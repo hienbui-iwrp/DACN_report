@@ -1,0 +1,130 @@
+\contentsline {section}{\numberline {1}Tổng quan}{4}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Giới thiệu đề tài}{4}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Mục tiêu đề tài}{4}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Phạm vi đề tài}{4}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Ý nghĩa đề tài}{4}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Đóng góp của đề tài}{4}{subsection.1.5}%
+\contentsline {section}{\numberline {2}Cơ sở lý thuyết}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Lược đồ BPMN}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Lược đồ BPEL}{5}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Yêu cầu hệ thống}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Yêu cầu chức năng}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Yêu cầu phi chức năng}{7}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Lược đồ Use-case}{8}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Toàn hệ thống}{8}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Đặt hàng trực tuyến}{9}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Xem danh sách sản phẩm}{9}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Lọc sản phẩm theo từ khóa}{10}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Lọc sản phẩm theo sự kiện }{10}{subsubsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.4}Lọc sản phẩm theo đặc điểm }{10}{subsubsection.4.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.5}Xem thông tin chi tiết sản phẩm }{11}{subsubsection.4.2.5}%
+\contentsline {subsubsection}{\numberline {4.2.6} Thêm sản phẩm vào giỏ hàng}{11}{subsubsection.4.2.6}%
+\contentsline {subsubsection}{\numberline {4.2.7}Mua hàng trực tuyến }{12}{subsubsection.4.2.7}%
+\contentsline {subsubsection}{\numberline {4.2.8}Thanh toán}{13}{subsubsection.4.2.8}%
+\contentsline {subsection}{\numberline {4.3}Quản lý sự kiện}{14}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Xem thông tin chi tiết sự kiện}{14}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Thêm sự kiện cho hệ thống bán hàng online.}{15}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}Chỉnh sửa sự kiện}{15}{subsubsection.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.4}Xóa sự kiện}{16}{subsubsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.4}Quản lý chi nhánh}{16}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Thêm chi nhánh}{16}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}Chỉnh sửa thông tin chi nhánh}{17}{subsubsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.3}Xem thông tin chi tiết chi nhánh}{17}{subsubsection.4.4.3}%
+\contentsline {subsubsection}{\numberline {4.4.4}Xóa chi nhánh}{17}{subsubsection.4.4.4}%
+\contentsline {subsection}{\numberline {4.5}Quản lý hoạt động kinh doanh}{18}{subsection.4.5}%
+\contentsline {subsubsection}{\numberline {4.5.1}Xem biểu đồ kinh doanh}{18}{subsubsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.6}Quản lý nhân viên}{19}{subsection.4.6}%
+\contentsline {subsubsection}{\numberline {4.6.1}Xem thông tin chi tiết nhân viên}{19}{subsubsection.4.6.1}%
+\contentsline {subsubsection}{\numberline {4.6.2}Xem thông tin điểm danh nhân viên}{20}{subsubsection.4.6.2}%
+\contentsline {subsubsection}{\numberline {4.6.3}Chỉnh sửa thông tin chi tiết nhân viên}{20}{subsubsection.4.6.3}%
+\contentsline {subsubsection}{\numberline {4.6.4}Thêm nhân viên}{20}{subsubsection.4.6.4}%
+\contentsline {subsubsection}{\numberline {4.6.5}Xóa nhân viên}{21}{subsubsection.4.6.5}%
+\contentsline {subsubsection}{\numberline {4.6.6}Yêu cầu thêm nhân viên}{21}{subsubsection.4.6.6}%
+\contentsline {subsubsection}{\numberline {4.6.7}Yêu cầu xóa nhân viên}{22}{subsubsection.4.6.7}%
+\contentsline {subsubsection}{\numberline {4.6.8}Duyệt yêu cầu cập nhật nhân viên}{22}{subsubsection.4.6.8}%
+\contentsline {subsubsection}{\numberline {4.6.9}Điểm danh}{22}{subsubsection.4.6.9}%
+\contentsline {subsection}{\numberline {4.7}Quản lý tài khoản}{23}{subsection.4.7}%
+\contentsline {subsubsection}{\numberline {4.7.1}Đăng ký}{23}{subsubsection.4.7.1}%
+\contentsline {subsubsection}{\numberline {4.7.2}Chỉnh sửa thông tin}{23}{subsubsection.4.7.2}%
+\contentsline {subsubsection}{\numberline {4.7.3}Tạo mới mật khẩu}{24}{subsubsection.4.7.3}%
+\contentsline {subsubsection}{\numberline {4.7.4}Xem thông tin chi tiết tài khoản}{24}{subsubsection.4.7.4}%
+\contentsline {subsection}{\numberline {4.8}Quản lý kho}{25}{subsection.4.8}%
+\contentsline {subsubsection}{\numberline {4.8.1}Xem thông tin chi tiết kho}{25}{subsubsection.4.8.1}%
+\contentsline {subsubsection}{\numberline {4.8.2}Thêm kho}{25}{subsubsection.4.8.2}%
+\contentsline {subsubsection}{\numberline {4.8.3}Chỉnh sửa thông tin kho}{26}{subsubsection.4.8.3}%
+\contentsline {subsubsection}{\numberline {4.8.4}Xóa kho}{27}{subsubsection.4.8.4}%
+\contentsline {subsection}{\numberline {4.9}Quản lý hàng hóa}{27}{subsection.4.9}%
+\contentsline {subsubsection}{\numberline {4.9.1}Thêm hàng trong kho}{27}{subsubsection.4.9.1}%
+\contentsline {subsubsection}{\numberline {4.9.2}Xóa hàng trong kho}{28}{subsubsection.4.9.2}%
+\contentsline {subsubsection}{\numberline {4.9.3}Xem thông tin chi tiết hàng}{28}{subsubsection.4.9.3}%
+\contentsline {subsubsection}{\numberline {4.9.4}Chỉnh sửa thông tin hàng}{29}{subsubsection.4.9.4}%
+\contentsline {subsubsection}{\numberline {4.9.5}Xuất hàng trong kho}{29}{subsubsection.4.9.5}%
+\contentsline {subsubsection}{\numberline {4.9.6}Chuyển kho}{30}{subsubsection.4.9.6}%
+\contentsline {subsubsection}{\numberline {4.9.7}Nhận trả hàng}{30}{subsubsection.4.9.7}%
+\contentsline {subsection}{\numberline {4.10}Quản lý đơn hàng}{30}{subsection.4.10}%
+\contentsline {subsubsection}{\numberline {4.10.1}Xem thông tin đơn hàng trực tiếp}{30}{subsubsection.4.10.1}%
+\contentsline {subsubsection}{\numberline {4.10.2}Xem thông tin đơn hàng trực tuyến}{31}{subsubsection.4.10.2}%
+\contentsline {subsubsection}{\numberline {4.10.3}Cập nhật trạng thái đơn hàng}{31}{subsubsection.4.10.3}%
+\contentsline {subsubsection}{\numberline {4.10.4}Xem trạng thái đơn hàng}{32}{subsubsection.4.10.4}%
+\contentsline {subsubsection}{\numberline {4.10.5}Yêu cầu xuất hóa đơn}{32}{subsubsection.4.10.5}%
+\contentsline {section}{\numberline {5}Thiết kế lược đồ BPMN}{34}{section.5}%
+\contentsline {section}{\numberline {6}Kiến trúc hệ thống}{35}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Tổng quan}{35}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Tầng UI}{35}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Tầng API}{35}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Tầng service}{35}{subsection.6.4}%
+\contentsline {section}{\numberline {7}Thiết kế cơ sở dữ liệu}{36}{section.7}%
+\contentsline {section}{\numberline {8}Thiết kế giao diện}{37}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Giao diện chung}{37}{subsection.8.1}%
+\contentsline {subsubsection}{\numberline {8.1.1}Đăng nhập}{37}{subsubsection.8.1.1}%
+\contentsline {subsection}{\numberline {8.2}Giao diện người dùng}{37}{subsection.8.2}%
+\contentsline {subsubsection}{\numberline {8.2.1}Đăng ký}{37}{subsubsection.8.2.1}%
+\contentsline {subsubsection}{\numberline {8.2.2}Tạo lại mật khẩu}{38}{subsubsection.8.2.2}%
+\contentsline {subsubsection}{\numberline {8.2.3}Header}{39}{subsubsection.8.2.3}%
+\contentsline {subsubsection}{\numberline {8.2.4}Footer}{40}{subsubsection.8.2.4}%
+\contentsline {subsubsection}{\numberline {8.2.5}Trang chủ}{41}{subsubsection.8.2.5}%
+\contentsline {subsubsection}{\numberline {8.2.6}Thông tin chi tiết sản phẩm}{42}{subsubsection.8.2.6}%
+\contentsline {subsubsection}{\numberline {8.2.7}Giỏ hàng}{44}{subsubsection.8.2.7}%
+\contentsline {subsubsection}{\numberline {8.2.8}Thanh toán}{44}{subsubsection.8.2.8}%
+\contentsline {subsubsection}{\numberline {8.2.9}Giao diện quản lý đơn hàng}{46}{subsubsection.8.2.9}%
+\contentsline {subsubsection}{\numberline {8.2.10}Giao diện chi tiết đơn hàng}{47}{subsubsection.8.2.10}%
+\contentsline {subsubsection}{\numberline {8.2.11}Giao diện thông tin khách hàng}{47}{subsubsection.8.2.11}%
+\contentsline {subsection}{\numberline {8.3}Giao diện quản trị viên}{50}{subsection.8.3}%
+\contentsline {subsubsection}{\numberline {8.3.1}Chung}{50}{subsubsection.8.3.1}%
+\contentsline {subsubsubsection}{\numberline {8.3.1.a}Thay đổi mật khẩu}{50}{subsubsubsection.8.3.1.1}%
+\contentsline {subsubsection}{\numberline {8.3.2}Quản lý chi nhánh}{51}{subsubsection.8.3.2}%
+\contentsline {subsubsubsection}{\numberline {8.3.2.a}Thêm, chỉnh sửa chi nhánh}{51}{subsubsubsection.8.3.2.1}%
+\contentsline {subsubsubsection}{\numberline {8.3.2.b}Thông tin chi tiết chi nhánh}{52}{subsubsubsection.8.3.2.2}%
+\contentsline {subsubsection}{\numberline {8.3.3}Quản lý hoạt động kinh doanh}{52}{subsubsection.8.3.3}%
+\contentsline {subsubsection}{\numberline {8.3.4}Quản lý nhân viên}{54}{subsubsection.8.3.4}%
+\contentsline {subsubsubsection}{\numberline {8.3.4.a}Thêm, chỉnh sửa nhân viên}{54}{subsubsubsection.8.3.4.1}%
+\contentsline {subsubsubsection}{\numberline {8.3.4.b}Thông tin chi tiết nhân viên}{54}{subsubsubsection.8.3.4.2}%
+\contentsline {subsubsubsection}{\numberline {8.3.4.c}Quản lý yêu cầu nhân viên}{56}{subsubsubsection.8.3.4.3}%
+\contentsline {subsubsubsection}{\numberline {8.3.4.d}Yêu cầu thêm nhân viên}{56}{subsubsubsection.8.3.4.4}%
+\contentsline {subsubsubsection}{\numberline {8.3.4.e}Yêu cầu xóa nhân viên}{56}{subsubsubsection.8.3.4.5}%
+\contentsline {subsubsection}{\numberline {8.3.5}Quản lý tài khoản}{56}{subsubsection.8.3.5}%
+\contentsline {subsubsubsection}{\numberline {8.3.5.a}Thông tin chi tiết tài khoản}{58}{subsubsubsection.8.3.5.1}%
+\contentsline {subsubsubsection}{\numberline {8.3.5.b}Thông tin chi tiết đơn hàng}{58}{subsubsubsection.8.3.5.2}%
+\contentsline {subsubsection}{\numberline {8.3.6}Quản lý kho}{58}{subsubsection.8.3.6}%
+\contentsline {subsubsection}{\numberline {8.3.7}Thêm, chỉnh sửa thông tin kho}{58}{subsubsection.8.3.7}%
+\contentsline {subsubsection}{\numberline {8.3.8}Quản lý sự kiện}{59}{subsubsection.8.3.8}%
+\contentsline {subsubsection}{\numberline {8.3.9}Thêm, chỉnh sửa thông tin sự kiện}{59}{subsubsection.8.3.9}%
+\contentsline {subsubsection}{\numberline {8.3.10}Chọn hàng cho sự kiện}{60}{subsubsection.8.3.10}%
+\contentsline {subsubsection}{\numberline {8.3.11}Quản lý hàng hóa}{60}{subsubsection.8.3.11}%
+\contentsline {subsubsubsection}{\numberline {8.3.11.a}Chỉnh sửa thông tin hàng}{61}{subsubsubsection.8.3.11.1}%
+\contentsline {subsubsubsection}{\numberline {8.3.11.b}Vận chuyển hàng}{61}{subsubsubsection.8.3.11.2}%
+\contentsline {subsubsection}{\numberline {8.3.12}Quản lý đơn hàng trực tuyến}{62}{subsubsection.8.3.12}%
+\contentsline {subsubsubsection}{\numberline {8.3.12.a}Chi tiết đơn hàng trực tuyến}{62}{subsubsubsection.8.3.12.1}%
+\contentsline {subsubsection}{\numberline {8.3.13}Quản lý đơn hàng trực tiếp}{63}{subsubsection.8.3.13}%
+\contentsline {subsubsubsection}{\numberline {8.3.13.a}Chi tiết đơn hàng cửa hàng}{63}{subsubsubsection.8.3.13.1}%
+\contentsline {subsubsection}{\numberline {8.3.14}Giao diện khác}{63}{subsubsection.8.3.14}%
+\contentsline {subsubsubsection}{\numberline {8.3.14.a}Quản lý chi nhánh}{65}{subsubsubsection.8.3.14.1}%
+\contentsline {subsubsubsection}{\numberline {8.3.14.b}Trưởng chi nhánh}{65}{subsubsubsection.8.3.14.2}%
+\contentsline {subsubsubsection}{\numberline {8.3.14.c}Quản lý hàng hóa}{65}{subsubsubsection.8.3.14.3}%
+\contentsline {subsubsubsection}{\numberline {8.3.14.d}Quản lý kho}{65}{subsubsubsection.8.3.14.4}%
+\contentsline {section}{\numberline {9}Lựa chọn công nghệ}{66}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Front-end}{66}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Back-end}{66}{subsection.9.2}%
+\contentsline {section}{\numberline {10}Tổng kết}{67}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Kế hoạch cho giai đoạn luận văn}{67}{subsection.10.1}%
+\contentsline {section}{\numberline {11}Tham khảo}{68}{section.11}%
