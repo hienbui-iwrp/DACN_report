@@ -1,7 +1,7 @@
 % !TeX root = ..\main.tex
 \section{Cơ sở lý thuyết}
 \subsection{Lược đồ BPMN}
-\subsubsection{BPMN là gì}
+\subsubsection{Tổng quan về BPMN}
 
 \hspace*{0.5cm}BPMN(Business Process Modeling Notation) là một lược đồ tập hợp các kí hiệu để mô hình hóa trực quan các quy trình nghiệp vụ xử lý . BPMN giúp các doanh nghiệp trực quan hóa các hoạt động và các luồng thông tin để thực hiện quy trình nghiệp vụ.
 \begin{figure}[!htp]
@@ -113,6 +113,32 @@ Các cổng có nhiệm vụ chính là kiểm soát dòng chảy của quy trì
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Ngôn ngữ BPEL}
+\subsubsection{Tổng quan về BPEL}
+BPEL hay BPEL4WS(Business Process Execution Language for Web Services) là ngôn ngữ dùng để định nghĩa và thực thi các quy trình nghiệp vụ sử dụng các dịch vụ web. Ngôn ngữ BPEL được xây dựng dựa trên nền tảng XML hỗ trợ các dịch vụ web: SOAP, WSDL, UDDI. BPEL xây dựng một dịch vụ web dựa trên việc điều phối, phối hợp các dịch vụ web độc lập khác để hình thành nên một dịch vụ web mới.
+\subsubsection{Các thành phần trong BPEL}
+BPEL bao gồm các thành phần nguyên tố và các thành phần cấu trúc. Các thành phần nguyên tố bao gồm:
+\begin{itemize}
+	\item $<invoke>$: Gọi một dịch vụ web khác
+	\item $<receive>$: Đợi phản hồi tự các tác vụ bất đồng bộ
+	\item $<reply>$: Phản hồi cho các tác vụ đồng bộ
+	\item $<assign>$: Gán giá trị cho biến
+	\item $<throw>$: Chỉ định các lỗi, ngoại lệ
+	\item $<wait>$: Đợi một thời gian
+	\item $<terminate>$: Kết thúc toàn bộ quy trình
+\end{itemize}
+
+Bên cạnh thành nguyên tố, các thành phần cấu trúc chứa nhiều tác vụ bên trong:
+\begin{itemize}
+	\item $<sequence>$: Các tác vụ thực hiện tuần tự
+	\item $<flow>$: Các tác vụ thực hiện song song
+	\item $<switch>$: Thực hiện các tác vụ rẽ nhánh
+	\item $<while>$: Thực hiện các vọng lặp
+\end{itemize}
+
+Ngoài ra, còn có $<partnerLink>$ dùng để xác định các đối tác, các dịch vụ web sử dụng, $<variable>$ để định nghĩa các biến cần thiết trong quy trình
+
+\subsubsection{Ví dụ về BPEL}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Chuyển đổi BPMN sang BPEL}
