@@ -10,11 +10,14 @@
 
 \subsection{Tầng UI}
 
+
+
+
 \subsubsection{CustomerUI}
 Module này bao gồm các class dùng để hiển thị UI đối với phía khách hàng
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[width=17cm]{img/Architecture/customer UI.png}
+	\includegraphics[width=17cm]{img/Architecture/UI/customer UI.png}
 	\newline
 	\caption{Lược đồ class của Module CustomerUI}
 \end{figure}
@@ -33,7 +36,7 @@ Module này bao gồm các class dùng để hiển thị UI đối với phía 
 LoginUI là một class dùng để hiển thị trang đăng nhập cho cả phía khách hàng và quản trị viên
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[width=2cm]{img/Architecture/loginUI.png}
+	\includegraphics[width=2cm]{img/Architecture/UI/loginUI.png}
 	\newline
 	\caption{Lược đồ class của LoginUI}
 \end{figure}
@@ -53,7 +56,7 @@ Module này bao gồm các class dùng để hiển thị UI đối với phía 
 
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[width=17cm]{img/Architecture/adminUI.png}
+	\includegraphics[width=17cm]{img/Architecture/UI/adminUI.png}
 	\newline
 	\caption{Lược đồ class của Module AdminUI}
 \end{figure}
@@ -68,6 +71,10 @@ Module này bao gồm các class dùng để hiển thị UI đối với phía 
 	\end{itemize}
 \end{quote}
 
+
+
+
+
 \subsection{Tầng API}
 \subsubsection{Customer APIs}
 Module này dùng để chứa các API được xuất ra ngoài cho phía khách hàng
@@ -79,6 +86,188 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía qu�
 Module này dùng để chứa các API được xuất ra ngoài cho bất kì đối tượng người dùng nào
 
 
+
+
 \subsection{Tầng service}
 
-\subsubsection{}
+\subsubsection{Customer Order Service}
+\begin{figure}[!htp]
+	\centering
+	\includegraphics[width=13cm]{img/Architecture/service/CustomerOrderService.png}
+	\newline
+	\caption{Lược đồ class của Customer Order Service}
+\end{figure}
+\textbf{Mô tả:}
+\begin{quote}
+	\begin{itemize}
+		\item CustomerUI
+		\item NavBar
+		\item Header
+		\item Footer
+		\item ..
+	\end{itemize}
+\end{quote}
+
+
+\subsubsection{Cart Service}
+\begin{figure}[!htp]
+	\centering
+	\includegraphics[width=11cm]{img/Architecture/service/CartService.png}
+	\newline
+	\caption{Lược đồ class của Cart Service}
+\end{figure}
+\textbf{Mô tả:}
+\begin{quote}
+	\begin{itemize}
+		\item CustomerUI
+		\item NavBar
+		\item Header
+		\item Footer
+		\item ..
+	\end{itemize}
+\end{quote}
+
+
+\subsubsection{Customer Service}
+\begin{figure}[!htp]
+	\centering
+	\includegraphics[width=11cm]{img/Architecture/service/CustomerService.png}
+	\newline
+	\caption{Lược đồ class của Customer Service}
+\end{figure}
+\textbf{Mô tả:}
+\begin{quote}
+	\begin{itemize}
+		\item CustomerUI
+		\item NavBar
+		\item Header
+		\item Footer
+		\item ..
+	\end{itemize}
+\end{quote}
+
+
+\subsubsection{Order Service}
+\begin{figure}[!htp]
+	\centering
+	\includegraphics[width=11cm]{img/Architecture/service/OrderService.png}
+	\newline
+	\caption{Lược đồ class của Order Service}
+\end{figure}
+\textbf{Mô tả:}
+\begin{quote}
+	\begin{itemize}
+		\item ...
+		\item ...
+	\end{itemize}
+\end{quote}
+
+
+\subsubsection{Account Service}
+\begin{figure}[!htp]
+	\centering
+	\includegraphics[width=11cm]{img/Architecture/service/AccountService.png}
+	\newline
+	\caption{Lược đồ class của Account Service}
+\end{figure}
+\textbf{Mô tả:}
+\begin{quote}
+	\begin{itemize}
+		\item ...
+		\item ...
+	\end{itemize}
+\end{quote}
+
+
+\subsubsection{Staff Service}
+\begin{figure}[!htp]
+	\centering
+	\includegraphics[width=11cm]{img/Architecture/service/StaffService.png}
+	\newline
+	\caption{Lược đồ class của Staff Service}
+\end{figure}
+\textbf{Mô tả:}
+\begin{quote}
+	\begin{itemize}
+		\item ...
+		\item ...
+	\end{itemize}
+\end{quote}
+
+
+\subsubsection{Branch Service}
+\begin{figure}[!htp]
+	\centering
+	\includegraphics[width=11cm]{img/Architecture/service/BranchService.png}
+	\newline
+	\caption{Lược đồ class của Branch Service}
+\end{figure}
+\textbf{Mô tả:}
+\begin{quote}
+	\begin{itemize}
+		\item ...
+		\item ...
+	\end{itemize}
+\end{quote}
+
+
+\subsubsection{Event Service}
+\begin{figure}[!htp]
+	\centering
+	\includegraphics[width=11cm]{img/Architecture/service/EventService.png}
+	\newline
+	\caption{Lược đồ class của Event Service}
+\end{figure}
+\textbf{Mô tả:}
+\begin{quote}
+	\begin{itemize}
+		\item ...
+		\item ...
+	\end{itemize}
+\end{quote}
+
+\subsubsection{Warehouse Service}
+\begin{figure}[!htp]
+	\centering
+	\includegraphics[width=11cm]{img/Architecture/service/WarehouseService.png}
+	\newline
+	\caption{Lược đồ class của Warehouse Service}
+\end{figure}
+\textbf{Mô tả:}
+\begin{quote}
+	\begin{itemize}
+		\item ...
+		\item ...
+	\end{itemize}
+\end{quote}
+
+\subsubsection{Statistic Service}
+\begin{figure}[!htp]
+	\centering
+	\includegraphics[width=11cm]{img/Architecture/service/StatisticService.png}
+	\newline
+	\caption{Lược đồ class của Statistic Service}
+\end{figure}
+\textbf{Mô tả:}
+\begin{quote}
+	\begin{itemize}
+		\item ...
+		\item ...
+	\end{itemize}
+\end{quote}
+
+\subsubsection{Goods Service}
+\begin{figure}[!htp]
+	\centering
+	\includegraphics[width=17cm]{img/Architecture/service/GoodsService.png}
+	\newline
+	\caption{Lược đồ class của Goods Service}
+\end{figure}
+\textbf{Mô tả:}
+\begin{quote}
+	\begin{itemize}
+		\item ...
+		\item ...
+	\end{itemize}
+\end{quote}
+
