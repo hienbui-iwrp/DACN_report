@@ -114,7 +114,7 @@ Các cổng có nhiệm vụ chính là kiểm soát dòng chảy của quy trì
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Ngôn ngữ BPEL}
 \subsubsection{Tổng quan về BPEL}
-BPEL hay BPEL4WS(Business Process Execution Language for Web Services) là ngôn ngữ dùng để định nghĩa và thực thi các quy trình nghiệp vụ sử dụng các dịch vụ web. Ngôn ngữ BPEL được xây dựng dựa trên nền tảng XML hỗ trợ các dịch vụ web: SOAP, WSDL, UDDI. BPEL xây dựng một dịch vụ web dựa trên việc điều phối, phối hợp các dịch vụ web độc lập khác để hình thành nên một dịch vụ web mới.
+\hspace*{0.5cm} BPEL hay BPEL4WS(Business Process Execution Language for Web Services) là ngôn ngữ dùng để định nghĩa và thực thi các quy trình nghiệp vụ sử dụng các dịch vụ web. Ngôn ngữ BPEL được xây dựng dựa trên nền tảng XML hỗ trợ các dịch vụ web: SOAP, WSDL, UDDI. BPEL xây dựng một dịch vụ web dựa trên việc điều phối, phối hợp các dịch vụ web độc lập khác để hình thành nên một dịch vụ web mới.
 \subsubsection{Các thành phần trong BPEL}
 BPEL bao gồm các thành phần nguyên tố và các thành phần cấu trúc. Các thành phần nguyên tố bao gồm:
 \begin{itemize}
@@ -137,7 +137,34 @@ Bên cạnh thành nguyên tố, các thành phần cấu trúc chứa nhiều t
 
 Ngoài ra, còn có $<partnerLink>$ dùng để xác định các đối tác, các dịch vụ web sử dụng, $<variable>$ để định nghĩa các biến cần thiết trong quy trình
 
+
 \subsubsection{Ví dụ về BPEL}
+
+\hspace*{0.5cm} Để hiểu rõ về quy trình được mô tả bằng BPEL, ta xem xét ví dụ về quy trình sắp xếp chuyến đi cho nhân viên. Đầu tiên, chúng ta sẽ kiếm tra hạng vé của nhân viên, giả sử rằng có một dịch vụ web Employee Travel sẽ làm việc này. Sau đó, chúng ta kiểm tra giá vé của hai hãng: American Airlines và Delta Airlines để chọn ra giá vé thấp hơn và trả lại kết quả. Quy trình này được minh họa như sau:
+
+\begin{figure}[!htp]
+	\begin{center}
+		\includegraphics[width=10cm]{img/theory/BPEL/Sample.png}
+	\end{center}
+	\caption{Ví dụ về quy trình BPEL sắp xếp chuyến đi}
+\end{figure}
+
+\begin{flushleft}
+	Hình ảnh được lấy từ \url{https://www.oracle.com/technical-resources/articles/matjaz-bpel.html}
+\end{flushleft}
+
+Trong ví dụ này, các partner của hệ thống sẽ bao gồm Client, Employee Travel Status Web Service, American Airlines Web Service, Detal Airlines Web Service. Chúng ta sẽ xây dựng một quy trình BPEL bất đồng bộ, giả định rằng dịch vụ web Employee Travel là đồng bộ vì dữ liệu nhân viên đã có sẵn và có thể phản hồi ngay lập tức. 
+
+Quy trình BPEL chi tiết như sau: Đầu tiên Client sẽ gửi một yêu cầu bất đồng bộ kèm theo thông tin chuyến đi đến hệ thống. Hệ thống sẽ nhận thông tin và thực hiện lệnh gọi đồng bộ sang dịch vụ web Employee Travel để lấy thông tin hạng vé của nhân viên này. Tiếp theo, hệ thống sẽ thực hiện 2 lệnh gọi bất đồng bộ đồng thời đến 2 dịch vụ web của American Airlines và Delta Airlines để xác định giá vé. Sau khi hệ thống nhận được phản hồi kết quả của 2 hãng hàng không, hệ thóng thực hiện so sánh để tìm giá vé thấp hơn và trả lại kết quả cho Client. Quy trình kết thúc. 
+
+\subsubsection{Các bước xây dựng quy trình BPEL}
+Để xây dựng ví dụ trên, ta cần thực hiện các bước sau:
+\begin{enumerate}
+	\item Xác định các dịch vụ web liên quan: Xác định các dịch vụ web tương tác đối với hệ thống (Employee Travel Web Service, American Airlines Web Service, Delta Airlines Web Service)
+	\item Xây dựng WSDL cho quy trình BPEL: BPEL là một dịch vụ web, do đó ta cần xây dựng WSDL cho chính nó
+	\item Xác định partnerLink cho quy trình: Cần xác định các dịch vụ web được thực hiện đồng bộ hay bất đồng bộ, cần những tham số nào để gọi.
+	\item Xây dựng quy trình: Xây dựng các luồng đi, logic trong quy trình
+\end{enumerate} 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
