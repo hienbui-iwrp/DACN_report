@@ -90,6 +90,21 @@ Module này dùng để chứa các API được xuất ra ngoài cho bất kì 
 
 \subsection{Tầng service}
 
+Lược đồ class ở tậng service được xây dựng theo các thành phần sau:
+\begin{itemize}
+	\item Repository: Class dùng để truy cập trực tiếp đến dữ liệu trong Database
+	\item Model: Class dùng để chứa thông tin nhận lên từ Database
+	\item Controllers: Class dùng để xử lý các logic nghiệp vụ
+	\item Response: Class chứa thông tin trả về khi có yêu cầu từ bên ngoài
+	\item Các Interface: Giúp đảm bảo nguyên lý \textbf{Dependency inversion principle} của \textbf{SOLID}
+	      \begin {itemize}
+	\item IRepository: Cung cấp các api cho các class Controller
+	\item IController: Cung cấp các api để bên ngoài service truy cập đến
+\end{itemize}
+\end{itemize}
+
+
+
 \subsubsection{Customer Order Service}
 \begin{figure}[!htp]
 	\centering
@@ -97,16 +112,7 @@ Module này dùng để chứa các API được xuất ra ngoài cho bất kì 
 	\newline
 	\caption{Lược đồ class của Customer Order Service}
 \end{figure}
-\textbf{Mô tả:}
-\begin{quote}
-	\begin{itemize}
-		\item CustomerUI
-		\item NavBar
-		\item Header
-		\item Footer
-		\item ..
-	\end{itemize}
-\end{quote}
+
 
 
 \subsubsection{Cart Service}
@@ -116,16 +122,6 @@ Module này dùng để chứa các API được xuất ra ngoài cho bất kì 
 	\newline
 	\caption{Lược đồ class của Cart Service}
 \end{figure}
-\textbf{Mô tả:}
-\begin{quote}
-	\begin{itemize}
-		\item CustomerUI
-		\item NavBar
-		\item Header
-		\item Footer
-		\item ..
-	\end{itemize}
-\end{quote}
 
 
 \subsubsection{Customer Service}
@@ -135,16 +131,7 @@ Module này dùng để chứa các API được xuất ra ngoài cho bất kì 
 	\newline
 	\caption{Lược đồ class của Customer Service}
 \end{figure}
-\textbf{Mô tả:}
-\begin{quote}
-	\begin{itemize}
-		\item CustomerUI
-		\item NavBar
-		\item Header
-		\item Footer
-		\item ..
-	\end{itemize}
-\end{quote}
+
 
 
 \subsubsection{Order Service}
@@ -154,13 +141,7 @@ Module này dùng để chứa các API được xuất ra ngoài cho bất kì 
 	\newline
 	\caption{Lược đồ class của Order Service}
 \end{figure}
-\textbf{Mô tả:}
-\begin{quote}
-	\begin{itemize}
-		\item ...
-		\item ...
-	\end{itemize}
-\end{quote}
+
 
 
 \subsubsection{Account Service}
@@ -170,13 +151,7 @@ Module này dùng để chứa các API được xuất ra ngoài cho bất kì 
 	\newline
 	\caption{Lược đồ class của Account Service}
 \end{figure}
-\textbf{Mô tả:}
-\begin{quote}
-	\begin{itemize}
-		\item ...
-		\item ...
-	\end{itemize}
-\end{quote}
+
 
 
 \subsubsection{Staff Service}
@@ -186,29 +161,80 @@ Module này dùng để chứa các API được xuất ra ngoài cho bất kì 
 	\newline
 	\caption{Lược đồ class của Staff Service}
 \end{figure}
-\textbf{Mô tả:}
-\begin{quote}
-	\begin{itemize}
-		\item ...
-		\item ...
-	\end{itemize}
-\end{quote}
+
 
 
 \subsubsection{Branch Service}
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[width=11cm]{img/Architecture/service/BranchService.png}
+	\includegraphics[width=10cm]{img/Architecture/service/BranchService.png}
 	\newline
 	\caption{Lược đồ class của Branch Service}
 \end{figure}
-\textbf{Mô tả:}
-\begin{quote}
-	\begin{itemize}
-		\item ...
-		\item ...
-	\end{itemize}
-\end{quote}
+
+\subsubsection*{BranchRepository}
+Thuộc tính:
+\begin{itemize}
+	\item branchModel: Chứa đối tượng BranchModel
+	\item staffModel: Chứa đối tượng StaffModel
+\end{itemize}
+Phương thức:
+\begin{itemize}
+	\item getListBranch(): Lấy danh sách chi nhánh
+	\item getDetailBranch(id: string): Lấy thông tin chi tiết một chi nhánh
+	\item createBranch(info: BranchModel): Thêm một chi nhánh mới
+	\item updateBranch(info: BranchModel): Cập nhật thông tin một chi nhánh
+	\item deleteBranch(id: string): Xóa một chi nhánh
+	\item getListStaff(BranchId: string): Lấy danh sách nhân viên của chi nhánh
+\end{itemize}
+
+\subsubsection*{BranchModel}
+Thuộc tính:
+\begin{itemize}
+	\item id: Id của chi nhánh
+	\item name: Tên của chi nhánh
+	\item street: Tên đường của chi nhánh
+	\item ward: Phường của chi nhánh
+	\item province: Tỉnh của chi nhánh
+	\item createdDate: Ngày tạo chi nhánh
+	\item managerId: Id của người quản lý
+	\item image: Các hình ảnh của chi nhánh
+\end{itemize}
+
+\subsubsection*{StaffModel}
+Thuộc tính:
+\begin{itemize}
+	\item id: Id của nhân viên
+	\item branchId: Id của chi nhánh làm việc
+	\item startDate: Thời gian bắt đầu làm việc tại chi nhánh
+	\item endDate: Thời gian kết thúc làm việc tại chi nhánh
+\end{itemize}
+
+\subsubsection*{BranchController}
+Thuộc tính:
+\begin{itemize}
+	\item repo: Chứa đối tượng repository
+\end{itemize}
+Phương thức:
+\begin{itemize}
+	\item getListBranch(): Lấy danh sách chi nhánh
+	\item getDetailBranch(id: string): Lấy thông tin chi tiết một chi nhánh
+	\item addBranch(info: BranchModel): Thêm một chi nhánh mới
+	\item updateBranch(info: BranchModel): Cập nhật thông tin một chi nhánh
+	\item deleteBranch(id: int): Xóa một chi nhánh
+	\item getListStaff(BranchId: string): Lấy danh sách nhân viên của chi nhánh
+	\item updateManger(managerId: sring, branchId:string): Cập nhật quản lý chi nhánh
+	\item getStatistic(time: enum): Lấy thông tin thống kê lợi nhuận, doanh thu.
+\end{itemize}
+
+\subsubsection*{UpdateResponse - GetStaffResponse - GetBranchResponse }
+Thuộc tính:
+\begin{itemize}
+	\item statusCode: Mã trạng thái của phản hồi
+	\item message: Thông điệp của phản hồi
+	\item value: Các dữ liệu trả về đối với các yêu cầu HTTP GET
+\end{itemize}
+
 
 
 \subsubsection{Event Service}
@@ -218,13 +244,7 @@ Module này dùng để chứa các API được xuất ra ngoài cho bất kì 
 	\newline
 	\caption{Lược đồ class của Event Service}
 \end{figure}
-\textbf{Mô tả:}
-\begin{quote}
-	\begin{itemize}
-		\item ...
-		\item ...
-	\end{itemize}
-\end{quote}
+
 
 \subsubsection{Warehouse Service}
 \begin{figure}[!htp]
@@ -233,13 +253,7 @@ Module này dùng để chứa các API được xuất ra ngoài cho bất kì 
 	\newline
 	\caption{Lược đồ class của Warehouse Service}
 \end{figure}
-\textbf{Mô tả:}
-\begin{quote}
-	\begin{itemize}
-		\item ...
-		\item ...
-	\end{itemize}
-\end{quote}
+
 
 \subsubsection{Statistic Service}
 \begin{figure}[!htp]
@@ -263,11 +277,4 @@ Module này dùng để chứa các API được xuất ra ngoài cho bất kì 
 	\newline
 	\caption{Lược đồ class của Goods Service}
 \end{figure}
-\textbf{Mô tả:}
-\begin{quote}
-	\begin{itemize}
-		\item ...
-		\item ...
-	\end{itemize}
-\end{quote}
 
