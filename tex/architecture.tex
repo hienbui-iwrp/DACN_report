@@ -152,6 +152,51 @@ Lược đồ class ở tậng service được xây dựng theo các thành ph�
 	\caption{Lược đồ class của Account Service}
 \end{figure}
 
+\subsubsubsection*{AccountRepository}
+Thuộc tính:
+\begin{itemize}
+	\item accountModel: Chứa đối tượng AccountModel
+\end{itemize}
+Phương thức:
+\begin{itemize}
+	\item getAcount(keyword: string): Lấy danh sách tài khoản theo từ khóa
+	\item createAccount(info: AccountModel): Tạo một tài khoản mới
+	\item updateAccount(info: AccountModel): Cập nhật thông tin một tài khoản
+\end{itemize}
+
+\subsubsubsection*{AccountModel}
+Thuộc tính:
+\begin{itemize}
+	\item username: Tên đăng nhập tài khoản
+	\item password: Mật khẩu tài khoản
+	\item role: Quyền của tài khoản
+\end{itemize}
+
+\subsubsubsection*{AccountController}
+Thuộc tính:
+\begin{itemize}
+	\item accountModel: Chứa đối tượng AccountModel
+\end{itemize}
+Phương thức:
+\begin{itemize}
+	\item getAcount(username: string): Lấy tài khoản theo tên đăng nhập
+	\item getListAccount(): Lấy danh sách tất cả tài khoản
+	\item searchAccount(keyword: string) : Lấy danh sách tài khoản theo từ khóa
+	\item addAccount(info: accountModel): Tạo một tài khoản mới
+	\item resetPassword(username: string, newPass: string): Tái thiết lập mật khẩu	
+	\item updateRole(username: string, role: int): Cập nhật quyền tài khoản
+\end{itemize}
+
+
+\subsubsubsection*{UpdateResponse - GetResponse}
+Thuộc tính:
+\begin{itemize}
+	\item statusCode: Mã trạng thái của phản hồi
+	\item message: Thông điệp của phản hồi
+	\item value: Các dữ liệu trả về đối với các yêu cầu HTTP GET
+\end{itemize}
+
+
 
 
 \subsubsection{Staff Service}
@@ -248,8 +293,6 @@ Thuộc tính:
 	\item message: Thông điệp của phản hồi
 	\item value: Các dữ liệu trả về đối với các yêu cầu HTTP GET
 \end{itemize}
-
-
 
 
 
@@ -352,13 +395,9 @@ Thuộc tính:
 	\newline
 	\caption{Lược đồ class của Statistic Service}
 \end{figure}
-\textbf{Mô tả:}
-\begin{quote}
-	\begin{itemize}
-		\item ...
-		\item ...
-	\end{itemize}
-\end{quote}
+
+
+
 
 \subsubsection{Goods Service}
 \begin{figure}[!htp]
