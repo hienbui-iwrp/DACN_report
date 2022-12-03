@@ -162,6 +162,95 @@ Lược đồ class ở tậng service được xây dựng theo các thành ph�
 	\caption{Lược đồ class của Staff Service}
 \end{figure}
 
+\subsubsubsection*{StaffRepository}
+Thuộc tính:
+\begin{itemize}
+	\item staffModel: Chứa đối tượng StaffModel
+	\item attendanceModel: Chứa đối tượng AttendanceModel
+	\item requestModel: Chứa đối tượng RequestModel
+\end{itemize}
+Phương thức:
+\begin{itemize}
+	\item getListStaff(keyword: string): Lấy danh sách nhân viên theo từ khóa
+	\item getDetailStaff(id: string): Lấy thông tin chi tiết một nhân viên
+	\item createStaff(info: StaffModel): Thêm một nhân viên mới
+	\item updateStaff(info: StaffModel): Cập nhật thông tin một nhân viên
+	\item deleteStaff(id: string): Xóa một nhân viên
+	\item getListAttendance(staffId, month: dateTime): Lấy danh sách điểm danh của nhân viên
+	\item createRequest (type: int, info: StaffModel): Tạo một yêu cầu về thêm, xóa nhân viên
+	\item updateRequestStatus (status: int, requestId: string): Cập nhật trạng thái cùa yêu cầu
+\end{itemize}
+
+\subsubsubsection*{StaffModel}
+Thuộc tính:
+\begin{itemize}
+	\item id: Id của nhân viên
+	\item name: Tên của nhân viên
+	\item requestModel: Chứa đối tượng RequestModel
+	\item street: Tên đường của nhân viên
+	\item ward: Phường của nhân viên
+	\item distric: Quận của nhân viên
+	\item province: Tỉnh của nhân viên
+	\item citizenId: Căn cước của nhân viên
+	\item role: Vị trí của nhân viên
+	\item branchId: Id nơi làm việc của nhân viên
+	\item salary: Mức lương của nhân viên
+	\item startDate: Ngày bắt đầu làm việc của nhân viên
+	\item endDate: Ngày kết thúc làm việc của nhân viên
+	\item gender: Giới tính của nhân viên
+	\item phoneNumber: Số điện thoại của nhân viên
+	\item email: Email của nhân viên
+\end{itemize}
+
+
+\subsubsubsubsection*{AttendaceModel}
+Thuộc tính:
+\begin{itemize}
+	\item staffId: Id của nhân viên
+	\item date: Ngày làm việc
+	\item start: Thời gian bắt đầu
+	\item end: Thờ gian kết thúc
+\end{itemize}
+
+\subsubsubsubsection*{RequestModel}
+Thuộc tính:
+\begin{itemize}
+	\item id: Id của yêu cầu
+	\item staffId: Id của nhân viên
+	\item createDate: Ngày tạo
+	\item type: Loại yêu cầu
+	\item status: Trạng thái yêu cầu
+\end{itemize}
+
+\subsubsubsubsection*{StaffController}
+Thuộc tính:
+\begin{itemize}
+	\item repo: Chứa đối tượng StaffRepository
+\end{itemize}
+Phương thức:
+\begin{itemize}
+	\item getListStaff(branchId: string): Lấy danh sách nhân viên theo chi nhánh
+	\item getDetailStaff(id: string): Lấy thông tin chi tiết một nhân viên
+	\item searchStaff(keyword: string): Lấy danh sách nhân viên theo từ khóa
+	\item createStaff(info: StaffModel): Thêm một nhân viên mới
+	\item updateStaff(info: StaffModel): Cập nhật thông tin một nhân viên
+	\item deleteStaff(id: string): Xóa một nhân viên
+	\item createAddRequest(info: StaffModel): Tạo một yêu cầu thêm nhân viên
+	\item createDeleteRequest(id:string): Tạo một yêu cầu về xóa nhân viên
+	\item updateRequestStatus (status: int, requestId: string): Cập nhật trạng thái cùa yêu cầu
+	\item getListAttendance(staffId, month: dateTime): Lấy danh sách điểm danh của nhân viên
+\end{itemize}
+
+\subsubsubsubsection*{UpdateResponse - GetResponse}
+Thuộc tính:
+\begin{itemize}
+	\item statusCode: Mã trạng thái của phản hồi
+	\item message: Thông điệp của phản hồi
+	\item value: Các dữ liệu trả về đối với các yêu cầu HTTP GET
+\end{itemize}
+
+
+
 
 
 \subsubsection{Branch Service}
@@ -172,7 +261,7 @@ Lược đồ class ở tậng service được xây dựng theo các thành ph�
 	\caption{Lược đồ class của Branch Service}
 \end{figure}
 
-\subsubsection*{BranchRepository}
+\subsubsubsubsection*{BranchRepository}
 Thuộc tính:
 \begin{itemize}
 	\item branchModel: Chứa đối tượng BranchModel
@@ -188,20 +277,21 @@ Phương thức:
 	\item getListStaff(BranchId: string): Lấy danh sách nhân viên của chi nhánh
 \end{itemize}
 
-\subsubsection*{BranchModel}
+\subsubsubsubsection*{BranchModel}
 Thuộc tính:
 \begin{itemize}
 	\item id: Id của chi nhánh
 	\item name: Tên của chi nhánh
 	\item street: Tên đường của chi nhánh
 	\item ward: Phường của chi nhánh
+	\item distric: Quận của chi nhánh
 	\item province: Tỉnh của chi nhánh
 	\item createdDate: Ngày tạo chi nhánh
 	\item managerId: Id của người quản lý
 	\item image: Các hình ảnh của chi nhánh
 \end{itemize}
 
-\subsubsection*{StaffModel}
+\subsubsubsubsection*{StaffModel}
 Thuộc tính:
 \begin{itemize}
 	\item id: Id của nhân viên
@@ -210,7 +300,7 @@ Thuộc tính:
 	\item endDate: Thời gian kết thúc làm việc tại chi nhánh
 \end{itemize}
 
-\subsubsection*{BranchController}
+\subsubsubsubsection*{BranchController}
 Thuộc tính:
 \begin{itemize}
 	\item repo: Chứa đối tượng repository
@@ -227,7 +317,7 @@ Phương thức:
 	\item getStatistic(time: enum): Lấy thông tin thống kê lợi nhuận, doanh thu.
 \end{itemize}
 
-\subsubsection*{UpdateResponse - GetStaffResponse - GetBranchResponse }
+\subsubsubsubsection*{UpdateResponse - GetStaffResponse - GetBranchResponse }
 Thuộc tính:
 \begin{itemize}
 	\item statusCode: Mã trạng thái của phản hồi
