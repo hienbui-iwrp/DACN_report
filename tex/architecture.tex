@@ -175,7 +175,7 @@ Thuộc tính:
 \subsubsubsection*{AccountController}
 Thuộc tính:
 \begin{itemize}
-	\item accountModel: Chứa đối tượng AccountModel
+	\item repo: Chứa đối tượng AccountRepository
 \end{itemize}
 Phương thức:
 \begin{itemize}
@@ -396,6 +396,71 @@ Thuộc tính:
 	\caption{Lược đồ class của Statistic Service}
 \end{figure}
 
+\subsubsubsection*{StatisticRepository}
+Thuộc tính:
+\begin{itemize}
+	\item statisticalModel: Chứa đối tượng StatisticalModel
+	\item filterModel: Chứa đối tượng FilterModel
+\end{itemize}
+Phương thức:
+\begin{itemize}
+	\item getAllProductStatistical(): Lấy thông tin thống kê tất cả sản phẩm
+	\item getProductStatistical(id: string, start:date,
+	end:date): Lấy thông tin thống kê của một sản phẩm
+	\item addGoods(goods: GoodModel): Cập nhật thông tin hàng vào Database
+	\item getStatisticalByType(filter: FilterModel, start:date,
+	end:date): Lấy thông tin thống kê các sản phẩm theo bộ lọc
+\end{itemize}
+
+\subsubsubsection*{GoodModel}
+Thuộc tính:
+\begin{itemize}
+	\item goodId: Id của mặt hàng
+	\item size: Kích thước của hàng
+	\item color: Màu sắc của mặt hàng
+	\item type: Loại của mặt hàng
+	\item gender: Giới tính của mặt hàng
+	\item count: Số lượng đã bán của mặt hàng
+	\item price: Giá của mặt hàng
+	\item cost: Chi phí nhập của mặt hàng
+	\item orderId: Mã đơn chứa mặt hàng
+	\item date: Ngày tạo đơn
+	\item branchId: Mã chi nhánh tạo đơn
+\end{itemize}
+
+\subsubsubsection*{FilterModel}
+Thuộc tính:
+\begin{itemize}
+	\item branchIds: Id của chi nhánh cần lọc
+	\item gender: Giới tính hàng cần lọc
+	\item type: Loại của mặt hàng cần lọc
+\end{itemize}
+
+\subsubsubsection*{StatisticController}
+Thuộc tính:
+\begin{itemize}
+	\item repo: Chứa đối tượng StatisticRepository
+\end{itemize}
+Phương thức:
+\begin{itemize}
+	\item getProfitByType(filter: FilterModel, start:date,
+	end:date): Lấy thông tin lợi nhuận các mặt hàng theo bộ lọc
+	\item getProfitProduct(id: string, start:date,
+	end:date): Lấy thông tin lợi nhuận của một sản phẩm
+	\item getRevenueProduct(id: string, start:date,
+	end:date): Lấy thông tin doanh thu các mặt hàng theo bộ lọc
+	\item getRevenueByType(filter: FilterModel, start:date,
+	end:date): Lấy thông tin doanh thu của một sản phẩm
+	\item addGoods(info: BranchModel): Thêm một mặt hàng vào thống kê
+\end{itemize}
+
+\subsubsubsection*{UpdateResponse - GetResponse}
+Thuộc tính:
+\begin{itemize}
+	\item statusCode: Mã trạng thái của phản hồi
+	\item message: Thông điệp của phản hồi
+	\item value: Các dữ liệu trả về đối với các yêu cầu HTTP GET
+\end{itemize}
 
 
 
