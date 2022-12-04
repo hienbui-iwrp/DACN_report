@@ -169,3 +169,34 @@ Quy trình BPEL chi tiết như sau: Đầu tiên Client sẽ gửi một yêu c
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Chuyển đổi BPMN sang BPEL}
+\par Việc chuyển đổi từ BPMN sang BPEL sẽ giúp tự động hóa quy trình nghiệp vụ. BPMN ở dạng diagram, là mô hình và công cụ để người dùng nghiệp vụ và lập trình viên có thể làm việc và giao tiếp với nhau. 
+Còn để thực thi được nghiệp vụ, chúng ta cần ngôn ngữ thực thi, ở đây là BPEL. Vậy nên việc chuyển đổi từ BPMN sang BPEL là bước quan trọng trong việc tự động hóa quy trình nghiệp vụ.
+
+\par Đầu tiên, ta đề cập đến các cấu trúc well-structured trong BPMN. Đây là các cấu trúc cơ bản, và dễ dàng để convert sang BPEL, do đó đây sẽ là nền tảng trong việc chuyển đổi. Các cấu trúc well-structured bao gồm:
+\begin{itemize}
+	\item Sequence
+	\item Flow
+	\item Switch
+	\item Pick
+	\item While
+	\item Repeat
+	\item Repeat - While
+\end{itemize}
+
+\par Với các cấu trúc phức tạp hơn, ta gọi các cấu trúc đó là non-well structured. Đối với cấu trúc này, ta có thể chia nhỏ và gom nhóm các thành phần của cấu trúc để tạo nên các well-structured, và từ đó chuyển đổi từng phần well-structured nhỏ sang BPEL. 
+Sau đó ta gộp các thành phần BPEL đã chuyển đổi để thành BPEL cuối cùng.
+
+\par Giải thuật chuyển đổi từ BPMN X sang BPEL như sau:
+\begin{enumerate}
+	\item Nếu X là well-structured, chuyển đổi trực tiếp sang BPEL, tới bước 4.
+	\item Nếu X là non-well structured:
+	\begin{enumerate}
+		\item Nếu tồn tại thành phần C là Sequence, chọn ra phần đó và đến bước 2.4.
+		\item Nếu tồn tại thành phần C là well-structured và non-sequence, chọn ra phần đó và đến bước 2.4.
+		\item Nếu tồn tại thành phần C là non-well structured, chọn ra phần đó.
+		\item Gán việc ánh xạ C qua BPEL cho công việc t\_{c}.
+		\item Quay lại bước 2.
+	\end{enumerate}
+	\item Xuất ra đoạn code ứng với công việc t\_{c}.
+	\item Event nhập và event xuất được ánh xạ tương ứng lần lượt thành <process> và </process> để bao lại phần code BPEL vừa được chuyển đổi.
+\end{enumerate}
