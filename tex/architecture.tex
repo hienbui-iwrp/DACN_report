@@ -9,7 +9,17 @@
 	\caption{Tổng quan kiến trúc hệ thống}
 \end{figure}
 
-\subsection{Tầng UI}
+Hệ thống được xây dựng dữa trên kiến Microservice và được chia thành nhiều tầng:
+\begin{itemize}
+	\item Tầng User Interface: Tầng giao diện tương tác với người dùng
+	\item Tầng BPEL: Tầng xây dựng quy trình BPEL, điều phối các quy trình nghiệp vụ trong hệ thống
+	\item Tầng API Gateway: Tầng xuất các Api từ các dịch vụ web đưa đến quy trình BPEL
+	\item Tầng BFF: Đóng vai trò trong việc kiểm tra các hoạt động trung gian khi nhận yêu cầu từ phía người dùng
+	\item Tầng Web Service: Bao gồm các dịch vụ Web 
+\end{itemize}
+
+
+\subsection{Tầng User Interface}
 
 
 \subsubsection{CustomerUI}
@@ -289,11 +299,30 @@ Phương thức:
 
 
 
-
-
 \subsection{Tầng API}
 \subsubsection{Customer APIs}
-Module này dùng để chứa các API được xuất ra ngoài cho phía khách hàng
+Module này dùng để chứa các API được xuất ra ngoài cho phía khách hàng:
+
+\subsubsubsection*{Customer Service}
+\begin{itemize}
+	\item getCustomerInfo
+	\begin{quote}
+		GET: /api/customer-service/customer/{customerId}
+		\begin{itemize}
+			\item username: string (Required)
+		\end{itemize}
+	\end{quote}
+	\item getCustomerInfo
+	\begin{quote}
+		PUT /api/customer-service/customer/{customerid}
+		\begin{itemize}
+			\item customer: CustomerModel (Required)
+		\end{itemize}
+	\end{quote}
+
+\end{itemize}
+
+
 
 \subsubsection{Admin APIs}
 Module này dùng để chứa các API được xuất ra ngoài cho phía quản trị viên
@@ -722,4 +751,14 @@ Thuộc tính:
 	\newline
 	\caption{Lược đồ class của Goods Service}
 \end{figure}
+
+
+
+\subsubsection{Giao tiếp đồng bộ giữa các dịch vụ Web}
+
+
+
+\subsubsection{Giao tiếp bất đồng bộ giữa các dịch vụ Web}
+
+Hệ thống còn có Kafka là một hàng đợi thông điệp pub/sub dùng để đồng bộ dữ liệu giữa các dịch vụ Web cho các tác vụ bất động bộ. Khi một thông điệp được gửi lên từ một dịch vụ Web, thông điệp sẽ được lưu trong hàng đợi thông điệp. Khi một dịch vụ Web gọi đến để lấy dữ liệu, Kafka sẽ gửi thông điệp đến cho dịch vụ Web đó, nếu gửi thất bại, hệ thống sẽ tự động gửi lại thay vì người dùng phải thực hiện gửi.
 
