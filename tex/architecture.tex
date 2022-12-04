@@ -24,11 +24,115 @@ Module này bao gồm các class dùng để hiển thị UI đối với phía 
 \textbf{Mô tả:}
 \begin{quote}
 	\begin{itemize}
-		\item CustomerUI
-		\item NavBar
-		\item Header
-		\item Footer
-		\item ..
+		\item CustomerUI: Giao diện chính của khách hàng khi truy cập vào trang web của hệ thống
+			\begin{itemize}
+				\item render(): Hiển thị lên màn hình của khách hàng
+			\end{itemize}
+		\item NavBar: Thành phần luôn có của giao diện của khách hàng hiển thị các lựa chọn truy cập nhanh cho khách hàng
+			\begin{itemize}
+				\item render(): Hiển thị lên màn hình của khách hàng
+				\item hoverItem(): Hiển thị lên màn hình giao diện các lựa chọn khi người dùng rê chuột đến các thể loại ở thanh navbar
+				\item selectItem(): Hiển thị lên màn hình giao diện tương ứng với lựa chọn của khách hàng trên thanh navbar.
+			\end{itemize}
+		\item Header: Thành phần luôn có của giao diện của khách hàng hiển thị các thông tin về tài khoản của khách hàng cũng như logo và chức năng tìm kiếm cho khách hàng.
+			\begin{itemize}
+				\item render(): Hiển thị lên màn hình của khách hàng.
+				\item showHome(): Hiển thị về trang chủ mặc định của hệ thống.
+				\item showCustomerOrder(): Hiển thị lên màn hình danh sách đơn hàng của khách hàng khi đã đăng nhập.
+				\item showCart(): Hiển thị lên màn hình thông tin giỏ hàng của khách hàng khi đã đăng nhập.
+				\item showLogin(): Hiển thị lên màn hình trang đăng nhập cho khách hàng khi chưa đăng nhập.
+				\item showCustomerInfo(): Hiển thị lên màn hình thông tin chi tiết tài khoản của khách hàng khi đã đăng nhập.
+				\item showProductByName(): Hiển thị lên màn hình danh sách các sản phẩm khi người dùng chọn tìm kiếm.
+			\end{itemize}
+		\item Footer: Thành phần luôn có của giao diện của khách hàng hiển thị các thông tin về hệ thống.
+			\begin{itemize}
+				\item render(): Hiển thị lên màn hình của khách hàng.
+				\item showHome(): Hiển thị về trang chủ mặc định của hệ thống.
+				\item showProduct(): Hiển thị lên màn hình danh sách tất cả sản phẩm của hệ thống.
+				\item showInstructionSize(): Hiển thị lên màn hình thông tin hướng dẫn chọn size.
+				\item showCustomerOrder(): Hiển thị lên màn hình trang danh sách các đơn hàng của khách hàng khi đã đăng nhập.
+				\item showIntroduction(): Hiển thị lên màn hình trang giới thiệu về hệ thống cửa hàng.
+			\end{itemize}
+		\item Home: Màn hình mặc định của người dùng sau khi truy cập vào trang web của hệ thống.
+			\begin{itemize}
+				\item render(): Hiển thị lên màn hình của khách hàng.
+				\item renderEvent(): Hiển thị thông tin các sự kiện đang diễn ra.
+				\item renderListTypeProduct(): Hiển thị danh sách các sản phẩm nổi bật theo từng thể loại.
+			\end{itemize}
+		\item ListProduct: Màn hình hiển thị danh sách tất cả sản phẩm của hệ thống cho khách hàng.
+			\begin{itemize}
+				\item render(): Hiển thị lên màn hình của khách hàng.
+				\item renderFollowType(): Hiển thị danh sách sản phẩm theo đặc điểm và thể loại.
+				\item renderListProduct(): Hiển thị danh sách các sản phẩm.
+			\end{itemize}
+		\item ProductDetail: Màn hình hiển thị danh sách tất cả sản phẩm của hệ thống cho khách hàng.
+			\begin{itemize}
+				\item render(): Hiển thị lên màn hình của khách hàng.
+				\item showInstructionSize(): Hiển thị lên màn hình thông tin hướng dẫn chọn size.
+				\item renderImageProduct(): Hiển thị hình ảnh sản phẩm mà khách hàng chọn.
+				\item changeQuantity(): Thay đổi số lượng sản phẩm để thêm vào giỏ hàng.
+			\end{itemize}
+		\item Cart: Màn hình hiển thị thông tin giỏ hàng của khách hàng.
+			\begin{itemize}
+				\item render(): Hiển thị lên màn hình của khách hàng.
+				\item renderListProduct(): Hiển thị danh sách sản phẩm có trong giỏ hàng.
+				\item showProductDetail(): Chuyển đến trang thông tin chi tiết của sản phẩm.
+				\item changeQuantity(): Thay đổi số lượng sản phẩm trong giỏ hàng.
+				\item renderTotalPrice(): Hiển thị tổng giá tiền của các sản phẩm được chọn trong giỏ hàng.
+			\end{itemize}
+		\item Payment: Màn hình hiển thị trang thanh toán cho khách hàng.
+			\begin{itemize}
+				\item render(): Hiển thị lên màn hình của khách hàng.
+				\item renderOrder(): Hiển thị đơn hàng.
+				\item renderTotalCost(): Hiển thị toán bộ chi phí đơn hàng.
+				\item renderAddress(): Hiển thị địa chỉ đơn hàng.
+				\item renderShipFee(): Hiển thị giá tiền vận chuyển đơn hàng.
+				\item ShowPaymentOnline(): Hiển thị màn hình thanh toán online.
+			\end{itemize}
+		\item Manager Order: Màn hình hiển thị danh sách các đơn hàng của khách hàng.
+			\begin{itemize}
+				\item render(): Hiển thị lên màn hình của khách hàng.
+				\item renderListOrder(): Hiển thị danh sách đơn hàng.
+				\item showOrderDetail(): Hiển thị thông tin chi tiết của đơn hàng.
+			\end{itemize}
+		\item Order Detail: Màn hình hiển thị thông tin chi tiết đơn hàng của khách hàng.
+			\begin{itemize}
+				\item render(): Hiển thị lên màn hình của khách hàng.
+				\item renderStatus(): Hiển thị trạng thái của đơn hàng.
+				\item renderListTransport(): Hiển thị danh sách thông tin quá trình vận chuyển.
+				\item renderListProduct(): Hiển thị danh sách sản phẩm có trong đơn hàng.
+				\item renderCost(): Hiển thị danh sách các khoản chi phí của đơn hàng.
+			\end{itemize}
+		\item Forgot Password: Màn hình hiển thị trang tạo lại mật khẩu cho tài khoản của khách hàng.
+			\begin{itemize}
+				\item render(): Hiển thị lên màn hình của khách hàng.
+				\item showPassword(): Hiển thị mật khẩu khỏi trạng thái bị ẩn.
+				\item confirmAccount(): Xác nhận tài khoản muốn đổi mật khẩu.
+				\item renderConfirmOtp(): Hiển thị màn hình xác nhận mã OTP.
+				\item confirmOtp(): Gửi xác nhận mã OTP.
+				\item showUpdatePassword(): Hiển thị trang cập nhật mật khẩu mới cho tài khoản.
+				\item validateConfirmPassword(): Kiểm tra thông tin nhập lại mật khẩu của khách hàng.
+				\item updatePassword(): Gửi thông tin cập nhật mật khẩu mới cho tài khoản.
+			\end{itemize}
+		\item Register: Màn hình hiển thị trang đăng ký tài khoản cho khách hàng.
+			\begin{itemize}
+				\item render(): Hiển thị lên màn hình của khách hàng.
+				\item showPassword(): Hiển thị mật khẩu khỏi trạng thái bị ẩn.
+				\item register(): gửi thông tin xác nhận.
+				\item renderConfirmOtp(): Hiển thị màn hình xác nhận mã OTP.
+				\item confirmOtp(): Gửi xác nhận mã OTP.
+				\item validateConfirmPassword(): Kiểm tra thông tin nhập lại mật khẩu của khách hàng.
+			\end{itemize}
+		\item Customer Info: Màn hình hiển thị trang thông tin chi tiết tài khoản của khách hàng.
+			\begin{itemize}
+				\item render(): Hiển thị lên màn hình của khách hàng.
+				\item renderInfo(): Hiển thị thông tin chung của khách hàng.
+				\item renderAddress(): Hiển thị thông tin địa chỉ các khách hàng.
+				\item saveEdit(): gửi đi thông tin tài khoản đã chỉnh sửa.
+				\item showChangePassword(): hiển thị màn hình đổi mật khẩu.
+				\item changePassword(): gửi thông tin đổi mật khẩu của tài khoản.
+				\item validateConfirmPassword(): Kiểm tra thông tin nhập lại mật khẩu của khách hàng.
+			\end{itemize}
 	\end{itemize}
 \end{quote}
 
@@ -113,7 +217,42 @@ Lược đồ class ở tậng service được xây dựng theo các thành ph�
 	\caption{Lược đồ class của Customer Order Service}
 \end{figure}
 
+	\subsubsubsection*{CustomerOrderRepository}
+	Thuộc tính:
+	\begin{itemize}
+		\item order: Chứa đối tượng Order
+		\item orderDetail: Chứa đối tượng OrderDetail
+	\end{itemize}
+	Phương thức:
+	\begin{itemize}
+		\item readListOrder(customerId: string): Lấy danh sách đơn hàng theo mã khách hàng
+		\item readOrderDetail(customerId: string, orderId: string): Lấy thông tin chi tiết của đơn hàng.
+	\end{itemize}
 
+	\subsubsubsection*{CustomerOrderController}
+	Thuộc tính:
+	\begin{itemize}
+		\item repo: Chứa đối tượng CustomerOrderRepository
+	\end{itemize}
+	Phương thức:
+	\begin{itemize}
+		\item makeOrder(listProduct: list<Product>): Tạo đơn hàng
+		\item calcShipFee(address: Address): Tính chi phí giao hàng
+		\item getAddress(customerId: string): Lấy thông tin địa chỉ của tài khoản của khách hàng.
+		\item makePayment(customerId: string): Tạo giao dịch thanh toán.
+		\item addOrder(customerId: string, address: Address, listProduct: list<Product>): Thêm đơn hàng vào cơ sở dữ liệu của hệ thống.
+		\item getListOrder(customerId: string): Lấy danh sách đơn hàng theo mã khách hàng
+		\item getOrderDetail(customerId: string, orderId: string): Lấy thông tin chi tiết của đơn hàng.
+	\end{itemize}
+
+	\subsubsubsection*{MakeOrderResponse - GetAddressResponse - CalcResponse - MakePaymentResponse - AddResponse}
+	Thuộc tính:
+	\begin{itemize}
+		\item statusCode: Mã trạng thái của phản hồi
+		\item message: Thông điệp của phản hồi
+		\item value: Các dữ liệu trả về đối với các yêu cầu
+	\end{itemize}
+	
 
 \subsubsection{Cart Service}
 \begin{figure}[!htp]
