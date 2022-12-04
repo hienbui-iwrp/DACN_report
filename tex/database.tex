@@ -3,6 +3,121 @@
 \par Nhóm lựa chọn kiến trúc Microservice cho hệ thống, với việc chia ra các service nhỏ và mỗi service có một database riêng phục vụ cho nghiệp vụ của riêng service đó, nên ở đây các database được thiết kế riêng lẻ cho từng service.
 
 \subsection{ERD/EERD}
+\subsubsection{Service Khách hàng}
+\begin{figure}[!htp]
+    \begin{center}
+        \includegraphics[width=0.7\textwidth]{img/database/erd/eerd-customer.png}
+        \newline
+        \caption{ERD cho database của service Khách hàng}
+    \end{center}
+\end{figure}
+
+\par Database của service Khách hàng bao gồm hai thực thể là Khách hàng và Tài khoản của khách hàng. Thực thể khách hàng chứa các thông tin cá nhân của khách hàng, bao gồm các thuộc tính:
+\begin{itemize}
+    \item Mã khách hàng: thuộc tính khóa, là mã của khách hàng.
+    \item Tên: Là tên của khách hàng.
+    \item Giới tính: Là giới tính của khách hàng.
+    \item Email: Là email của khách hàng.
+    \item Số điện thoại: Là số điện thoại của khách hàng.
+    \item Số nhà, đường: Là địa chỉ sô nhà, đường của khách hàng ở.
+    \item Phường / xã: Là địa chỉ phường / xã của khách hàng ở.
+    \item Quận / huyện: Là địa chỉ quận / huyện của khách hàng ở.
+    \item Tỉnh / thành phố: Là địa chỉ tỉnh / thành phố của khách hàng ở.
+\end{itemize}
+
+\par Thực thể Tài khoản của khách hàng bao gồm các thuộc tính:
+\begin{itemize}
+    \item Tên đăng nhập: tên đăng nhập của tài khoản của khách hàng.
+\end{itemize}
+
+\par Khách hàng và Tài khoản có mối quan hệ thuộc, đây là mối quan hệ bắt buộc, 1-1: một khách hàng chỉ thuộc 1 tài khoản và 1 tài khoản chỉ dùng cho 1 khách hàng.
+
+\subsubsection{Service Giỏ hàng}
+\begin{figure}[!htp]
+    \begin{center}
+        \includegraphics[width=0.7\textwidth]{img/database/erd/eerd-cart.png}
+        \newline
+        \caption{ERD cho database của service Giỏ hàng}
+    \end{center}
+\end{figure}
+
+\par Database của service Giỏ hàng bao gồm hai thực thể là Giỏ hàng và Hàng trong giỏ hàng. Thực thể Giỏ hàng chứa thông tin về giỏ hàng, bao gồm các thuộc tính:
+\begin{itemize}
+    \item Mã giỏ hàng: thuộc tính khóa, là mã của giỏ hàng.
+    \item Mã khách hàng: là mã khách hàng của khách hàng chủ của giỏ hàng đó.
+    \item Số lượng món: là thuộc tính dẫn xuất, số lượng loại sản phẩm có trong giỏ hàng.
+\end{itemize}
+
+\par Thực thể Hàng trong giỏ hàng chứa thông tin của mặt hàng trong trong giỏ hàng đó. Thực thể này bao gồm các thuộc tính:
+\begin{itemize}
+    \item Mã hàng: thuộc tính khóa, là mã của loại hàng đó.
+    \item Kích thước: thuộc tính khóa, là kích thước của loại hàng đó.
+    \item Màu: thuộc tính khóa, là màu sắc của loại hàng đó.
+\end{itemize}
+
+\par Giỏ hàng và Hàng có mối quan hệ chứa, Mối quan hệ là M-N. Giỏ hàng tham gia vào mối quan hệ với ràng buộc tham gia không bắt buộc: Giỏ hàng có thể chứa hàng hoặc không, có thể chứa hàng với số lượng khác nhau. Hàng tham gia vào mối quan hệ với ràng buộc tham gia không bắt buộc, một hàng có thể có hoặc không thuộc giỏ hàng nào. Mối quan hệ này có các thuộc tính:
+\begin{itemize}
+    \item Số lượng: số lượng của món hàng có trong giỏ hàng.
+\end{itemize}
+
+\subsubsection{Service Đơn hàng của khách hàng}
+\begin{figure}[!htp]
+    \begin{center}
+        \includegraphics[width=1\textwidth]{img/database/erd/eerd-customer-order.png}
+        \newline
+        \caption{ERD cho database của service Đơn hàng của khách hàng}
+    \end{center}
+\end{figure}
+
+\par Database của service Đơn hàng của khách hàng bao gồm hai thực thể là Đơn hàng và Hàng trong đơn hàng. Thực thể Đơn hàng chứa thông tin về đơn hàng, bao gồm các thuộc tính:
+\begin{itemize}
+    \item Mã đơn hàng: thuộc tính khóa, là mã của đơn hàng.
+    \item Mã khách hàng: là mã khách hàng của khách hàng chủ của đơn hàng đó.
+    \item Ngày giao dịch: là ngày thực hiện giao dịch của đơn hàng.
+    \item Phí ship: là phí vận chuyển của đơn hàng.
+    \item Mong đợi: là thời gian ước tính để giao đơn hàng.
+    \item Tổng giá tiền: là thuộc tính dẫn xuất, là tổng giá tiền của đơn hàng.
+    \item Thông tin trạng thái: là thuộc tính đa trị, là trạng thái của đơn hàng, bao gồm 2 thuộc tính con là Trạng thái và Thời gian. Trạng thái là trạng thái của đơn hàng và thời gian là thời điểm xảy ra trạng thái của đơn hàng.
+\end{itemize}
+
+\par Thực thể Hàng trong đơn hàng chứa thông tin của mặt hàng trong trong đơn hàng đó. Thực thể này bao gồm các thuộc tính:
+\begin{itemize}
+    \item Mã hàng: thuộc tính khóa, là mã của loại hàng đó.
+    \item Kích thước: thuộc tính khóa, là kích thước của loại hàng đó.
+    \item Màu: thuộc tính khóa, là màu sắc của loại hàng đó.
+    \item Số lượng: là số lượng của loại hàng trong đơn hàng.
+    \item Đơn giá: là giá tiền của loại hàng trong đơn hàng.
+    \item Thuế: là thuế được thu trên loại hàng đó trong đơn hàng.
+    \item Thành tiền: là thuộc tính dẫn xuất, giá tiền cuối cùng được tính cho loại hàng đó trong đơn hàng.
+\end{itemize}
+
+\par Đơn hàng và Hàng có mối quan hệ Bao gồm, đây là quan hệ bắt buộc, Mối quan hệ là 1-N: đơn hàng bắt buộc có hàng, và có thể có nhiều hàng; hàng trong đơn hàng bắt buộc phải thuộc về một đơn hàng, và chỉ thuộc về duy nhất một đơn hàng.
+
+\subsubsection{Service Sự kiện}
+\begin{figure}[!htp]
+    \begin{center}
+        \includegraphics[width=0.6\textwidth]{img/database/erd/eerd-event.png}
+        \newline
+        \caption{ERD cho database của service Sự kiện}
+    \end{center}
+\end{figure}
+
+\par Database của service Sự kiện bao gồm hai thực thể là Sự kiện và Hàng. Thực thể Sự kiện chứa thông tin về sự kiện, bao gồm các thuộc tính:
+\begin{itemize}
+    \item Mã sự kiện: thuộc tính khóa, là mã của sự kiện.
+    \item Tên: là của sự kiện.
+    \item Giảm giá: là giá trị giảm giá của sự kiện đối với các mặt hàng trong sự kiện.
+    \item Thời gian bắt đầu: là thời gian bắt đầu sự kiện.
+    \item Thời gian kết thúc: là thời gian kết thúc sự kiện.
+\end{itemize}
+
+\par Thực thể Hàng trong sự kiện chứa thông tin của mặt hàng trong trong sự kiện đó. Thực thể này bao gồm các thuộc tính:
+\begin{itemize}
+    \item Mã hàng: thuộc tính khóa, là mã của loại hàng đó.
+\end{itemize}
+
+\par Sự kiện và Hàng có mối quan hệ có, mối quan hệ là M-N: sự kiện có thể có nhiều hàng, ít hàng hoặc không có hàng; hàng trong cũng có thể thuộc không hoặc ít hoặc nhiều sự kiện.
+
 \subsubsection{Service Hàng hóa}
 \begin{figure}[!htp]
     \begin{center}
@@ -253,6 +368,42 @@ Thực thể Hàng chỉ chứa một vài thông tin của hàng hóa được 
 
 \subsection{Ánh xạ}
 \par Từ các ERD/EERD trên, chúng ta có các ánh xạ sau tương ứng với mỗi service.
+
+\subsubsection{Service Khách hàng}
+\begin{figure}[!htp]
+    \begin{center}
+        \includegraphics[width=1\textwidth]{img/database/mapping/mapping-customer.png}
+        \newline
+        \caption{Ánh xạ cho database của service Khách hàng}
+    \end{center}
+\end{figure}
+
+\subsubsection{Service Giỏ hàng}
+\begin{figure}[!htp]
+    \begin{center}
+        \includegraphics[width=1\textwidth]{img/database/mapping/mapping-cart.png}
+        \newline
+        \caption{Ánh xạ cho database của service Giỏ hàng}
+    \end{center}
+\end{figure}
+
+\subsubsection{Service Đơn hàng của khách hàng}
+\begin{figure}[!htp]
+    \begin{center}
+        \includegraphics[width=1\textwidth]{img/database/mapping/mapping-customer-order.png}
+        \newline
+        \caption{Ánh xạ cho database của service Đơn hàng của khách hàng}
+    \end{center}
+\end{figure}
+
+\subsubsection{Service Sự kiện}
+\begin{figure}[!htp]
+    \begin{center}
+        \includegraphics[width=1\textwidth]{img/database/mapping/mapping-event.png}
+        \newline
+        \caption{Ánh xạ cho database của service Sự kiện}
+    \end{center}
+\end{figure}
 
 \subsubsection{Service Hàng hóa}
 \begin{figure}[!htp]
