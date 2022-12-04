@@ -312,7 +312,8 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía khá
 			\item username: string (Required)
 		\end{itemize}
 	\end{quote}
-	\item getCustomerInfo
+
+	\item updateCustomerInfo
 	\begin{quote}
 		PUT /api/customer-service/customer/{customerid}
 		\begin{itemize}
@@ -320,18 +321,153 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía khá
 		\end{itemize}
 	\end{quote}
 
+	\item addCustomerInfo
+	\begin{quote}
+		POST /api/customer-service/customer
+		\begin{itemize}
+			\item customer: CustomerModel (Required)
+		\end{itemize}
+	\end{quote}
 \end{itemize}
+
+\subsubsubsection*{Cart Service}
+\begin{itemize}
+	\item addCart
+	\begin{quote}
+		POST /api/cart-service/cart
+		\begin{itemize}
+			\item customerId: string (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item getCart
+	\begin{quote}
+		POST /api/cart-service/cart/{customerId}
+		\begin{itemize}
+			\item customerId: string (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item addProductToCart
+	\begin{quote}
+		POST /api/cart-service/cart/{customerId}
+		\begin{itemize}
+			\item cartId: string (Required)
+			\item product: GoodInCartModel (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item removeProductToCart
+	\begin{quote}
+		DELETE /api/cart-service/cart/{cartId}
+		\begin{itemize}
+			\item cartId: string (Required)
+			\item product: Good (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item removeAllProductInCart
+	\begin{quote}
+		DELETE /api/cart-service/cart/all/{cartId}
+		\begin{itemize}
+			\item cartId: string (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item UpdateCart
+	\begin{quote}
+		PUT /api/cart-service/cart/{cartId}
+		\begin{itemize}
+			\item cartId: string (Required)
+			\item product: GoodInCartModel (Required)
+		\end{itemize}
+	\end{quote}
+\end{itemize}
+
+\subsubsubsection*{Make Order Service}
+\begin{itemize}
+	\item makeOrder
+	\begin{quote}
+		POST /api/make-order-service/order
+		\begin{itemize}
+			\item event: EventModel (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item calcShipFee
+	\begin{quote}
+		POST /api/make-order-service/ship-fee
+		\begin{itemize}
+			\item address: Address (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item makePayment
+	\begin{quote}
+		POST /api/make-order-service/payment
+		\begin{itemize}
+			\item cost: int (Required)
+		\end{itemize}
+	\end{quote}
+\end{itemize}
+
 
 
 
 \subsubsection{Admin APIs}
 Module này dùng để chứa các API được xuất ra ngoài cho phía quản trị viên
 
+\subsubsubsection*{Event Service}
+\begin{itemize}
+	\item addEvent
+	\begin{quote}
+		POST /api/event-service/event
+		\begin{itemize}
+			\item event: EventModel (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item getAllEvent
+	\begin{quote}
+		GET /api/event-service/event
+	\end{quote}
+
+	\item removeEvent
+	\begin{quote}
+		DELETE /api/event-service/event/{eventId}
+		\begin{itemize}
+			\item eventId: string (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item UpdateEvent
+	\begin{quote}
+		PUT /api/event-service/event/{eventId}
+		\begin{itemize}
+			\item eventId: string (Required)
+			\item event: EventModel (Required)
+		\end{itemize}
+	\end{quote}
+\end{itemize}
+
+
+
+
 \subsubsection{Shared APIs}
 Module này dùng để chứa các API được xuất ra ngoài cho bất kì đối tượng người dùng nào
 
+\subsubsubsection*{Goods Service}
+\begin{itemize}
+	\item getGoods
+	\begin{quote}
+		GET /api/goods-service/goods{goodsId}
+		\begin{itemize}
+			\item goodsId: string (Required)
+		\end{itemize}
+	\end{quote}
+\end{itemize}
 
-
+s
 
 \subsection{Tầng service}
 
