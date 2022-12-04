@@ -1,4 +1,5 @@
 % !TeX root = ..\main.tex
+
 \section{Kiến trúc hệ thống}
 \subsection{Tổng quan}
 \begin{figure}[!htp]
@@ -9,8 +10,6 @@
 \end{figure}
 
 \subsection{Tầng UI}
-
-
 
 
 \subsubsection{CustomerUI}
@@ -144,16 +143,11 @@ LoginUI là một class dùng để hiển thị trang đăng nhập cho cả ph
 	\newline
 	\caption{Lược đồ class của LoginUI}
 \end{figure}
-\textbf{Mô tả:}
-\begin{quote}
-	\begin{itemize}
-		\item CustomerUI
-		\item NavBar
-		\item Header
-		\item Footer
-		\item ..
-	\end{itemize}
-\end{quote}
+Phương thức:
+\begin{itemize}
+	\item showPassword(): Hiện mật khẩu
+	\item login(username: string, password: string)(): Đăng nhập vào hệ thống
+\end{itemize}
 
 \subsubsection{AdminUI}
 Module này bao gồm các class dùng để hiển thị UI đối với phía quản trị viên
@@ -164,16 +158,120 @@ Module này bao gồm các class dùng để hiển thị UI đối với phía 
 	\newline
 	\caption{Lược đồ class của Module AdminUI}
 \end{figure}
-\textbf{Mô tả:}
-\begin{quote}
-	\begin{itemize}
-		\item CustomerUI
-		\item NavBar
-		\item Header
-		\item Footer
-		\item ..
-	\end{itemize}
-\end{quote}
+
+\subsubsubsection*{AdminUI}
+Phương thức:
+\begin{itemize}
+	\item render(): Trình chiếu màn hình admin
+\end{itemize}
+
+\subsubsubsection*{Branch}
+Phương thức:
+\begin{itemize}
+	\item showAddForm(): Trình chiếu biểu mẫu thêm mới
+	\item addBranch(): Thêm chi nhánh mới
+	\item showEditForm(branchId: string): Trình chiếu biểu mẫu chỉnh sửa
+	\item updateBranch(branchId: string, info: BranchModel): Cập nhật thông tin chi nhánh
+\end{itemize}
+
+\subsubsubsection*{BranchDetail}
+Phương thức:
+\begin{itemize}
+	\item showEditForm(branchId: string): Trình chiếu biểu mẫu chỉnh sửa
+	\item updateBranch(branchId: string, info: BranchModel): Cập nhật thông tin chi nhánh
+	\item deleteBranch(branchId: string): Xóa chi nhánh
+	\item showChart(branchId: string, time: enum): Trình chiếu biểu đồ kinh doanh 
+\end{itemize}
+
+\subsubsubsection*{Staff}
+Phương thức:
+\begin{itemize}
+	\item showAddForm(): Trình chiếu biểu mẫu thêm mới
+	\item addStaff(info: StaffModel): Thêm một nhân viên
+	\item filterByBranch(branchId: string): Tìm nhân viên theo chi nhánh
+	\item searchStaff(keyword: string): Tìm kiếm chi nhánh theo từ khóa
+	\item showEditForm(staffId: string): Trình chiếu biểu mẫu chỉnh sửa
+	\item updateStaff(branchId: string, info: BranchModel): Cập nhật thông tin chi nhánh
+\end{itemize}
+
+\subsubsubsection*{StaffRequest}
+Phương thức:
+\begin{itemize}
+	\item acceptRequest(requestId: string): Xác nhận yêu cầu
+	\item denyRequest(requestId: string): Hủy bỏ yêu cầu
+	\item showStafffFom(staffId: string): Trình chiếu biểu mẫu thông tin nhân viên
+\end{itemize}
+
+
+\subsubsubsection*{StaffDetail}
+Phương thức:
+\begin{itemize}
+	\item showEditForm(staffId: string): Trình chiếu biểu mẫu chỉnh sửa
+	\item updateStaff(info: StaffModel): Cập nhật thông tin nhân viên
+	\item deleteBranch(staffId: string): Xóa nhân viên
+\end{itemize}
+
+\subsubsubsection*{Account}
+Phương thức:
+\begin{itemize}
+	\item searchAccount(keyword: string): Tìm kiếm tài khoản theo từ khóa
+\end{itemize}
+
+
+\subsubsubsection*{AccountDetail}
+Phương thức:
+\begin{itemize}
+	\item showOrder(month: date): Trình chiếu danh sách đơn hàng
+	\item showOrderDetail(orderId: string): Trình chiếu biểu mẫu chi tiết đơn hàng  
+\end{itemize}
+
+\subsubsubsection*{Event}
+Phương thức:
+\begin{itemize}
+	\item addEvent(): Thêm một sự kiện mới
+\end{itemize}
+
+\subsubsubsection*{AccountDetail}
+Phương thức:
+\begin{itemize}
+	\item showListGood(): Trình chiếu danh sách tất cả hàng
+	\item searchGood(keyword: string): Tùm kiếm danh sách hàng theo từ khóa
+	\item updateEvent(info: EventModel): Cập nhật thông tin sự kiện
+\end{itemize}
+
+\subsubsubsection*{Goods}
+Phương thức:
+\begin{itemize}
+	\item searchGoods(keyword: string): Tìm kiếm hàng theo từ khóa
+	\item addGoods(info: GoodsModel): Thêm một sản phẩm
+\end{itemize}
+
+\subsubsubsection*{GoodsDetail}
+Phương thức:
+\begin{itemize}
+	\item updateImage(goodsId: string, image: list<string>): Cập nhật hình ảnh sản phẩm
+	\item searchGoods(keyword: string): Tìm kiếm hàng theo từ khóa
+\end{itemize}
+
+\subsubsubsection*{GoodsDetail}
+Phương thức:
+\begin{itemize}
+	\item updateGoods(info: GoodsModel): Cập nhật thông tin sản phẩm
+\end{itemize}
+
+\subsubsubsection*{OrderOffline}
+Phương thức:
+\begin{itemize}
+	\item filter(branchId: string, start: date, end: date): Tìm kiếm đơn hàng theo thời gian, chi nhánh
+	\item searchOrder(keyword: string): Tìm kiếm đơn hàng theo từ khóa
+\end{itemize}
+
+\subsubsubsection*{OrderOnline}
+Phương thức:
+\begin{itemize}
+	\item filter(start: date, end: date): Tìm kiếm đơn hàng theo thời gian
+	\item searchOrder(keyword: string): Tìm kiếm đơn hàng theo từ khóa
+\end{itemize}
 
 
 
