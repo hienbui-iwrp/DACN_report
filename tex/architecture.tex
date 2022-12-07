@@ -948,6 +948,8 @@ Module này dùng để chứa các API được xuất ra ngoài cho bất kì 
 
 s
 
+
+
 \subsection{Tầng service}
 
 Lược đồ class ở tậng service được xây dựng theo các thành phần sau:
@@ -1059,14 +1061,6 @@ Phương thức:
 	\item updateAccount(info: AccountModel): Cập nhật thông tin một tài khoản
 \end{itemize}
 
-\subsubsubsection*{AccountModel}
-Thuộc tính:
-\begin{itemize}
-	\item username: Tên đăng nhập tài khoản
-	\item password: Mật khẩu tài khoản
-	\item role: Quyền của tài khoản
-\end{itemize}
-
 \subsubsubsection*{AccountController}
 Thuộc tính:
 \begin{itemize}
@@ -1090,7 +1084,6 @@ Thuộc tính:
 	\item message: Thông điệp của phản hồi
 	\item value: Các dữ liệu trả về đối với các yêu cầu HTTP GET
 \end{itemize}
-
 
 
 
@@ -1119,47 +1112,6 @@ Phương thức:
 	\item getListAttendance(staffId, month: dateTime): Lấy danh sách điểm danh của nhân viên
 	\item createRequest (type: int, info: StaffModel): Tạo một yêu cầu về thêm, xóa nhân viên
 	\item updateRequestStatus (status: int, requestId: string): Cập nhật trạng thái cùa yêu cầu
-\end{itemize}
-
-\subsubsubsection*{StaffModel}
-Thuộc tính:
-\begin{itemize}
-	\item id: Id của nhân viên
-	\item name: Tên của nhân viên
-	\item requestModel: Chứa đối tượng RequestModel
-	\item street: Tên đường của nhân viên
-	\item ward: Phường của nhân viên
-	\item distric: Quận của nhân viên
-	\item province: Tỉnh của nhân viên
-	\item citizenId: Căn cước của nhân viên
-	\item role: Vị trí của nhân viên
-	\item branchId: Id nơi làm việc của nhân viên
-	\item salary: Mức lương của nhân viên
-	\item startDate: Ngày bắt đầu làm việc của nhân viên
-	\item endDate: Ngày kết thúc làm việc của nhân viên
-	\item gender: Giới tính của nhân viên
-	\item phoneNumber: Số điện thoại của nhân viên
-	\item email: Email của nhân viên
-\end{itemize}
-
-
-\subsubsubsection*{AttendaceModel}
-Thuộc tính:
-\begin{itemize}
-	\item staffId: Id của nhân viên
-	\item date: Ngày làm việc
-	\item start: Thời gian bắt đầu
-	\item end: Thờ gian kết thúc
-\end{itemize}
-
-\subsubsubsection*{RequestModel}
-Thuộc tính:
-\begin{itemize}
-	\item id: Id của yêu cầu
-	\item staffId: Id của nhân viên
-	\item createDate: Ngày tạo
-	\item type: Loại yêu cầu
-	\item status: Trạng thái yêu cầu
 \end{itemize}
 
 \subsubsubsection*{StaffController}
@@ -1213,29 +1165,6 @@ Phương thức:
 	\item updateBranch(info: BranchModel): Cập nhật thông tin một chi nhánh
 	\item deleteBranch(id: string): Xóa một chi nhánh
 	\item getListStaff(BranchId: string): Lấy danh sách nhân viên của chi nhánh
-\end{itemize}
-
-\subsubsubsection*{BranchModel}
-Thuộc tính:
-\begin{itemize}
-	\item id: Id của chi nhánh
-	\item name: Tên của chi nhánh
-	\item street: Tên đường của chi nhánh
-	\item ward: Phường của chi nhánh
-	\item distric: Quận của chi nhánh
-	\item province: Tỉnh của chi nhánh
-	\item createdDate: Ngày tạo chi nhánh
-	\item managerId: Id của người quản lý
-	\item image: Các hình ảnh của chi nhánh
-\end{itemize}
-
-\subsubsubsection*{StaffModel}
-Thuộc tính:
-\begin{itemize}
-	\item id: Id của nhân viên
-	\item branchId: Id của chi nhánh làm việc
-	\item startDate: Thời gian bắt đầu làm việc tại chi nhánh
-	\item endDate: Thời gian kết thúc làm việc tại chi nhánh
 \end{itemize}
 
 \subsubsubsection*{BranchController}
@@ -1305,30 +1234,6 @@ Phương thức:
 	\item addGoods(goods: GoodModel): Cập nhật thông tin hàng vào Database
 	\item getStatisticalByType(filter: FilterModel, start:date,
 	end:date): Lấy thông tin thống kê các sản phẩm theo bộ lọc
-\end{itemize}
-
-\subsubsubsection*{GoodModel}
-Thuộc tính:
-\begin{itemize}
-	\item goodId: Id của mặt hàng
-	\item size: Kích thước của hàng
-	\item color: Màu sắc của mặt hàng
-	\item type: Loại của mặt hàng
-	\item gender: Giới tính của mặt hàng
-	\item count: Số lượng đã bán của mặt hàng
-	\item price: Giá của mặt hàng
-	\item cost: Chi phí nhập của mặt hàng
-	\item orderId: Mã đơn chứa mặt hàng
-	\item date: Ngày tạo đơn
-	\item branchId: Mã chi nhánh tạo đơn
-\end{itemize}
-
-\subsubsubsection*{FilterModel}
-Thuộc tính:
-\begin{itemize}
-	\item branchIds: Id của chi nhánh cần lọc
-	\item gender: Giới tính hàng cần lọc
-	\item type: Loại của mặt hàng cần lọc
 \end{itemize}
 
 \subsubsubsection*{StatisticController}
