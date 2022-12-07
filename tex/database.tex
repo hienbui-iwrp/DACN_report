@@ -233,6 +233,139 @@
     \item Ngày kết thúc: ngày quản lý nghỉ làm việc tại kho đó.
 \end{itemize}
 
+\subsubsection{Service chi nhánh}
+\begin{figure}[!htp]
+    \begin{center}
+        \includegraphics[width=1\textwidth]{img/database/erd/branch.png}
+        \newline
+        \caption{ERD cho database của service chi nhánh}
+    \end{center}
+\end{figure}
+
+Database của service chi nhánh bao gồm hai thực thể là Nhân viên và chi nhánh. Thực thể chi nhánh chứa thông tin về chi nhánh:
+\begin{itemize}
+    \item mã: thuộc tính khóa, là mã của chi nhánh.
+    \item tên: Tên chi nhánh.
+    \item ngày tạo: Ngày tạo chi nhánh.
+    \item giờ mở: Giờ mở cửa mổi ngày của chi nhánh.
+    \item giờ đóng: Giờ đóng cửa mổi ngày của chi nhánh.
+    \item hình ảnh: Hình ảnh minh họa chi nhánh.
+    \item đường/thôn: Tên đường của chi nhánh.
+    \item phường/xã: Phường xã của chi nhánh.
+    \item quận/huyện: Quận, huyện của chi nhánh.
+    \item thành phố /tỉnh: Tỉnh, thành phố của chi nhánh
+\end{itemize}
+
+Thực thể Nhân viên chỉ chứa một vài thông tin nhân viên:
+\begin{itemize}
+    \item mã: thuộc tính khóa, là mã của nhân viên.
+\end{itemize}
+
+Chi nhánh và nhân viên có mối quan hệ Làm tại và Quản lý: Mỗi chi nhánh đều phải có ít nhất một nhân viên và một quản lý. Mối quan hệ Bao gồm có các thông tin:
+\begin{itemize}
+    \item ngày bắt đầu: ngày bắt đầu làm việc tại chi nhánh của nhân viên.
+    \item ngày kết thúc: ngày kết thúc làm việc tại chi nhánh của nhân viên.
+\end{itemize}   
+
+
+\subsubsection{Service tài khoản}
+\begin{figure}[!htp]
+    \begin{center}
+        \includegraphics[width=5cm]{img/database/erd/account.png}
+        \newline
+        \caption{ERD cho database của service tài khoản}
+    \end{center}
+\end{figure}
+
+Database của service tài khoản chỉ có thực thể tài khoản chứa thông tin về tài khoản:
+\begin{itemize}
+    \item tên đăng nhập: Thuộc tính khóa, là tên đăng nhập của tài khoản.
+    \item mật khẩu: Mật khẩu của tài khoản.
+    \item quyền: Quyền của tài khoản.
+\end{itemize}
+
+
+\subsubsection{Service nhân viên}
+\begin{figure}[!htp]
+    \begin{center}
+        \includegraphics[width=1\textwidth]{img/database/erd/staff.png}
+        \newline
+        \caption{ERD cho database của service nhân viên}
+    \end{center}
+\end{figure}
+
+Database của service nhân viên chứa các thực thể Nhân viên, Bản yêu cầu, Tài khoản, Bản điểm danh. Thực thể Nhân viên bao gồm các thông tin của nhân viên:
+\begin{itemize}
+    \item mã: thuộc tính khóa, là mã của nhân viên.
+    \item tên: Tên nhân viên.
+    \item cccd: Căn cước công dân chi nhánh
+    \item vị trí: Vị trí làm việc trong cửa hàng
+    \item lương: Mức lương của nhân viên
+    \item ngày vào: Ngày được nhận vào làm.
+    \item sdt: Số điện thoại của nhân viên.
+    \item email: Email của nhân viên.
+    \item đường/thôn: Tên đường của nhân viên.
+    \item phường/xã: Phường xã của nhân viên.
+    \item quận/huyện: Quận, huyện của nhân viên.
+    \item thành phố /tỉnh: Tỉnh, thành phố của nhân viên
+\end{itemize}
+
+Thực thể Bản yêu cầu chứa thông tin về yêu cầu thêm, xóa nhân viên:
+\begin{itemize}
+    \item mã: thuộc tính khóa, là mã của yêu cầu.
+    \item ngày yêu cầu: Ngày tạo yêu cầu
+    \item loại yêu cầu: Loại của yêu cầu là thêm hay xóa
+    \item trạng thái: Trạng thái của yêu cầu đang chờ, được duyệt hoặc hủy bỏ
+\end{itemize}
+
+Thực thể Bản điểm danh chứa thông tin về hoạt động điểm danh của nhân viên:
+\begin{itemize}
+    \item ngày: thuộc tính khóa, là ngày làm việc của nhân viên.
+    \item thời gian vào: Thời gian bắt đầu vào làm trong ngày của nhân viên
+    \item thời gian ra: Thời gian kết thúc làm trong ngày của nhân viên
+    \item thời gian làm: Thời gian làm việc trong ngày của nhân viên
+\end{itemize}
+
+Thực thể Tài khoản chỉ chứa thông tin về tên tài khoản của nhân viên
+
+Nhân viên và Bản yêu cầu có mối quan hệ Thuộc về: Mỗi bản yêu cầu đều phải thuộc về một nhân viên
+
+Nhân viên và Tài khoản có mối quan hệ Có: Chỉ có các nhân viên cấp quản lý mới sở hữu tài khoản
+
+Nhân viên và Bản điểm danh cầu có mối quan hệ Điểm danh: Tât cả bản điểm danh đều phải có nhân viên
+
+
+\subsubsection{Service thống kê}
+\begin{figure}[!htp]
+    \begin{center}
+        \includegraphics[width=1\textwidth]{img/database/erd/Statistic.png}
+        \newline
+        \caption{ERD cho database của service thống kê}
+    \end{center}
+\end{figure}
+
+Database của service chi nhánh bao gồm hai thực thể là Đơn hàng và hàng. Thực thể đơn hàng chứa thông tin về các đơn hàng:
+\begin{itemize}
+    \item Mã đơn hàng: thuộc tính khóa, là mã của đơn hàng.
+    \item Ngày giao dịch: Ngày tạo đơn hàng.
+    \item mã cửa hàng: Nơi tạo đơn hàng.
+\end{itemize}
+
+Thực thể Hàng chỉ chứa một vài thông tin của hàng hóa được bán:
+\begin{itemize}
+    \item Mã hàng: thuộc tính khóa, là mã của món hàng.
+    \item Kích thước: thuộc tính khóa, là kích thước của món hàng.
+    \item Màu: thuộc tính khóa, là mã của món hàng.
+    \item Loại: Loại của món hàng.
+    \item Số lượng: Số lượng của món hàng trong đơn.
+    \item Giới tính: Giới tính của món hàng.
+    \item chi phí: Giá nhập của món hàng.
+    \item đơn giá: Đơn giá bán ra của món hàng.
+\end{itemize}
+
+Đơn hàng và hàng có mối quan hệ bao gồm: Mỗi đơn hàng đều phải có ít nhất một món hàng và mỗi món hàng đều phải nằm trong ít nhất một đơn hàng:
+
+
 \subsection{Ánh xạ}
 \par Từ các ERD/EERD trên, chúng ta có các ánh xạ sau tương ứng với mỗi service.
 
@@ -296,5 +429,43 @@
         \includegraphics[width=1\textwidth]{img/database/mapping/mapping-kho.png}
         \newline
         \caption{Ánh xạ cho database của service Kho}
+    \end{center}
+\end{figure}
+
+\subsubsection{Service chi nhánh}
+\begin{figure}[!htp]
+    \begin{center}
+        \includegraphics[width=1\textwidth]{img/database/mapping/branch.png}
+        \newline
+        \caption{Ánh xạ cho database của service chi nhánh}
+    \end{center}
+\end{figure}
+
+
+\subsubsection{Service tài khoản}
+\begin{figure}[!htp]
+    \begin{center}
+        \includegraphics[width=5cm]{img/database/mapping/account.png}
+        \newline
+        \caption{Ánh xạ cho database của service tài khoản}
+    \end{center}
+\end{figure}
+
+\subsubsection{Service nhân viên}
+\begin{figure}[!htp]
+    \begin{center}
+        \includegraphics[width=1\textwidth]{img/database/mapping/staff.png}
+        \newline
+        \caption{Ánh xạ cho database của service nhân viên}
+    \end{center}
+\end{figure}
+
+
+\subsubsection{Service thống kê}
+\begin{figure}[!htp]
+    \begin{center}
+        \includegraphics[width=1\textwidth]{img/database/mapping/Statistic.png}
+        \newline
+        \caption{Ánh xạ cho database của service thống kê}
     \end{center}
 \end{figure}
