@@ -32,117 +32,130 @@ Module này bao gồm các class dùng để hiển thị UI đối với phía 
 \end{figure}
 \textbf{Mô tả:}
 \begin{quote}
-	\begin{itemize}
-		\item CustomerUI: Giao diện chính của khách hàng khi truy cập vào trang web của hệ thống
-			\begin{itemize}
-				\item render(): Hiển thị lên màn hình của khách hàng
-			\end{itemize}
-		\item NavBar: Thành phần luôn có của giao diện của khách hàng hiển thị các lựa chọn truy cập nhanh cho khách hàng
-			\begin{itemize}
-				\item render(): Hiển thị lên màn hình của khách hàng
-				\item hoverItem(): Hiển thị lên màn hình giao diện các lựa chọn khi người dùng rê chuột đến các thể loại ở thanh navbar
-				\item selectItem(): Hiển thị lên màn hình giao diện tương ứng với lựa chọn của khách hàng trên thanh navbar.
-			\end{itemize}
-		\item Header: Thành phần luôn có của giao diện của khách hàng hiển thị các thông tin về tài khoản của khách hàng cũng như logo và chức năng tìm kiếm cho khách hàng.
-			\begin{itemize}
-				\item render(): Hiển thị lên màn hình của khách hàng.
-				\item showHome(): Hiển thị về trang chủ mặc định của hệ thống.
-				\item showCustomerOrder(): Hiển thị lên màn hình danh sách đơn hàng của khách hàng khi đã đăng nhập.
-				\item showCart(): Hiển thị lên màn hình thông tin giỏ hàng của khách hàng khi đã đăng nhập.
-				\item showLogin(): Hiển thị lên màn hình trang đăng nhập cho khách hàng khi chưa đăng nhập.
-				\item showCustomerInfo(): Hiển thị lên màn hình thông tin chi tiết tài khoản của khách hàng khi đã đăng nhập.
-				\item showProductByName(): Hiển thị lên màn hình danh sách các sản phẩm khi người dùng chọn tìm kiếm.
-			\end{itemize}
-		\item Footer: Thành phần luôn có của giao diện của khách hàng hiển thị các thông tin về hệ thống.
-			\begin{itemize}
-				\item render(): Hiển thị lên màn hình của khách hàng.
-				\item showHome(): Hiển thị về trang chủ mặc định của hệ thống.
-				\item showProduct(): Hiển thị lên màn hình danh sách tất cả sản phẩm của hệ thống.
-				\item showInstructionSize(): Hiển thị lên màn hình thông tin hướng dẫn chọn size.
-				\item showCustomerOrder(): Hiển thị lên màn hình trang danh sách các đơn hàng của khách hàng khi đã đăng nhập.
-				\item showIntroduction(): Hiển thị lên màn hình trang giới thiệu về hệ thống cửa hàng.
-			\end{itemize}
-		\item Home: Màn hình mặc định của người dùng sau khi truy cập vào trang web của hệ thống.
-			\begin{itemize}
-				\item render(): Hiển thị lên màn hình của khách hàng.
-				\item renderEvent(): Hiển thị thông tin các sự kiện đang diễn ra.
-				\item renderListTypeProduct(): Hiển thị danh sách các sản phẩm nổi bật theo từng thể loại.
-			\end{itemize}
-		\item ListProduct: Màn hình hiển thị danh sách tất cả sản phẩm của hệ thống cho khách hàng.
-			\begin{itemize}
-				\item render(): Hiển thị lên màn hình của khách hàng.
-				\item renderFollowType(): Hiển thị danh sách sản phẩm theo đặc điểm và thể loại.
-				\item renderListProduct(): Hiển thị danh sách các sản phẩm.
-			\end{itemize}
-		\item ProductDetail: Màn hình hiển thị danh sách tất cả sản phẩm của hệ thống cho khách hàng.
-			\begin{itemize}
-				\item render(): Hiển thị lên màn hình của khách hàng.
-				\item showInstructionSize(): Hiển thị lên màn hình thông tin hướng dẫn chọn size.
-				\item renderImageProduct(): Hiển thị hình ảnh sản phẩm mà khách hàng chọn.
-				\item changeQuantity(): Thay đổi số lượng sản phẩm để thêm vào giỏ hàng.
-			\end{itemize}
-		\item Cart: Màn hình hiển thị thông tin giỏ hàng của khách hàng.
-			\begin{itemize}
-				\item render(): Hiển thị lên màn hình của khách hàng.
-				\item renderListProduct(): Hiển thị danh sách sản phẩm có trong giỏ hàng.
-				\item showProductDetail(): Chuyển đến trang thông tin chi tiết của sản phẩm.
-				\item changeQuantity(): Thay đổi số lượng sản phẩm trong giỏ hàng.
-				\item renderTotalPrice(): Hiển thị tổng giá tiền của các sản phẩm được chọn trong giỏ hàng.
-			\end{itemize}
-		\item Payment: Màn hình hiển thị trang thanh toán cho khách hàng.
-			\begin{itemize}
-				\item render(): Hiển thị lên màn hình của khách hàng.
-				\item renderOrder(): Hiển thị đơn hàng.
-				\item renderTotalCost(): Hiển thị toán bộ chi phí đơn hàng.
-				\item renderAddress(): Hiển thị địa chỉ đơn hàng.
-				\item renderShipFee(): Hiển thị giá tiền vận chuyển đơn hàng.
-				\item ShowPaymentOnline(): Hiển thị màn hình thanh toán online.
-			\end{itemize}
-		\item Manager Order: Màn hình hiển thị danh sách các đơn hàng của khách hàng.
-			\begin{itemize}
-				\item render(): Hiển thị lên màn hình của khách hàng.
-				\item renderListOrder(): Hiển thị danh sách đơn hàng.
-				\item showOrderDetail(): Hiển thị thông tin chi tiết của đơn hàng.
-			\end{itemize}
-		\item Order Detail: Màn hình hiển thị thông tin chi tiết đơn hàng của khách hàng.
-			\begin{itemize}
-				\item render(): Hiển thị lên màn hình của khách hàng.
-				\item renderStatus(): Hiển thị trạng thái của đơn hàng.
-				\item renderListTransport(): Hiển thị danh sách thông tin quá trình vận chuyển.
-				\item renderListProduct(): Hiển thị danh sách sản phẩm có trong đơn hàng.
-				\item renderCost(): Hiển thị danh sách các khoản chi phí của đơn hàng.
-			\end{itemize}
-		\item Forgot Password: Màn hình hiển thị trang tạo lại mật khẩu cho tài khoản của khách hàng.
-			\begin{itemize}
-				\item render(): Hiển thị lên màn hình của khách hàng.
-				\item showPassword(): Hiển thị mật khẩu khỏi trạng thái bị ẩn.
-				\item confirmAccount(): Xác nhận tài khoản muốn đổi mật khẩu.
-				\item renderConfirmOtp(): Hiển thị màn hình xác nhận mã OTP.
-				\item confirmOtp(): Gửi xác nhận mã OTP.
-				\item showUpdatePassword(): Hiển thị trang cập nhật mật khẩu mới cho tài khoản.
-				\item validateConfirmPassword(): Kiểm tra thông tin nhập lại mật khẩu của khách hàng.
-				\item updatePassword(): Gửi thông tin cập nhật mật khẩu mới cho tài khoản.
-			\end{itemize}
-		\item Register: Màn hình hiển thị trang đăng ký tài khoản cho khách hàng.
-			\begin{itemize}
-				\item render(): Hiển thị lên màn hình của khách hàng.
-				\item showPassword(): Hiển thị mật khẩu khỏi trạng thái bị ẩn.
-				\item register(): gửi thông tin xác nhận.
-				\item renderConfirmOtp(): Hiển thị màn hình xác nhận mã OTP.
-				\item confirmOtp(): Gửi xác nhận mã OTP.
-				\item validateConfirmPassword(): Kiểm tra thông tin nhập lại mật khẩu của khách hàng.
-			\end{itemize}
-		\item Customer Info: Màn hình hiển thị trang thông tin chi tiết tài khoản của khách hàng.
-			\begin{itemize}
-				\item render(): Hiển thị lên màn hình của khách hàng.
-				\item renderInfo(): Hiển thị thông tin chung của khách hàng.
-				\item renderAddress(): Hiển thị thông tin địa chỉ các khách hàng.
-				\item saveEdit(): gửi đi thông tin tài khoản đã chỉnh sửa.
-				\item showChangePassword(): hiển thị màn hình đổi mật khẩu.
-				\item changePassword(): gửi thông tin đổi mật khẩu của tài khoản.
-				\item validateConfirmPassword(): Kiểm tra thông tin nhập lại mật khẩu của khách hàng.
-			\end{itemize}
-	\end{itemize}
+	
+	\subsubsubsection*{CustomerUI} 
+	 	Giao diện chính của khách hàng khi truy cập vào trang web của hệ thống.
+		\begin{itemize}
+			\item render(): Hiển thị lên màn hình của khách hàng.
+		\end{itemize}
+		\subsubsubsection*{NavBar} 
+		Thành phần luôn có của giao diện của khách hàng hiển thị các lựa chọn truy cập nhanh cho khách hàng.
+		\begin{itemize}
+			\item render(): Hiển thị lên màn hình của khách hàng.
+			\item hoverItem(): Hiển thị lên màn hình giao diện các lựa chọn khi người dùng rê chuột đến các thể loại ở thanh navbar.
+			\item selectItem(): Hiển thị lên màn hình giao diện tương ứng với lựa chọn của khách hàng trên thanh navbar.
+		\end{itemize}
+		\subsubsubsection*{Header} 
+		Thành phần luôn có của giao diện của khách hàng hiển thị các thông tin về tài khoản của khách hàng cũng như logo và chức năng tìm kiếm cho khách hàng.
+		\begin{itemize}
+			\item render(): Hiển thị lên màn hình của khách hàng.
+			\item showHome(): Hiển thị về trang chủ mặc định của hệ thống.
+			\item showCustomerOrder(): Hiển thị lên màn hình danh sách đơn hàng của khách hàng khi đã đăng nhập.
+			\item showCart(): Hiển thị lên màn hình thông tin giỏ hàng của khách hàng khi đã đăng nhập.
+			\item showLogin(): Hiển thị lên màn hình trang đăng nhập cho khách hàng khi chưa đăng nhập.
+			\item showCustomerInfo(): Hiển thị lên màn hình thông tin chi tiết tài khoản của khách hàng khi đã đăng nhập.
+			\item showProductByName(): Hiển thị lên màn hình danh sách các sản phẩm khi người dùng chọn tìm kiếm.
+		\end{itemize}
+		\subsubsubsection*{Footer} 
+		Thành phần luôn có của giao diện của khách hàng hiển thị các thông tin về hệ thống.
+		\begin{itemize}
+			\item render(): Hiển thị lên màn hình của khách hàng.
+			\item showHome(): Hiển thị về trang chủ mặc định của hệ thống.
+			\item showProduct(): Hiển thị lên màn hình danh sách tất cả sản phẩm của hệ thống.
+			\item showInstructionSize(): Hiển thị lên màn hình thông tin hướng dẫn chọn size.
+			\item showCustomerOrder(): Hiển thị lên màn hình trang danh sách các đơn hàng của khách hàng khi đã đăng nhập.
+			\item showIntroduction(): Hiển thị lên màn hình trang giới thiệu về hệ thống cửa hàng.
+		\end{itemize}
+		\subsubsubsection*{Home} 
+		Màn hình mặc định của người dùng sau khi truy cập vào trang web của hệ thống.
+		\begin{itemize}
+			\item render(): Hiển thị lên màn hình của khách hàng.
+			\item renderEvent(): Hiển thị thông tin các sự kiện đang diễn ra.
+			\item renderListTypeProduct(): Hiển thị danh sách các sản phẩm nổi bật theo từng thể loại.
+		\end{itemize}
+		\subsubsubsection*{ListProduct} 
+		Màn hình hiển thị danh sách tất cả sản phẩm của hệ thống cho khách hàng.
+		\begin{itemize}
+			\item render(): Hiển thị lên màn hình của khách hàng.
+			\item renderFollowType(): Hiển thị danh sách sản phẩm theo đặc điểm và thể loại.
+			\item renderListProduct(): Hiển thị danh sách các sản phẩm.
+		\end{itemize}
+		\subsubsubsection*{ProductDetail} Màn hình hiển thị danh sách tất cả sản phẩm của hệ thống cho khách hàng.
+		\begin{itemize}
+			\item render(): Hiển thị lên màn hình của khách hàng.
+			\item showInstructionSize(): Hiển thị lên màn hình thông tin hướng dẫn chọn size.
+			\item renderImageProduct(): Hiển thị hình ảnh sản phẩm mà khách hàng chọn.
+			\item changeQuantity(): Thay đổi số lượng sản phẩm để thêm vào giỏ hàng.
+		\end{itemize}
+		\subsubsubsection*{Cart}
+		Màn hình hiển thị thông tin giỏ hàng của khách hàng.
+		\begin{itemize}
+			\item render(): Hiển thị lên màn hình của khách hàng.
+			\item renderListProduct(): Hiển thị danh sách sản phẩm có trong giỏ hàng.
+			\item showProductDetail(): Chuyển đến trang thông tin chi tiết của sản phẩm.
+			\item changeQuantity(): Thay đổi số lượng sản phẩm trong giỏ hàng.
+			\item renderTotalPrice(): Hiển thị tổng giá tiền của các sản phẩm được chọn trong giỏ hàng.
+		\end{itemize}
+		\subsubsubsection*{Payment} 
+		Màn hình hiển thị trang thanh toán cho khách hàng.
+		\begin{itemize}
+			\item render(): Hiển thị lên màn hình của khách hàng.
+			\item renderOrder(): Hiển thị đơn hàng.
+			\item renderTotalCost(): Hiển thị toán bộ chi phí đơn hàng.
+			\item renderAddress(): Hiển thị địa chỉ đơn hàng.
+			\item renderShipFee(): Hiển thị giá tiền vận chuyển đơn hàng.
+			\item ShowPaymentOnline(): Hiển thị màn hình thanh toán online.
+		\end{itemize}
+		\subsubsubsection*{ Manager Order}
+		Màn hình hiển thị danh sách các đơn hàng của khách hàng.
+		\begin{itemize}
+			\item render(): Hiển thị lên màn hình của khách hàng.
+			\item renderListOrder(): Hiển thị danh sách đơn hàng.
+			\item showOrderDetail(): Hiển thị thông tin chi tiết của đơn hàng.
+		\end{itemize}
+		\subsubsubsection*{Order Detail}
+		Màn hình hiển thị thông tin chi tiết đơn hàng của khách hàng.
+		\begin{itemize}
+			\item render(): Hiển thị lên màn hình của khách hàng.
+			\item renderStatus(): Hiển thị trạng thái của đơn hàng.
+			\item renderListTransport(): Hiển thị danh sách thông tin quá trình vận chuyển.
+			\item renderListProduct(): Hiển thị danh sách sản phẩm có trong đơn hàng.
+			\item renderCost(): Hiển thị danh sách các khoản chi phí của đơn hàng.
+		\end{itemize}
+		\subsubsubsection*{Forgot Password}
+		Màn hình hiển thị trang tạo lại mật khẩu cho tài khoản của khách hàng.
+		\begin{itemize}
+			\item render(): Hiển thị lên màn hình của khách hàng.
+			\item showPassword(): Hiển thị mật khẩu khỏi trạng thái bị ẩn.
+			\item confirmAccount(): Xác nhận tài khoản muốn đổi mật khẩu.
+			\item renderConfirmOtp(): Hiển thị màn hình xác nhận mã OTP.
+			\item confirmOtp(): Gửi xác nhận mã OTP.
+			\item showUpdatePassword(): Hiển thị trang cập nhật mật khẩu mới cho tài khoản.
+			\item validateConfirmPassword(): Kiểm tra thông tin nhập lại mật khẩu của khách hàng.
+			\item updatePassword(): Gửi thông tin cập nhật mật khẩu mới cho tài khoản.
+		\end{itemize}
+		\subsubsubsection*{Register} 
+		Màn hình hiển thị trang đăng ký tài khoản cho khách hàng.
+		\begin{itemize}
+			\item render(): Hiển thị lên màn hình của khách hàng.
+			\item showPassword(): Hiển thị mật khẩu khỏi trạng thái bị ẩn.
+			\item register(): gửi thông tin xác nhận.
+			\item renderConfirmOtp(): Hiển thị màn hình xác nhận mã OTP.
+			\item confirmOtp(): Gửi xác nhận mã OTP.
+			\item validateConfirmPassword(): Kiểm tra thông tin nhập lại mật khẩu của khách hàng.
+		\end{itemize}
+		\subsubsubsection*{Customer Info}
+		Màn hình hiển thị trang thông tin chi tiết tài khoản của khách hàng.
+		\begin{itemize}
+			\item render(): Hiển thị lên màn hình của khách hàng.
+			\item renderInfo(): Hiển thị thông tin chung của khách hàng.
+			\item renderAddress(): Hiển thị thông tin địa chỉ các khách hàng.
+			\item saveEdit(): gửi đi thông tin tài khoản đã chỉnh sửa.
+			\item showChangePassword(): hiển thị màn hình đổi mật khẩu.
+			\item changePassword(): gửi thông tin đổi mật khẩu của tài khoản.
+			\item validateConfirmPassword(): Kiểm tra thông tin nhập lại mật khẩu của khách hàng.
+		\end{itemize}
+	
 \end{quote}
 
 \subsubsection{LoginUI}
@@ -403,6 +416,44 @@ Lược đồ class ở tậng service được xây dựng theo các thành ph�
 	\caption{Lược đồ class của Cart Service}
 \end{figure}
 
+	\subsubsubsection*{CartRepository}
+	Thuộc tính:
+	\begin{itemize}
+		\item goodInCart: Chứa đối tượng GoodInCartModel
+	\end{itemize}
+	Phương thức:
+	\begin{itemize}
+		\item createCart(customerId: string): tạo giỏ hàng cho tài khoản khách hàng
+		\item readCart(customerId: string): Lấy thông tin giỏ hàng thuộc tài khoản của khách hàng.
+		\item createProductToCart(customerId: string, product: GoodInCartModel): Thêm sản phẩm vào giỏ hàng.
+		\item deleteProductInCart(cartId: string, product: Good): Xóa sản phẩm khỏi giỏ hàng.
+		\item deleteAllProductInCart(cartId: string): Xóa toàn bộ sản phẩm khỏi giỏ hàng.
+		\item updateCart(customerId: string, product: GoodInCartModel): Cập nhật thông tin sản phẩm trong giỏ hàng.
+	\end{itemize}
+
+	\subsubsubsection*{CartController}
+	Thuộc tính:
+	\begin{itemize}
+		\item repo: Chứa đối tượng CartRepository
+	\end{itemize}
+	Phương thức:
+	\begin{itemize}
+		\item addCart(customerId: string): Xử lý dữ liệu và gọi thêm giỏ hàng cho tài khoản khách hàng để trả về kết quả.
+		\item getCart(customerId: string): Xử lý dữ liệu và gọi lấy thông tin giỏ hàng thuộc tài khoản của khách hàng để trả về kết quả.
+		\item addProductToCart(customerId: string, product: GoodInCartModel): Xử lý dữ liệu và gọi thêm sản phẩm vào giỏ hàng để trả về kết quả.
+		\item removeProductInCart(cartId: string, product: Good): Xử lý dữ liệu và gọi xóa sản phẩm khỏi giỏ hàng để trả về kết quả.
+		\item removeAllProductInCart(castId: string): Xử lý dữ liệu và gọi xóa toàn bộ sản phẩm khỏi giỏ hàng để trả về kết quả.
+		\item getListProductInfo(cartId: string, listGood: list<GoodInCartModel>): Xử lý dữ liệu và gọi xóa toàn bộ sản phẩm khỏi giỏ hàng để trả về kết quả.
+		\item editCart(cartId: string, product: GoodInCartModel): Xử lý dữ liệu và gọi cập nhật thông tin sản phẩm trong giỏ hàng để trả về kết quả.
+	\end{itemize}
+
+	\subsubsubsection*{GetResponse - AddResponse - UpdateResponse - DeleteResponse}
+	Thuộc tính:
+	\begin{itemize}
+		\item statusCode: Mã trạng thái của phản hồi.
+		\item message: Thông điệp của phản hồi.
+		\item value: Các dữ liệu trả về đối với các yêu cầu.
+	\end{itemize}
 
 \subsubsection{Customer Service}
 \begin{figure}[!htp]
@@ -412,7 +463,37 @@ Lược đồ class ở tậng service được xây dựng theo các thành ph�
 	\caption{Lược đồ class của Customer Service}
 \end{figure}
 
+	\subsubsubsection*{CustomerRepository}
+	Thuộc tính:
+	\begin{itemize}
+		\item customerModel: Chứa đối tượng CustomerModel
+	\end{itemize}
+	Phương thức:
+	\begin{itemize}
+		\item createCustomer(customer: CustomerModel): tạo tài khoản khách hàng
+		\item updateCustomer(customer: CustomerModel): cập nhật tài khoản khách hàng
+		\item readCustomerInfo(username: string): lấy thông tin chi tiết của tài khoản khách hàng
+	\end{itemize}
 
+	\subsubsubsection*{CustomerController}
+	Thuộc tính:
+	\begin{itemize}
+		\item repo: Chứa đối tượng CustomerRepository
+	\end{itemize}
+	Phương thức:
+	\begin{itemize}
+		\item createCustomer(customer: CustomerModel): Xử lý dữ liệu và gọi tạo tài khoản khách hàng để trả về kết quả.
+		\item updateCustomer(customer: CustomerModel): Xử lý dữ liệu và gọi cập nhật tài khoản khách hàng để trả về kết quả.
+		\item readCustomerInfo(username: string): Xử lý dữ liệu và gọi lấy thông tin chi tiết của tài khoản khách hàng để trả về kết quả.
+	\end{itemize}
+
+	\subsubsubsection*{GetResponse - AddResponse - UpdateResponse}
+	Thuộc tính:
+	\begin{itemize}
+		\item statusCode: Mã trạng thái của phản hồi
+		\item message: Thông điệp của phản hồi
+		\item value: Các dữ liệu trả về đối với các yêu cầu
+	\end{itemize}
 
 \subsubsection{Order Service}
 \begin{figure}[!htp]
@@ -649,7 +730,6 @@ Thuộc tính:
 \end{itemize}
 
 
-
 \subsubsection{Event Service}
 \begin{figure}[!htp]
 	\centering
@@ -658,6 +738,42 @@ Thuộc tính:
 	\caption{Lược đồ class của Event Service}
 \end{figure}
 
+\subsubsubsection*{EventRepository}
+Thuộc tính:
+\begin{itemize}
+	\item eventModel: Chứa đối tượng EventModel
+\end{itemize}
+Phương thức:
+\begin{itemize}
+	\item readAllEvent(): lấy danh sách toàn bộ sự kiện của hệ thống.
+	\item readEvent(eventId: string): lấy thông tin chi tiết của sự kiện trong hệ thống.
+	\item deleteEvent(eventId: string): xóa sự kiện khỏi hệ thống.g.
+	\item createEvent(event: EventModel): tạo sự kiện mới.
+	\item updateEvent(event: EventModel): cập nhật thông tin của sự kiện.
+\end{itemize}
+
+\subsubsubsection*{EventController}
+Thuộc tính:
+\begin{itemize}
+	\item repo: Chứa đối tượng EventRepository
+\end{itemize}
+Phương thức:
+\begin{itemize}
+	\item getAllEvent(): Xử lý dữ liệu và gọi lấy danh sách toàn bộ sự kiện của hệ thống.
+	\item getEventInfoById(eventId: string): Xử lý dữ liệu và gọi lấy thông tin chi tiết của sự kiện trong hệ thống.
+	\item deleteEvent(eventId: string): Xử lý dữ liệu và gọi xóa sự kiện khỏi hệ thống.
+	\item addEvent(event: EventDetail): Xử lý dữ liệu và gọi tạo sự kiện mới.
+	\item updateEvent(event: EventDetail): Xử lý dữ liệu và gọi cập nhật thông tin của sự kiện.
+	\item getAllGood(): Xử lý dữ liệu và gọi lấy thông tin toàn bộ hàng.
+\end{itemize}
+
+\subsubsubsection*{GetResponse - AddResponse - UpdateResponse - DeleteResponse}
+Thuộc tính:
+\begin{itemize}
+	\item statusCode: Mã trạng thái của phản hồi
+	\item message: Thông điệp của phản hồi
+	\item value: Các dữ liệu trả về đối với các yêu cầu
+\end{itemize}
 
 \subsubsection{Warehouse Service}
 \begin{figure}[!htp]
@@ -753,10 +869,65 @@ Thuộc tính:
 \end{figure}
 
 
-
+\newpage
 \subsubsection{Giao tiếp đồng bộ giữa các dịch vụ Web}
 
+\subsubsubsection{Customer order Service}
+\begin{figure}[!htp]
+	\centering
+	\includegraphics[width=10cm]{img/Architecture/service/customer-order-call.png}
+	\newline
+	\caption{Lược đồ giao tiếp đồng bộ của Customer order Service với các dịch vụ khác}
+\end{figure}
 
+\begin{itemize}
+	\item \textbf{Goods service}: Customer order service gọi tới Goods service để thực hiện lấy thông tin cần thiết của sản phẩm, sử dụng dữ liệu đó để tính toán cho đơn hàng cũng như tạo đơn hàng.
+	\item \textbf{Event service}: Customer order service gọi tới Event service để thực hiện lấy thông tin sự kiện giảm giá để tính toán giá tiền cho đơn hàng.
+	\item \textbf{Customer service}: Customer order service gọi tới Customer service để thực hiện lấy thông tin người dùng để tạo đơn hàng và tự đồng điền form.
+	\item \textbf{Transport service}: Customer order service gọi tới Transport service để thực hiện lấy thông tin giá tiền vận chuyển.
+	\item \textbf{Payment service}: Customer order service gọi tới Payment service để thực hiện thanh toán trực tuyến khi người dùng chọn phương thức thanh toán trực tuyến tương ứng.
+\end{itemize}
+
+
+\subsubsubsection{Cart Service}
+\begin{figure}[!htp]
+	\centering
+	\includegraphics[width=8cm]{img/Architecture/service/cart-call.png}
+	\newline
+	\caption{Lược đồ giao tiếp đồng bộ của Cart Service với các dịch vụ khác}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Goods service}: Cart service gọi tới Goods service để thực hiện lấy thông tin cần thiết của sản phẩm, sử dụng dữ liệu đó để tính toán cho tổng giá tiền trong giỏ hàng.
+	\item \textbf{Event service}: Cart service gọi tới Event service để thực hiện lấy thông tin sự kiện giảm giá để tính toán giá tiền cho sản phẩm trong giỏ hàng.
+\end{itemize}
+
+\newpage
+\subsubsubsection{Staff Service}
+\begin{figure}[!htp]
+	\centering
+	\includegraphics[width=7cm]{img/Architecture/service/staff-call.png}
+	\newline
+	\caption{Lược đồ giao tiếp đồng bộ của Staff Service với các dịch vụ khác}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Account service}: Staff service gọi tới Account service để thực hiện cập nhật hoặc thêm tài khoản của nhân viên.
+	\item \textbf{Warehouse service}: Staff service gọi tới Warehouse service để thực hiện cập nhật lại thông tin quản lý khi đổi quyền của nhân viên.
+	\item \textbf{Branch service}: Staff service gọi tới Branch service để thực hiện cập nhật lại thông tin quản lý khi đổi quyền của nhân viên.
+\end{itemize}
+
+\subsubsubsection{Account Service}
+\begin{figure}[!htp]
+	\centering
+	\includegraphics[width=8cm]{img/Architecture/service/account-call.png}
+	\newline
+	\caption{Lược đồ giao tiếp đồng bộ của Account Service với các dịch vụ khác}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Customer service}: Account service gọi tới Customer service để thực hiện thêm người dùng tương ứng với tài khoản vừa được tạo.
+\end{itemize}
 
 \subsubsection{Giao tiếp bất đồng bộ giữa các dịch vụ Web}
 
