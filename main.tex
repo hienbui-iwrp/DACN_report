@@ -1,5 +1,5 @@
 
-\documentclass[a4paper]{article}
+\documentclass[a4paper]{report}
 \usepackage{vntex}
 %\usepackage[english,vietnam]{babel}
 \usepackage[utf8]{inputenc}
@@ -41,6 +41,7 @@
 %\usepackage{pstcol} 								% PSTricks with the standard color package
 
 \usepackage[normalem]{ulem}
+
 
 \newtheorem{theorem}{{\bf Định lý}}
 \newtheorem{property}{{\bf Tính chất}}
@@ -109,19 +110,7 @@
 \captionsetup[figure]{labelfont={small,bf},textfont={small,it},belowskip=-1pt,aboveskip=-9pt}
 %space remove between caption, figure, and text
 \captionsetup[table]{labelfont={small,bf},textfont={small,it},belowskip=-1pt,aboveskip=7pt}
-%space remove between caption, table, and text
 
-%\floatplacement{figure}{H}%forced here float placement automatically for figures
-%\floatplacement{table}{H}%forced here float placement automatically for table
-%the following settings (11 lines) are to remove white space before or after the figures and tables
-%\setcounter{topnumber}{2}
-%\setcounter{bottomnumber}{2}
-%\setcounter{totalnumber}{4}
-%\renewcommand{\topfraction}{0.85}
-%\renewcommand{\bottomfraction}{0.85}
-%\renewcommand{\textfraction}{0.15}
-%\renewcommand{\floatpagefraction}{0.8}
-%\renewcommand{\textfraction}{0.1}
 \setlength{\floatsep}{5pt plus 2pt minus 2pt}
 \setlength{\textfloatsep}{5pt plus 2pt minus 2pt}
 \setlength{\intextsep}{10pt plus 2pt minus 2pt}
@@ -205,61 +194,55 @@
 \tableofcontents
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % Giới thiệu
-\newpage
-\include{tex/intro}
+\chapter{Tổng quan}
+\input{tex/intro}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Cơ sở lý thuyết
-\newpage
-\include{tex/theory}
+\chapter{Cơ sở lý thuyết}
+\input{tex/theory}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\chapter{Thiết kế hệ thống}
 % Requirement
-\newpage
-\include{tex/Requirement}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{tex/Requirement}
 
 % Usecase
-\newpage
-% \include{tex/usecase}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{tex/usecase}
 
 % BPMN
-\newpage
-% \include{tex/BPMN-diagram}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{tex/BPMN-diagram}
 
 % Architecture
-\newpage
-% \include{tex/architecture}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{tex/architecture}
 
 % Database
-\newpage
-% \include{tex/database}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{tex/database}
 
 % UI
-\newpage
-% \include{tex/UI}
+\input{tex/UI}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\chapter{Công nghệ}
 % technology
-\newpage
-\include{tex/technology}
+\input{tex/technology}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\chapter{Tổng kết}
 % summary
-\newpage
-\include{tex/summary}
+\input{tex/summary}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\chapter{Tham khảo}
 % refer
-\newpage
-\include{tex/refer}
+\input{tex/refer}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
 \end{document}
