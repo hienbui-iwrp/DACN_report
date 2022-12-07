@@ -1375,5 +1375,19 @@ Thuộc tính:
 
 \subsubsection{Giao tiếp bất đồng bộ giữa các dịch vụ Web}
 
-Hệ thống còn có Kafka là một hàng đợi thông điệp pub/sub dùng để đồng bộ dữ liệu giữa các dịch vụ Web cho các tác vụ bất động bộ. Khi một thông điệp được gửi lên từ một dịch vụ Web, thông điệp sẽ được lưu trong hàng đợi thông điệp. Khi một dịch vụ Web gọi đến để lấy dữ liệu, Kafka sẽ gửi thông điệp đến cho dịch vụ Web đó, nếu gửi thất bại, hệ thống sẽ tự động gửi lại thay vì người dùng phải thực hiện gửi.
+\par Giao tiếp bất đồng bộ diễn ra ở các tác vụ không yêu cầu phản hồi kết quả ngay, thay vào đó yêu cầu gọi sẽ được lưu lại và xử lý sau. Việc giao tiếp bất đồng bộ giảm việc sử dụng tài nguyên của hệ thống, trong khi vẫn đảm bảo được kết quả trả về.
 
+\par Khi phía client gửi một yêu cầu (request) đến phía server, client sẽ chờ server xử lý xong toàn bộ quá trình theo quy trình nghiệp vụ rồi mới kết thúc. 
+Đối với các tác vụ lớn hoặc yêu cầu thời gian xử lý lớn, phía client sẽ phải chờ lâu, và điều này làm hao phí tài nguyên của hệ thống. Bằng việc áp dụng giao tiếp bất đồng bộ vào các tác vụ thích hợp, hệ thống sẽ giảm được việc sử dụng tài nguyên hệ thống khi client phải phản hồi lâu từ server. 
+Các request trước khi được xử lý bằng giao tiếp bất đồng bộ sẽ được kiểm tra kĩ về mặt dữ liệu, để đảm bảo các lỗi liên quan đến dữ liệu request sẽ không xuất hiện khi xử lý sau. Sau khi xử lý request, kết quả sẽ được gửi về cho phía client. 
+Phía server sau khi hoàn thành bước kiểm tra dữ liệu và xử lý các tác vụ đồng bộ, sẽ gửi thông điệp vào message queue để gửi đến service đích. Khi việc thêm thông điệp vào message queue thành công, phía server sẽ trả về thành công cho phía client, không cần phía client phải chờ toàn bộ quy trình nghiệp vụ phải xử lý xong.
+
+\par Để hiện thực việc giao tiếp bất đồng bộ giữa các dịch vụ web, hệ thống sử dụng Kafka. Đây là một hàng đợi thông điệp pub/sub dùng để lưu trữ và gửi đi các thông điệp.
+Ta có thể tạo nên các \textbf{topic} trong Kafka. Các service có thể publish thông điệp lên một hoặc nhiều topic, 
+và khi một service subscribe vào một topic, nó có thể nhận dữ liệu từ topic đó. 
+Khi một thông điệp được gửi lên từ một dịch vụ Web, thông điệp sẽ được lưu trong hàng đợi thông điệp. 
+Những service subscribe vào topic này sau đó sẽ nhận được thông điệp này để xử lý. 
+Khi việc xử lý thất bại, bao gồm cả việc gửi thông điệp đến các subscriber thất bại, chúng ta có thể gửi lại thông điệp đó. 
+Vì điểm mạnh về multiple-sub và multiple-pub (một service có thể publish lên nhiều topic, cũng như có thể subscribe vào nhiều topic), cùng với việc hỗ trợ retry khi xảy ra lỗi, mà Kafka được nhóm lựa chọn sử dụng trong hệ thống.
+
+\par Trong hệ thống, nhóm tổ chức các topic theo nhu cầu gửi thông điệp bất đồng bộ đến các service đích. Theo cách tổ chức này, một topic sẽ chỉ được subscribe bởi một service, và đó là service đích nhận và xử lý thông điệp. Trong khi đó, có thể có nhiều service subscribe vào một topic, tùy theo nhu cầu của các service.
