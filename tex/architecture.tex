@@ -325,7 +325,8 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía khá
 			\item username: string (Required)
 		\end{itemize}
 	\end{quote}
-	\item getCustomerInfo
+
+	\item updateCustomerInfo
 	\begin{quote}
 		PUT /api/customer-service/customer/{customerid}
 		\begin{itemize}
@@ -333,16 +334,632 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía khá
 		\end{itemize}
 	\end{quote}
 
+	\item addCustomerInfo
+	\begin{quote}
+		POST /api/customer-service/customer
+		\begin{itemize}
+			\item customer: CustomerModel (Required)
+		\end{itemize}
+	\end{quote}
 \end{itemize}
+
+\subsubsubsection*{Cart Service}
+\begin{itemize}
+	\item addCart
+	\begin{quote}
+		POST /api/cart-service/cart
+		\begin{itemize}
+			\item customerId: string (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item getCart
+	\begin{quote}
+		POST /api/cart-service/cart/{customerId}
+		\begin{itemize}
+			\item customerId: string (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item addProductToCart
+	\begin{quote}
+		POST /api/cart-service/cart/{customerId}
+		\begin{itemize}
+			\item cartId: string (Required)
+			\item product: GoodInCartModel (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item removeProductToCart
+	\begin{quote}
+		DELETE /api/cart-service/cart/{cartId}
+		\begin{itemize}
+			\item cartId: string (Required)
+			\item product: Good (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item removeAllProductInCart
+	\begin{quote}
+		DELETE /api/cart-service/cart/all/{cartId}
+		\begin{itemize}
+			\item cartId: string (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item UpdateCart
+	\begin{quote}
+		PUT /api/cart-service/cart/{cartId}
+		\begin{itemize}
+			\item cartId: string (Required)
+			\item product: GoodInCartModel (Required)
+		\end{itemize}
+	\end{quote}
+\end{itemize}
+
+\subsubsubsection*{Make Order Service}
+\begin{itemize}
+	\item getListOrder
+	\begin{quote}
+		GET /api/order-service/orders/{customerId}
+		\begin{itemize}
+			\item customerId: string (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item getOrderDetail
+	\begin{quote}
+		GET /api/order-service/order-detail
+		\begin{itemize}
+			\item customerId: string (Required)
+			\item orderId: string (Required)
+		\end{itemize}
+	\end{quote}
+\end{itemize}
+
+\subsubsubsection*{Order Service}
+\begin{itemize}
+	\item readOrder
+	\begin{quote}
+		GET /api/order-service/order/{orderId}
+		\begin{itemize}
+			\item orderId: string (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item createOrder
+	\begin{quote}
+		POST /api/order-service/order
+		\begin{itemize}
+			\item transactionDate: DateTime (Required)
+			\item totalAmount: int (Required)
+			\item isOnline: bool (Required)
+			\item customerId: string
+			\item shippingFee: float
+			\item storeId: string
+			\item goods: [GoodsInOrder] (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item readOnlineOrderStatus
+	\begin{quote}
+		GET /api/order-service/online-order-status/{orderId}
+		\begin{itemize}
+			\item orderId: string (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item getOrderDetail
+	\begin{quote}
+		GET /api/order-service/order-detail
+		\begin{itemize}
+			\item customerId: string (Required)
+			\item orderId: string (Required)
+		\end{itemize}
+	\end{quote}
+\end{itemize}
+
+\subsubsubsection*{Account Service}
+\begin{itemize}
+	\item Authentication
+	\begin{quote}
+		GET /api/account-service/{username}
+		\begin{itemize}
+			\item password: string (Required)
+			\end{itemize}
+	\end{quote}
+
+	\item addAccount
+	\begin{quote}
+		POST /api/account-service/add
+		\begin{itemize}
+			\item password: string (Required)
+			\item username: string (Required)
+			\item role: enum (Required)
+		\end{itemize}
+	\end{quote}
+\end{itemize}
+
+
 
 
 
 \subsubsection{Admin APIs}
 Module này dùng để chứa các API được xuất ra ngoài cho phía quản trị viên
 
+\subsubsubsection*{Event Service}
+\begin{itemize}
+	\item addEvent
+	\begin{quote}
+		POST /api/event-service/event
+		\begin{itemize}
+			\item event: EventModel (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item getAllEvent
+	\begin{quote}
+		GET /api/event-service/event
+	\end{quote}
+
+	\item removeEvent
+	\begin{quote}
+		DELETE /api/event-service/event/{eventId}
+		\begin{itemize}
+			\item eventId: string (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item UpdateEvent
+	\begin{quote}
+		PUT /api/event-service/event/{eventId}
+		\begin{itemize}
+			\item eventId: string (Required)
+			\item event: EventModel (Required)
+		\end{itemize}
+	\end{quote}
+\end{itemize}
+
+\subsubsubsection*{Warehouse Service}
+\begin{itemize}
+	\item getManager
+	\begin{quote}
+		GET /api/warehouse-service/manager/{warehouseId}
+	\end{quote}
+
+	\item updateManager
+	\begin{quote}
+		PUT /api/warehouse-service/manager
+	\end{quote}
+
+	\item getStaff
+	\begin{quote}
+		GET /api/warehouse-service/staff/{warehouseId}
+	\end{quote}
+
+	\item addStaff
+	\begin{quote}
+		POST /api/warehouse-service/staff
+	\end{quote}
+
+	\item updateStaff
+	\begin{quote}
+		PUT /api/warehouse-service/staff
+	\end{quote}
+
+	\item deleteStaff
+	\begin{quote}
+		DELETE /api/warehouse-service/staff
+	\end{quote}
+
+	\item addWarehouse
+	\begin{quote}
+		POST /api/warehouse-service/warehouse
+	\end{quote}
+
+	\item getWarehouse	
+	\begin{quote}
+		GET /api/warehouse-service/warehouse/{warehouseId}
+	\end{quote}
+
+	\item updateWarehouse
+	\begin{quote}
+		PUT /api/warehouse-service/warehouse
+	\end{quote}
+
+	\item deleteWarehouse
+	\begin{quote}
+		DELETE /api/warehouse-service/warehouse
+	\end{quote}
+\end{itemize}
+
+\subsubsubsection*{Goods Service}
+\begin{itemize}
+	\item getGoods
+	\begin{quote}
+		GET /api/goods-service/goods{goodsId}
+		\begin{itemize}
+			\item goodsId: string (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item updateGoods
+	\begin{quote}
+		PUT /api/goods-service/goods
+	\end{quote}
+
+	\item addGoods
+	\begin{quote}
+		POST /api/goods-service/goods
+	\end{quote}
+
+	\item deleteGoods
+	\begin{quote}
+		DELETE /api/goods-service/goods
+	\end{quote}
+
+	\item createImport
+	\begin{quote}
+		POST /api/goods-service/import
+	\end{quote}
+
+	\item createExport
+	\begin{quote}
+		POST /api/goods-service/export
+	\end{quote}
+
+	\item createWHTransfer
+	\begin{quote}
+		POST /api/goods-service/wh-transfer
+	\end{quote}
+
+	\item createReturnManufact	
+	\begin{quote}
+		POST /api/goods-service/return-manufact
+	\end{quote}
+
+	\item createCustReturn
+	\begin{quote}
+		POST /api/goods-service/cust-return
+	\end{quote}
+\end{itemize}
+
+\subsubsubsection*{Order Service}
+\begin{itemize}
+	\item readOrder
+	\begin{quote}
+		GET /api/order-service/order/{orderId}
+		\begin{itemize}
+			\item orderId: string (Required)
+		\end{itemize}
+	\end{quote}
+
+
+	\item updateOnlineOrderStatus
+	\begin{quote}
+		PUT api/order-service/online-order-status
+		\begin{itemize}
+			\item orderId: string (Required)
+			\item status: string (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item getListOrder
+	\begin{quote}
+		GET /api/order-service/orders/{customerId}
+		\begin{itemize}
+			\item customerId: string (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item getOrderDetail
+	\begin{quote}
+		GET /api/order-service/order-detail
+		\begin{itemize}
+			\item customerId: string (Required)
+			\item orderId: string (Required)
+		\end{itemize}
+	\end{quote}
+\end{itemize}
+
+\subsubsubsection*{Branch Service}
+\begin{itemize}
+	\item readListBranch
+	\begin{quote}
+		GET /api/branch-service/
+	\end{quote}
+
+
+	\item readBranchDetail
+	\begin{quote}
+		GET /api/branch-service/{branchId}
+		\begin{itemize}
+			\item branchId: string (Required)
+			\end{itemize}
+	\end{quote}
+
+	\item readBranchStatistic
+	\begin{quote}
+		GET /api/branch-service/{branchId}
+		\begin{itemize}
+			\item branchId: string (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item updateBranch
+	\begin{quote}
+		POST /api/branch-service/{branchId}
+		\begin{itemize}
+			\item branchId: string (Required)
+			\item name: string (Required)
+			\item capacity: int (Required)
+			\item address: string (Required)
+			\item open: dateTime (Required)
+			\item close: dateTime (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item updateBranchManager
+	\begin{quote}
+		POST /api/branch-service/manager
+		\begin{itemize}
+			\item branchId: string (Required)
+			\item staffId: string (Required)
+			\end{itemize}
+	\end{quote}
+
+	\item addBranch
+	\begin{quote}
+		POST /api/branch-service/
+		\begin{itemize}
+			\item branchId: string (Required)
+			\item name: string (Required)
+			\item capacity: int (Required)
+			\item address: string (Required)
+			\item open: dateTime (Required)
+			\item close: dateTime (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item deleteBranch
+	\begin{quote}
+		DELETE /api/branch-service/{branchId}
+		\begin{itemize}
+			\item branchId: string (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item readBranchStaff
+	\begin{quote}
+		GET /api/branch-service/staff
+		\begin{itemize}
+			\item branchId: string (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item readBranchStatistic
+	\begin{quote}
+		GET /api/branch-service/statistic
+		\begin{itemize}
+			\item branchId: string (Required)
+			\item time: enum (Required)
+		\end{itemize}
+	\end{quote}
+\end{itemize}
+
+\subsubsubsection*{Account Service}
+\begin{itemize}
+	\item readListAccount
+	\begin{quote}
+		GET /api/account-service/
+	\end{quote}
+
+	\item Authentication
+	\begin{quote}
+		GET /api/account-service/{username}
+		\begin{itemize}
+			\item password: string (Required)
+			\end{itemize}
+	\end{quote}
+
+	\item filterAccount
+	\begin{quote}
+		GET /api/account-service/{keyword}
+	\end{quote}
+
+	\item updateRole
+	\begin{quote}
+		POST /api/account-service/role
+		\begin{itemize}
+			\item username: string (Required)
+			\item role: enum (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item addAccount
+	\begin{quote}
+		POST /api/account-service/add
+		\begin{itemize}
+			\item password: string (Required)
+			\item username: string (Required)
+			\item role: enum (Required)
+		\end{itemize}
+	\end{quote}
+\end{itemize}
+
+\subsubsubsection*{Staff Service}
+\begin{itemize}
+	\item readListStaff
+	\begin{quote}
+		GET /api/staff-service/staff
+	\end{quote}
+
+	\item readDetailStaff
+	\begin{quote}
+		GET /api/staff-service/staff/{staffId}
+	\end{quote}
+
+	\item getAttendanceStaff
+	\begin{quote}
+		GET /api/staff-service/staff/attendance/{staffId}
+	\end{quote}
+
+	\item filterStaff
+	\begin{quote}
+		GET /api/staff-service/staff/{keyword}
+		\begin{itemize}
+			\item branchId: string
+		\end{itemize}
+	\end{quote}
+
+	\item addStaff
+	\begin{quote}
+		POST /api/staff-service/staff
+		\begin{itemize}
+			\item name: string (Required)
+			\item birthDate: date (Required)
+			\item homeTown: string (Required)
+			\item citizenId: string (Required)
+			\item phone: string (Required)
+			\item address: string (Required)
+			\item workingPlace: enum (Required)
+			\item role: enum (Required)
+			\item salary: int (Required)
+			\item username: enum
+			\item password: enum
+		\end{itemize}
+	\end{quote}
+
+	\item updateStaff
+	\begin{quote}
+		POST /api/staff-service/staff/{staffId}
+		\begin{itemize}
+			\item name: string (Required)
+			\item birthDate: date (Required)
+			\item homeTown: string (Required)
+			\item citizenId: string (Required)
+			\item phone: string (Required)
+			\item address: string (Required)
+			\item workingPlace: enum (Required)
+			\item role: enum (Required)
+			\item salary: int (Required)
+			\item username: enum
+			\item password: enum
+		\end{itemize}
+	\end{quote}
+
+	\item deleteStaff
+	\begin{quote}
+		DELETE /api/staff-service/staff/{staffId}
+	\end{quote}
+
+	\item createAddRequest
+	\begin{quote}
+		POST /api/staff-service/request/
+		\begin{itemize}
+			\item name: string (Required)
+			\item birthDate: date (Required)
+			\item homeTown: string (Required)
+			\item citizenId: string (Required)
+			\item phone: string (Required)
+			\item address: string (Required)
+			\item workingPlace: enum (Required)
+			\item role: enum (Required)
+			\item salary: int (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item createDeleteRequest
+	\begin{quote}
+		POST /api/staff-service/request/{staffId}
+	\end{quote}
+
+	\item updateRequestStatus
+	\begin{quote}
+		POST /api/staff-service/request/{requestId}
+		\begin{itemize}
+			\item status: bool (Required)
+		\end{itemize}
+	\end{quote}
+
+\end{itemize}
+
+\subsubsubsection*{Statistic Service}
+\begin{itemize}
+	\item getStatistic
+	\begin{quote}
+		GET /api/statistic-service
+		\begin{itemize}
+			\item branchId: string (Required)
+			\item start: dateTime (Required)
+			\item end: dateTime (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item getRevenue
+	\begin{quote}
+		GET /api/statistic-service/revenue
+		\begin{itemize}
+			\item branchId: string
+			\item gender: enum
+			\item type: enum
+			\item start: dateTime (Required)	
+			\item end: dateTime (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item getRevenue1Goods
+	\begin{quote}
+		GET /api/statistic-service/revenue/{goodsId}
+		\begin{itemize}
+			\item start: dateTime (Required)	
+			\item end: dateTime (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item getProfit
+	\begin{quote}
+		GET /api/statistic-service/profit
+		\begin{itemize}
+			\item branchId: string
+			\item gender: enum
+			\item type: enum
+			\item start: dateTime (Required)	
+			\item end: dateTime (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item getProfit1Goods
+	\begin{quote}
+		GET /api/statistic-service/profit/{goodsId}
+		\begin{itemize}
+			\item start: dateTime (Required)	
+			\item end: dateTime (Required)
+		\end{itemize}
+	\end{quote}
+
+\end{itemize}
+
+
+
+
+
+
 \subsubsection{Shared APIs}
 Module này dùng để chứa các API được xuất ra ngoài cho bất kì đối tượng người dùng nào
 
+\subsubsubsection*{Goods Service}
+\begin{itemize}
+	\item getGoods
+	\begin{quote}
+		GET /api/goods-service/goods{goodsId}
+		\begin{itemize}
+			\item goodsId: string (Required)
+		\end{itemize}
+	\end{quote}
+\end{itemize}
+
+s
 
 
 
@@ -525,14 +1142,6 @@ Phương thức:
 	\item updateAccount(info: AccountModel): Cập nhật thông tin một tài khoản
 \end{itemize}
 
-\subsubsubsection*{AccountModel}
-Thuộc tính:
-\begin{itemize}
-	\item username: Tên đăng nhập tài khoản
-	\item password: Mật khẩu tài khoản
-	\item role: Quyền của tài khoản
-\end{itemize}
-
 \subsubsubsection*{AccountController}
 Thuộc tính:
 \begin{itemize}
@@ -556,7 +1165,6 @@ Thuộc tính:
 	\item message: Thông điệp của phản hồi
 	\item value: Các dữ liệu trả về đối với các yêu cầu HTTP GET
 \end{itemize}
-
 
 
 
@@ -585,47 +1193,6 @@ Phương thức:
 	\item getListAttendance(staffId, month: dateTime): Lấy danh sách điểm danh của nhân viên
 	\item createRequest (type: int, info: StaffModel): Tạo một yêu cầu về thêm, xóa nhân viên
 	\item updateRequestStatus (status: int, requestId: string): Cập nhật trạng thái cùa yêu cầu
-\end{itemize}
-
-\subsubsubsection*{StaffModel}
-Thuộc tính:
-\begin{itemize}
-	\item id: Id của nhân viên
-	\item name: Tên của nhân viên
-	\item requestModel: Chứa đối tượng RequestModel
-	\item street: Tên đường của nhân viên
-	\item ward: Phường của nhân viên
-	\item distric: Quận của nhân viên
-	\item province: Tỉnh của nhân viên
-	\item citizenId: Căn cước của nhân viên
-	\item role: Vị trí của nhân viên
-	\item branchId: Id nơi làm việc của nhân viên
-	\item salary: Mức lương của nhân viên
-	\item startDate: Ngày bắt đầu làm việc của nhân viên
-	\item endDate: Ngày kết thúc làm việc của nhân viên
-	\item gender: Giới tính của nhân viên
-	\item phoneNumber: Số điện thoại của nhân viên
-	\item email: Email của nhân viên
-\end{itemize}
-
-
-\subsubsubsection*{AttendaceModel}
-Thuộc tính:
-\begin{itemize}
-	\item staffId: Id của nhân viên
-	\item date: Ngày làm việc
-	\item start: Thời gian bắt đầu
-	\item end: Thờ gian kết thúc
-\end{itemize}
-
-\subsubsubsection*{RequestModel}
-Thuộc tính:
-\begin{itemize}
-	\item id: Id của yêu cầu
-	\item staffId: Id của nhân viên
-	\item createDate: Ngày tạo
-	\item type: Loại yêu cầu
-	\item status: Trạng thái yêu cầu
 \end{itemize}
 
 \subsubsubsection*{StaffController}
@@ -679,29 +1246,6 @@ Phương thức:
 	\item updateBranch(info: BranchModel): Cập nhật thông tin một chi nhánh
 	\item deleteBranch(id: string): Xóa một chi nhánh
 	\item getListStaff(BranchId: string): Lấy danh sách nhân viên của chi nhánh
-\end{itemize}
-
-\subsubsubsection*{BranchModel}
-Thuộc tính:
-\begin{itemize}
-	\item id: Id của chi nhánh
-	\item name: Tên của chi nhánh
-	\item street: Tên đường của chi nhánh
-	\item ward: Phường của chi nhánh
-	\item distric: Quận của chi nhánh
-	\item province: Tỉnh của chi nhánh
-	\item createdDate: Ngày tạo chi nhánh
-	\item managerId: Id của người quản lý
-	\item image: Các hình ảnh của chi nhánh
-\end{itemize}
-
-\subsubsubsection*{StaffModel}
-Thuộc tính:
-\begin{itemize}
-	\item id: Id của nhân viên
-	\item branchId: Id của chi nhánh làm việc
-	\item startDate: Thời gian bắt đầu làm việc tại chi nhánh
-	\item endDate: Thời gian kết thúc làm việc tại chi nhánh
 \end{itemize}
 
 \subsubsubsection*{BranchController}
@@ -806,30 +1350,6 @@ Phương thức:
 	\item addGoods(goods: GoodModel): Cập nhật thông tin hàng vào Database
 	\item getStatisticalByType(filter: FilterModel, start:date,
 	end:date): Lấy thông tin thống kê các sản phẩm theo bộ lọc
-\end{itemize}
-
-\subsubsubsection*{GoodModel}
-Thuộc tính:
-\begin{itemize}
-	\item goodId: Id của mặt hàng
-	\item size: Kích thước của hàng
-	\item color: Màu sắc của mặt hàng
-	\item type: Loại của mặt hàng
-	\item gender: Giới tính của mặt hàng
-	\item count: Số lượng đã bán của mặt hàng
-	\item price: Giá của mặt hàng
-	\item cost: Chi phí nhập của mặt hàng
-	\item orderId: Mã đơn chứa mặt hàng
-	\item date: Ngày tạo đơn
-	\item branchId: Mã chi nhánh tạo đơn
-\end{itemize}
-
-\subsubsubsection*{FilterModel}
-Thuộc tính:
-\begin{itemize}
-	\item branchIds: Id của chi nhánh cần lọc
-	\item gender: Giới tính hàng cần lọc
-	\item type: Loại của mặt hàng cần lọc
 \end{itemize}
 
 \subsubsubsection*{StatisticController}
