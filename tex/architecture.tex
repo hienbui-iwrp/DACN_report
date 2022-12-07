@@ -2,8 +2,27 @@
 
 \section{Kiến trúc hệ thống}
 \subsection{Tổng quan}
-<<<<<<< HEAD
-=======
+
+Để chọn lựa kiến trục phù hợp với hế thống, chúng ta xem xét ưu điểm và nhược điểm của từng loại kiến trúc.\\
+
+\begin{table}
+	\begin{tabular}{|p{3cm}|p{12cm}|}
+		\hline
+		\textbf{Tên kiến trúc} & Layer\\
+		\hline
+		\textbf{Mô tả}         & Kiến trúc được xây dựng thành nhiều lớp, các thành phần trong cùng một lớp có cùng nhiệm vụ với nhau; mỗi lớp sẽ cung cấp dịch vụ cho tầng trên của nó       \\
+		\hline
+		\textbf{Ưu điểm}       & Có bản chất là hệ thống nguyên khối nên đơn giản, dễ xây dựng, chi phí thấp khi xây dựng bảo trì đồng thời có thể tăng tính tin cậy dựa vào số lượng các lớp \\
+		\hline
+		\textbf{Nhược điểm}    & Khả năng co giản, mở rộng thấp; hiệu xuất thấp vì không thể xử lý các tác vụ song song; dễ gặp lỗi khi triển khai vì phải thực hiện triển khai nguyên khối   \\
+		\hline
+		\textbf{Sử dụng cho}   & Sử dụng trong các hệ thống nhỏ, không yêu cầu hiệu năng cao; các hệ thống được xây dựng trên một hệ thống có sẵn trước đó                                    \\
+		\hline
+	\end{tabular}
+	\caption{Kiến trúc Layer}
+\end{table}
+
+
 \begin{figure}[!htp]
 	\centering
 	\includegraphics[width=6in]{img/Architecture/general-architect.png}
@@ -17,13 +36,11 @@ Hệ thống được xây dựng dữa trên kiến Microservice và được c
 	\item Tầng BPEL: Tầng xây dựng quy trình BPEL, điều phối các quy trình nghiệp vụ trong hệ thống
 	\item Tầng API Gateway: Tầng xuất các Api từ các dịch vụ web đưa đến quy trình BPEL
 	\item Tầng BFF: Đóng vai trò trong việc kiểm tra các hoạt động trung gian khi nhận yêu cầu từ phía người dùng
-	\item Tầng Web Service: Bao gồm các dịch vụ Web 
+	\item Tầng Web Service: Bao gồm các dịch vụ Web
 \end{itemize}
 
 
 \subsection{Tầng User Interface}
-
-
 \subsubsection{CustomerUI}
 Module này bao gồm các class dùng để hiển thị UI đối với phía khách hàng
 \begin{figure}[!htp]
@@ -34,130 +51,130 @@ Module này bao gồm các class dùng để hiển thị UI đối với phía 
 \end{figure}
 \textbf{Mô tả:}
 \begin{quote}
-	
-	\subsubsubsection*{CustomerUI} 
-	 	Giao diện chính của khách hàng khi truy cập vào trang web của hệ thống.
-		\begin{itemize}
-			\item render(): Hiển thị lên màn hình của khách hàng.
-		\end{itemize}
-		\subsubsubsection*{NavBar} 
-		Thành phần luôn có của giao diện của khách hàng hiển thị các lựa chọn truy cập nhanh cho khách hàng.
-		\begin{itemize}
-			\item render(): Hiển thị lên màn hình của khách hàng.
-			\item hoverItem(): Hiển thị lên màn hình giao diện các lựa chọn khi người dùng rê chuột đến các thể loại ở thanh navbar.
-			\item selectItem(): Hiển thị lên màn hình giao diện tương ứng với lựa chọn của khách hàng trên thanh navbar.
-		\end{itemize}
-		\subsubsubsection*{Header} 
-		Thành phần luôn có của giao diện của khách hàng hiển thị các thông tin về tài khoản của khách hàng cũng như logo và chức năng tìm kiếm cho khách hàng.
-		\begin{itemize}
-			\item render(): Hiển thị lên màn hình của khách hàng.
-			\item showHome(): Hiển thị về trang chủ mặc định của hệ thống.
-			\item showCustomerOrder(): Hiển thị lên màn hình danh sách đơn hàng của khách hàng khi đã đăng nhập.
-			\item showCart(): Hiển thị lên màn hình thông tin giỏ hàng của khách hàng khi đã đăng nhập.
-			\item showLogin(): Hiển thị lên màn hình trang đăng nhập cho khách hàng khi chưa đăng nhập.
-			\item showCustomerInfo(): Hiển thị lên màn hình thông tin chi tiết tài khoản của khách hàng khi đã đăng nhập.
-			\item showProductByName(): Hiển thị lên màn hình danh sách các sản phẩm khi người dùng chọn tìm kiếm.
-		\end{itemize}
-		\subsubsubsection*{Footer} 
-		Thành phần luôn có của giao diện của khách hàng hiển thị các thông tin về hệ thống.
-		\begin{itemize}
-			\item render(): Hiển thị lên màn hình của khách hàng.
-			\item showHome(): Hiển thị về trang chủ mặc định của hệ thống.
-			\item showProduct(): Hiển thị lên màn hình danh sách tất cả sản phẩm của hệ thống.
-			\item showInstructionSize(): Hiển thị lên màn hình thông tin hướng dẫn chọn size.
-			\item showCustomerOrder(): Hiển thị lên màn hình trang danh sách các đơn hàng của khách hàng khi đã đăng nhập.
-			\item showIntroduction(): Hiển thị lên màn hình trang giới thiệu về hệ thống cửa hàng.
-		\end{itemize}
-		\subsubsubsection*{Home} 
-		Màn hình mặc định của người dùng sau khi truy cập vào trang web của hệ thống.
-		\begin{itemize}
-			\item render(): Hiển thị lên màn hình của khách hàng.
-			\item renderEvent(): Hiển thị thông tin các sự kiện đang diễn ra.
-			\item renderListTypeProduct(): Hiển thị danh sách các sản phẩm nổi bật theo từng thể loại.
-		\end{itemize}
-		\subsubsubsection*{ListProduct} 
-		Màn hình hiển thị danh sách tất cả sản phẩm của hệ thống cho khách hàng.
-		\begin{itemize}
-			\item render(): Hiển thị lên màn hình của khách hàng.
-			\item renderFollowType(): Hiển thị danh sách sản phẩm theo đặc điểm và thể loại.
-			\item renderListProduct(): Hiển thị danh sách các sản phẩm.
-		\end{itemize}
-		\subsubsubsection*{ProductDetail} Màn hình hiển thị danh sách tất cả sản phẩm của hệ thống cho khách hàng.
-		\begin{itemize}
-			\item render(): Hiển thị lên màn hình của khách hàng.
-			\item showInstructionSize(): Hiển thị lên màn hình thông tin hướng dẫn chọn size.
-			\item renderImageProduct(): Hiển thị hình ảnh sản phẩm mà khách hàng chọn.
-			\item changeQuantity(): Thay đổi số lượng sản phẩm để thêm vào giỏ hàng.
-		\end{itemize}
-		\subsubsubsection*{Cart}
-		Màn hình hiển thị thông tin giỏ hàng của khách hàng.
-		\begin{itemize}
-			\item render(): Hiển thị lên màn hình của khách hàng.
-			\item renderListProduct(): Hiển thị danh sách sản phẩm có trong giỏ hàng.
-			\item showProductDetail(): Chuyển đến trang thông tin chi tiết của sản phẩm.
-			\item changeQuantity(): Thay đổi số lượng sản phẩm trong giỏ hàng.
-			\item renderTotalPrice(): Hiển thị tổng giá tiền của các sản phẩm được chọn trong giỏ hàng.
-		\end{itemize}
-		\subsubsubsection*{Payment} 
-		Màn hình hiển thị trang thanh toán cho khách hàng.
-		\begin{itemize}
-			\item render(): Hiển thị lên màn hình của khách hàng.
-			\item renderOrder(): Hiển thị đơn hàng.
-			\item renderTotalCost(): Hiển thị toán bộ chi phí đơn hàng.
-			\item renderAddress(): Hiển thị địa chỉ đơn hàng.
-			\item renderShipFee(): Hiển thị giá tiền vận chuyển đơn hàng.
-			\item ShowPaymentOnline(): Hiển thị màn hình thanh toán online.
-		\end{itemize}
-		\subsubsubsection*{ Manager Order}
-		Màn hình hiển thị danh sách các đơn hàng của khách hàng.
-		\begin{itemize}
-			\item render(): Hiển thị lên màn hình của khách hàng.
-			\item renderListOrder(): Hiển thị danh sách đơn hàng.
-			\item showOrderDetail(): Hiển thị thông tin chi tiết của đơn hàng.
-		\end{itemize}
-		\subsubsubsection*{Order Detail}
-		Màn hình hiển thị thông tin chi tiết đơn hàng của khách hàng.
-		\begin{itemize}
-			\item render(): Hiển thị lên màn hình của khách hàng.
-			\item renderStatus(): Hiển thị trạng thái của đơn hàng.
-			\item renderListTransport(): Hiển thị danh sách thông tin quá trình vận chuyển.
-			\item renderListProduct(): Hiển thị danh sách sản phẩm có trong đơn hàng.
-			\item renderCost(): Hiển thị danh sách các khoản chi phí của đơn hàng.
-		\end{itemize}
-		\subsubsubsection*{Forgot Password}
-		Màn hình hiển thị trang tạo lại mật khẩu cho tài khoản của khách hàng.
-		\begin{itemize}
-			\item render(): Hiển thị lên màn hình của khách hàng.
-			\item showPassword(): Hiển thị mật khẩu khỏi trạng thái bị ẩn.
-			\item confirmAccount(): Xác nhận tài khoản muốn đổi mật khẩu.
-			\item renderConfirmOtp(): Hiển thị màn hình xác nhận mã OTP.
-			\item confirmOtp(): Gửi xác nhận mã OTP.
-			\item showUpdatePassword(): Hiển thị trang cập nhật mật khẩu mới cho tài khoản.
-			\item validateConfirmPassword(): Kiểm tra thông tin nhập lại mật khẩu của khách hàng.
-			\item updatePassword(): Gửi thông tin cập nhật mật khẩu mới cho tài khoản.
-		\end{itemize}
-		\subsubsubsection*{Register} 
-		Màn hình hiển thị trang đăng ký tài khoản cho khách hàng.
-		\begin{itemize}
-			\item render(): Hiển thị lên màn hình của khách hàng.
-			\item showPassword(): Hiển thị mật khẩu khỏi trạng thái bị ẩn.
-			\item register(): gửi thông tin xác nhận.
-			\item renderConfirmOtp(): Hiển thị màn hình xác nhận mã OTP.
-			\item confirmOtp(): Gửi xác nhận mã OTP.
-			\item validateConfirmPassword(): Kiểm tra thông tin nhập lại mật khẩu của khách hàng.
-		\end{itemize}
-		\subsubsubsection*{Customer Info}
-		Màn hình hiển thị trang thông tin chi tiết tài khoản của khách hàng.
-		\begin{itemize}
-			\item render(): Hiển thị lên màn hình của khách hàng.
-			\item renderInfo(): Hiển thị thông tin chung của khách hàng.
-			\item renderAddress(): Hiển thị thông tin địa chỉ các khách hàng.
-			\item saveEdit(): gửi đi thông tin tài khoản đã chỉnh sửa.
-			\item showChangePassword(): hiển thị màn hình đổi mật khẩu.
-			\item changePassword(): gửi thông tin đổi mật khẩu của tài khoản.
-			\item validateConfirmPassword(): Kiểm tra thông tin nhập lại mật khẩu của khách hàng.
-		\end{itemize}
-	
+
+	\subsubsubsection*{CustomerUI}
+	Giao diện chính của khách hàng khi truy cập vào trang web của hệ thống.
+	\begin{itemize}
+		\item render(): Hiển thị lên màn hình của khách hàng.
+	\end{itemize}
+	\subsubsubsection*{NavBar}
+	Thành phần luôn có của giao diện của khách hàng hiển thị các lựa chọn truy cập nhanh cho khách hàng.
+	\begin{itemize}
+		\item render(): Hiển thị lên màn hình của khách hàng.
+		\item hoverItem(): Hiển thị lên màn hình giao diện các lựa chọn khi người dùng rê chuột đến các thể loại ở thanh navbar.
+		\item selectItem(): Hiển thị lên màn hình giao diện tương ứng với lựa chọn của khách hàng trên thanh navbar.
+	\end{itemize}
+	\subsubsubsection*{Header}
+	Thành phần luôn có của giao diện của khách hàng hiển thị các thông tin về tài khoản của khách hàng cũng như logo và chức năng tìm kiếm cho khách hàng.
+	\begin{itemize}
+		\item render(): Hiển thị lên màn hình của khách hàng.
+		\item showHome(): Hiển thị về trang chủ mặc định của hệ thống.
+		\item showCustomerOrder(): Hiển thị lên màn hình danh sách đơn hàng của khách hàng khi đã đăng nhập.
+		\item showCart(): Hiển thị lên màn hình thông tin giỏ hàng của khách hàng khi đã đăng nhập.
+		\item showLogin(): Hiển thị lên màn hình trang đăng nhập cho khách hàng khi chưa đăng nhập.
+		\item showCustomerInfo(): Hiển thị lên màn hình thông tin chi tiết tài khoản của khách hàng khi đã đăng nhập.
+		\item showProductByName(): Hiển thị lên màn hình danh sách các sản phẩm khi người dùng chọn tìm kiếm.
+	\end{itemize}
+	\subsubsubsection*{Footer}
+	Thành phần luôn có của giao diện của khách hàng hiển thị các thông tin về hệ thống.
+	\begin{itemize}
+		\item render(): Hiển thị lên màn hình của khách hàng.
+		\item showHome(): Hiển thị về trang chủ mặc định của hệ thống.
+		\item showProduct(): Hiển thị lên màn hình danh sách tất cả sản phẩm của hệ thống.
+		\item showInstructionSize(): Hiển thị lên màn hình thông tin hướng dẫn chọn size.
+		\item showCustomerOrder(): Hiển thị lên màn hình trang danh sách các đơn hàng của khách hàng khi đã đăng nhập.
+		\item showIntroduction(): Hiển thị lên màn hình trang giới thiệu về hệ thống cửa hàng.
+	\end{itemize}
+	\subsubsubsection*{Home}
+	Màn hình mặc định của người dùng sau khi truy cập vào trang web của hệ thống.
+	\begin{itemize}
+		\item render(): Hiển thị lên màn hình của khách hàng.
+		\item renderEvent(): Hiển thị thông tin các sự kiện đang diễn ra.
+		\item renderListTypeProduct(): Hiển thị danh sách các sản phẩm nổi bật theo từng thể loại.
+	\end{itemize}
+	\subsubsubsection*{ListProduct}
+	Màn hình hiển thị danh sách tất cả sản phẩm của hệ thống cho khách hàng.
+	\begin{itemize}
+		\item render(): Hiển thị lên màn hình của khách hàng.
+		\item renderFollowType(): Hiển thị danh sách sản phẩm theo đặc điểm và thể loại.
+		\item renderListProduct(): Hiển thị danh sách các sản phẩm.
+	\end{itemize}
+	\subsubsubsection*{ProductDetail} Màn hình hiển thị danh sách tất cả sản phẩm của hệ thống cho khách hàng.
+	\begin{itemize}
+		\item render(): Hiển thị lên màn hình của khách hàng.
+		\item showInstructionSize(): Hiển thị lên màn hình thông tin hướng dẫn chọn size.
+		\item renderImageProduct(): Hiển thị hình ảnh sản phẩm mà khách hàng chọn.
+		\item changeQuantity(): Thay đổi số lượng sản phẩm để thêm vào giỏ hàng.
+	\end{itemize}
+	\subsubsubsection*{Cart}
+	Màn hình hiển thị thông tin giỏ hàng của khách hàng.
+	\begin{itemize}
+		\item render(): Hiển thị lên màn hình của khách hàng.
+		\item renderListProduct(): Hiển thị danh sách sản phẩm có trong giỏ hàng.
+		\item showProductDetail(): Chuyển đến trang thông tin chi tiết của sản phẩm.
+		\item changeQuantity(): Thay đổi số lượng sản phẩm trong giỏ hàng.
+		\item renderTotalPrice(): Hiển thị tổng giá tiền của các sản phẩm được chọn trong giỏ hàng.
+	\end{itemize}
+	\subsubsubsection*{Payment}
+	Màn hình hiển thị trang thanh toán cho khách hàng.
+	\begin{itemize}
+		\item render(): Hiển thị lên màn hình của khách hàng.
+		\item renderOrder(): Hiển thị đơn hàng.
+		\item renderTotalCost(): Hiển thị toán bộ chi phí đơn hàng.
+		\item renderAddress(): Hiển thị địa chỉ đơn hàng.
+		\item renderShipFee(): Hiển thị giá tiền vận chuyển đơn hàng.
+		\item ShowPaymentOnline(): Hiển thị màn hình thanh toán online.
+	\end{itemize}
+	\subsubsubsection*{ Manager Order}
+	Màn hình hiển thị danh sách các đơn hàng của khách hàng.
+	\begin{itemize}
+		\item render(): Hiển thị lên màn hình của khách hàng.
+		\item renderListOrder(): Hiển thị danh sách đơn hàng.
+		\item showOrderDetail(): Hiển thị thông tin chi tiết của đơn hàng.
+	\end{itemize}
+	\subsubsubsection*{Order Detail}
+	Màn hình hiển thị thông tin chi tiết đơn hàng của khách hàng.
+	\begin{itemize}
+		\item render(): Hiển thị lên màn hình của khách hàng.
+		\item renderStatus(): Hiển thị trạng thái của đơn hàng.
+		\item renderListTransport(): Hiển thị danh sách thông tin quá trình vận chuyển.
+		\item renderListProduct(): Hiển thị danh sách sản phẩm có trong đơn hàng.
+		\item renderCost(): Hiển thị danh sách các khoản chi phí của đơn hàng.
+	\end{itemize}
+	\subsubsubsection*{Forgot Password}
+	Màn hình hiển thị trang tạo lại mật khẩu cho tài khoản của khách hàng.
+	\begin{itemize}
+		\item render(): Hiển thị lên màn hình của khách hàng.
+		\item showPassword(): Hiển thị mật khẩu khỏi trạng thái bị ẩn.
+		\item confirmAccount(): Xác nhận tài khoản muốn đổi mật khẩu.
+		\item renderConfirmOtp(): Hiển thị màn hình xác nhận mã OTP.
+		\item confirmOtp(): Gửi xác nhận mã OTP.
+		\item showUpdatePassword(): Hiển thị trang cập nhật mật khẩu mới cho tài khoản.
+		\item validateConfirmPassword(): Kiểm tra thông tin nhập lại mật khẩu của khách hàng.
+		\item updatePassword(): Gửi thông tin cập nhật mật khẩu mới cho tài khoản.
+	\end{itemize}
+	\subsubsubsection*{Register}
+	Màn hình hiển thị trang đăng ký tài khoản cho khách hàng.
+	\begin{itemize}
+		\item render(): Hiển thị lên màn hình của khách hàng.
+		\item showPassword(): Hiển thị mật khẩu khỏi trạng thái bị ẩn.
+		\item register(): gửi thông tin xác nhận.
+		\item renderConfirmOtp(): Hiển thị màn hình xác nhận mã OTP.
+		\item confirmOtp(): Gửi xác nhận mã OTP.
+		\item validateConfirmPassword(): Kiểm tra thông tin nhập lại mật khẩu của khách hàng.
+	\end{itemize}
+	\subsubsubsection*{Customer Info}
+	Màn hình hiển thị trang thông tin chi tiết tài khoản của khách hàng.
+	\begin{itemize}
+		\item render(): Hiển thị lên màn hình của khách hàng.
+		\item renderInfo(): Hiển thị thông tin chung của khách hàng.
+		\item renderAddress(): Hiển thị thông tin địa chỉ các khách hàng.
+		\item saveEdit(): gửi đi thông tin tài khoản đã chỉnh sửa.
+		\item showChangePassword(): hiển thị màn hình đổi mật khẩu.
+		\item changePassword(): gửi thông tin đổi mật khẩu của tài khoản.
+		\item validateConfirmPassword(): Kiểm tra thông tin nhập lại mật khẩu của khách hàng.
+	\end{itemize}
+
 \end{quote}
 
 \subsubsection{LoginUI}
@@ -191,7 +208,7 @@ Phương thức:
 \end{itemize}
 
 \subsubsubsection*{Branch}
-Màn hình quản lý chi nhánh\\ 
+Màn hình quản lý chi nhánh\\
 Phương thức:
 \begin{itemize}
 	\item showAddForm(): Hiển thị biểu mẫu thêm mới
@@ -201,17 +218,17 @@ Phương thức:
 \end{itemize}
 
 \subsubsubsection*{BranchDetail}
-Màn hình hiển thị thông tin chi tiết chi nhánh\\ 
+Màn hình hiển thị thông tin chi tiết chi nhánh\\
 Phương thức:
 \begin{itemize}
 	\item showEditForm(branchId: string): Hiển thị biểu mẫu chỉnh sửa
 	\item updateBranch(branchId: string, info: BranchModel): Cập nhật thông tin chi nhánh
 	\item deleteBranch(branchId: string): Xóa chi nhánh
-	\item showChart(branchId: string, time: enum): Hiển thị biểu đồ kinh doanh 
+	\item showChart(branchId: string, time: enum): Hiển thị biểu đồ kinh doanh
 \end{itemize}
 
 \subsubsubsection*{Staff}
-Màn hình quản lý nhân viên\\ 
+Màn hình quản lý nhân viên\\
 Phương thức:
 \begin{itemize}
 	\item showAddForm(): Hiển thị biểu mẫu thêm mới
@@ -223,7 +240,7 @@ Phương thức:
 \end{itemize}
 
 \subsubsubsection*{StaffRequest}
-Màn hình quản lý yêu cầu thêm, xóa nhân viên\\ 
+Màn hình quản lý yêu cầu thêm, xóa nhân viên\\
 Phương thức:
 \begin{itemize}
 	\item acceptRequest(requestId: string): Xác nhận yêu cầu
@@ -233,7 +250,7 @@ Phương thức:
 
 
 \subsubsubsection*{StaffDetail}
-Màn hình hiển thị thông tin chi tiết nhân viên\\ 
+Màn hình hiển thị thông tin chi tiết nhân viên\\
 Phương thức:
 \begin{itemize}
 	\item showEditForm(staffId: string): Hiển thị biểu mẫu chỉnh sửa
@@ -242,7 +259,7 @@ Phương thức:
 \end{itemize}
 
 \subsubsubsection*{Account}
-Màn hình quản lý tài khoản\\ 
+Màn hình quản lý tài khoản\\
 Phương thức:
 \begin{itemize}
 	\item searchAccount(keyword: string): Tìm kiếm tài khoản theo từ khóa
@@ -250,22 +267,22 @@ Phương thức:
 
 
 \subsubsubsection*{AccountDetail}
-Màn hình hiển thị thông tin chi tiết tài khoản\\ 
+Màn hình hiển thị thông tin chi tiết tài khoản\\
 Phương thức:
 \begin{itemize}
 	\item showOrder(month: date): Hiển thị danh sách đơn hàng
-	\item showOrderDetail(orderId: string): Hiển thị biểu mẫu chi tiết đơn hàng  
+	\item showOrderDetail(orderId: string): Hiển thị biểu mẫu chi tiết đơn hàng
 \end{itemize}
 
 \subsubsubsection*{Event}
-Màn hình quản lý sự kiện\\ 
+Màn hình quản lý sự kiện\\
 Phương thức:
 \begin{itemize}
 	\item addEvent(): Thêm một sự kiện mới
 \end{itemize}
 
 \subsubsubsection*{EventDetail}
-Màn hình hiển thị thông tin chi tiết sự kiện\\ 
+Màn hình hiển thị thông tin chi tiết sự kiện\\
 Phương thức:
 \begin{itemize}
 	\item showListGood(): Hiển thị danh sách tất cả hàng
@@ -274,7 +291,7 @@ Phương thức:
 \end{itemize}
 
 \subsubsubsection*{Goods}
-Màn hình quản lý hàng hóa\\ 
+Màn hình quản lý hàng hóa\\
 Phương thức:
 \begin{itemize}
 	\item searchGoods(keyword: string): Tìm kiếm hàng theo từ khóa
@@ -282,7 +299,7 @@ Phương thức:
 \end{itemize}
 
 \subsubsubsection*{GoodsDetail}
-Màn hình hiển thị thông tin chi tiết hàng hóa\\ 
+Màn hình hiển thị thông tin chi tiết hàng hóa\\
 Phương thức:
 \begin{itemize}
 	\item updateImage(goodsId: string, image: list<string>): Cập nhật hình ảnh sản phẩm
@@ -290,14 +307,14 @@ Phương thức:
 \end{itemize}
 
 \subsubsubsection*{GoodsEdit}
-Màn hình hiển thị biểu mẫu vận chuyển hàng hóa\\ 
+Màn hình hiển thị biểu mẫu vận chuyển hàng hóa\\
 Phương thức:
 \begin{itemize}
 	\item updateGoods(info: GoodsModel): Cập nhật thông tin sản phẩm
 \end{itemize}
 
 \subsubsubsection*{OrderOffline}
-Màn hình quản lý các đơn hàng trực tiếp\\ 
+Màn hình quản lý các đơn hàng trực tiếp\\
 Phương thức:
 \begin{itemize}
 	\item filter(branchId: string, start: date, end: date): Tìm kiếm đơn hàng theo thời gian, chi nhánh
@@ -305,7 +322,7 @@ Phương thức:
 \end{itemize}
 
 \subsubsubsection*{OrderOnline}
-Màn hình quản lý các đơn hàng trực tuyến\\ 
+Màn hình quản lý các đơn hàng trực tuyến\\
 Phương thức:
 \begin{itemize}
 	\item filter(start: date, end: date): Tìm kiếm đơn hàng theo thời gian
@@ -321,165 +338,165 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía khá
 \subsubsubsection*{Customer Service}
 \begin{itemize}
 	\item getCustomerInfo
-	\begin{quote}
-		GET: /api/customer-service/customer/{customerId}
-		\begin{itemize}
-			\item username: string (Required)
-		\end{itemize}
-	\end{quote}
+	      \begin{quote}
+		      GET: /api/customer-service/customer/{customerId}
+		      \begin{itemize}
+			      \item username: string (Required)
+		      \end{itemize}
+	      \end{quote}
 
 	\item updateCustomerInfo
-	\begin{quote}
-		PUT /api/customer-service/customer/{customerid}
-		\begin{itemize}
-			\item customer: CustomerModel (Required)
-		\end{itemize}
-	\end{quote}
+	      \begin{quote}
+		      PUT /api/customer-service/customer/{customerid}
+		      \begin{itemize}
+			      \item customer: CustomerModel (Required)
+		      \end{itemize}
+	      \end{quote}
 
 	\item addCustomerInfo
-	\begin{quote}
-		POST /api/customer-service/customer
-		\begin{itemize}
-			\item customer: CustomerModel (Required)
-		\end{itemize}
-	\end{quote}
+	      \begin{quote}
+		      POST /api/customer-service/customer
+		      \begin{itemize}
+			      \item customer: CustomerModel (Required)
+		      \end{itemize}
+	      \end{quote}
 \end{itemize}
 
 \subsubsubsection*{Cart Service}
 \begin{itemize}
 	\item addCart
-	\begin{quote}
-		POST /api/cart-service/cart
-		\begin{itemize}
-			\item customerId: string (Required)
-		\end{itemize}
-	\end{quote}
+	      \begin{quote}
+		      POST /api/cart-service/cart
+		      \begin{itemize}
+			      \item customerId: string (Required)
+		      \end{itemize}
+	      \end{quote}
 
 	\item getCart
-	\begin{quote}
-		POST /api/cart-service/cart/{customerId}
-		\begin{itemize}
-			\item customerId: string (Required)
-		\end{itemize}
-	\end{quote}
+	      \begin{quote}
+		      POST /api/cart-service/cart/{customerId}
+		      \begin{itemize}
+			      \item customerId: string (Required)
+		      \end{itemize}
+	      \end{quote}
 
 	\item addProductToCart
-	\begin{quote}
-		POST /api/cart-service/cart/{customerId}
-		\begin{itemize}
-			\item cartId: string (Required)
-			\item product: GoodInCartModel (Required)
-		\end{itemize}
-	\end{quote}
+	      \begin{quote}
+		      POST /api/cart-service/cart/{customerId}
+		      \begin{itemize}
+			      \item cartId: string (Required)
+			      \item product: GoodInCartModel (Required)
+		      \end{itemize}
+	      \end{quote}
 
 	\item removeProductToCart
-	\begin{quote}
-		DELETE /api/cart-service/cart/{cartId}
-		\begin{itemize}
-			\item cartId: string (Required)
-			\item product: Good (Required)
-		\end{itemize}
-	\end{quote}
+	      \begin{quote}
+		      DELETE /api/cart-service/cart/{cartId}
+		      \begin{itemize}
+			      \item cartId: string (Required)
+			      \item product: Good (Required)
+		      \end{itemize}
+	      \end{quote}
 
 	\item removeAllProductInCart
-	\begin{quote}
-		DELETE /api/cart-service/cart/all/{cartId}
-		\begin{itemize}
-			\item cartId: string (Required)
-		\end{itemize}
-	\end{quote}
+	      \begin{quote}
+		      DELETE /api/cart-service/cart/all/{cartId}
+		      \begin{itemize}
+			      \item cartId: string (Required)
+		      \end{itemize}
+	      \end{quote}
 
 	\item UpdateCart
-	\begin{quote}
-		PUT /api/cart-service/cart/{cartId}
-		\begin{itemize}
-			\item cartId: string (Required)
-			\item product: GoodInCartModel (Required)
-		\end{itemize}
-	\end{quote}
+	      \begin{quote}
+		      PUT /api/cart-service/cart/{cartId}
+		      \begin{itemize}
+			      \item cartId: string (Required)
+			      \item product: GoodInCartModel (Required)
+		      \end{itemize}
+	      \end{quote}
 \end{itemize}
 
 \subsubsubsection*{Make Order Service}
 \begin{itemize}
 	\item getListOrder
-	\begin{quote}
-		GET /api/order-service/orders/{customerId}
-		\begin{itemize}
-			\item customerId: string (Required)
-		\end{itemize}
-	\end{quote}
+	      \begin{quote}
+		      GET /api/order-service/orders/{customerId}
+		      \begin{itemize}
+			      \item customerId: string (Required)
+		      \end{itemize}
+	      \end{quote}
 
 	\item getOrderDetail
-	\begin{quote}
-		GET /api/order-service/order-detail
-		\begin{itemize}
-			\item customerId: string (Required)
-			\item orderId: string (Required)
-		\end{itemize}
-	\end{quote}
+	      \begin{quote}
+		      GET /api/order-service/order-detail
+		      \begin{itemize}
+			      \item customerId: string (Required)
+			      \item orderId: string (Required)
+		      \end{itemize}
+	      \end{quote}
 \end{itemize}
 
 \subsubsubsection*{Order Service}
 \begin{itemize}
 	\item readOrder
-	\begin{quote}
-		GET /api/order-service/order/{orderId}
-		\begin{itemize}
-			\item orderId: string (Required)
-		\end{itemize}
-	\end{quote}
+	      \begin{quote}
+		      GET /api/order-service/order/{orderId}
+		      \begin{itemize}
+			      \item orderId: string (Required)
+		      \end{itemize}
+	      \end{quote}
 
 	\item createOrder
-	\begin{quote}
-		POST /api/order-service/order
-		\begin{itemize}
-			\item transactionDate: DateTime (Required)
-			\item totalAmount: int (Required)
-			\item isOnline: bool (Required)
-			\item customerId: string
-			\item shippingFee: float
-			\item storeId: string
-			\item goods: [GoodsInOrder] (Required)
-		\end{itemize}
-	\end{quote}
+	      \begin{quote}
+		      POST /api/order-service/order
+		      \begin{itemize}
+			      \item transactionDate: DateTime (Required)
+			      \item totalAmount: int (Required)
+			      \item isOnline: bool (Required)
+			      \item customerId: string
+			      \item shippingFee: float
+			      \item storeId: string
+			      \item goods: [GoodsInOrder] (Required)
+		      \end{itemize}
+	      \end{quote}
 
 	\item readOnlineOrderStatus
-	\begin{quote}
-		GET /api/order-service/online-order-status/{orderId}
-		\begin{itemize}
-			\item orderId: string (Required)
-		\end{itemize}
-	\end{quote}
+	      \begin{quote}
+		      GET /api/order-service/online-order-status/{orderId}
+		      \begin{itemize}
+			      \item orderId: string (Required)
+		      \end{itemize}
+	      \end{quote}
 
 	\item getOrderDetail
-	\begin{quote}
-		GET /api/order-service/order-detail
-		\begin{itemize}
-			\item customerId: string (Required)
-			\item orderId: string (Required)
-		\end{itemize}
-	\end{quote}
+	      \begin{quote}
+		      GET /api/order-service/order-detail
+		      \begin{itemize}
+			      \item customerId: string (Required)
+			      \item orderId: string (Required)
+		      \end{itemize}
+	      \end{quote}
 \end{itemize}
 
 \subsubsubsection*{Account Service}
 \begin{itemize}
 	\item Authentication
-	\begin{quote}
-		GET /api/account-service/{username}
-		\begin{itemize}
-			\item password: string (Required)
-			\end{itemize}
-	\end{quote}
+	      \begin{quote}
+		      GET /api/account-service/{username}
+		      \begin{itemize}
+			      \item password: string (Required)
+		      \end{itemize}
+	      \end{quote}
 
 	\item addAccount
-	\begin{quote}
-		POST /api/account-service/add
-		\begin{itemize}
-			\item password: string (Required)
-			\item username: string (Required)
-			\item role: enum (Required)
-		\end{itemize}
-	\end{quote}
+	      \begin{quote}
+		      POST /api/account-service/add
+		      \begin{itemize}
+			      \item password: string (Required)
+			      \item username: string (Required)
+			      \item role: enum (Required)
+		      \end{itemize}
+	      \end{quote}
 \end{itemize}
 
 
@@ -492,171 +509,140 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía qu�
 \subsubsubsection*{Event Service}
 \begin{itemize}
 	\item addEvent
-	\begin{quote}
-		POST /api/event-service/event
-		\begin{itemize}
-			\item event: EventModel (Required)
-		\end{itemize}
-	\end{quote}
+	      \begin{quote}
+		      POST /api/event-service/event
+		      \begin{itemize}
+			      \item event: EventModel (Required)
+		      \end{itemize}
+	      \end{quote}
 
 	\item getAllEvent
-	\begin{quote}
-		GET /api/event-service/event
-	\end{quote}
+	      \begin{quote}
+		      GET /api/event-service/event
+	      \end{quote}
 
 	\item removeEvent
-	\begin{quote}
-		DELETE /api/event-service/event/{eventId}
-		\begin{itemize}
-			\item eventId: string (Required)
-		\end{itemize}
-	\end{quote}
+	      \begin{quote}
+		      DELETE /api/event-service/event/{eventId}
+		      \begin{itemize}
+			      \item eventId: string (Required)
+		      \end{itemize}
+	      \end{quote}
 
 	\item UpdateEvent
-	\begin{quote}
-		PUT /api/event-service/event/{eventId}
-		\begin{itemize}
-			\item eventId: string (Required)
-			\item event: EventModel (Required)
-		\end{itemize}
-	\end{quote}
+	      \begin{quote}
+		      PUT /api/event-service/event/{eventId}
+		      \begin{itemize}
+			      \item eventId: string (Required)
+			      \item event: EventModel (Required)
+		      \end{itemize}
+	      \end{quote}
 \end{itemize}
 
 \subsubsubsection*{Warehouse Service}
 \begin{itemize}
 	\item getManager
-	\begin{quote}
-		GET /api/warehouse-service/manager/{warehouseId}
-	\end{quote}
+	      \begin{quote}
+		      GET /api/warehouse-service/manager/{warehouseId}
+	      \end{quote}
 
 	\item updateManager
-	\begin{quote}
-		PUT /api/warehouse-service/manager
-	\end{quote}
+	      \begin{quote}
+		      PUT /api/warehouse-service/manager
+	      \end{quote}
 
 	\item getStaff
-	\begin{quote}
-		GET /api/warehouse-service/staff/{warehouseId}
-	\end{quote}
+	      \begin{quote}
+		      GET /api/warehouse-service/staff/{warehouseId}
+	      \end{quote}
 
 	\item addStaff
-	\begin{quote}
-		POST /api/warehouse-service/staff
-	\end{quote}
+	      \begin{quote}
+		      POST /api/warehouse-service/staff
+	      \end{quote}
 
 	\item updateStaff
-	\begin{quote}
-		PUT /api/warehouse-service/staff
-	\end{quote}
+	      \begin{quote}
+		      PUT /api/warehouse-service/staff
+	      \end{quote}
 
 	\item deleteStaff
-	\begin{quote}
-		DELETE /api/warehouse-service/staff
-	\end{quote}
+	      \begin{quote}
+		      DELETE /api/warehouse-service/staff
+	      \end{quote}
 
 	\item addWarehouse
-	\begin{quote}
-		POST /api/warehouse-service/warehouse
-	\end{quote}
+	      \begin{quote}
+		      POST /api/warehouse-service/warehouse
+	      \end{quote}
 
-	\item getWarehouse	
-	\begin{quote}
-		GET /api/warehouse-service/warehouse/{warehouseId}
-	\end{quote}
+	\item getWarehouse
+	      \begin{quote}
+		      GET /api/warehouse-service/warehouse/{warehouseId}
+	      \end{quote}
 
 	\item updateWarehouse
-	\begin{quote}
-		PUT /api/warehouse-service/warehouse
-	\end{quote}
+	      \begin{quote}
+		      PUT /api/warehouse-service/warehouse
+	      \end{quote}
 
 	\item deleteWarehouse
-	\begin{quote}
-		DELETE /api/warehouse-service/warehouse
-	\end{quote}
+	      \begin{quote}
+		      DELETE /api/warehouse-service/warehouse
+	      \end{quote}
 \end{itemize}
 
 \subsubsubsection*{Goods Service}
 \begin{itemize}
 	\item getGoods
-	\begin{quote}
-		GET /api/goods-service/goods{goodsId}
-		\begin{itemize}
-			\item goodsId: string (Required)
-		\end{itemize}
-	\end{quote}
+	      \begin{quote}
+		      GET /api/goods-service/goods{goodsId}
+		      \begin{itemize}
+			      \item goodsId: string (Required)
+		      \end{itemize}
+	      \end{quote}
 
 	\item updateGoods
-	\begin{quote}
-		PUT /api/goods-service/goods
-	\end{quote}
+	      \begin{quote}
+		      PUT /api/goods-service/goods
+	      \end{quote}
 
 	\item addGoods
-	\begin{quote}
-		POST /api/goods-service/goods
-	\end{quote}
+	      \begin{quote}
+		      POST /api/goods-service/goods
+	      \end{quote}
 
 	\item deleteGoods
-	\begin{quote}
-		DELETE /api/goods-service/goods
-	\end{quote}
+	      \begin{quote}
+		      DELETE /api/goods-service/goods
+	      \end{quote}
 
 	\item createImport
-	\begin{quote}
-		POST /api/goods-service/import
-	\end{quote}
+	      \begin{quote}
+		      POST /api/goods-service/import
+	      \end{quote}
 
 	\item createExport
-	\begin{quote}
-		POST /api/goods-service/export
-	\end{quote}
+	      \begin{quote}
+		      POST /api/goods-service/export
+	      \end{quote}
 
 	\item createWHTransfer
-	\begin{quote}
-		POST /api/goods-service/wh-transfer
-	\end{quote}
+	      \begin{quote}
+		      POST /api/goods-service/wh-transfer
+	      \end{quote}
 
-	\item createReturnManufact	
-	\begin{quote}
-		POST /api/goods-service/return-manufact
-	\end{quote}
+	\item createReturnManufact
+	      \begin{quote}
+		      POST /api/goods-service/return-manufact
+	      \end{quote}
 
 	\item createCustReturn
-	\begin{quote}
-		POST /api/goods-service/cust-return
-	\end{quote}
+	      \begin{quote}
+		      POST /api/goods-service/cust-return
+	      \end{quote}
 \end{itemize}
->>>>>>> 2f5bd7c68702eba0b4ac6c67fb983c36ff130107
 
-Để chọn lựa kiến trục phù hợp với hế thống, chúng ta xem xét ưu điểm và nhược điểm của từng loại kiến trúc.\\
-
-
-\begin{table}
-	\begin{tabular}{|p{3cm}|p{12cm}|}
-		\hline
-		\textbf{Tên kiến trúc} & Layer  \\ 
-		\hline
-		\textbf{Mô tả} & Kiến trúc được xây dựng thành nhiều lớp, các thành phần trong cùng một lớp có cùng nhiệm vụ với nhau; mỗi lớp sẽ cung cấp dịch vụ cho tầng trên của nó  \\ 
-		\hline
-		\textbf{Ưu điểm} & Có bản chất là hệ thống nguyên khối nên đơn giản, dễ xây dựng, chi phí thấp khi xây dựng bảo trì đồng thời có thể tăng tính tin cậy dựa vào số lượng các lớp     \\ 
-		\hline
-		\textbf{Nhược điểm} & Khả năng co giản, mở rộng thấp; hiệu xuất thấp vì không thể xử lý các tác vụ song song; dễ gặp lỗi khi triển khai vì phải thực hiện triển khai nguyên khối   \\ 
-		\hline
-		\textbf{Sử dụng cho} & Sử dụng trong các hệ thống nhỏ, không yêu cầu hiệu năng cao; các hệ thống được xây dựng trên một hệ thống có sẵn trước đó \\ 
-		\hline
-		
-	\end{tabular}
-	\caption{Kiến trúc Layer}
-\end{table}
-
-
-
-
-
-
-<<<<<<< HEAD
-\begin{figure}[!htp]
-	\centering
-	\includegraphics[width=6in]{img/Architecture/general-architect.png}
 =======
 
 \subsubsection{Shared APIs}
@@ -665,12 +651,12 @@ Module này dùng để chứa các API được xuất ra ngoài cho bất kì 
 \subsubsubsection*{Goods Service}
 \begin{itemize}
 	\item getGoods
-	\begin{quote}
-		GET /api/goods-service/goods{goodsId}
-		\begin{itemize}
-			\item goodsId: string (Required)
-		\end{itemize}
-	\end{quote}
+	      \begin{quote}
+		      GET /api/goods-service/goods{goodsId}
+		      \begin{itemize}
+			      \item goodsId: string (Required)
+		      \end{itemize}
+	      \end{quote}
 \end{itemize}
 
 s
@@ -686,10 +672,10 @@ Lược đồ class ở tậng service được xây dựng theo các thành ph�
 	\item Controllers: Class dùng để xử lý các logic nghiệp vụ
 	\item Response: Class chứa thông tin trả về khi có yêu cầu từ bên ngoài
 	\item Các Interface: Giúp đảm bảo nguyên lý \textbf{Dependency inversion principle} của \textbf{SOLID}
-	      \begin {itemize}
-	\item IRepository: Cung cấp các api cho các class Controller
-	\item IController: Cung cấp các api để bên ngoài service truy cập đến
-\end{itemize}
+	\begin {itemize}
+		\item IRepository: Cung cấp các api cho các class Controller
+		\item IController: Cung cấp các api để bên ngoài service truy cập đến
+	\end{itemize}
 \end{itemize}
 
 
@@ -702,42 +688,42 @@ Lược đồ class ở tậng service được xây dựng theo các thành ph�
 	\caption{Lược đồ class của Customer Order Service}
 \end{figure}
 
-	\subsubsubsection*{CustomerOrderRepository}
-	Thuộc tính:
-	\begin{itemize}
-		\item order: Chứa đối tượng Order
-		\item orderDetail: Chứa đối tượng OrderDetail
-	\end{itemize}
-	Phương thức:
-	\begin{itemize}
-		\item readListOrder(customerId: string): Lấy danh sách đơn hàng theo mã khách hàng
-		\item readOrderDetail(customerId: string, orderId: string): Lấy thông tin chi tiết của đơn hàng.
-	\end{itemize}
+\subsubsubsection*{CustomerOrderRepository}
+Thuộc tính:
+\begin{itemize}
+	\item order: Chứa đối tượng Order
+	\item orderDetail: Chứa đối tượng OrderDetail
+\end{itemize}
+Phương thức:
+\begin{itemize}
+	\item readListOrder(customerId: string): Lấy danh sách đơn hàng theo mã khách hàng
+	\item readOrderDetail(customerId: string, orderId: string): Lấy thông tin chi tiết của đơn hàng.
+\end{itemize}
 
-	\subsubsubsection*{CustomerOrderController}
-	Thuộc tính:
-	\begin{itemize}
-		\item repo: Chứa đối tượng CustomerOrderRepository
-	\end{itemize}
-	Phương thức:
-	\begin{itemize}
-		\item makeOrder(listProduct: list<Product>): Tạo đơn hàng
-		\item calcShipFee(address: Address): Tính chi phí giao hàng
-		\item getAddress(customerId: string): Lấy thông tin địa chỉ của tài khoản của khách hàng.
-		\item makePayment(customerId: string): Tạo giao dịch thanh toán.
-		\item addOrder(customerId: string, address: Address, listProduct: list<Product>): Thêm đơn hàng vào cơ sở dữ liệu của hệ thống.
-		\item getListOrder(customerId: string): Lấy danh sách đơn hàng theo mã khách hàng
-		\item getOrderDetail(customerId: string, orderId: string): Lấy thông tin chi tiết của đơn hàng.
-	\end{itemize}
+\subsubsubsection*{CustomerOrderController}
+Thuộc tính:
+\begin{itemize}
+	\item repo: Chứa đối tượng CustomerOrderRepository
+\end{itemize}
+Phương thức:
+\begin{itemize}
+	\item makeOrder(listProduct: list<Product>): Tạo đơn hàng
+	\item calcShipFee(address: Address): Tính chi phí giao hàng
+	\item getAddress(customerId: string): Lấy thông tin địa chỉ của tài khoản của khách hàng.
+	\item makePayment(customerId: string): Tạo giao dịch thanh toán.
+	\item addOrder(customerId: string, address: Address, listProduct: list<Product>): Thêm đơn hàng vào cơ sở dữ liệu của hệ thống.
+	\item getListOrder(customerId: string): Lấy danh sách đơn hàng theo mã khách hàng
+	\item getOrderDetail(customerId: string, orderId: string): Lấy thông tin chi tiết của đơn hàng.
+\end{itemize}
 
-	\subsubsubsection*{MakeOrderResponse - GetAddressResponse - CalcResponse - MakePaymentResponse - AddResponse}
-	Thuộc tính:
-	\begin{itemize}
-		\item statusCode: Mã trạng thái của phản hồi
-		\item message: Thông điệp của phản hồi
-		\item value: Các dữ liệu trả về đối với các yêu cầu
-	\end{itemize}
-	
+\subsubsubsection*{MakeOrderResponse - GetAddressResponse - CalcResponse - MakePaymentResponse - AddResponse}
+Thuộc tính:
+\begin{itemize}
+	\item statusCode: Mã trạng thái của phản hồi
+	\item message: Thông điệp của phản hồi
+	\item value: Các dữ liệu trả về đối với các yêu cầu
+\end{itemize}
+
 
 \subsubsection{Cart Service}
 \begin{figure}[!htp]
@@ -747,44 +733,44 @@ Lược đồ class ở tậng service được xây dựng theo các thành ph�
 	\caption{Lược đồ class của Cart Service}
 \end{figure}
 
-	\subsubsubsection*{CartRepository}
-	Thuộc tính:
-	\begin{itemize}
-		\item goodInCart: Chứa đối tượng GoodInCartModel
-	\end{itemize}
-	Phương thức:
-	\begin{itemize}
-		\item createCart(customerId: string): tạo giỏ hàng cho tài khoản khách hàng
-		\item readCart(customerId: string): Lấy thông tin giỏ hàng thuộc tài khoản của khách hàng.
-		\item createProductToCart(customerId: string, product: GoodInCartModel): Thêm sản phẩm vào giỏ hàng.
-		\item deleteProductInCart(cartId: string, product: Good): Xóa sản phẩm khỏi giỏ hàng.
-		\item deleteAllProductInCart(cartId: string): Xóa toàn bộ sản phẩm khỏi giỏ hàng.
-		\item updateCart(customerId: string, product: GoodInCartModel): Cập nhật thông tin sản phẩm trong giỏ hàng.
-	\end{itemize}
+\subsubsubsection*{CartRepository}
+Thuộc tính:
+\begin{itemize}
+	\item goodInCart: Chứa đối tượng GoodInCartModel
+\end{itemize}
+Phương thức:
+\begin{itemize}
+	\item createCart(customerId: string): tạo giỏ hàng cho tài khoản khách hàng
+	\item readCart(customerId: string): Lấy thông tin giỏ hàng thuộc tài khoản của khách hàng.
+	\item createProductToCart(customerId: string, product: GoodInCartModel): Thêm sản phẩm vào giỏ hàng.
+	\item deleteProductInCart(cartId: string, product: Good): Xóa sản phẩm khỏi giỏ hàng.
+	\item deleteAllProductInCart(cartId: string): Xóa toàn bộ sản phẩm khỏi giỏ hàng.
+	\item updateCart(customerId: string, product: GoodInCartModel): Cập nhật thông tin sản phẩm trong giỏ hàng.
+\end{itemize}
 
-	\subsubsubsection*{CartController}
-	Thuộc tính:
-	\begin{itemize}
-		\item repo: Chứa đối tượng CartRepository
-	\end{itemize}
-	Phương thức:
-	\begin{itemize}
-		\item addCart(customerId: string): Xử lý dữ liệu và gọi thêm giỏ hàng cho tài khoản khách hàng để trả về kết quả.
-		\item getCart(customerId: string): Xử lý dữ liệu và gọi lấy thông tin giỏ hàng thuộc tài khoản của khách hàng để trả về kết quả.
-		\item addProductToCart(customerId: string, product: GoodInCartModel): Xử lý dữ liệu và gọi thêm sản phẩm vào giỏ hàng để trả về kết quả.
-		\item removeProductInCart(cartId: string, product: Good): Xử lý dữ liệu và gọi xóa sản phẩm khỏi giỏ hàng để trả về kết quả.
-		\item removeAllProductInCart(castId: string): Xử lý dữ liệu và gọi xóa toàn bộ sản phẩm khỏi giỏ hàng để trả về kết quả.
-		\item getListProductInfo(cartId: string, listGood: list<GoodInCartModel>): Xử lý dữ liệu và gọi xóa toàn bộ sản phẩm khỏi giỏ hàng để trả về kết quả.
-		\item editCart(cartId: string, product: GoodInCartModel): Xử lý dữ liệu và gọi cập nhật thông tin sản phẩm trong giỏ hàng để trả về kết quả.
-	\end{itemize}
+\subsubsubsection*{CartController}
+Thuộc tính:
+\begin{itemize}
+	\item repo: Chứa đối tượng CartRepository
+\end{itemize}
+Phương thức:
+\begin{itemize}
+	\item addCart(customerId: string): Xử lý dữ liệu và gọi thêm giỏ hàng cho tài khoản khách hàng để trả về kết quả.
+	\item getCart(customerId: string): Xử lý dữ liệu và gọi lấy thông tin giỏ hàng thuộc tài khoản của khách hàng để trả về kết quả.
+	\item addProductToCart(customerId: string, product: GoodInCartModel): Xử lý dữ liệu và gọi thêm sản phẩm vào giỏ hàng để trả về kết quả.
+	\item removeProductInCart(cartId: string, product: Good): Xử lý dữ liệu và gọi xóa sản phẩm khỏi giỏ hàng để trả về kết quả.
+	\item removeAllProductInCart(castId: string): Xử lý dữ liệu và gọi xóa toàn bộ sản phẩm khỏi giỏ hàng để trả về kết quả.
+	\item getListProductInfo(cartId: string, listGood: list<GoodInCartModel>): Xử lý dữ liệu và gọi xóa toàn bộ sản phẩm khỏi giỏ hàng để trả về kết quả.
+	\item editCart(cartId: string, product: GoodInCartModel): Xử lý dữ liệu và gọi cập nhật thông tin sản phẩm trong giỏ hàng để trả về kết quả.
+\end{itemize}
 
-	\subsubsubsection*{GetResponse - AddResponse - UpdateResponse - DeleteResponse}
-	Thuộc tính:
-	\begin{itemize}
-		\item statusCode: Mã trạng thái của phản hồi.
-		\item message: Thông điệp của phản hồi.
-		\item value: Các dữ liệu trả về đối với các yêu cầu.
-	\end{itemize}
+\subsubsubsection*{GetResponse - AddResponse - UpdateResponse - DeleteResponse}
+Thuộc tính:
+\begin{itemize}
+	\item statusCode: Mã trạng thái của phản hồi.
+	\item message: Thông điệp của phản hồi.
+	\item value: Các dữ liệu trả về đối với các yêu cầu.
+\end{itemize}
 
 \subsubsection{Customer Service}
 \begin{figure}[!htp]
@@ -794,37 +780,37 @@ Lược đồ class ở tậng service được xây dựng theo các thành ph�
 	\caption{Lược đồ class của Customer Service}
 \end{figure}
 
-	\subsubsubsection*{CustomerRepository}
-	Thuộc tính:
-	\begin{itemize}
-		\item customerModel: Chứa đối tượng CustomerModel
-	\end{itemize}
-	Phương thức:
-	\begin{itemize}
-		\item createCustomer(customer: CustomerModel): tạo tài khoản khách hàng
-		\item updateCustomer(customer: CustomerModel): cập nhật tài khoản khách hàng
-		\item readCustomerInfo(username: string): lấy thông tin chi tiết của tài khoản khách hàng
-	\end{itemize}
+\subsubsubsection*{CustomerRepository}
+Thuộc tính:
+\begin{itemize}
+	\item customerModel: Chứa đối tượng CustomerModel
+\end{itemize}
+Phương thức:
+\begin{itemize}
+	\item createCustomer(customer: CustomerModel): tạo tài khoản khách hàng
+	\item updateCustomer(customer: CustomerModel): cập nhật tài khoản khách hàng
+	\item readCustomerInfo(username: string): lấy thông tin chi tiết của tài khoản khách hàng
+\end{itemize}
 
-	\subsubsubsection*{CustomerController}
-	Thuộc tính:
-	\begin{itemize}
-		\item repo: Chứa đối tượng CustomerRepository
-	\end{itemize}
-	Phương thức:
-	\begin{itemize}
-		\item createCustomer(customer: CustomerModel): Xử lý dữ liệu và gọi tạo tài khoản khách hàng để trả về kết quả.
-		\item updateCustomer(customer: CustomerModel): Xử lý dữ liệu và gọi cập nhật tài khoản khách hàng để trả về kết quả.
-		\item readCustomerInfo(username: string): Xử lý dữ liệu và gọi lấy thông tin chi tiết của tài khoản khách hàng để trả về kết quả.
-	\end{itemize}
+\subsubsubsection*{CustomerController}
+Thuộc tính:
+\begin{itemize}
+	\item repo: Chứa đối tượng CustomerRepository
+\end{itemize}
+Phương thức:
+\begin{itemize}
+	\item createCustomer(customer: CustomerModel): Xử lý dữ liệu và gọi tạo tài khoản khách hàng để trả về kết quả.
+	\item updateCustomer(customer: CustomerModel): Xử lý dữ liệu và gọi cập nhật tài khoản khách hàng để trả về kết quả.
+	\item readCustomerInfo(username: string): Xử lý dữ liệu và gọi lấy thông tin chi tiết của tài khoản khách hàng để trả về kết quả.
+\end{itemize}
 
-	\subsubsubsection*{GetResponse - AddResponse - UpdateResponse}
-	Thuộc tính:
-	\begin{itemize}
-		\item statusCode: Mã trạng thái của phản hồi
-		\item message: Thông điệp của phản hồi
-		\item value: Các dữ liệu trả về đối với các yêu cầu
-	\end{itemize}
+\subsubsubsection*{GetResponse - AddResponse - UpdateResponse}
+Thuộc tính:
+\begin{itemize}
+	\item statusCode: Mã trạng thái của phản hồi
+	\item message: Thông điệp của phản hồi
+	\item value: Các dữ liệu trả về đối với các yêu cầu
+\end{itemize}
 
 \subsubsection{Order Service}
 \begin{figure}[!htp]
@@ -867,7 +853,7 @@ Phương thức:
 	\item getListAccount(): Lấy danh sách tất cả tài khoản
 	\item searchAccount(keyword: string) : Lấy danh sách tài khoản theo từ khóa
 	\item addAccount(info: accountModel): Tạo một tài khoản mới
-	\item resetPassword(username: string, newPass: string): Tái thiết lập mật khẩu	
+	\item resetPassword(username: string, newPass: string): Tái thiết lập mật khẩu
 	\item updateRole(username: string, role: int): Cập nhật quyền tài khoản
 \end{itemize}
 
@@ -1044,16 +1030,11 @@ Thuộc tính:
 
 \subsubsection{Statistic Service}
 \begin{figure}[!htp]
-	\centering
-	\includegraphics[width=11cm]{img/Architecture/service/StatisticService.png}
->>>>>>> 2f5bd7c68702eba0b4ac6c67fb983c36ff130107
-	\newline
-	\caption{Tổng quan kiến trúc hệ thống}
+\centering
+\includegraphics[width=11cm]{img/Architecture/service/StatisticService.png}
+\newline
+	\caption{Lược đồ class của Statistic Service}
 \end{figure}
-
-<<<<<<< HEAD
-Hệ thống được xây dựng dữa trên kiến trúc Microservice và được chia thành nhiều tầng:
-=======
 \subsubsubsection*{StatisticRepository}
 Thuộc tính:
 \begin{itemize}
@@ -1064,10 +1045,10 @@ Phương thức:
 \begin{itemize}
 	\item getAllProductStatistical(): Lấy thông tin thống kê tất cả sản phẩm
 	\item getProductStatistical(id: string, start:date,
-	end:date): Lấy thông tin thống kê của một sản phẩm
+	      end:date): Lấy thông tin thống kê của một sản phẩm
 	\item addGoods(goods: GoodModel): Cập nhật thông tin hàng vào Database
 	\item getStatisticalByType(filter: FilterModel, start:date,
-	end:date): Lấy thông tin thống kê các sản phẩm theo bộ lọc
+	      end:date): Lấy thông tin thống kê các sản phẩm theo bộ lọc
 \end{itemize}
 
 \subsubsubsection*{StatisticController}
@@ -1078,13 +1059,13 @@ Thuộc tính:
 Phương thức:
 \begin{itemize}
 	\item getProfitByType(filter: FilterModel, start:date,
-	end:date): Lấy thông tin lợi nhuận các mặt hàng theo bộ lọc
+	      end:date): Lấy thông tin lợi nhuận các mặt hàng theo bộ lọc
 	\item getProfitProduct(id: string, start:date,
-	end:date): Lấy thông tin lợi nhuận của một sản phẩm
+	      end:date): Lấy thông tin lợi nhuận của một sản phẩm
 	\item getRevenueProduct(id: string, start:date,
-	end:date): Lấy thông tin doanh thu các mặt hàng theo bộ lọc
+	      end:date): Lấy thông tin doanh thu các mặt hàng theo bộ lọc
 	\item getRevenueByType(filter: FilterModel, start:date,
-	end:date): Lấy thông tin doanh thu của một sản phẩm
+	      end:date): Lấy thông tin doanh thu của một sản phẩm
 	\item addGoods(info: BranchModel): Thêm một mặt hàng vào thống kê
 \end{itemize}
 
@@ -1096,1273 +1077,8 @@ Thuộc tính:
 	\item Tầng BPEL: Tầng xây dựng quy trình BPEL, điều phối các quy trình nghiệp vụ trong hệ thống
 	\item Tầng API Gateway: Tầng xuất các Api từ các dịch vụ web đưa đến quy trình BPEL
 	\item Tầng BFF: Đóng vai trò trong việc kiểm tra các hoạt động trung gian khi nhận yêu cầu từ phía người dùng
-	\item Tầng Web Service: Bao gồm các dịch vụ Web 
+	\item Tầng Web Service: Bao gồm các dịch vụ Web
 \end{itemize}
-
-% \subsection{Tầng User Interface}
-
-
-% \subsubsection{CustomerUI}
-% Module này bao gồm các class dùng để hiển thị UI đối với phía khách hàng
-% \begin{figure}[!htp]
-% 	\centering
-% 	\includegraphics[width=17cm]{img/Architecture/UI/customer UI.png}
-% 	\newline
-% 	\caption{Lược đồ class của Module CustomerUI}
-% \end{figure}
-% \textbf{Mô tả:}
-% \begin{quote}
-% 	\begin{itemize}
-% 		\item CustomerUI: Giao diện chính của khách hàng khi truy cập vào trang web của hệ thống
-% 			\begin{itemize}
-% 				\item render(): Hiển thị lên màn hình của khách hàng
-% 			\end{itemize}
-% 		\item NavBar: Thành phần luôn có của giao diện của khách hàng hiển thị các lựa chọn truy cập nhanh cho khách hàng
-% 			\begin{itemize}
-% 				\item render(): Hiển thị lên màn hình của khách hàng
-% 				\item hoverItem(): Hiển thị lên màn hình giao diện các lựa chọn khi người dùng rê chuột đến các thể loại ở thanh navbar
-% 				\item selectItem(): Hiển thị lên màn hình giao diện tương ứng với lựa chọn của khách hàng trên thanh navbar.
-% 			\end{itemize}
-% 		\item Header: Thành phần luôn có của giao diện của khách hàng hiển thị các thông tin về tài khoản của khách hàng cũng như logo và chức năng tìm kiếm cho khách hàng.
-% 			\begin{itemize}
-% 				\item render(): Hiển thị lên màn hình của khách hàng.
-% 				\item showHome(): Hiển thị về trang chủ mặc định của hệ thống.
-% 				\item showCustomerOrder(): Hiển thị lên màn hình danh sách đơn hàng của khách hàng khi đã đăng nhập.
-% 				\item showCart(): Hiển thị lên màn hình thông tin giỏ hàng của khách hàng khi đã đăng nhập.
-% 				\item showLogin(): Hiển thị lên màn hình trang đăng nhập cho khách hàng khi chưa đăng nhập.
-% 				\item showCustomerInfo(): Hiển thị lên màn hình thông tin chi tiết tài khoản của khách hàng khi đã đăng nhập.
-% 				\item showProductByName(): Hiển thị lên màn hình danh sách các sản phẩm khi người dùng chọn tìm kiếm.
-% 			\end{itemize}
-% 		\item Footer: Thành phần luôn có của giao diện của khách hàng hiển thị các thông tin về hệ thống.
-% 			\begin{itemize}
-% 				\item render(): Hiển thị lên màn hình của khách hàng.
-% 				\item showHome(): Hiển thị về trang chủ mặc định của hệ thống.
-% 				\item showProduct(): Hiển thị lên màn hình danh sách tất cả sản phẩm của hệ thống.
-% 				\item showInstructionSize(): Hiển thị lên màn hình thông tin hướng dẫn chọn size.
-% 				\item showCustomerOrder(): Hiển thị lên màn hình trang danh sách các đơn hàng của khách hàng khi đã đăng nhập.
-% 				\item showIntroduction(): Hiển thị lên màn hình trang giới thiệu về hệ thống cửa hàng.
-% 			\end{itemize}
-% 		\item Home: Màn hình mặc định của người dùng sau khi truy cập vào trang web của hệ thống.
-% 			\begin{itemize}
-% 				\item render(): Hiển thị lên màn hình của khách hàng.
-% 				\item renderEvent(): Hiển thị thông tin các sự kiện đang diễn ra.
-% 				\item renderListTypeProduct(): Hiển thị danh sách các sản phẩm nổi bật theo từng thể loại.
-% 			\end{itemize}
-% 		\item ListProduct: Màn hình hiển thị danh sách tất cả sản phẩm của hệ thống cho khách hàng.
-% 			\begin{itemize}
-% 				\item render(): Hiển thị lên màn hình của khách hàng.
-% 				\item renderFollowType(): Hiển thị danh sách sản phẩm theo đặc điểm và thể loại.
-% 				\item renderListProduct(): Hiển thị danh sách các sản phẩm.
-% 			\end{itemize}
-% 		\item ProductDetail: Màn hình hiển thị danh sách tất cả sản phẩm của hệ thống cho khách hàng.
-% 			\begin{itemize}
-% 				\item render(): Hiển thị lên màn hình của khách hàng.
-% 				\item showInstructionSize(): Hiển thị lên màn hình thông tin hướng dẫn chọn size.
-% 				\item renderImageProduct(): Hiển thị hình ảnh sản phẩm mà khách hàng chọn.
-% 				\item changeQuantity(): Thay đổi số lượng sản phẩm để thêm vào giỏ hàng.
-% 			\end{itemize}
-% 		\item Cart: Màn hình hiển thị thông tin giỏ hàng của khách hàng.
-% 			\begin{itemize}
-% 				\item render(): Hiển thị lên màn hình của khách hàng.
-% 				\item renderListProduct(): Hiển thị danh sách sản phẩm có trong giỏ hàng.
-% 				\item showProductDetail(): Chuyển đến trang thông tin chi tiết của sản phẩm.
-% 				\item changeQuantity(): Thay đổi số lượng sản phẩm trong giỏ hàng.
-% 				\item renderTotalPrice(): Hiển thị tổng giá tiền của các sản phẩm được chọn trong giỏ hàng.
-% 			\end{itemize}
-% 		\item Payment: Màn hình hiển thị trang thanh toán cho khách hàng.
-% 			\begin{itemize}
-% 				\item render(): Hiển thị lên màn hình của khách hàng.
-% 				\item renderOrder(): Hiển thị đơn hàng.
-% 				\item renderTotalCost(): Hiển thị toán bộ chi phí đơn hàng.
-% 				\item renderAddress(): Hiển thị địa chỉ đơn hàng.
-% 				\item renderShipFee(): Hiển thị giá tiền vận chuyển đơn hàng.
-% 				\item ShowPaymentOnline(): Hiển thị màn hình thanh toán online.
-% 			\end{itemize}
-% 		\item Manager Order: Màn hình hiển thị danh sách các đơn hàng của khách hàng.
-% 			\begin{itemize}
-% 				\item render(): Hiển thị lên màn hình của khách hàng.
-% 				\item renderListOrder(): Hiển thị danh sách đơn hàng.
-% 				\item showOrderDetail(): Hiển thị thông tin chi tiết của đơn hàng.
-% 			\end{itemize}
-% 		\item Order Detail: Màn hình hiển thị thông tin chi tiết đơn hàng của khách hàng.
-% 			\begin{itemize}
-% 				\item render(): Hiển thị lên màn hình của khách hàng.
-% 				\item renderStatus(): Hiển thị trạng thái của đơn hàng.
-% 				\item renderListTransport(): Hiển thị danh sách thông tin quá trình vận chuyển.
-% 				\item renderListProduct(): Hiển thị danh sách sản phẩm có trong đơn hàng.
-% 				\item renderCost(): Hiển thị danh sách các khoản chi phí của đơn hàng.
-% 			\end{itemize}
-% 		\item Forgot Password: Màn hình hiển thị trang tạo lại mật khẩu cho tài khoản của khách hàng.
-% 			\begin{itemize}
-% 				\item render(): Hiển thị lên màn hình của khách hàng.
-% 				\item showPassword(): Hiển thị mật khẩu khỏi trạng thái bị ẩn.
-% 				\item confirmAccount(): Xác nhận tài khoản muốn đổi mật khẩu.
-% 				\item renderConfirmOtp(): Hiển thị màn hình xác nhận mã OTP.
-% 				\item confirmOtp(): Gửi xác nhận mã OTP.
-% 				\item showUpdatePassword(): Hiển thị trang cập nhật mật khẩu mới cho tài khoản.
-% 				\item validateConfirmPassword(): Kiểm tra thông tin nhập lại mật khẩu của khách hàng.
-% 				\item updatePassword(): Gửi thông tin cập nhật mật khẩu mới cho tài khoản.
-% 			\end{itemize}
-% 		\item Register: Màn hình hiển thị trang đăng ký tài khoản cho khách hàng.
-% 			\begin{itemize}
-% 				\item render(): Hiển thị lên màn hình của khách hàng.
-% 				\item showPassword(): Hiển thị mật khẩu khỏi trạng thái bị ẩn.
-% 				\item register(): gửi thông tin xác nhận.
-% 				\item renderConfirmOtp(): Hiển thị màn hình xác nhận mã OTP.
-% 				\item confirmOtp(): Gửi xác nhận mã OTP.
-% 				\item validateConfirmPassword(): Kiểm tra thông tin nhập lại mật khẩu của khách hàng.
-% 			\end{itemize}
-% 		\item Customer Info: Màn hình hiển thị trang thông tin chi tiết tài khoản của khách hàng.
-% 			\begin{itemize}
-% 				\item render(): Hiển thị lên màn hình của khách hàng.
-% 				\item renderInfo(): Hiển thị thông tin chung của khách hàng.
-% 				\item renderAddress(): Hiển thị thông tin địa chỉ các khách hàng.
-% 				\item saveEdit(): gửi đi thông tin tài khoản đã chỉnh sửa.
-% 				\item showChangePassword(): hiển thị màn hình đổi mật khẩu.
-% 				\item changePassword(): gửi thông tin đổi mật khẩu của tài khoản.
-% 				\item validateConfirmPassword(): Kiểm tra thông tin nhập lại mật khẩu của khách hàng.
-% 			\end{itemize}
-% 	\end{itemize}
-% \end{quote}
-
-% \subsubsection{LoginUI}
-% LoginUI là một class dùng để hiển thị trang đăng nhập cho cả phía khách hàng và quản trị viên
-% \begin{figure}[!htp]
-% 	\centering
-% 	\includegraphics[width=2cm]{img/Architecture/UI/loginUI.png}
-% 	\newline
-% 	\caption{Lược đồ class của LoginUI}
-% \end{figure}
-% Phương thức:
-% \begin{itemize}
-% 	\item showPassword(): Hiện mật khẩu
-% 	\item login(username: string, password: string)(): Đăng nhập vào hệ thống
-% \end{itemize}
-
-% \subsubsection{AdminUI}
-% Module này bao gồm các class dùng để hiển thị UI đối với phía quản trị viên
-
-% \begin{figure}[!htp]
-% 	\centering
-% 	\includegraphics[width=17cm]{img/Architecture/UI/adminUI.png}
-% 	\newline
-% 	\caption{Lược đồ class của Module AdminUI}
-% \end{figure}
-
-% \subsubsubsection*{AdminUI}
-% Phương thức:
-% \begin{itemize}
-% 	\item render(): Hiển thị màn hình admin
-% \end{itemize}
-
-% \subsubsubsection*{Branch}
-% Màn hình quản lý chi nhánh\\ 
-% Phương thức:
-% \begin{itemize}
-% 	\item showAddForm(): Hiển thị biểu mẫu thêm mới
-% 	\item addBranch(): Thêm chi nhánh mới
-% 	\item showEditForm(branchId: string): Hiển thị biểu mẫu chỉnh sửa
-% 	\item updateBranch(branchId: string, info: BranchModel): Cập nhật thông tin chi nhánh
-% \end{itemize}
-
-% \subsubsubsection*{BranchDetail}
-% Màn hình hiển thị thông tin chi tiết chi nhánh\\ 
-% Phương thức:
-% \begin{itemize}
-% 	\item showEditForm(branchId: string): Hiển thị biểu mẫu chỉnh sửa
-% 	\item updateBranch(branchId: string, info: BranchModel): Cập nhật thông tin chi nhánh
-% 	\item deleteBranch(branchId: string): Xóa chi nhánh
-% 	\item showChart(branchId: string, time: enum): Hiển thị biểu đồ kinh doanh 
-% \end{itemize}
-
-% \subsubsubsection*{Staff}
-% Màn hình quản lý nhân viên\\ 
-% Phương thức:
-% \begin{itemize}
-% 	\item showAddForm(): Hiển thị biểu mẫu thêm mới
-% 	\item addStaff(info: StaffModel): Thêm một nhân viên
-% 	\item filterByBranch(branchId: string): Tìm nhân viên theo chi nhánh
-% 	\item searchStaff(keyword: string): Tìm kiếm chi nhánh theo từ khóa
-% 	\item showEditForm(staffId: string): Hiển thị biểu mẫu chỉnh sửa
-% 	\item updateStaff(branchId: string, info: BranchModel): Cập nhật thông tin chi nhánh
-% \end{itemize}
-
-% \subsubsubsection*{StaffRequest}
-% Màn hình quản lý yêu cầu thêm, xóa nhân viên\\ 
-% Phương thức:
-% \begin{itemize}
-% 	\item acceptRequest(requestId: string): Xác nhận yêu cầu
-% 	\item denyRequest(requestId: string): Hủy bỏ yêu cầu
-% 	\item showStafffFom(staffId: string): Hiển thị biểu mẫu thông tin nhân viên
-% \end{itemize}
-
-
-% \subsubsubsection*{StaffDetail}
-% Màn hình hiển thị thông tin chi tiết nhân viên\\ 
-% Phương thức:
-% \begin{itemize}
-% 	\item showEditForm(staffId: string): Hiển thị biểu mẫu chỉnh sửa
-% 	\item updateStaff(info: StaffModel): Cập nhật thông tin nhân viên
-% 	\item deleteBranch(staffId: string): Xóa nhân viên
-% \end{itemize}
-
-% \subsubsubsection*{Account}
-% Màn hình quản lý tài khoản\\ 
-% Phương thức:
-% \begin{itemize}
-% 	\item searchAccount(keyword: string): Tìm kiếm tài khoản theo từ khóa
-% \end{itemize}
-
-
-% \subsubsubsection*{AccountDetail}
-% Màn hình hiển thị thông tin chi tiết tài khoản\\ 
-% Phương thức:
-% \begin{itemize}
-% 	\item showOrder(month: date): Hiển thị danh sách đơn hàng
-% 	\item showOrderDetail(orderId: string): Hiển thị biểu mẫu chi tiết đơn hàng  
-% \end{itemize}
-
-% \subsubsubsection*{Event}
-% Màn hình quản lý sự kiện\\ 
-% Phương thức:
-% \begin{itemize}
-% 	\item addEvent(): Thêm một sự kiện mới
-% \end{itemize}
-
-% \subsubsubsection*{EventDetail}
-% Màn hình hiển thị thông tin chi tiết sự kiện\\ 
-% Phương thức:
-% \begin{itemize}
-% 	\item showListGood(): Hiển thị danh sách tất cả hàng
-% 	\item searchGood(keyword: string): Tùm kiếm danh sách hàng theo từ khóa
-% 	\item updateEvent(info: EventModel): Cập nhật thông tin sự kiện
-% \end{itemize}
-
-% \subsubsubsection*{Goods}
-% Màn hình quản lý hàng hóa\\ 
-% Phương thức:
-% \begin{itemize}
-% 	\item searchGoods(keyword: string): Tìm kiếm hàng theo từ khóa
-% 	\item addGoods(info: GoodsModel): Thêm một sản phẩm
-% \end{itemize}
-
-% \subsubsubsection*{GoodsDetail}
-% Màn hình hiển thị thông tin chi tiết hàng hóa\\ 
-% Phương thức:
-% \begin{itemize}
-% 	\item updateImage(goodsId: string, image: list<string>): Cập nhật hình ảnh sản phẩm
-% 	\item searchGoods(keyword: string): Tìm kiếm hàng theo từ khóa
-% \end{itemize}
-
-% \subsubsubsection*{GoodsEdit}
-% Màn hình hiển thị biểu mẫu vận chuyển hàng hóa\\ 
-% Phương thức:
-% \begin{itemize}
-% 	\item updateGoods(info: GoodsModel): Cập nhật thông tin sản phẩm
-% \end{itemize}
-
-% \subsubsubsection*{OrderOffline}
-% Màn hình quản lý các đơn hàng trực tiếp\\ 
-% Phương thức:
-% \begin{itemize}
-% 	\item filter(branchId: string, start: date, end: date): Tìm kiếm đơn hàng theo thời gian, chi nhánh
-% 	\item searchOrder(keyword: string): Tìm kiếm đơn hàng theo từ khóa
-% \end{itemize}
-
-% \subsubsubsection*{OrderOnline}
-% Màn hình quản lý các đơn hàng trực tuyến\\ 
-% Phương thức:
-% \begin{itemize}
-% 	\item filter(start: date, end: date): Tìm kiếm đơn hàng theo thời gian
-% 	\item searchOrder(keyword: string): Tìm kiếm đơn hàng theo từ khóa
-% \end{itemize}
-
-
-
-% \subsection{Tầng API}
-% \subsubsection{Customer APIs}
-% Module này dùng để chứa các API được xuất ra ngoài cho phía khách hàng:
-
-% \subsubsubsection*{Customer Service}
-% \begin{itemize}
-% 	\item getCustomerInfo
-% 	\begin{quote}
-% 		GET: /api/customer-service/customer/{customerId}
-% 		\begin{itemize}
-% 			\item username: string (Required)
-% 		\end{itemize}
-% 	\end{quote}
-
-% 	\item updateCustomerInfo
-% 	\begin{quote}
-% 		PUT /api/customer-service/customer/{customerid}
-% 		\begin{itemize}
-% 			\item customer: CustomerModel (Required)
-% 		\end{itemize}
-% 	\end{quote}
-
-% 	\item addCustomerInfo
-% 	\begin{quote}
-% 		POST /api/customer-service/customer
-% 		\begin{itemize}
-% 			\item customer: CustomerModel (Required)
-% 		\end{itemize}
-% 	\end{quote}
-% \end{itemize}
-
-% \subsubsubsection*{Cart Service}
-% \begin{itemize}
-% 	\item addCart
-% 	\begin{quote}
-% 		POST /api/cart-service/cart
-% 		\begin{itemize}
-% 			\item customerId: string (Required)
-% 		\end{itemize}
-% 	\end{quote}
-
-% 	\item getCart
-% 	\begin{quote}
-% 		POST /api/cart-service/cart/{customerId}
-% 		\begin{itemize}
-% 			\item customerId: string (Required)
-% 		\end{itemize}
-% 	\end{quote}
-
-% 	\item addProductToCart
-% 	\begin{quote}
-% 		POST /api/cart-service/cart/{customerId}
-% 		\begin{itemize}
-% 			\item cartId: string (Required)
-% 			\item product: GoodInCartModel (Required)
-% 		\end{itemize}
-% 	\end{quote}
-
-% 	\item removeProductToCart
-% 	\begin{quote}
-% 		DELETE /api/cart-service/cart/{cartId}
-% 		\begin{itemize}
-% 			\item cartId: string (Required)
-% 			\item product: Good (Required)
-% 		\end{itemize}
-% 	\end{quote}
-
-% 	\item removeAllProductInCart
-% 	\begin{quote}
-% 		DELETE /api/cart-service/cart/all/{cartId}
-% 		\begin{itemize}
-% 			\item cartId: string (Required)
-% 		\end{itemize}
-% 	\end{quote}
-
-% 	\item UpdateCart
-% 	\begin{quote}
-% 		PUT /api/cart-service/cart/{cartId}
-% 		\begin{itemize}
-% 			\item cartId: string (Required)
-% 			\item product: GoodInCartModel (Required)
-% 		\end{itemize}
-% 	\end{quote}
-% \end{itemize}
-
-% \subsubsubsection*{Make Order Service}
-% \begin{itemize}
-% 	\item getListOrder
-% 	\begin{quote}
-% 		GET /api/order-service/orders/{customerId}
-% 		\begin{itemize}
-% 			\item customerId: string (Required)
-% 		\end{itemize}
-% 	\end{quote}
-
-% 	\item getOrderDetail
-% 	\begin{quote}
-% 		GET /api/order-service/order-detail
-% 		\begin{itemize}
-% 			\item customerId: string (Required)
-% 			\item orderId: string (Required)
-% 		\end{itemize}
-% 	\end{quote}
-% \end{itemize}
-
-% \subsubsubsection*{Order Service}
-% \begin{itemize}
-% 	\item readOrder
-% 	\begin{quote}
-% 		GET /api/order-service/order/{orderId}
-% 		\begin{itemize}
-% 			\item orderId: string (Required)
-% 		\end{itemize}
-% 	\end{quote}
-
-% 	\item createOrder
-% 	\begin{quote}
-% 		POST /api/order-service/order
-% 		\begin{itemize}
-% 			\item transactionDate: DateTime (Required)
-% 			\item totalAmount: int (Required)
-% 			\item isOnline: bool (Required)
-% 			\item customerId: string
-% 			\item shippingFee: float
-% 			\item storeId: string
-% 			\item goods: [GoodsInOrder] (Required)
-% 		\end{itemize}
-% 	\end{quote}
-
-% 	\item readOnlineOrderStatus
-% 	\begin{quote}
-% 		GET /api/order-service/online-order-status/{orderId}
-% 		\begin{itemize}
-% 			\item orderId: string (Required)
-% 		\end{itemize}
-% 	\end{quote}
-
-% 	\item getOrderDetail
-% 	\begin{quote}
-% 		GET /api/order-service/order-detail
-% 		\begin{itemize}
-% 			\item customerId: string (Required)
-% 			\item orderId: string (Required)
-% 		\end{itemize}
-% 	\end{quote}
-% \end{itemize}
-
-% \subsubsubsection*{Account Service}
-% \begin{itemize}
-% 	\item Authentication
-% 	\begin{quote}
-% 		GET /api/account-service/{username}
-% 		\begin{itemize}
-% 			\item password: string (Required)
-% 			\end{itemize}
-% 	\end{quote}
-
-% 	\item addAccount
-% 	\begin{quote}
-% 		POST /api/account-service/add
-% 		\begin{itemize}
-% 			\item password: string (Required)
-% 			\item username: string (Required)
-% 			\item role: enum (Required)
-% 		\end{itemize}
-% 	\end{quote}
-% \end{itemize}
-
-
-
-
-
-% \subsubsection{Admin APIs}
-% Module này dùng để chứa các API được xuất ra ngoài cho phía quản trị viên
-
-% \subsubsubsection*{Event Service}
-% \begin{itemize}
-% 	\item addEvent
-% 	\begin{quote}
-% 		POST /api/event-service/event
-% 		\begin{itemize}
-% 			\item event: EventModel (Required)
-% 		\end{itemize}
-% 	\end{quote}
-
-% 	\item getAllEvent
-% 	\begin{quote}
-% 		GET /api/event-service/event
-% 	\end{quote}
-
-% 	\item removeEvent
-% 	\begin{quote}
-% 		DELETE /api/event-service/event/{eventId}
-% 		\begin{itemize}
-% 			\item eventId: string (Required)
-% 		\end{itemize}
-% 	\end{quote}
-
-% 	\item UpdateEvent
-% 	\begin{quote}
-% 		PUT /api/event-service/event/{eventId}
-% 		\begin{itemize}
-% 			\item eventId: string (Required)
-% 			\item event: EventModel (Required)
-% 		\end{itemize}
-% 	\end{quote}
-% \end{itemize}
-
-% \subsubsubsection*{Warehouse Service}
-% \begin{itemize}
-% 	\item getManager
-% 	\begin{quote}
-% 		GET /api/warehouse-service/manager/{warehouseId}
-% 	\end{quote}
-
-% 	\item updateManager
-% 	\begin{quote}
-% 		PUT /api/warehouse-service/manager
-% 	\end{quote}
-
-% 	\item getStaff
-% 	\begin{quote}
-% 		GET /api/warehouse-service/staff/{warehouseId}
-% 	\end{quote}
-
-% 	\item addStaff
-% 	\begin{quote}
-% 		POST /api/warehouse-service/staff
-% 	\end{quote}
-
-% 	\item updateStaff
-% 	\begin{quote}
-% 		PUT /api/warehouse-service/staff
-% 	\end{quote}
-
-% 	\item deleteStaff
-% 	\begin{quote}
-% 		DELETE /api/warehouse-service/staff
-% 	\end{quote}
-
-% 	\item addWarehouse
-% 	\begin{quote}
-% 		POST /api/warehouse-service/warehouse
-% 	\end{quote}
-
-% 	\item getWarehouse	
-% 	\begin{quote}
-% 		GET /api/warehouse-service/warehouse/{warehouseId}
-% 	\end{quote}
-
-% 	\item updateWarehouse
-% 	\begin{quote}
-% 		PUT /api/warehouse-service/warehouse
-% 	\end{quote}
-
-% 	\item deleteWarehouse
-% 	\begin{quote}
-% 		DELETE /api/warehouse-service/warehouse
-% 	\end{quote}
-% \end{itemize}
-
-% \subsubsubsection*{Goods Service}
-% \begin{itemize}
-% 	\item getGoods
-% 	\begin{quote}
-% 		GET /api/goods-service/goods{goodsId}
-% 		\begin{itemize}
-% 			\item goodsId: string (Required)
-% 		\end{itemize}
-% 	\end{quote}
-
-% 	\item updateGoods
-% 	\begin{quote}
-% 		PUT /api/goods-service/goods
-% 	\end{quote}
-
-% 	\item addGoods
-% 	\begin{quote}
-% 		POST /api/goods-service/goods
-% 	\end{quote}
-
-% 	\item deleteGoods
-% 	\begin{quote}
-% 		DELETE /api/goods-service/goods
-% 	\end{quote}
-
-% 	\item createImport
-% 	\begin{quote}
-% 		POST /api/goods-service/import
-% 	\end{quote}
-
-% 	\item createExport
-% 	\begin{quote}
-% 		POST /api/goods-service/export
-% 	\end{quote}
-
-% 	\item createWHTransfer
-% 	\begin{quote}
-% 		POST /api/goods-service/wh-transfer
-% 	\end{quote}
-
-% 	\item createReturnManufact	
-% 	\begin{quote}
-% 		POST /api/goods-service/return-manufact
-% 	\end{quote}
-
-% 	\item createCustReturn
-% 	\begin{quote}
-% 		POST /api/goods-service/cust-return
-% 	\end{quote}
-% \end{itemize}
-
-% \subsubsubsection*{Order Service}
-% \begin{itemize}
-% 	\item readOrder
-% 	\begin{quote}
-% 		GET /api/order-service/order/{orderId}
-% 		\begin{itemize}
-% 			\item orderId: string (Required)
-% 		\end{itemize}
-% 	\end{quote}
-
-
-% 	\item updateOnlineOrderStatus
-% 	\begin{quote}
-% 		PUT api/order-service/online-order-status
-% 		\begin{itemize}
-% 			\item orderId: string (Required)
-% 			\item status: string (Required)
-% 		\end{itemize}
-% 	\end{quote}
-
-% 	\item getListOrder
-% 	\begin{quote}
-% 		GET /api/order-service/orders/{customerId}
-% 		\begin{itemize}
-% 			\item customerId: string (Required)
-% 		\end{itemize}
-% 	\end{quote}
-
-% 	\item getOrderDetail
-% 	\begin{quote}
-% 		GET /api/order-service/order-detail
-% 		\begin{itemize}
-% 			\item customerId: string (Required)
-% 			\item orderId: string (Required)
-% 		\end{itemize}
-% 	\end{quote}
-% \end{itemize}
-
-% \subsubsubsection*{Branch Service}
-% \begin{itemize}
-% 	\item readListBranch
-% 	\begin{quote}
-% 		GET /api/branch-service/
-% 	\end{quote}
-
-
-% 	\item readBranchDetail
-% 	\begin{quote}
-% 		GET /api/branch-service/{branchId}
-% 		\begin{itemize}
-% 			\item branchId: string (Required)
-% 			\end{itemize}
-% 	\end{quote}
-
-% 	\item readBranchStatistic
-% 	\begin{quote}
-% 		GET /api/branch-service/{branchId}
-% 		\begin{itemize}
-% 			\item branchId: string (Required)
-% 		\end{itemize}
-% 	\end{quote}
-
-% 	\item updateBranch
-% 	\begin{quote}
-% 		POST /api/branch-service/{branchId}
-% 		\begin{itemize}
-% 			\item branchId: string (Required)
-% 			\item name: string (Required)
-% 			\item capacity: int (Required)
-% 			\item address: string (Required)
-% 			\item open: dateTime (Required)
-% 			\item close: dateTime (Required)
-% 		\end{itemize}
-% 	\end{quote}
-
-% 	\item updateBranchManager
-% 	\begin{quote}
-% 		POST /api/branch-service/manager
-% 		\begin{itemize}
-% 			\item branchId: string (Required)
-% 			\item staffId: string (Required)
-% 			\end{itemize}
-% 	\end{quote}
-
-% 	\item addBranch
-% 	\begin{quote}
-% 		POST /api/branch-service/
-% 		\begin{itemize}
-% 			\item branchId: string (Required)
-% 			\item name: string (Required)
-% 			\item capacity: int (Required)
-% 			\item address: string (Required)
-% 			\item open: dateTime (Required)
-% 			\item close: dateTime (Required)
-% 		\end{itemize}
-% 	\end{quote}
-
-% 	\item deleteBranch
-% 	\begin{quote}
-% 		DELETE /api/branch-service/{branchId}
-% 		\begin{itemize}
-% 			\item branchId: string (Required)
-% 		\end{itemize}
-% 	\end{quote}
-
-% 	\item readBranchStaff
-% 	\begin{quote}
-% 		GET /api/branch-service/staff
-% 		\begin{itemize}
-% 			\item branchId: string (Required)
-% 		\end{itemize}
-% 	\end{quote}
-
-% 	\item readBranchStatistic
-% 	\begin{quote}
-% 		GET /api/branch-service/statistic
-% 		\begin{itemize}
-% 			\item branchId: string (Required)
-% 			\item time: enum (Required)
-% 		\end{itemize}
-% 	\end{quote}
-% \end{itemize}
-
-% \subsubsubsection*{Account Service}
-% \begin{itemize}
-% 	\item readListAccount
-% 	\begin{quote}
-% 		GET /api/account-service/
-% 	\end{quote}
-
-% 	\item Authentication
-% 	\begin{quote}
-% 		GET /api/account-service/{username}
-% 		\begin{itemize}
-% 			\item password: string (Required)
-% 			\end{itemize}
-% 	\end{quote}
-
-% 	\item filterAccount
-% 	\begin{quote}
-% 		GET /api/account-service/{keyword}
-% 	\end{quote}
-
-% 	\item updateRole
-% 	\begin{quote}
-% 		POST /api/account-service/role
-% 		\begin{itemize}
-% 			\item username: string (Required)
-% 			\item role: enum (Required)
-% 		\end{itemize}
-% 	\end{quote}
-
-% 	\item addAccount
-% 	\begin{quote}
-% 		POST /api/account-service/add
-% 		\begin{itemize}
-% 			\item password: string (Required)
-% 			\item username: string (Required)
-% 			\item role: enum (Required)
-% 		\end{itemize}
-% 	\end{quote}
-% \end{itemize}
-
-% \subsubsubsection*{Staff Service}
-% \begin{itemize}
-% 	\item readListStaff
-% 	\begin{quote}
-% 		GET /api/staff-service/staff
-% 	\end{quote}
-
-% 	\item readDetailStaff
-% 	\begin{quote}
-% 		GET /api/staff-service/staff/{staffId}
-% 	\end{quote}
-
-% 	\item getAttendanceStaff
-% 	\begin{quote}
-% 		GET /api/staff-service/staff/attendance/{staffId}
-% 	\end{quote}
-
-% 	\item filterStaff
-% 	\begin{quote}
-% 		GET /api/staff-service/staff/{keyword}
-% 		\begin{itemize}
-% 			\item branchId: string
-% 		\end{itemize}
-% 	\end{quote}
-
-% 	\item addStaff
-% 	\begin{quote}
-% 		POST /api/staff-service/staff
-% 		\begin{itemize}
-% 			\item name: string (Required)
-% 			\item birthDate: date (Required)
-% 			\item homeTown: string (Required)
-% 			\item citizenId: string (Required)
-% 			\item phone: string (Required)
-% 			\item address: string (Required)
-% 			\item workingPlace: enum (Required)
-% 			\item role: enum (Required)
-% 			\item salary: int (Required)
-% 			\item username: enum
-% 			\item password: enum
-% 		\end{itemize}
-% 	\end{quote}
-
-% 	\item updateStaff
-% 	\begin{quote}
-% 		POST /api/staff-service/staff/{staffId}
-% 		\begin{itemize}
-% 			\item name: string (Required)
-% 			\item birthDate: date (Required)
-% 			\item homeTown: string (Required)
-% 			\item citizenId: string (Required)
-% 			\item phone: string (Required)
-% 			\item address: string (Required)
-% 			\item workingPlace: enum (Required)
-% 			\item role: enum (Required)
-% 			\item salary: int (Required)
-% 			\item username: enum
-% 			\item password: enum
-% 		\end{itemize}
-% 	\end{quote}
-
-% 	\item deleteStaff
-% 	\begin{quote}
-% 		DELETE /api/staff-service/staff/{staffId}
-% 	\end{quote}
-
-% 	\item createAddRequest
-% 	\begin{quote}
-% 		POST /api/staff-service/request/
-% 		\begin{itemize}
-% 			\item name: string (Required)
-% 			\item birthDate: date (Required)
-% 			\item homeTown: string (Required)
-% 			\item citizenId: string (Required)
-% 			\item phone: string (Required)
-% 			\item address: string (Required)
-% 			\item workingPlace: enum (Required)
-% 			\item role: enum (Required)
-% 			\item salary: int (Required)
-% 		\end{itemize}
-% 	\end{quote}
-
-% 	\item createDeleteRequest
-% 	\begin{quote}
-% 		POST /api/staff-service/request/{staffId}
-% 	\end{quote}
-
-% 	\item updateRequestStatus
-% 	\begin{quote}
-% 		POST /api/staff-service/request/{requestId}
-% 		\begin{itemize}
-% 			\item status: bool (Required)
-% 		\end{itemize}
-% 	\end{quote}
-
-% \end{itemize}
-
-% \subsubsubsection*{Statistic Service}
-% \begin{itemize}
-% 	\item getStatistic
-% 	\begin{quote}
-% 		GET /api/statistic-service
-% 		\begin{itemize}
-% 			\item branchId: string (Required)
-% 			\item start: dateTime (Required)
-% 			\item end: dateTime (Required)
-% 		\end{itemize}
-% 	\end{quote}
-
-% 	\item getRevenue
-% 	\begin{quote}
-% 		GET /api/statistic-service/revenue
-% 		\begin{itemize}
-% 			\item branchId: string
-% 			\item gender: enum
-% 			\item type: enum
-% 			\item start: dateTime (Required)	
-% 			\item end: dateTime (Required)
-% 		\end{itemize}
-% 	\end{quote}
-
-% 	\item getRevenue1Goods
-% 	\begin{quote}
-% 		GET /api/statistic-service/revenue/{goodsId}
-% 		\begin{itemize}
-% 			\item start: dateTime (Required)	
-% 			\item end: dateTime (Required)
-% 		\end{itemize}
-% 	\end{quote}
-
-% 	\item getProfit
-% 	\begin{quote}
-% 		GET /api/statistic-service/profit
-% 		\begin{itemize}
-% 			\item branchId: string
-% 			\item gender: enum
-% 			\item type: enum
-% 			\item start: dateTime (Required)	
-% 			\item end: dateTime (Required)
-% 		\end{itemize}
-% 	\end{quote}
-
-% 	\item getProfit1Goods
-% 	\begin{quote}
-% 		GET /api/statistic-service/profit/{goodsId}
-% 		\begin{itemize}
-% 			\item start: dateTime (Required)	
-% 			\item end: dateTime (Required)
-% 		\end{itemize}
-% 	\end{quote}
-
-% \end{itemize}
-
-
-
-
-
-
-% \subsubsection{Shared APIs}
-% Module này dùng để chứa các API được xuất ra ngoài cho bất kì đối tượng người dùng nào
-
-% \subsubsubsection*{Goods Service}
-% \begin{itemize}
-% 	\item getGoods
-% 	\begin{quote}
-% 		GET /api/goods-service/goods{goodsId}
-% 		\begin{itemize}
-% 			\item goodsId: string (Required)
-% 		\end{itemize}
-% 	\end{quote}
-% \end{itemize}
-
-% s
-
-
-
-% \subsection{Tầng service}
-
-% Lược đồ class ở tậng service được xây dựng theo các thành phần sau:
-% \begin{itemize}
-% 	\item Repository: Class dùng để truy cập trực tiếp đến dữ liệu trong Database
-% 	\item Model: Class dùng để chứa thông tin nhận lên từ Database
-% 	\item Controllers: Class dùng để xử lý các logic nghiệp vụ
-% 	\item Response: Class chứa thông tin trả về khi có yêu cầu từ bên ngoài
-% 	\item Các Interface: Giúp đảm bảo nguyên lý \textbf{Dependency inversion principle} của \textbf{SOLID}
-% 	      \begin {itemize}
-% 	\item IRepository: Cung cấp các api cho các class Controller
-% 	\item IController: Cung cấp các api để bên ngoài service truy cập đến
-% \end{itemize}
-% \end{itemize}
-
-
-
-% \subsubsection{Customer Order Service}
-% \begin{figure}[!htp]
-% 	\centering
-% 	\includegraphics[width=13cm]{img/Architecture/service/CustomerOrderService.png}
-% 	\newline
-% 	\caption{Lược đồ class của Customer Order Service}
-% \end{figure}
-
-% 	\subsubsubsection*{CustomerOrderRepository}
-% 	Thuộc tính:
-% 	\begin{itemize}
-% 		\item order: Chứa đối tượng Order
-% 		\item orderDetail: Chứa đối tượng OrderDetail
-% 	\end{itemize}
-% 	Phương thức:
-% 	\begin{itemize}
-% 		\item readListOrder(customerId: string): Lấy danh sách đơn hàng theo mã khách hàng
-% 		\item readOrderDetail(customerId: string, orderId: string): Lấy thông tin chi tiết của đơn hàng.
-% 	\end{itemize}
-
-% 	\subsubsubsection*{CustomerOrderController}
-% 	Thuộc tính:
-% 	\begin{itemize}
-% 		\item repo: Chứa đối tượng CustomerOrderRepository
-% 	\end{itemize}
-% 	Phương thức:
-% 	\begin{itemize}
-% 		\item makeOrder(listProduct: list<Product>): Tạo đơn hàng
-% 		\item calcShipFee(address: Address): Tính chi phí giao hàng
-% 		\item getAddress(customerId: string): Lấy thông tin địa chỉ của tài khoản của khách hàng.
-% 		\item makePayment(customerId: string): Tạo giao dịch thanh toán.
-% 		\item addOrder(customerId: string, address: Address, listProduct: list<Product>): Thêm đơn hàng vào cơ sở dữ liệu của hệ thống.
-% 		\item getListOrder(customerId: string): Lấy danh sách đơn hàng theo mã khách hàng
-% 		\item getOrderDetail(customerId: string, orderId: string): Lấy thông tin chi tiết của đơn hàng.
-% 	\end{itemize}
-
-% 	\subsubsubsection*{MakeOrderResponse - GetAddressResponse - CalcResponse - MakePaymentResponse - AddResponse}
-% 	Thuộc tính:
-% 	\begin{itemize}
-% 		\item statusCode: Mã trạng thái của phản hồi
-% 		\item message: Thông điệp của phản hồi
-% 		\item value: Các dữ liệu trả về đối với các yêu cầu
-% 	\end{itemize}
-	
-
-<<<<<<< HEAD
-% \subsubsection{Cart Service}
-% \begin{figure}[!htp]
-% 	\centering
-% 	\includegraphics[width=11cm]{img/Architecture/service/CartService.png}
-% 	\newline
-% 	\caption{Lược đồ class của Cart Service}
-% \end{figure}
-
-
-% \subsubsection{Customer Service}
-% \begin{figure}[!htp]
-% 	\centering
-% 	\includegraphics[width=11cm]{img/Architecture/service/CustomerService.png}
-% 	\newline
-% 	\caption{Lược đồ class của Customer Service}
-% \end{figure}
-
-
-
-% \subsubsection{Order Service}
-% \begin{figure}[!htp]
-% 	\centering
-% 	\includegraphics[width=11cm]{img/Architecture/service/OrderService.png}
-% 	\newline
-% 	\caption{Lược đồ class của Order Service}
-% \end{figure}
-
-
-
-% \subsubsection{Account Service}
-% \begin{figure}[!htp]
-% 	\centering
-% 	\includegraphics[width=11cm]{img/Architecture/service/AccountService.png}
-% 	\newline
-% 	\caption{Lược đồ class của Account Service}
-% \end{figure}
-
-% \subsubsubsection*{AccountRepository}
-% Thuộc tính:
-% \begin{itemize}
-% 	\item accountModel: Chứa đối tượng AccountModel
-% \end{itemize}
-% Phương thức:
-% \begin{itemize}
-% 	\item getAcount(keyword: string): Lấy danh sách tài khoản theo từ khóa
-% 	\item createAccount(info: AccountModel): Tạo một tài khoản mới
-% 	\item updateAccount(info: AccountModel): Cập nhật thông tin một tài khoản
-% \end{itemize}
-
-% \subsubsubsection*{AccountController}
-% Thuộc tính:
-% \begin{itemize}
-% 	\item repo: Chứa đối tượng AccountRepository
-% \end{itemize}
-% Phương thức:
-% \begin{itemize}
-% 	\item getAcount(username: string): Lấy tài khoản theo tên đăng nhập
-% 	\item getListAccount(): Lấy danh sách tất cả tài khoản
-% 	\item searchAccount(keyword: string) : Lấy danh sách tài khoản theo từ khóa
-% 	\item addAccount(info: accountModel): Tạo một tài khoản mới
-% 	\item resetPassword(username: string, newPass: string): Tái thiết lập mật khẩu	
-% 	\item updateRole(username: string, role: int): Cập nhật quyền tài khoản
-% \end{itemize}
-
-
-% \subsubsubsection*{UpdateResponse - GetResponse}
-% Thuộc tính:
-% \begin{itemize}
-% 	\item statusCode: Mã trạng thái của phản hồi
-% 	\item message: Thông điệp của phản hồi
-% 	\item value: Các dữ liệu trả về đối với các yêu cầu HTTP GET
-% \end{itemize}
-
-
-
-% \subsubsection{Staff Service}
-% \begin{figure}[!htp]
-% 	\centering
-% 	\includegraphics[width=11cm]{img/Architecture/service/StaffService.png}
-% 	\newline
-% 	\caption{Lược đồ class của Staff Service}
-% \end{figure}
-
-% \subsubsubsection*{StaffRepository}
-% Thuộc tính:
-% \begin{itemize}
-% 	\item staffModel: Chứa đối tượng StaffModel
-% 	\item attendanceModel: Chứa đối tượng AttendanceModel
-% 	\item requestModel: Chứa đối tượng RequestModel
-% \end{itemize}
-% Phương thức:
-% \begin{itemize}
-% 	\item getListStaff(keyword: string): Lấy danh sách nhân viên theo từ khóa
-% 	\item getDetailStaff(id: string): Lấy thông tin chi tiết một nhân viên
-% 	\item createStaff(info: StaffModel): Thêm một nhân viên mới
-% 	\item updateStaff(info: StaffModel): Cập nhật thông tin một nhân viên
-% 	\item deleteStaff(id: string): Xóa một nhân viên
-% 	\item getListAttendance(staffId, month: dateTime): Lấy danh sách điểm danh của nhân viên
-% 	\item createRequest (type: int, info: StaffModel): Tạo một yêu cầu về thêm, xóa nhân viên
-% 	\item updateRequestStatus (status: int, requestId: string): Cập nhật trạng thái cùa yêu cầu
-% \end{itemize}
-
-% \subsubsubsection*{StaffController}
-% Thuộc tính:
-% \begin{itemize}
-% 	\item repo: Chứa đối tượng StaffRepository
-% \end{itemize}
-% Phương thức:
-% \begin{itemize}
-% 	\item getListStaff(branchId: string): Lấy danh sách nhân viên theo chi nhánh
-% 	\item getDetailStaff(id: string): Lấy thông tin chi tiết một nhân viên
-% 	\item searchStaff(keyword: string): Lấy danh sách nhân viên theo từ khóa
-% 	\item createStaff(info: StaffModel): Thêm một nhân viên mới
-% 	\item updateStaff(info: StaffModel): Cập nhật thông tin một nhân viên
-% 	\item deleteStaff(id: string): Xóa một nhân viên
-% 	\item createAddRequest(info: StaffModel): Tạo một yêu cầu thêm nhân viên
-% 	\item createDeleteRequest(id:string): Tạo một yêu cầu về xóa nhân viên
-% 	\item updateRequestStatus (status: int, requestId: string): Cập nhật trạng thái cùa yêu cầu
-% 	\item getListAttendance(staffId, month: dateTime): Lấy danh sách điểm danh của nhân viên
-% \end{itemize}
-
-% \subsubsubsection*{UpdateResponse - GetResponse}
-% Thuộc tính:
-% \begin{itemize}
-% 	\item statusCode: Mã trạng thái của phản hồi
-% 	\item message: Thông điệp của phản hồi
-% 	\item value: Các dữ liệu trả về đối với các yêu cầu HTTP GET
-% \end{itemize}
-
-
-
-% \subsubsection{Branch Service}
-% \begin{figure}[!htp]
-% 	\centering
-% 	\includegraphics[width=10cm]{img/Architecture/service/BranchService.png}
-% 	\newline
-% 	\caption{Lược đồ class của Branch Service}
-% \end{figure}
-
-% \subsubsubsection*{BranchRepository}
-% Thuộc tính:
-% \begin{itemize}
-% 	\item branchModel: Chứa đối tượng BranchModel
-% 	\item staffModel: Chứa đối tượng StaffModel
-% \end{itemize}
-% Phương thức:
-% \begin{itemize}
-% 	\item getListBranch(): Lấy danh sách chi nhánh
-% 	\item getDetailBranch(id: string): Lấy thông tin chi tiết một chi nhánh
-% 	\item createBranch(info: BranchModel): Thêm một chi nhánh mới
-% 	\item updateBranch(info: BranchModel): Cập nhật thông tin một chi nhánh
-% 	\item deleteBranch(id: string): Xóa một chi nhánh
-% 	\item getListStaff(BranchId: string): Lấy danh sách nhân viên của chi nhánh
-% \end{itemize}
-
-% \subsubsubsection*{BranchController}
-% Thuộc tính:
-% \begin{itemize}
-% 	\item repo: Chứa đối tượng repository
-% \end{itemize}
-% Phương thức:
-% \begin{itemize}
-% 	\item getListBranch(): Lấy danh sách chi nhánh
-% 	\item getDetailBranch(id: string): Lấy thông tin chi tiết một chi nhánh
-% 	\item addBranch(info: BranchModel): Thêm một chi nhánh mới
-% 	\item updateBranch(info: BranchModel): Cập nhật thông tin một chi nhánh
-% 	\item deleteBranch(id: int): Xóa một chi nhánh
-% 	\item getListStaff(BranchId: string): Lấy danh sách nhân viên của chi nhánh
-% 	\item updateManger(managerId: sring, branchId:string): Cập nhật quản lý chi nhánh
-% 	\item getStatistic(time: enum): Lấy thông tin thống kê lợi nhuận, doanh thu.
-% \end{itemize}
-
-% \subsubsubsection*{UpdateResponse - GetStaffResponse - GetBranchResponse }
-% Thuộc tính:
-% \begin{itemize}
-% 	\item statusCode: Mã trạng thái của phản hồi
-% 	\item message: Thông điệp của phản hồi
-% 	\item value: Các dữ liệu trả về đối với các yêu cầu HTTP GET
-% \end{itemize}
-
-
-
-% \subsubsection{Event Service}
-% \begin{figure}[!htp]
-% 	\centering
-% 	\includegraphics[width=11cm]{img/Architecture/service/EventService.png}
-% 	\newline
-% 	\caption{Lược đồ class của Event Service}
-% \end{figure}
-
-
-% \subsubsection{Warehouse Service}
-% \begin{figure}[!htp]
-% 	\centering
-% 	\includegraphics[width=11cm]{img/Architecture/service/WarehouseService.png}
-% 	\newline
-% 	\caption{Lược đồ class của Warehouse Service}
-% \end{figure}
-
-
-% \subsubsection{Statistic Service}
-% \begin{figure}[!htp]
-% 	\centering
-% 	\includegraphics[width=11cm]{img/Architecture/service/StatisticService.png}
-% 	\newline
-% 	\caption{Lược đồ class của Statistic Service}
-% \end{figure}
-
-% \subsubsubsection*{StatisticRepository}
-% Thuộc tính:
-% \begin{itemize}
-% 	\item statisticalModel: Chứa đối tượng StatisticalModel
-% 	\item filterModel: Chứa đối tượng FilterModel
-% \end{itemize}
-% Phương thức:
-% \begin{itemize}
-% 	\item getAllProductStatistical(): Lấy thông tin thống kê tất cả sản phẩm
-% 	\item getProductStatistical(id: string, start:date,
-% 	end:date): Lấy thông tin thống kê của một sản phẩm
-% 	\item addGoods(goods: GoodModel): Cập nhật thông tin hàng vào Database
-% 	\item getStatisticalByType(filter: FilterModel, start:date,
-% 	end:date): Lấy thông tin thống kê các sản phẩm theo bộ lọc
-% \end{itemize}
-
-% \subsubsubsection*{StatisticController}
-% Thuộc tính:
-% \begin{itemize}
-% 	\item repo: Chứa đối tượng StatisticRepository
-% \end{itemize}
-% Phương thức:
-% \begin{itemize}
-% 	\item getProfitByType(filter: FilterModel, start:date,
-% 	end:date): Lấy thông tin lợi nhuận các mặt hàng theo bộ lọc
-% 	\item getProfitProduct(id: string, start:date,
-% 	end:date): Lấy thông tin lợi nhuận của một sản phẩm
-% 	\item getRevenueProduct(id: string, start:date,
-% 	end:date): Lấy thông tin doanh thu các mặt hàng theo bộ lọc
-% 	\item getRevenueByType(filter: FilterModel, start:date,
-% 	end:date): Lấy thông tin doanh thu của một sản phẩm
-% 	\item addGoods(info: BranchModel): Thêm một mặt hàng vào thống kê
-% \end{itemize}
-
-% \subsubsubsection*{UpdateResponse - GetResponse}
-% Thuộc tính:
-% \begin{itemize}
-% 	\item statusCode: Mã trạng thái của phản hồi
-% 	\item message: Thông điệp của phản hồi
-% 	\item value: Các dữ liệu trả về đối với các yêu cầu HTTP GET
-% \end{itemize}
-
-
-
-% \subsubsection{Goods Service}
-% \begin{figure}[!htp]
-% 	\centering
-% 	\includegraphics[width=17cm]{img/Architecture/service/GoodsService.png}
-% 	\newline
-% 	\caption{Lược đồ class của Goods Service}
-% \end{figure}
-
-
-
-% \subsubsection{Giao tiếp đồng bộ giữa các dịch vụ Web}
-
-
-
-% \subsubsection{Giao tiếp bất đồng bộ giữa các dịch vụ Web}
-
-% Hệ thống còn có Kafka là một hàng đợi thông điệp pub/sub dùng để đồng bộ dữ liệu giữa các dịch vụ Web cho các tác vụ bất động bộ. Khi một thông điệp được gửi lên từ một dịch vụ Web, thông điệp sẽ được lưu trong hàng đợi thông điệp. Khi một dịch vụ Web gọi đến để lấy dữ liệu, Kafka sẽ gửi thông điệp đến cho dịch vụ Web đó, nếu gửi thất bại, hệ thống sẽ tự động gửi lại thay vì người dùng phải thực hiện gửi.
-=======
 
 \subsubsection{Goods Service}
 \begin{figure}[!htp]
@@ -2436,5 +1152,4 @@ Thuộc tính:
 \subsubsection{Giao tiếp bất đồng bộ giữa các dịch vụ Web}
 
 Hệ thống còn có Kafka là một hàng đợi thông điệp pub/sub dùng để đồng bộ dữ liệu giữa các dịch vụ Web cho các tác vụ bất động bộ. Khi một thông điệp được gửi lên từ một dịch vụ Web, thông điệp sẽ được lưu trong hàng đợi thông điệp. Khi một dịch vụ Web gọi đến để lấy dữ liệu, Kafka sẽ gửi thông điệp đến cho dịch vụ Web đó, nếu gửi thất bại, hệ thống sẽ tự động gửi lại thay vì người dùng phải thực hiện gửi.
->>>>>>> 2f5bd7c68702eba0b4ac6c67fb983c36ff130107
 
