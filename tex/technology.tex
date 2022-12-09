@@ -4,6 +4,13 @@
     \subsection{Front-end}
         \subsubsection{React}
             \hspace*{0.5cm} React là một thư viện JavaScript được phát triển bởi Facebook, là kiểu lập trình khai báo giúp người dùng xây dựng giao diện người dùng (UI) một cách hiệu quả và linh hoạt. React cho phép ta tạo những giao diện (UI) phức tạp từ những "component" mà mỗi component đó chính là một đoạn code nhỏ và độc lập. Khi chia ra từng component giúp ta có thể tái sử dụng lại tốt. Mỗi component có thể có các state bên trong nó và quản lý state đó, ngoài ra các component có thể nhận các dữ liệu từ các component khác truyền vào thông qua các props, và mỗi component sẽ chỉ re-render khi các state hay props của component thay đổi, vậy nên các component sẽ không cần re-render khi không cần thiết.\\
+            
+            \begin{figure}[!htp]
+                \begin{center}
+                \includegraphics[width=5cm]{img/Technology/react.png}
+                \end{center}
+                \caption{Logo React}
+            \end{figure}
 
             Ưu điểm của React:
             \begin{itemize}
@@ -20,9 +27,17 @@
                 \item Quản lý state: Trong các component luôn phải thực hiện quản lý các state, các component lồng nhau thì compoent con có thể nhận state của component cha qua props, mà khi lồng ghép quá nhiều component khiến cho việc truyền state từ component này sang component kia trở nên quá cồng kềnh.
             \end{itemize}
         \subsubsection{Ant Design Pro}
-            \hspace*{0.5cm} Ant Design Pro là một front-end framework bao gồm 3 thành phần chính là Ant Design, UmiJs và DvaJs.
+            \hspace*{0.5cm} Ant Design Pro là một front-end framework bao gồm 2 thành phần chính được sử dụng để hỗ trợ xây dựng giao diện trong đề tài này là Ant Design và DvaJs.
             \subsubsubsection{Ant Design}
             \hspace*{0.5cm} Ant Design là một thư viện của React cung cấp rất nhiều component có tính thông dụng cao, đa dạng và đầy đủ để đáp ứng các nhu cầu để không cần phải định nghĩa thêm các base component nữa. Ant Design có một cộng đồng sử dụng rất lớn, hiện tại số lượt started ở trên github của Ant Design đã đạt hơn 83 nghìn lượt.
+            
+            \begin{figure}[!htp]
+                \begin{center}
+                \includegraphics[width=5cm]{img/Technology/antd.jpg}
+                \end{center}
+                \caption{Logo Ant Design}
+            \end{figure}
+
             \hspace*{0.5cm} Ưu điểm của Ant Design bao gồm:
             \begin{itemize}
                 \item Số lượng base component: Như đã giới thiệu, Ant Design cung cấp rất nhiều base component đa dạng và đầy đủ giúp ta không cần sài thêm thư viện giao diện khác nữa.
@@ -32,18 +47,33 @@
                 \item Cộng đồng sử dụng: Ant Design có cộng đồng sử dụng lớn giúp cho việc tìm kiếm giải đáp thắc mắc rất dễ dàng.
             \end{itemize}
 
-            \subsubsubsection{UmiJs}
             \subsubsubsection{DvaJs}
-            \hspace*{0.5cm} Những vấn đề gặp phải ở React:
-            \subsubsubsection*{Giao tiếp giữa các component:} Có ba loại giao tiếp xảy ra giữa các component.
-            \begin{itemize}
-                \item Gửi props đến component con
-                \item Gửi props đến component cha
-                \item Gửi props đến component khác không phải mối quan hệ cha-con
-            \end{itemize}
+            \hspace*{0.5cm} Dva là một giải pháp luồng dữ liệu dựa trên redux và redux-saga. Để đơn giản hóa trải nghiệm của việc phát triển, dva cũng tích hợp cả react-router và fetch. Có thể xem dva là một khung ứng dụng của React để đơn giản hóa API và giúp việc phát triển các ứng dụng React trở nên thuận tiện và nhanh hơn.\\
 
-            Với các vấn đề giao tiếp như trên thì React chỉ cung cấp cách giao tiếp duy nhất là truyền qua các tham số và ở những dự án lớn, việc truyền qua tham số khiến cho việc lập trình rất cồng kềnh cũng như khi có thay đổi thì việc sửa đổi cũng rất bất tiện khi phải sửa cả các component trung gian giữa 2 component liên quan.
-            \hspace*{0.5cm} Dva là một giải pháp luồng dữ liệu dựa trên redux và redux-saga. Để đơn giản hóa trải nghiệm của việc phát triển, dva cũng tích hợp cả react-router và fetch. Có thể xem dva là một khung ứng dụng của React để đơn giản hóa API và giúp việc phát triển các ứng dụng React trở nên thuận tiện và nhanh hơn.
+            \begin{figure}[!htp]
+                \begin{center}
+                \includegraphics[width=5cm]{img/Technology/dva.png}
+                \end{center}
+                \caption{Logo DvaJs}
+            \end{figure}
+
+            Dva xử lý các vấn đề về việc giao tiếp giữa các component trong React khi các component cần sử dụng chung state trở nên quá cồng kềnh bằng cách tập trung các state lại 1 nơi, đồng thời giúp quản lý những side effect (những thứ liên quan đến bất đồng bộ) trong ứng dụng dễ dàng hơn đồng thời kiểm tra và xử lý lỗi tốt hơn.\\
+
+            \begin{figure}[!htp]
+                \begin{center}
+                \includegraphics[width=14cm]{img/Technology/dva-struct.png}
+                \end{center}
+                \caption{Mô hình data flow trong dva}
+            \end{figure}
+
+            Các thành phần chính trong dva bao gồm: 
+            \begin{itemize}
+                \item \textbf{State:} đây là một đối tượng chứa toàn bộ trạng thái ứng dụng. State là nơi lưu trữ dữ liệu, và dữ liệu sẽ được cập nhật sau khi nhận được Action.
+                \item \textbf{Action:} là một đối tượng được sử dụng để mô tả các sự kiện của lớp giao diện người dùng.
+                \item \textbf{Reducer:} là một bộ xử lý Action, được sử dụng để xử lý các hoạt động đồng bộ. Chức năng của Reducer là xử lý state hiện tại từ state trước đó tương ứng theo Action được gửi đến để xử lý.
+                \item \textbf{Effect:} cũng là một bộ xử lý Action, được sử dụng để xử lý các hoạt động bất đồng bộ. Thường dùng cho các hoạt động I/O hay đọc ghi cơ sở dữ liệu.
+                \item \textbf{View:} là lớp giao diện người dùng bao gồm các thành phần React. Sau khi tìm nạp dữ liệu từ State, nó sẽ hiển thị dữ liệu đó thành mã HTML. Chỉ cần State thay đổi thì View sẽ được cập nhật tự động.
+            \end{itemize}
 
             % \hspace*{0.5cm} Ở phần front-end, nhóm sử dụng bộ 
     
