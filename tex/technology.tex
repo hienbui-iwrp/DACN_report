@@ -2,6 +2,50 @@
 \section{Lựa chọn công nghệ}
 
     \subsection{Front-end}
+        \subsubsection{React}
+            \hspace*{0.5cm} React là một thư viện JavaScript được phát triển bởi Facebook, là kiểu lập trình khai báo giúp người dùng xây dựng giao diện người dùng (UI) một cách hiệu quả và linh hoạt. React cho phép ta tạo những giao diện (UI) phức tạp từ những "component" mà mỗi component đó chính là một đoạn code nhỏ và độc lập. Khi chia ra từng component giúp ta có thể tái sử dụng lại tốt. Mỗi component có thể có các state bên trong nó và quản lý state đó, ngoài ra các component có thể nhận các dữ liệu từ các component khác truyền vào thông qua các props, và mỗi component sẽ chỉ re-render khi các state hay props của component thay đổi, vậy nên các component sẽ không cần re-render khi không cần thiết.\\
+
+            Ưu điểm của React:
+            \begin{itemize}
+                \item Dễ hiểu và dễ sử dụng: Nguồn cung cấp tài liệu, hướng dẫn và tài nguyên đào tạo tốt giúp ta có thể học và hiểu React một cách dễ dàng. Đặc biệt đối với những ai đã có nền tảng về Javascript thì React khá dễ sử dụng.
+                \item Các component có thể tái sử dụng: Mỗi component trong ứng dụng đều có thể tái sử dụng. Là trung tâm của tất cả các ứng dụng khi sử dụng React, các component có thể được lồng vào nhau. Việc lồng component này với component khác cho phép tạo ra các giao diện phức tạp được xây dựng từ các khối component đơn giản.
+                \item Nâng cao hiệu suất: React là tạo nên một hiệu suất tuyệt vời vì nó sử dụng cách quản lý một DOM ảo. DOM xử lý HTML, XML hoặc XHTML. Nó là một API lập trình và đa nền tảng. Với React, người dùng không viết trực tiếp vào DOM mà vào DOM ảo, do đó dẫn đến hiệu suất mượt mà và nhanh hơn.
+                \item Có thư viện JavaScript: React cung cấp một thư viện JavaScript rất phong phú, do đó mang lại sự linh hoạt hơn cho các lập trình viên.
+            \end{itemize}
+
+            Nhược điểm của React:
+            \begin{itemize}
+                \item Cần cập nhật liên tục: Tốc độ phát triển cao của React dẫn đến môi trường thay đổi nhanh chóng và liên tục, điều này làm cho lập trình viên khó có thể áp dụng tất cả. Do đó, lập trình viên cần phải luôn cập nhật những thay đổi về kỹ năng hay môi trường.
+                \item Quản lý component: Khi số lượng component trong hệ thống đạt tới một số lượng lớn nhất định, việc quản lý và chọn lựa component phù hợp trở nên tốn thời gian hơn đòi hỏi cách tổ chức và quản lý component phải hợp lý. Khi không tổ chức các component một cách có hệ thống thì khiến cho việc quyết định tìm kiếm để sử dụng lại component gặp khó khăn và xảy ra việc viết một component mới bị trùng với một component đã có nhưng không tìm thấy, khiến tăng số lượng component cũng như chi phí về lưu trữ code.
+                \item Quản lý state: Trong các component luôn phải thực hiện quản lý các state, các component lồng nhau thì compoent con có thể nhận state của component cha qua props, mà khi lồng ghép quá nhiều component khiến cho việc truyền state từ component này sang component kia trở nên quá cồng kềnh.
+            \end{itemize}
+        \subsubsection{Ant Design Pro}
+            \hspace*{0.5cm} Ant Design Pro là một front-end framework bao gồm 3 thành phần chính là Ant Design, UmiJs và DvaJs.
+            \subsubsubsection{Ant Design}
+            \hspace*{0.5cm} Ant Design là một thư viện của React cung cấp rất nhiều component có tính thông dụng cao, đa dạng và đầy đủ để đáp ứng các nhu cầu để không cần phải định nghĩa thêm các base component nữa. Ant Design có một cộng đồng sử dụng rất lớn, hiện tại số lượt started ở trên github của Ant Design đã đạt hơn 83 nghìn lượt.
+            \hspace*{0.5cm} Ưu điểm của Ant Design bao gồm:
+            \begin{itemize}
+                \item Số lượng base component: Như đã giới thiệu, Ant Design cung cấp rất nhiều base component đa dạng và đầy đủ giúp ta không cần sài thêm thư viện giao diện khác nữa.
+                \item Khả năng customize base component: Ant Design cung cấp rất nhiều props để lập trình viên có thể tùy biến linh hoạt theo nhu cầu.
+                \item Dễ học, dễ hiêu: Ant Design cung cấp bộ tài liệu hướng dẫn rất chi tiết cùng với demo tương ứng giúp người dùng có thể dễ dàng hiểu rõ và sử dụng.
+                \item Responsive: Ant Design hỗ trợ dàn layout tương thích trên nhiều thiết bị và loại màn hình khác nhau, vì vậy không cần phải sài thêm các thư viện khác để responsive.
+                \item Cộng đồng sử dụng: Ant Design có cộng đồng sử dụng lớn giúp cho việc tìm kiếm giải đáp thắc mắc rất dễ dàng.
+            \end{itemize}
+
+            \subsubsubsection{UmiJs}
+            \subsubsubsection{DvaJs}
+            \hspace*{0.5cm} Những vấn đề gặp phải ở React:
+            \subsubsubsection*{Giao tiếp giữa các component:} Có ba loại giao tiếp xảy ra giữa các component.
+            \begin{itemize}
+                \item Gửi props đến component con
+                \item Gửi props đến component cha
+                \item Gửi props đến component khác không phải mối quan hệ cha-con
+            \end{itemize}
+
+            Với các vấn đề giao tiếp như trên thì React chỉ cung cấp cách giao tiếp duy nhất là truyền qua các tham số và ở những dự án lớn, việc truyền qua tham số khiến cho việc lập trình rất cồng kềnh cũng như khi có thay đổi thì việc sửa đổi cũng rất bất tiện khi phải sửa cả các component trung gian giữa 2 component liên quan.
+            \hspace*{0.5cm} Dva là một giải pháp luồng dữ liệu dựa trên redux và redux-saga. Để đơn giản hóa trải nghiệm của việc phát triển, dva cũng tích hợp cả react-router và fetch. Có thể xem dva là một khung ứng dụng của React để đơn giản hóa API và giúp việc phát triển các ứng dụng React trở nên thuận tiện và nhanh hơn.
+
+            % \hspace*{0.5cm} Ở phần front-end, nhóm sử dụng bộ 
     
     \subsection{Back-end}
 \par Ở phần back-end, nhóm sử dụng ngôn ngữ Golang để hiện thực. Đây là một ngôn ngữ mới và hiệu quả cho việc xây dựng hệ thống nói chung, và xây dựng hệ thống microservice nói riêng.
