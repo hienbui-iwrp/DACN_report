@@ -1156,6 +1156,31 @@ Thuộc tính:
 \newpage
 \subsubsection{Giao tiếp đồng bộ giữa các Services}
 
+\par Để hiện thực việc giao tiếp đồng bộ giữa các service, chúng ta có hai cách tiếp cận là giao tiếp thông qua bộ điều phối trung tâm (Orchestration) và giao tiếp trực tiếp giữa các service (Choreography). Với cách tiếp cận Choreography, các service sẽ gọi trực tiếp với nhau tùy theo mục đích của mình. Còn với cách tiếp cận Orchestration, một service trung gian sẽ được tạo ra để phục vụ cho việc giao tiếp giữa các service trong hệ thống; mục đích của service này là để quản lý và điều phối các lần gọi nhau giữa các service. 
+\par Ví dụ, với hệ thống có hai service Customer Wishlist và Customer Demographics. Service Customer Wishlist được dùng để quản lý danh sách yêu thích của người dùng, còn service Customer Demographics được dùng để quản lý thông tin người dùng. Hiện tại, người dùng 123 có nhu cầu lấy thông tin chi tiết về danh sách yêu thích của mình. Do service Customer Wishlist chưa lưu tất cả các thông tin cần thiết, nên nó cần gọi service Customer Demographics để lấy thêm dữ liệu.
+
+\par Nếu sử dụng Choreography, sơ đồ giao tiếp giữa các service được trình bày như sau:
+\begin{figure}[!htp]
+	\centering
+	\includegraphics[width=17cm]{img/Architecture/choreography.PNG}
+	\newline
+	\caption{Giao tiếp giữa các service bằng Choreography}
+\end{figure}
+Đối với phương pháp giao tiếp Choreography, service Customer Wishlist gọi trực tiếp đến service Customer Demographics để lấy thông tin từ user mà không đi qua trung gian nào cả. Và service Customer Demographics cũng trả về kết quả trực tiếp cho service Customer Wishlist.
+
+\par Nếu sử dụng Orchestration, sơ đồ giao tiếp giữa các service được trình bày như sau:
+\begin{figure}[!htp]
+	\centering
+	\includegraphics[width=17cm]{img/Architecture/orchestration.PNG}
+	\newline
+	\caption{Giao tiếp giữa các service bằng Orchestration}
+\end{figure}
+Đối với phương pháp giao tiếp Orchestration, một service trung gian được tạo ra, với vai trò điều phối việc gọi nhau để lấy thông tin giữa service Customer Wishlist và Customer Demographics. Khi nhận được yêu cầu lấy thông tin từ người dùng, service trung gian gọi đến các service đích để lấy thông tin: gọi đến Customer Wishlist để lấy thông tin danh sách yêu thích, và gọi đến Customer Demographics để lấy thông tin người dùng.
+
+\par Mỗi phương pháp có các ưu điểm và nhược điểm riêng. Đối với Choreography, cách tiếp cận này giúp giảm đi tính phụ thuộc giữa các service (decoupled), và đây cũng là mục đích đối với hệ thống microservice. Tuy vậy, việc quản lý lỗi và quản lý luồng thực thi sẽ là vấn đề lớn ở phương pháp này. Còn đối với Orchestration, đây là phương pháp hợp lý cho các công việc có luồng nghiệp vụ phức tạp, tuy vậy sẽ tạo nên sự phụ thuộc lẫn nhau giữa các service.
+
+\par Ở hệ thống này, nhóm lựa chọn phương pháp Choreography để hiện thực việc giao tiếp giữa các service, để đảm bảo tính phân chia rõ ràng và ít phụ thuộc (loosely-coupled) giữa các service, đồng thời hạn chế các nhược điểm khi luồng thực thi trong những lần gọi là không phức tạp.
+
 \subsubsubsection{Customer order Service}
 \begin{figure}[!htp]
 	\centering
