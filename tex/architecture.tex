@@ -1164,7 +1164,7 @@ Thuộc tính:
 	\centering
 	\includegraphics[width=17cm]{img/Architecture/choreography.PNG}
 	\newline
-	\caption{Giao tiếp giữa các service bằng Choreography}
+	\caption{Giao tiếp giữa các service bằng Choreography \cite{archChoreography}}
 \end{figure}
 Đối với phương pháp giao tiếp Choreography, service Customer Wishlist gọi trực tiếp đến service Customer Demographics để lấy thông tin từ user mà không đi qua trung gian nào cả. Và service Customer Demographics cũng trả về kết quả trực tiếp cho service Customer Wishlist.
 
@@ -1173,7 +1173,7 @@ Thuộc tính:
 	\centering
 	\includegraphics[width=17cm]{img/Architecture/orchestration.PNG}
 	\newline
-	\caption{Giao tiếp giữa các service bằng Orchestration}
+	\caption{Giao tiếp giữa các service bằng Orchestration \cite{archOrchestration}}
 \end{figure}
 Đối với phương pháp giao tiếp Orchestration, một service trung gian được tạo ra, với vai trò điều phối việc gọi nhau để lấy thông tin giữa service Customer Wishlist và Customer Demographics. Khi nhận được yêu cầu lấy thông tin từ người dùng, service trung gian gọi đến các service đích để lấy thông tin: gọi đến Customer Wishlist để lấy thông tin danh sách yêu thích, và gọi đến Customer Demographics để lấy thông tin người dùng.
 
