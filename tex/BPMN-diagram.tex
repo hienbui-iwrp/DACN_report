@@ -10,34 +10,40 @@ Các lược đồ BPMN được nhóm thiết kế trên app Bizagi.
 	\newline
 	\caption{Lược đồ BPMN cho quy trình quản lý kho}
 \end{figure}
-\textbf{Mô tả:} Quy trình bắt đầu khi người dùng truy cập vào giao diện quản lý kho. Hệ thống quản lý kho lấy ra dữ liệu kho cho người dùng thực hiện các tác vụ của mình. Nếu người dùng chỉ xem dữ liệu thì sẽ không có gì xảy ra thêm. Nếu người dùng thêm dữ liệu, người dùng sẽ nhập và submit dữ liệu mới, hệ thống kiểm tra và hoàn thành việc thêm nếu dữ liệu hợp lệ. Nếu người dùng chỉnh sửa dữ liệu, người dùng chỉnh sửa trên dữ liệu hiện tại của kho, hệ thống kiểm tra và hoàn thành việc cập nhật nếu dữ liệu hợp lệ. Nếu người dùng xóa dữ liệu, người dùng xóa kho và submit, hệ thống kiểm tra dữ liệu và hoàn thành việc xóa nếu dữ liệu hợp lệ.
+
+Quy trình bắt đầu khi người dùng truy cập vào giao diện quản lý kho. Hệ thống quản lý kho lấy ra dữ liệu kho cho người dùng thực hiện các tác vụ của mình. Nếu người dùng chỉ xem dữ liệu thì sẽ không có gì xảy ra thêm. Nếu người dùng thêm dữ liệu, người dùng sẽ nhập và submit dữ liệu mới, hệ thống kiểm tra và hoàn thành việc thêm nếu dữ liệu hợp lệ. Nếu người dùng chỉnh sửa dữ liệu, người dùng chỉnh sửa trên dữ liệu hiện tại của kho, hệ thống kiểm tra và hoàn thành việc cập nhật nếu dữ liệu hợp lệ. Nếu người dùng xóa dữ liệu, người dùng xóa kho và submit, hệ thống kiểm tra dữ liệu và hoàn thành việc xóa nếu dữ liệu hợp lệ.
 
 \subsection{Lưu hóa đơn từ cửa hàng}
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[width=17cm]{img/BPMN/Tho/save_invoice.PNG}
+	\includegraphics[width=8cm]{img/BPMN/Tho/save_invoice.PNG}
 	\newline
 	\caption{Lược đồ BPMN cho quy trình lưu hóa đơn từ cửa hàng}
 \end{figure}
-\textbf{Mô tả:} Quy trình bắt đầu sau khi cửa hàng xử lý xong đơn hàng và gửi thông tin đơn hàng cho hệ thống lưu lại. Hệ thống nhận dữ liệu và lưu lại đơn hàng vào hệ thống.
+
+Quy trình bắt đầu sau khi cửa hàng xử lý xong đơn hàng và gửi thông tin đơn hàng cho hệ thống lưu lại. Hệ thống nhận dữ liệu và lưu lại đơn hàng vào hệ thống.
+
+\newpage
 
 \subsection{Khách hàng yêu cầu xuất hóa đơn}
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[width=17cm]{img/BPMN/Tho/invoice_log.PNG}
+	\includegraphics[width=10cm]{img/BPMN/Tho/invoice_log.PNG}
 	\newline
 	\caption{Lược đồ BPMN cho quy trình khách hàng yêu cầu xuất hóa đơn}
 \end{figure}
-\textbf{Mô tả:} Quy trình bắt đầu khi người dùng tạo yêu cầu xuất hóa đơn. Lúc đó bên quản lý đơn nhận được yêu cầu kết xuất hóa đơn, sau đó xử lý yêu cầu. Bên quản lý đơn lấy thông tin đơn hàng, sau đó tạo hóa đơn rồi gửi về lại cho khách hàng. Khách hàng nhận được hóa đơn như đã yêu cầu.
+
+Quy trình bắt đầu khi người dùng tạo yêu cầu xuất hóa đơn. Lúc đó bên quản lý đơn nhận được yêu cầu kết xuất hóa đơn, sau đó xử lý yêu cầu. Bên quản lý đơn lấy thông tin đơn hàng, sau đó tạo hóa đơn rồi gửi về lại cho khách hàng. Khách hàng nhận được hóa đơn như đã yêu cầu.
 
 \subsection{Cập nhật trạng thái đơn hàng}
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[width=17cm]{img/BPMN/Tho/update_status.PNG}
+	\includegraphics[width=9cm]{img/BPMN/Tho/update_status.PNG}
 	\newline
 	\caption{Lược đồ BPMN cho quy trình cập nhật trạng thái đơn hàng}
 \end{figure}
-\textbf{Mô tả:} Quy trình bắt đầu khi bên giao vận gửi dữ liệu cập nhật trạng thái mới của đơn hàng về cho hệ thống quản lý đơn. Bên quản lý đơn sau khi nhận được trạng thái đơn hàng đã cập nhật sẽ tiến hành cập nhật trạng thái đơn hàng trong hệ thống.
+
+Quy trình bắt đầu khi bên giao vận gửi dữ liệu cập nhật trạng thái mới của đơn hàng về cho hệ thống quản lý đơn. Bên quản lý đơn sau khi nhận được trạng thái đơn hàng đã cập nhật sẽ tiến hành cập nhật trạng thái đơn hàng trong hệ thống.
 
 \subsection{Khách hàng mua hàng}
 \begin{figure}[!htp]
@@ -46,7 +52,8 @@ Các lược đồ BPMN được nhóm thiết kế trên app Bizagi.
 	\newline
 	\caption{Lược đồ BPMN cho quy trình khách hàng mua hàng}
 \end{figure}
-\textbf{Mô tả:} Quy trình bắt đầu khi người dùng bắt đầu truy cập vào trang web, khách hàng chọn cách thức mua hàng là bắt đầu từ tìm sản phẩm hoặc là bắt đầu mua từ những sản phẩm đã có sẵn trong giỏ hàng. Khi người dùng chọn tìm sản phẩm thì người dùng sẽ thực hiện quy trình con (sub-process) "Tìm sản phẩm". Sau khi thực hiện xong tìm sản phẩm và tìm thấy thì người dùng thực hiện xem thông tin chi tiết để hiểu rõ hơn về sản phẩm và quyết định có muốn thêm sản phẩm vào giỏ hàng hay không; hoặc khi người dùng đã biết về sản phẩm thì có thể thêm chọn thêm nhanh sản phẩm vào giỏ hàng. Sau khi thêm sản phẩm vào giỏ hàng thì người dùng thực hiện quy trình con quản lý giỏ hàng để lựa chọn cũng như cập nhật các đặc điểm mà người dùng mong muốn ở sản phẩm. Sau khi quản lý xong giỏ hàng thì người dùng cần chọn hành động tiếp tục tìm kiếm thêm sản phẩm để mua hàng hoặc là trực tiếp đi đến quy trình con "Mua hàng" và sau đó là kết thúc quy trình.
+
+Quy trình bắt đầu khi người dùng bắt đầu truy cập vào trang web, khách hàng chọn cách thức mua hàng là bắt đầu từ tìm sản phẩm hoặc là bắt đầu mua từ những sản phẩm đã có sẵn trong giỏ hàng. Khi người dùng chọn tìm sản phẩm thì người dùng sẽ thực hiện quy trình con (sub-process) "Tìm sản phẩm". Sau khi thực hiện xong tìm sản phẩm và tìm thấy thì người dùng thực hiện xem thông tin chi tiết để hiểu rõ hơn về sản phẩm và quyết định có muốn thêm sản phẩm vào giỏ hàng hay không; hoặc khi người dùng đã biết về sản phẩm thì có thể thêm chọn thêm nhanh sản phẩm vào giỏ hàng. Sau khi thêm sản phẩm vào giỏ hàng thì người dùng thực hiện quy trình con quản lý giỏ hàng để lựa chọn cũng như cập nhật các đặc điểm mà người dùng mong muốn ở sản phẩm. Sau khi quản lý xong giỏ hàng thì người dùng cần chọn hành động tiếp tục tìm kiếm thêm sản phẩm để mua hàng hoặc là trực tiếp đi đến quy trình con "Mua hàng" và sau đó là kết thúc quy trình.
 
 
 \begin{figure}[!htp]
@@ -55,7 +62,8 @@ Các lược đồ BPMN được nhóm thiết kế trên app Bizagi.
 	\newline
 	\caption{Lược đồ BPMN cho quy trình con tìm kiếm sản phẩm}
 \end{figure}
-\textbf{Mô tả:} Đây là 1 quy trình con chứa quy trình tìm kiếm sản phẩm mà người dùng muốn tìm kiếm. Bắt đầu từ việc chọn cách duyệt bằng cách duyệt theo ngẫu hứng hay duyệt theo ý muốn. Khi người dũng duyệt theo ý muốn thì thực hiện quy trình con "Chọn loại sản phẩm" để chọn nhưng loại sản phẩm theo ý muốn của khách hàng. Sau khi chọn loại sản phẩm thì hệ thống sẽ nhận thông tin và xử lý, sau đó phản hồi kết quả và người dùng kiểm tra kết quả tìm kiếm và kết thúc quy trình con này.
+
+Đây là một quy trình con chứa quy trình tìm kiếm sản phẩm mà người dùng muốn tìm kiếm. Bắt đầu từ việc chọn cách duyệt bằng cách duyệt theo ngẫu hứng hay duyệt theo ý muốn. Khi người dũng duyệt theo ý muốn thì thực hiện quy trình con "Chọn loại sản phẩm" để chọn nhưng loại sản phẩm theo ý muốn của khách hàng. Sau khi chọn loại sản phẩm thì hệ thống sẽ nhận thông tin và xử lý, sau đó phản hồi kết quả và người dùng kiểm tra kết quả tìm kiếm và kết thúc quy trình con này.
 
 \begin{figure}[!htp]
 	\centering
@@ -63,47 +71,61 @@ Các lược đồ BPMN được nhóm thiết kế trên app Bizagi.
 	\newline
 	\caption{Lược đồ BPMN cho quy trình con chọn loại sản phẩm mà khác hàng muốn tìm}
 \end{figure}
-\textbf{Mô tả:} Đây là 1 quy trình con chứa quy trình chọn loại sản phẩm mà người dùng muốn tìm kiếm. Bắt đầu từ việc chọn loại duyệt thì người dùng có thể chọn duyệt theo thể loại hoặc duyệt theo tên tìm kiếm hoặc duyệt theo sự kiện.
+
+Đây là một quy trình con chứa quy trình chọn loại sản phẩm mà người dùng muốn tìm kiếm. Bắt đầu từ việc chọn loại duyệt thì người dùng có thể chọn duyệt theo thể loại hoặc duyệt theo tên tìm kiếm hoặc duyệt theo sự kiện.
+
+\newpage
 
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[width=12cm]{img/BPMN/customer_buy/customer_product_detail.png}
+	\includegraphics[width=10cm]{img/BPMN/customer_buy/customer_product_detail.png}
 	\newline
 	\caption{Lược đồ BPMN cho quy trình xem xét thông tin chi tiết của sản phẩm}
 \end{figure}
-\textbf{Mô tả:} Đây là 1 quy trình con chứa quy trình xem thông tin chi tiết của sản phẩm, sau khi khách hàng chọn sản phẩm muốn xem thông tin chi tiết thì hệ thống sẽ thực hiện lấy thông tin chi tiết sản phẩm từ cơ sở dữ liệu và phản hồi kết quả về cho khách hàng. Sau khi nhận được kết quả thì khách hàng xem thông tin chi tiết của sản phẩm và kết thúc quy trình.
+
+Đây là một quy trình con chứa quy trình xem thông tin chi tiết của sản phẩm, sau khi khách hàng chọn sản phẩm muốn xem thông tin chi tiết thì hệ thống sẽ thực hiện lấy thông tin chi tiết sản phẩm từ cơ sở dữ liệu và phản hồi kết quả về cho khách hàng. Sau khi nhận được kết quả thì khách hàng xem thông tin chi tiết của sản phẩm và kết thúc quy trình.
+
+
 
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[width=15cm]{img/BPMN/customer_buy/customer_add_to_card.png}
+	\includegraphics[width=17cm]{img/BPMN/customer_buy/customer_add_to_card.png}
 	\newline
 	\caption{Lược đồ BPMN cho quy trình thêm sản phẩm vào giỏ hàng}
 \end{figure}
-\textbf{Mô tả:} Đây là 1 quy trình con chứa quy trình thêm sản phẩm vào giỏ hàng, sau khi khách hàng xem thông tin chi tiết và muốn mua sản phẩm thì người dùng các thông tin sản phẩm mà khách hàng muốn thêm sau đó xác nhận thêm vào giỏ hàng. Thông tin sản phẩm khách hàng chọn thêm vào giỏ hàng được gửi đi và hệ thống thực hiện kiểm tra tài khoản khách hàng đã đăng nhập chưa, sau khi xác nhận được đã đăng nhập thì hệ thống kiểm tra thông tin và cập nhật thông tin sản phẩm vào giỏ hàng, sau đó gửi kết quả về phía khách hàng. Sau khi nhận được kết quả thì người dùng kiểm tra kết quả và kết thúc quy trình.
+
+Đây là một quy trình con chứa quy trình thêm sản phẩm vào giỏ hàng, sau khi khách hàng xem thông tin chi tiết và muốn mua sản phẩm thì người dùng các thông tin sản phẩm mà khách hàng muốn thêm sau đó xác nhận thêm vào giỏ hàng. Thông tin sản phẩm khách hàng chọn thêm vào giỏ hàng được gửi đi và hệ thống thực hiện kiểm tra tài khoản khách hàng đã đăng nhập chưa, sau khi xác nhận được đã đăng nhập thì hệ thống kiểm tra thông tin và cập nhật thông tin sản phẩm vào giỏ hàng, sau đó gửi kết quả về phía khách hàng. Sau khi nhận được kết quả thì người dùng kiểm tra kết quả và kết thúc quy trình.
+
+\newpage 
 
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[width=15cm]{img/BPMN/customer_buy/customer_add_fast.png}
+	\includegraphics[width=16cm]{img/BPMN/customer_buy/customer_add_fast.png}
 	\newline
 	\caption{Lược đồ BPMN cho quy trình thêm nhanh sản phẩm vào giỏ hàng}
 \end{figure}
-\textbf{Mô tả:} Đây là 1 quy trình con chứa quy trình thêm nhanh sản phẩm vào giỏ hàng, sau khi khách hàng chọn thêm nhanh sản phẩm vào giỏ hàng. Thông tin sản phẩm khách hàng chọn thêm vào giỏ hàng được gửi đi và hệ thống thực hiện kiểm tra tài khoản khách hàng đã đăng nhập chưa, sau khi xác nhận được đã đăng nhập thì hệ thống kiểm tra thông tin và cập nhật thông tin sản phẩm vào giỏ hàng, sau đó gửi kết quả về phía khách hàng. Sau khi nhận được kết quả thì người dùng kiểm tra kết quả và kết thúc quy trình.
+
+Đây là một quy trình con chứa quy trình thêm nhanh sản phẩm vào giỏ hàng, sau khi khách hàng chọn thêm nhanh sản phẩm vào giỏ hàng. Thông tin sản phẩm khách hàng chọn thêm vào giỏ hàng được gửi đi và hệ thống thực hiện kiểm tra tài khoản khách hàng đã đăng nhập chưa, sau khi xác nhận được đã đăng nhập thì hệ thống kiểm tra thông tin và cập nhật thông tin sản phẩm vào giỏ hàng, sau đó gửi kết quả về phía khách hàng. Sau khi nhận được kết quả thì người dùng kiểm tra kết quả và kết thúc quy trình.
 
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[width=15cm]{img/BPMN/customer_buy/customer_cart.png}
+	\includegraphics[width=17cm]{img/BPMN/customer_buy/customer_cart.png}
 	\newline
 	\caption{Lược đồ BPMN cho quy trình quản lý giỏ hàng}
 \end{figure}
-\textbf{Mô tả:} Đây là 1 quy trình con chứa quy trình quản lý giỏ hàng. Quy trình bắt đầu từ khi khách hàng chọn vào giỏ hàng. Hệ thống thực hiện kiểm tra tài khoản rồi sau đó truy xuất dữ liệu giỏ hàng của tài khoản khách hàng và phản hồi về lại cho khách hàng. Khách hàng thực thực hiện xem xét giỏ hàng và thực hiện thay đổi thông tin sản phẩm trong giỏ hàng bằng cách thay đổi thông tin sản phẩm hay xóa sản phẩm khỏi giỏ hàng, hệ thống nhận thông tin thay đổi sau đó kiểm tra thông tin và cập nhật thông tin giỏ hàng rồi trả về kết quả, khách hàng nhận kết quả và kết thúc quy trình.
+
+Đây là một quy trình con chứa quy trình quản lý giỏ hàng. Quy trình bắt đầu từ khi khách hàng chọn vào giỏ hàng. Hệ thống thực hiện kiểm tra tài khoản rồi sau đó truy xuất dữ liệu giỏ hàng của tài khoản khách hàng và phản hồi về lại cho khách hàng. Khách hàng thực thực hiện xem xét giỏ hàng và thực hiện thay đổi thông tin sản phẩm trong giỏ hàng bằng cách thay đổi thông tin sản phẩm hay xóa sản phẩm khỏi giỏ hàng, hệ thống nhận thông tin thay đổi sau đó kiểm tra thông tin và cập nhật thông tin giỏ hàng rồi trả về kết quả, khách hàng nhận kết quả và kết thúc quy trình.
+
+\newpage
 
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[width=15cm]{img/BPMN/customer_buy/customer_buy_order.png}
+	\includegraphics[width=17cm]{img/BPMN/customer_buy/customer_buy_order.png}
 	\newline
 	\caption{Lược đồ BPMN cho quy trình mua hàng}
 \end{figure}
-\textbf{Mô tả:} Đây là 1 quy trình con chứa quy trình đặt mua hàng của khách hàng. Khách hàng chọn các sản phẩm trong giỏ hàng mà bản thân muốn mua và chọn "Đặt hàng". Hệ thống thực hiện kiểm tra hàng hóa và phản hồi về lại cho khách hàng. Sau khi chọn "Đặt hàng" và nhận kết quả xác nhận hàng hóa, khách hàng thực thực hiện nhập địa chỉ giao hàng, hệ thống sẽ thực hiện xử lý giao hàng và giá tiền để tính tổng hóa hơn cho khách hàng. Khách hàng thực hiện kiểm tra thông tin sau khi nhận lại thông tin giá tiền, nếu chưa chính xác về địa chỉ gia hàng thì quay lại nhập địa chỉ giao hàng, nếu đã chính xác thì thực hiện chọn phương thức thanh toán và chọn "Thanh toán". Hệ thống kiểm tra thông tin thanh toán mà người dùng chọn sau đó thực hiện quy trình "Thanh toán", sau khi kết thúc quy trình thanh toán thì hệ thống phản hồi và hiển thị thông báo kết quả đơn hàng, nếu thành công thì kết thúc quy trình, nếu thất bại thì khách hàng quay lại chọn phương thức thanh toán phù hợp.
+ 
+Đây là một quy trình con chứa quy trình đặt mua hàng của khách hàng. Khách hàng chọn các sản phẩm trong giỏ hàng mà bản thân muốn mua và chọn "Đặt hàng". Hệ thống thực hiện kiểm tra hàng hóa và phản hồi về lại cho khách hàng. Sau khi chọn "Đặt hàng" và nhận kết quả xác nhận hàng hóa, khách hàng thực thực hiện nhập địa chỉ giao hàng, hệ thống sẽ thực hiện xử lý giao hàng và giá tiền để tính tổng hóa hơn cho khách hàng. Khách hàng thực hiện kiểm tra thông tin sau khi nhận lại thông tin giá tiền, nếu chưa chính xác về địa chỉ gia hàng thì quay lại nhập địa chỉ giao hàng, nếu đã chính xác thì thực hiện chọn phương thức thanh toán và chọn "Thanh toán". Hệ thống kiểm tra thông tin thanh toán mà người dùng chọn sau đó thực hiện quy trình "Thanh toán", sau khi kết thúc quy trình thanh toán thì hệ thống phản hồi và hiển thị thông báo kết quả đơn hàng, nếu thành công thì kết thúc quy trình, nếu thất bại thì khách hàng quay lại chọn phương thức thanh toán phù hợp.
 
 \begin{figure}[!htp]
 	\centering
@@ -111,7 +133,8 @@ Các lược đồ BPMN được nhóm thiết kế trên app Bizagi.
 	\newline
 	\caption{Lược đồ BPMN cho quy trình tính toán chi phí đơn hàng}
 \end{figure}
-\textbf{Mô tả:} Đây là 1 quy trình con chứa quy trình tính toán chi phí đơn hàng. Hệ thống thực hiện kiểm tra kho để tạo đơn hàng vận chuyển, nếu không có kho nào đủ hàng cho khách hàng thì cần thực hiện tính toán trao đổi kho và gửi thông tin trao đổi hàng cho kho. Sau khi thực hiện tính toán kho thì thực hiện tính toán giá giao hàng và tính tổng tiền của đơn hàng.
+
+Đây là một quy trình con chứa quy trình tính toán chi phí đơn hàng. Hệ thống thực hiện kiểm tra kho để tạo đơn hàng vận chuyển, nếu không có kho nào đủ hàng cho khách hàng thì cần thực hiện tính toán trao đổi kho và gửi thông tin trao đổi hàng cho kho. Sau khi thực hiện tính toán kho thì thực hiện tính toán giá giao hàng và tính tổng tiền của đơn hàng.
 
 \begin{figure}[!htp]
 	\centering
@@ -119,10 +142,8 @@ Các lược đồ BPMN được nhóm thiết kế trên app Bizagi.
 	\newline
 	\caption{Lược đồ BPMN cho quy trình thanh toán đơn hàng}
 \end{figure}
-\textbf{Mô tả:} Đây là 1 quy trình con chứa quy trình thanh toán đơn hàng. Quy trình bắt đầu từ sự kiện nhận thông tin thanh toán, nếu thanh toán trực tiếp khi nhận hàng thì thực hiện cập nhật đơn hàng. Nếu phương thức thanh toán là trực tuyên thì hệ thống thực hiện gửi thông tin thanh toán cho bên thứ ba tương ứng với bên mà người dùng chọn, sau đó chờ bên thứ ba trả về kết quả thanh toán. Sau khi nhận được kết quả từ bên thứ ba thì thông báo kết quả với người dùng, nếu thanh toán thành công thì thực hiện cập nhật đơn hàng vào hệ thống, khi cập nhật đơn hàng thành công thì thực hiện gửi thông tin vận chuyển đến dịch vụ vận chuyển của bên thứ ba và kết thúc quy trình.
 
-
-\newpage
+Đây là một quy trình con chứa quy trình thanh toán đơn hàng. Quy trình bắt đầu từ sự kiện nhận thông tin thanh toán, nếu thanh toán trực tiếp khi nhận hàng thì thực hiện cập nhật đơn hàng. Nếu phương thức thanh toán là trực tuyên thì hệ thống thực hiện gửi thông tin thanh toán cho bên thứ ba tương ứng với bên mà người dùng chọn, sau đó chờ bên thứ ba trả về kết quả thanh toán. Sau khi nhận được kết quả từ bên thứ ba thì thông báo kết quả với người dùng, nếu thanh toán thành công thì thực hiện cập nhật đơn hàng vào hệ thống, khi cập nhật đơn hàng thành công thì thực hiện gửi thông tin vận chuyển đến dịch vụ vận chuyển của bên thứ ba và kết thúc quy trình.
 
 
 \subsection{Quản lý sự kiện}
@@ -135,7 +156,8 @@ Các lược đồ BPMN được nhóm thiết kế trên app Bizagi.
 	\newline
 	\caption{Lược đồ BPMN cho quy trình thêm sự kiện}
 \end{figure}
-Mô tả: quy trình được bắt đầu bởi sự kiện nhận thông tin cho sự kiện sắp tới, sau khi nhận được thông tin sự kiện mới thì quản trị viên nhập thông tin cho sự kiện và xác nhận tạo sự kiện. Sau khi thông tin sự kiện mới được gửi đi thì hệ thống sẽ kiểm tra thông tin sự kiện có hợp lệ hay không, nếu hợp lệ thì cập nhật sự kiện mới vào hệ thống và kết thúc quy trình, nếu không hợp lệ thì quản trị viên cần quay lại task nhập lại thông tin cho sự kiện.
+
+Quy trình được bắt đầu bởi sự kiện nhận thông tin cho sự kiện sắp tới, sau khi nhận được thông tin sự kiện mới thì quản trị viên nhập thông tin cho sự kiện và xác nhận tạo sự kiện. Sau khi thông tin sự kiện mới được gửi đi thì hệ thống sẽ kiểm tra thông tin sự kiện có hợp lệ hay không, nếu hợp lệ thì cập nhật sự kiện mới vào hệ thống và kết thúc quy trình, nếu không hợp lệ thì quản trị viên cần quay lại task nhập lại thông tin cho sự kiện.
 
 \subsubsection{Sửa sự kiện}
 
@@ -145,7 +167,8 @@ Mô tả: quy trình được bắt đầu bởi sự kiện nhận thông tin c
 	\newline
 	\caption{Lược đồ BPMN cho quy trình chỉnh sửa sự kiện}
 \end{figure}
-Mô tả: quy trình được bắt đầu bởi sự kiện nhận thông tin thay đổi sự kiện, sau khi nhận được thông tin sự kiện cần cập nhật thì quản trị viên chọn sự cần cần sửa, sau đó nhập thông tin cho sự kiện và xác nhận cập nhật sự kiện. Sau khi thông tin cập nhật sự kiện được gửi đi thì hệ thống sẽ kiểm tra thông tin sự kiện có hợp lệ hay không, nếu hợp lệ thì cập nhật lại sự kiện vào hệ thống và kết thúc quy trình, nếu không hợp lệ thì quản trị viên cần quay lại task nhập lại thông tin cho sự kiện.
+
+Quy trình được bắt đầu bởi sự kiện nhận thông tin thay đổi sự kiện, sau khi nhận được thông tin sự kiện cần cập nhật thì quản trị viên chọn sự cần cần sửa, sau đó nhập thông tin cho sự kiện và xác nhận cập nhật sự kiện. Sau khi thông tin cập nhật sự kiện được gửi đi thì hệ thống sẽ kiểm tra thông tin sự kiện có hợp lệ hay không, nếu hợp lệ thì cập nhật lại sự kiện vào hệ thống và kết thúc quy trình, nếu không hợp lệ thì quản trị viên cần quay lại task nhập lại thông tin cho sự kiện.
 
 \subsubsection{Xóa sự kiện}
 
@@ -155,13 +178,14 @@ Mô tả: quy trình được bắt đầu bởi sự kiện nhận thông tin t
 	\newline
 	\caption{Lược đồ BPMN cho quy trình xóa sự kiện}
 \end{figure}
-Mô tả: quy trình được bắt đầu bởi sự kiện nhận thông tin xóa sự kiện, sau khi nhận được thông tin sự kiện cần cập nhật thì quản trị viên chọn sự cần cần xóa và chọn xóa sự kiện. Sau khi thông tin sự kiện cần xóa được gửi đi thì hệ thống sẽ kiểm tra thông tin sự kiện có hợp lệ hay không, nếu hợp lệ thì cập nhật xóa sự kiện khỏi hệ thống và kết thúc quy trình, nếu không hợp lệ thì thông báo thất bại và kết thúc quy trình.
+
+Quy trình được bắt đầu bởi sự kiện nhận thông tin xóa sự kiện, sau khi nhận được thông tin sự kiện cần cập nhật thì quản trị viên chọn sự cần cần xóa và chọn xóa sự kiện. Sau khi thông tin sự kiện cần xóa được gửi đi thì hệ thống sẽ kiểm tra thông tin sự kiện có hợp lệ hay không, nếu hợp lệ thì cập nhật xóa sự kiện khỏi hệ thống và kết thúc quy trình, nếu không hợp lệ thì thông báo thất bại và kết thúc quy trình.
 
 
 \subsection{Khách hàng mua hàng trực tiếp}
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[width=14cm]{img/BPMN/Hien/Customer_buyOffline.png}
+	\includegraphics[width=13cm]{img/BPMN/Hien/Customer_buyOffline.png}
 	\newline
 	\caption{Lược đồ BPMN cho quy trình khách hàng mua hàng trực tiếp}
 \end{figure}
@@ -171,17 +195,19 @@ Khách hàng sau khi đến cửa hàng sẽ thực hiện chọn sản phẩm v
 \subsection{Đăng nhập}
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[width=14cm]{img/BPMN/Hien/Customer_login.png}
+	\includegraphics[width=10cm]{img/BPMN/Hien/Customer_login.png}
 	\newline
 	\caption{Lược đồ BPMN cho quy trình đăng nhập}
 \end{figure}
 
 Người dùng truy cập hệ thống nhập thông tin đăng nhập và chọn đăng nhập. Hệ thống thực hiện kiểm tra thông tin và trả thông báo thành công hoặc thất bại. Nếu thất bại sẽ yêu cầu người dùng đăng nhập lại
 
+\newpage
+
 \subsection{Đăng ký tài khoản}
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[width=14cm]{img/BPMN/Hien/Customer_register.png}
+	\includegraphics[width=10cm]{img/BPMN/Hien/Customer_register.png}
 	\newline
 	\caption{Lược đồ BPMN cho quy trình đăng ký tài khoản mới}
 \end{figure}
@@ -198,12 +224,12 @@ Người dùng nhập thông tin cá nhân và chọn đăng ký. Hệ thống n
 \end{figure}
 
 Người dùng nhập thông tin cá nhân và gửi. Hệ thống kiểm tra thông tin, nếu hợp lệ sẽ yêu cầu mật khẩu mới từ người dùng; ngược lại sẽ yêu cầu người dùng nhập lại thông tin. Sau khi người dùng nhập mật khẩu mới và gửi, hệ thống sẽ cập nhật thông tin và gửi thông báo thành công, nếu mật khẩu không hợp lệ sẽ yêu cầu người dùng nhập lại.
-
+\newpage
 
 \subsection{Quản lý chi nhánh}
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[width=14cm]{img/BPMN/Hien/Branch_management.png}
+	\includegraphics[width=16cm]{img/BPMN/Hien/Branch_management.png}
 	\newline
 	\caption{Lược đồ BPMN cho quy trình quản lý chi nhánh}
 \end{figure}
@@ -214,14 +240,14 @@ Khi quản trị viên truy cập, hệ thống sẽ lấy danh sách chi nhánh
 \subsection{Quản lý nhân viên}
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[width=14cm]{img/BPMN/Hien/Employee_Management.png}
+	\includegraphics[width=16cm]{img/BPMN/Hien/Employee_Management.png}
 	\newline
 	\caption{Lược đồ BPMN cho quy trình quản lý nhân viên}
 \end{figure}
 
 Khi quản trị viên truy cập, hệ thống sẽ lấy danh sách nhân viên. Quản trị viên thực hiện thêm mới hoặc xem thông tin nhân viên. Nêu thêm mới, quản trị viên sẽ nhập thông tin nhân viên mới và cập nhật hệ thống, nếu có thông tin không hợp lệ, hệ thống sẽ yêu cầu nhập lại thông tin. Nếu xem thông nhân viên, hệ thống sẽ lấy thông tin chi tiết của nhân viên đó. Quản trị viên có thể chỉ xem thông tin nhân viên, chỉnh sửa thông tin hoặc xóa nhân viên. Nếu chọn xóa, hệ thống sẽ kiểm tra và xóa nếu hợp lệ, ngược lại sẽ hiện thông tin chi tiết nhân viên. Nếu chọn chỉnh sửa, hệ thống yêu cầu nhập thông tin sẽ kiểm tra thông tin nếu hợp lệ sẽ cập nhật thông tin, ngược lại sẽ yêu cầu nhập lại thông tin
 
-
+\newpage
 
 \subsubsection*{Tạo yêu cầu thêm, xóa nhân viên}
 \begin{figure}[!htp]
