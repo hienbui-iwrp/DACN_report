@@ -494,6 +494,40 @@ Bảng dữ liệu Sự kiện có hàng trong service Sự kiện bao gồm cá
 	\end{center}
 \end{figure}
 
+Bảng dữ liệu Hàng hóa trong service Hàng hóa bao gồm các thuộc tính và kiểu dữ liệu:
+\begin{itemize}
+	\item Mã hàng: varchar(100).
+	\item Kích thước: varchar(5).
+	\item Màu: varchar(10).
+	\item Tên hàng: varchar(100).
+	\item Loại: 
+	\item Giới tính: int.
+	\item Lứa tuổi: varchar(50).
+	\item Nhà sản xuất: varchar(100).
+	\item Được bán: tinyint.
+	\item Đơn giá: int.
+	\item Mô tả: varchar(100).
+\end{itemize}
+
+Bảng dữ liệu Hình ảnh hàng trong service Hàng hóa bao gồm các thuộc tính và kiểu dữ liệu:
+\begin{itemize}
+	\item Mã hàng: varchar(100).
+	\item Mặc định: tinyint.
+	\item Màu: varchar(10).
+	\item Hình ảnh: varchar(100).
+\end{itemize}
+
+Bảng dữ liệu Hàng hóa trong kho trong service Hàng hóa gồm các thuộc tính và kiểu dữ liệu:
+\begin{itemize}
+	\item Mã hàng: varchar(100).
+	\item Kích thước: varchar(5).
+	\item Màu: varchar(10).
+	\item Mã kho: varchar(100).
+	\item Số lượng: int.
+	\item Ngày tạo: Date.
+	\item Ngày thay đổi: Date.
+\end{itemize}
+
 \subsubsection{Service Đơn hàng}
 \begin{figure}[!htp]
 	\begin{center}
@@ -502,6 +536,47 @@ Bảng dữ liệu Sự kiện có hàng trong service Sự kiện bao gồm cá
 		\caption{Ánh xạ cho database của service Đơn hàng}
 	\end{center}
 \end{figure}
+Bảng dữ liệu Hàng trong service Đơn hàng bao gồm các thuộc tính và kiểu dữ liệu:
+\begin{itemize}
+	\item Mã hàng: varchar(100).
+	\item Kích thước: varchar(5).
+	\item Màu: varchar(10).
+	\item Mã đơn hàng: varchar(100).
+	\item Số lượng: int.
+	\item Đơn giá: int.
+	\item Thành tiền: int.
+	\item Thuế: double.
+	\item Hình ảnh: varchar(100).
+\end{itemize}
+
+Bảng dữ liệu Đơn hàng trong service Đơn hàng bao gồm các thuộc tính và kiểu dữ liệu:
+\begin{itemize}
+	\item Mã đơn hàng: varchar(100).
+	\item Ngày giao dịch: Date.
+	\item Tổng giá tiền: int.
+\end{itemize}
+
+Bảng dữ liệu Đơn hàng online trong service Đơn hàng bao gồm các thuộc tính và kiểu dữ liệu:
+\begin{itemize}
+	\item Mã đơn hàng: varchar(100).
+	\item Mong đợi: Date.
+	\item Phí ship: int.
+	\item Mã khách hàng: varchar(100).
+	\item Phương thức thanh toán: varchar(50).
+\end{itemize}
+
+Bảng dữ liệu Đơn hàng cửa hàng trong service Đơn hàng bao gồm các thuộc tính và kiểu dữ liệu:
+\begin{itemize}
+	\item Mã đơn hàng: varchar(100).
+	\item Mã cửa hàng: varchar(100).
+\end{itemize}
+
+Bảng dữ liệu Trạng thái đơn hàng online cửa hàng trong service Đơn hàng bao gồm các thuộc tính và kiểu dữ liệu:
+\begin{itemize}
+	\item Mã đơn hàng: varchar(100).
+	\item Trạng thái: varchar(50).
+	\item Thời gian: DateTime.
+\end{itemize}
 
 \subsubsection{Service Kho}
 \begin{figure}[!htp]
@@ -511,6 +586,38 @@ Bảng dữ liệu Sự kiện có hàng trong service Sự kiện bao gồm cá
 		\caption{Ánh xạ cho database của service Kho}
 	\end{center}
 \end{figure}
+Bảng dữ liệu Kho trong service Kho bao gồm các thuộc tính và kiểu dữ liệu:
+\begin{itemize}
+	\item Mã kho: varchar(100).
+	\item Tên kho: varchar(100).
+	\item Sức chứa: int. 
+	\item Ngày thành lập: Date.
+	\item Số nhà_đường: varchar(100).
+	\item Phường_xã: varchar(100).
+	\item Quận_huyện: varchar(100).
+	\item Tỉnh_thành: varchar(100).
+\end{itemize}
+
+Bảng dữ liệu Nhân viên quản lý kho trong service Kho bao gồm các thuộc tính và kiểu dữ liệu:
+\begin{itemize}
+	\item Mã nhân viên: varchar(100).
+	\item Mã kho: varchar(100).
+	\item Ngày bắt đầu: Date.
+	\item Ngày kết thúc: Date.
+\end{itemize}
+
+Bảng dữ liệu Nhân viên thuộc kho trong service Kho bao gồm các thuộc tính và kiểu dữ liệu:
+\begin{itemize}
+	\item Mã nhân viên: varchar(100).
+	\item Mã kho: varchar(100).
+	\item Ngày bắt đầu: Date.
+	\item Ngày kết thúc: Date.
+\end{itemize}
+
+Bảng dữ liệu Nhân viên kho trong service Kho gồm các thuộc tính và kiểu dữ liệu:
+\begin{itemize}
+	\item Mã nhân viên: varchar(100).
+\end{itemize}
 
 \subsubsection{Service chi nhánh}
 \begin{figure}[!htp]

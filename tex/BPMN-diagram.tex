@@ -2,6 +2,43 @@
 \section{Thiết kế lược đồ BPMN}
 
 Các lược đồ BPMN được nhóm thiết kế trên app Bizagi.
+
+\subsection{Quản lý kho}
+\begin{figure}[!htp]
+	\centering
+	\includegraphics[width=17cm]{img/BPMN/Tho/warehouse.PNG}
+	\newline
+	\caption{Lược đồ BPMN cho quy trình quản lý kho}
+\end{figure}
+\textbf{Mô tả:} Quy trình bắt đầu khi người dùng truy cập vào giao diện quản lý kho. Hệ thống quản lý kho lấy ra dữ liệu kho cho người dùng thực hiện các tác vụ của mình. Nếu người dùng chỉ xem dữ liệu thì sẽ không có gì xảy ra thêm. Nếu người dùng thêm dữ liệu, người dùng sẽ nhập và submit dữ liệu mới, hệ thống kiểm tra và hoàn thành việc thêm nếu dữ liệu hợp lệ. Nếu người dùng chỉnh sửa dữ liệu, người dùng chỉnh sửa trên dữ liệu hiện tại của kho, hệ thống kiểm tra và hoàn thành việc cập nhật nếu dữ liệu hợp lệ. Nếu người dùng xóa dữ liệu, người dùng xóa kho và submit, hệ thống kiểm tra dữ liệu và hoàn thành việc xóa nếu dữ liệu hợp lệ.
+
+\subsection{Lưu hóa đơn từ cửa hàng}
+\begin{figure}[!htp]
+	\centering
+	\includegraphics[width=17cm]{img/BPMN/Tho/save_invoice.PNG}
+	\newline
+	\caption{Lược đồ BPMN cho quy trình lưu hóa đơn từ cửa hàng}
+\end{figure}
+\textbf{Mô tả:} Quy trình bắt đầu sau khi cửa hàng xử lý xong đơn hàng và gửi thông tin đơn hàng cho hệ thống lưu lại. Hệ thống nhận dữ liệu và lưu lại đơn hàng vào hệ thống.
+
+\subsection{Khách hàng yêu cầu xuất hóa đơn}
+\begin{figure}[!htp]
+	\centering
+	\includegraphics[width=17cm]{img/BPMN/Tho/invoice_log.PNG}
+	\newline
+	\caption{Lược đồ BPMN cho quy trình khách hàng yêu cầu xuất hóa đơn}
+\end{figure}
+\textbf{Mô tả:} Quy trình bắt đầu khi người dùng tạo yêu cầu xuất hóa đơn. Lúc đó bên quản lý đơn nhận được yêu cầu kết xuất hóa đơn, sau đó xử lý yêu cầu. Bên quản lý đơn lấy thông tin đơn hàng, sau đó tạo hóa đơn rồi gửi về lại cho khách hàng. Khách hàng nhận được hóa đơn như đã yêu cầu.
+
+\subsection{Cập nhật trạng thái đơn hàng}
+\begin{figure}[!htp]
+	\centering
+	\includegraphics[width=17cm]{img/BPMN/Tho/update_status.PNG}
+	\newline
+	\caption{Lược đồ BPMN cho quy trình cập nhật trạng thái đơn hàng}
+\end{figure}
+\textbf{Mô tả:} Quy trình bắt đầu khi bên giao vận gửi dữ liệu cập nhật trạng thái mới của đơn hàng về cho hệ thống quản lý đơn. Bên quản lý đơn sau khi nhận được trạng thái đơn hàng đã cập nhật sẽ tiến hành cập nhật trạng thái đơn hàng trong hệ thống.
+
 \subsection{Khách hàng mua hàng}
 \begin{figure}[!htp]
 	\centering
