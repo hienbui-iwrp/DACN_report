@@ -380,16 +380,16 @@ Thực thể Hàng chỉ chứa một vài thông tin của hàng hóa được 
 
 Bảng dữ liệu Khách hàng trong service Khách hàng bao gồm các thuộc tính và kiểu dữ liệu như sau:
 \begin{itemize}
-	\item Mã khách hàng: string.
-	\item Tên đăng nhập: string.
-	\item Tên: string.
-	\item Email: string.
-	\item Số điện thoại: string.
-	\item Giới tính: string.
-	\item Đường: string.
-	\item Phường\_xã: string.
-	\item Quận\_huyện: string.
-	\item Tỉnh\_thành: string.
+	\item Mã khách hàng: varchar(100).
+	\item Tên đăng nhập: varchar(100).
+	\item Tên: varchar(100).
+	\item Email: varchar(100).
+	\item Số điện thoại: varchar(15).
+	\item Giới tính: int.
+	\item Đường: varchar(100).
+	\item Phường\_xã: varchar(50).
+	\item Quận\_huyện: varchar(50).
+	\item Tỉnh\_thành: varchar(50).
 \end{itemize}
 
 \subsubsection{Service Giỏ hàng}
@@ -403,19 +403,19 @@ Bảng dữ liệu Khách hàng trong service Khách hàng bao gồm các thuộ
 
 Bảng dữ liệu Giỏ hàng trong service Giỏ hàng bao gồm các thuộc tính và kiểu dữ liệu như sau:
 \begin{itemize}
-	\item Mã giỏ hàng: string.
-	\item Mã khách hàng: string.
+	\item Mã giỏ hàng: varchar(100).
+	\item Mã khách hàng: varchar(100).
 	\item Số lượng: int.
-	\item Mã hàng: string.
-	\item Kích thước: string.
-	\item Màu: string.
+	\item Mã hàng: varchar(100).
+	\item Kích thước: varchar(5).
+	\item Màu: varchar(10).
 \end{itemize}
 
 Bảng dữ liệu Hàng trong service Giỏ hàng bao gồm các thuộc tính và kiểu dữ liệu như sau:
 \begin{itemize}
-	\item Mã hàng: string.
-	\item Kích thước: string.
-	\item Màu: string.
+	\item Mã hàng: varchar(100).
+	\item Kích thước: varchar(5).
+	\item Màu: varchar(10).
 \end{itemize}
 
 \subsubsection{Service Đơn hàng của khách hàng}
@@ -429,35 +429,35 @@ Bảng dữ liệu Hàng trong service Giỏ hàng bao gồm các thuộc tính 
 
 Bảng dữ liệu Hàng trong service Đơn hàng của khách hàng bao gồm các thuộc tính và kiểu dữ liệu như sau:
 \begin{itemize}
-	\item Mã hàng: string.
-	\item Mã đơn hàng: string.
+	\item Mã hàng: varchar(100).
+	\item Mã đơn hàng: varchar(100).
 	\item Số lượng: int.
-	\item Mã hàng: string.
-	\item Kích thước: string.
-	\item Màu: string.
+	\item Mã hàng: varchar(100).
+	\item Kích thước: varchar(5).
+	\item Màu: varchar(10).
 	\item Đơn giá: int.
 	\item Thành tiền: int.
 	\item Thuế: int.
-	\item Hình ảnh: string.
+	\item Hình ảnh: varchar(100).
 \end{itemize}
 
 Bảng dữ liệu Đơn hàng trong service Đơn hàng của khách hàng bao gồm các thuộc tính và kiểu dữ liệu như sau:
 \begin{itemize}
-	\item Mã đơn hàng: string.
-	\item Ngày giao dịch: string.
+	\item Mã đơn hàng: varchar(100).
+	\item Ngày giao dịch: Date.
 	\item Tổng giá tiền: int.
-	\item Mã khách hàng: int.
-	\item Mong đợi: string.
+	\item Mã khách hàng: varchar(100).
+	\item Mong đợi: varchar(50).
 	\item Phí ship: int.
-	\item Mã khách hàng: string.
-	\item Phương thức thanh toán: string.
+	\item Mã khách hàng: varchar(100).
+	\item Phương thức thanh toán: varchar(100).
 \end{itemize}
 
 Bảng dữ liệu Thông tin trạng thái đơn hàng trong service Đơn hàng của khách hàng bao gồm các thuộc tính và kiểu dữ liệu như sau:
 \begin{itemize}
-	\item Mã đơn hàng: string.
-	\item Trạng thái: string.
-	\item Thời gian: datetime.
+	\item Mã đơn hàng: varchar(100).
+	\item Trạng thái: varchar(250).
+	\item Thời gian: DateTime.
 \end{itemize}
 
 \subsubsection{Service Sự kiện}
@@ -471,18 +471,18 @@ Bảng dữ liệu Thông tin trạng thái đơn hàng trong service Đơn hàn
 
 Bảng dữ liệu Sự kiện trong service Sự kiện bao gồm các thuộc tính và kiểu dữ liệu như sau:
 \begin{itemize}
-	\item Mã sự kiện: string.
-	\item Tên: string.
+	\item Mã sự kiện: varchar(100).
+	\item Tên: varchar(100).
 	\item Giảm giá: int.
-	\item Thời gian bắt đầu: datetime.
-	\item Thời gian kết thúc: datetime.
+	\item Thời gian bắt đầu: DateTime.
+	\item Thời gian kết thúc: DateTime.
 \end{itemize}
 
 
 Bảng dữ liệu Sự kiện có hàng trong service Sự kiện bao gồm các thuộc tính và kiểu dữ liệu như sau:
 \begin{itemize}
-	\item Mã sự kiện: string.
-	\item Mã hàng: string.
+	\item Mã sự kiện: varchar(100).
+	\item Mã hàng: varchar(100).
 \end{itemize}
 
 \subsubsection{Service Hàng hóa}
@@ -592,10 +592,10 @@ Bảng dữ liệu Kho trong service Kho bao gồm các thuộc tính và kiểu
 	\item Tên kho: varchar(100).
 	\item Sức chứa: int. 
 	\item Ngày thành lập: Date.
-	\item Số nhà_đường: varchar(100).
-	\item Phường_xã: varchar(100).
-	\item Quận_huyện: varchar(100).
-	\item Tỉnh_thành: varchar(100).
+	\item Số nhà\_đường: varchar(100).
+	\item Phường\_xã: varchar(100).
+	\item Quận\_huyện: varchar(100).
+	\item Tỉnh\_thành: varchar(100).
 \end{itemize}
 
 Bảng dữ liệu Nhân viên quản lý kho trong service Kho bao gồm các thuộc tính và kiểu dữ liệu:
