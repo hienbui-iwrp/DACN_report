@@ -43,21 +43,21 @@ Mô tả công việc trong quy trình, được kí hiệu bằng một kình c
 		      \begin{center}
 			      \includegraphics[width=2cm]{img/theory/BPMN/Task.png}
 		      \end{center}
-		      \caption{Task}
+		      \caption{Task \cite{theoryBPMN0}}
 	      \end{figure}
 	\item Event Sub-Process: Một quy trình con nằm trong một quy trình lớn, chức nhiều task
 	      \begin{figure}[!htp]
 		      \begin{center}
 			      \includegraphics[width=2cm]{img/theory/BPMN/Event Sub-process.png}
 		      \end{center}
-		      \caption{Event Sub-Process}
+		      \caption{Event Sub-Process \cite{theoryBPMN0}}
 	      \end{figure}
 	\item Transaction: Các giao dịch, bao gồm các task nhỏ khác logic với nhau
 	      \begin{figure}[!htp]
 		      \begin{center}
 			      \includegraphics[width=2cm]{img/theory/BPMN/Transaction.png}
 		      \end{center}
-		      \caption{Transaction}
+		      \caption{Transaction \cite{theoryBPMN0}}
 	      \end{figure}
 	\item Call Activity: Gọi một quy trình khác đã được định nghĩa trong hệ thống, thay vì phải định nghĩa lại nhiều lần
 	      \begin{figure}[!htp]
@@ -65,16 +65,13 @@ Mô tả công việc trong quy trình, được kí hiệu bằng một kình c
 		      \begin{center}
 			      \includegraphics[width=2cm]{img/theory/BPMN/Call Activity.png}
 		      \end{center}
-		      \caption{Call Activity}
+		      \caption{Call Activity \cite{theoryBPMN0}}
 	      \end{figure}
 \end{itemize}
-\begin{flushleft}
-	Các hình ảnh được lấy từ \url{https://thinhnotes.com/chuyen-nghe-ba/giai-ngo-cac-ky-hieu-bpmn/}
-\end{flushleft}
 
 
 \subsubsubsection*{Events}
-Sự kiện là một điều gì đó xảy ra và có thể tác động đến quy trình nghiệp vụ. Một sự kiện có thể là bên ngoài hoặc bên trong nội bộ. Miễn là nó có tác động và ảnh hưởng trực tiếp đến quy trình nghiệp vụ. Các sự kiện thường được kí hiệu bằng hình tròn, bên trong có các kí hiệu về loại hình kích hoạt. Bao gồm các loại:
+Sự kiện là một tác động đến quy trình nghiệp vụ có thể là bên ngoài hoặc bên trong. Các sự kiện thường được kí hiệu bằng hình tròn, bên trong có các kí hiệu về loại hình kích hoạt. Bao gồm các loại:
 \begin{itemize}
 	\item Start: Các sự kiện mở đầu quy trình nghiệp vụ
 	\item Intermediate: Các sự kiện xảy ra giữa các quy trình nghiệp vụ
@@ -84,12 +81,8 @@ Sự kiện là một điều gì đó xảy ra và có thể tác động đế
 	\begin{center}
 		\includegraphics[width=6cm]{img/theory/BPMN/Event.png}
 	\end{center}
-	\caption{Các loại sự kiện trong BPMN}
+	\caption{Các loại sự kiện trong BPMN \cite{theoryBPMN1}}
 \end{figure}
-\begin{flushleft}
-	Hình ảnh được lấy từ \textit{\url{https://www.edrawsoft.com/what-is-bpmn.html?gclid=Cj0KCQiAvqGcBhCJARIsAFQ5ke5U9xsSqU24T_1MgVtsStQ3wV0NbkzXcIY-rDCU8JAet5rGQMc6PyIaAgdxEALw_wcB}}
-\end{flushleft}
-
 
 
 \subsubsubsection*{Gateways}
@@ -103,11 +96,8 @@ Các cổng có nhiệm vụ chính là kiểm soát dòng chảy của quy trì
 	\begin{center}
 		\includegraphics[width=8cm]{img/theory/BPMN/Gateway.png}
 	\end{center}
-	\caption{Các loại cổng phổ biến trong BPMN}
+	\caption{Các loại cổng phổ biến trong BPMN \cite{theoryBPMN1}}
 \end{figure}
-\begin{flushleft}
-	Hình ảnh được lấy từ \url{https://www.bacs.vn/vi/blog/kien-thuc/tong-quan-ve-bpmn-danh-cho-business-analyst-11002.html}
-\end{flushleft}
 
 
 
@@ -140,22 +130,18 @@ Ngoài ra, còn có $<partnerLink>$ dùng để xác định các đối tác, c
 
 \subsubsection{Ví dụ về BPEL}
 
-\hspace*{0.5cm} Để hiểu rõ về quy trình được mô tả bằng BPEL, ta xem xét ví dụ về quy trình sắp xếp chuyến đi cho nhân viên. Đầu tiên, chúng ta sẽ kiếm tra hạng vé của nhân viên, giả sử rằng có một dịch vụ web Employee Travel sẽ làm việc này. Sau đó, chúng ta kiểm tra giá vé của hai hãng: American Airlines và Delta Airlines để chọn ra giá vé thấp hơn và trả lại kết quả. Quy trình này được minh họa như sau:
+\hspace*{0.5cm} Để hiểu rõ về quy trình được mô tả bằng BPEL, ta xem xét ví dụ về quy trình sắp xếp chuyến đi cho nhân viên \cite{theoryBPEL}. Đầu tiên, chúng ta sẽ kiếm tra hạng vé của nhân viên, giả sử rằng có một dịch vụ web Employee Travel sẽ làm việc này. Sau đó, chúng ta kiểm tra giá vé của hai hãng: American Airlines và Delta Airlines để chọn ra giá vé thấp hơn và trả lại kết quả. Quy trình này được minh họa như sau:
 
 \begin{figure}[!htp]
 	\begin{center}
 		\includegraphics[width=10cm]{img/theory/BPEL/Sample.png}
 	\end{center}
-	\caption{Ví dụ về quy trình BPEL sắp xếp chuyến đi}
+	\caption{Ví dụ về quy trình BPEL sắp xếp chuyến đi \cite{theoryBPEL}}
 \end{figure}
 
-\begin{flushleft}
-	Hình ảnh được lấy từ \url{https://www.oracle.com/technical-resources/articles/matjaz-bpel.html}
-\end{flushleft}
+Trong ví dụ này, các partner của hệ thống sẽ bao gồm Client, Employee Travel Status Web Service, American Airlines Web Service, Detal Airlines Web Service. Chúng ta sẽ xây dựng một quy trình BPEL bất đồng bộ, giả định rằng dịch vụ web Employee Travel là đồng bộ vì dữ liệu nhân viên đã có sẵn trong hệ thống chúng ta. 
 
-Trong ví dụ này, các partner của hệ thống sẽ bao gồm Client, Employee Travel Status Web Service, American Airlines Web Service, Detal Airlines Web Service. Chúng ta sẽ xây dựng một quy trình BPEL bất đồng bộ, giả định rằng dịch vụ web Employee Travel là đồng bộ vì dữ liệu nhân viên đã có sẵn và có thể phản hồi ngay lập tức. 
-
-Quy trình BPEL chi tiết như sau: Đầu tiên Client sẽ gửi một yêu cầu bất đồng bộ kèm theo thông tin chuyến đi đến hệ thống. Hệ thống sẽ nhận thông tin và thực hiện lệnh gọi đồng bộ sang dịch vụ web Employee Travel để lấy thông tin hạng vé của nhân viên này. Tiếp theo, hệ thống sẽ thực hiện 2 lệnh gọi bất đồng bộ đồng thời đến 2 dịch vụ web của American Airlines và Delta Airlines để xác định giá vé. Sau khi hệ thống nhận được phản hồi kết quả của 2 hãng hàng không, hệ thóng thực hiện so sánh để tìm giá vé thấp hơn và trả lại kết quả cho Client. Quy trình kết thúc. 
+Quy trình BPEL chi tiết như sau: Đầu tiên Client sẽ gửi một yêu cầu bất đồng bộ kèm theo thông tin chuyến đi đến hệ thống. Hệ thống sẽ nhận thông tin và thực hiện lệnh gọi đồng bộ sang dịch vụ web Employee Travel để lấy thông tin hạng vé của nhân viên này. Tiếp theo, hệ thống sẽ thực hiện 2 lệnh gọi bất đồng bộ đồng thời đến 2 dịch vụ web của American Airlines và Delta Airlines để xác định giá vé. Sau khi hệ thống nhận được phản hồi kết quả của 2 hãng hàng không, hệ thống thực hiện so sánh để tìm giá vé thấp hơn và trả lại kết quả cho Client.
 
 \subsubsection{Các bước xây dựng quy trình BPEL}
 Để xây dựng ví dụ trên, ta cần thực hiện các bước sau:

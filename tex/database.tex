@@ -512,6 +512,8 @@ Bảng dữ liệu Sự kiện có hàng trong service Sự kiện bao gồm cá
 	\end{center}
 \end{figure}
 
+
+
 \subsubsection{Service chi nhánh}
 \begin{figure}[!htp]
 	\begin{center}
@@ -520,6 +522,34 @@ Bảng dữ liệu Sự kiện có hàng trong service Sự kiện bao gồm cá
 		\caption{Ánh xạ cho database của service chi nhánh}
 	\end{center}
 \end{figure}
+
+Bảng "Chi nhánh" bao gồm các thuộc tính và kiểu dữ liệu như sau:
+\begin{itemize}
+	\item mã: string.
+	\item tên: string.
+	\item tỉnh: string.
+	\item quận: string.
+	\item phường: string.
+	\item đường: string.
+	\item ngày tạo: dateTime.
+	\item quản lý: string.
+	\item giờ mở cửa: time.
+	\item giờ đóng cửa: time.
+\end{itemize}
+
+Bảng "Hình chi nhánh" bao gồm các thuộc tính và kiểu dữ liệu như sau:
+\begin{itemize}
+	\item mã: string.
+	\item hình ảnh: string.
+\end{itemize}
+
+Bảng "Quản lý chi nhánh" và "Nhân viên chi nhánh"  bao gồm các thuộc tính và kiểu dữ liệu như sau:
+\begin{itemize}
+	\item mã nhân viên: string.
+	\item mã kho: string.
+	\item ngày bắt đầu: dateTime.
+	\item ngày kết thúc: dateTime.
+\end{itemize}
 
 
 \subsubsection{Service tài khoản}
@@ -531,6 +561,14 @@ Bảng dữ liệu Sự kiện có hàng trong service Sự kiện bao gồm cá
 	\end{center}
 \end{figure}
 
+Bảng "Tài khoản" bao gồm các thuộc tính và kiểu dữ liệu như sau:
+\begin{itemize}
+	\item tên đăng nhập: string.
+	\item mật khẩu: string.
+	\item quyền: int.
+\end{itemize}
+
+
 \subsubsection{Service nhân viên}
 \begin{figure}[!htp]
 	\begin{center}
@@ -539,6 +577,46 @@ Bảng dữ liệu Sự kiện có hàng trong service Sự kiện bao gồm cá
 		\caption{Ánh xạ cho database của service nhân viên}
 	\end{center}
 \end{figure}
+
+Bảng "Tài khoản" bao gồm các thuộc tính và kiểu dữ liệu như sau:
+\begin{itemize}
+	\item Tên đăng nhập: string.
+	\item Mã nhân viên: string.
+\end{itemize}
+
+Bảng "Nhân viên" bao gồm các thuộc tính và kiểu dữ liệu như sau:
+\begin{itemize}
+	\item mã: string.
+	\item tên: string.
+	\item tỉnh: string.
+	\item quận: string.
+	\item phường: string.
+	\item đường: string.
+	\item cmnd: string.
+	\item vị trí: int.
+	\item ngày vào: dateTime.
+	\item lương: int.
+	\item giới tính: int. 
+	\item sdt: string.  
+	\item email: string. 
+\end{itemize}
+
+Bảng "Bản điểm danh" bao gồm các thuộc tính và kiểu dữ liệu như sau:
+\begin{itemize}
+	\item mã nhân viên: string.
+	\item ngày: dateTime.
+	\item thời gian vào: time.
+	\item thời gian ra: time.
+\end{itemize}
+
+Bảng "Bản yêu cầu" bao gồm các thuộc tính và kiểu dữ liệu như sau:
+\begin{itemize}
+	\item mã: string.
+	\item ngày yêu cầu: dateTime.
+	\item loại: int.
+	\item mã nhân viên: string.
+	\item trạng thái: time.
+\end{itemize}
 
 
 \subsubsection{Service thống kê}
@@ -549,3 +627,22 @@ Bảng dữ liệu Sự kiện có hàng trong service Sự kiện bao gồm cá
 		\caption{Ánh xạ cho database của service thống kê}
 	\end{center}
 \end{figure}
+
+Bảng "Hàng hóa" bao gồm các thuộc tính và kiểu dữ liệu như sau:
+\begin{itemize}
+	\item mã hàng: string.
+	\item kích thước: string.
+	\item màu: string.
+	\item loại: string.
+	\item giới tính: int.
+	\item chi phí: int.
+	\item đơn giá: int.
+	\item số lượng: int.
+	\item đơn hàng: string.
+\end{itemize}
+
+\begin{itemize}
+	\item mã đơn hàng: string.
+	\item ngày giao dịch: dateTime.
+	\item mã cửa hàng: string.
+\end{itemize}
