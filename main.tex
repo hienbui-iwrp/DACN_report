@@ -1,13 +1,13 @@
 \documentclass[a4paper]{report}
 \usepackage{vntex}
-%\usepackage[english,vietnam]{babel}
+% \usepackage[english,vietnam]{babel}
 \usepackage[utf8]{inputenc}
 
-%\usepackage[utf8]{inputenc}
-%\usepackage[francais]{babel}
+% \usepackage[utf8]{inputenc}
+% %\usepackage[francais]{babel}
 \usepackage{a4wide,amssymb,epsfig,latexsym,array,hhline,fancyhdr}
 \usepackage[normalem]{ulem}
-%\usepackage{soul}
+\usepackage{soul}
 \usepackage{tabto}
 \usepackage[makeroom]{cancel}
 \usepackage{amsmath}
@@ -71,7 +71,7 @@
     \put(0,-8){\includegraphics[width=8mm, height=8mm]{img/hcmut.png}}
     %\put(0,-8){\epsfig{width=10mm,figure=hcmut.eps}}
    \end{picture}&
-	%\includegraphics[width=8mm, height=8mm]{hcmut.png} & %
+	% \includegraphics[width=8mm, height=8mm]{hcmut.png} & %
 	\begin{tabular}{l}
 		\textbf{\bf \ttfamily Trường Đại Học Bách Khoa Tp.Hồ Chí Minh}\\
 		\textbf{\bf \ttfamily Khoa Khoa Học \& Kỹ Thuật Máy Tính}
@@ -89,7 +89,7 @@
 \renewcommand{\headrulewidth}{0.3pt}
 \renewcommand{\footrulewidth}{0.3pt}
 
-%%%
+% %%%
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{3}
 \makeatletter
@@ -116,65 +116,179 @@
 
 \thesislayout
 
+\newcommand{\setupfont}[1]{\fontsize{#1}{#1}\selectfont}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\newcommand{\norm}[1]{\lVert #1 \rVert}
+\newcommand{\bignorm}[1]{\bigg \lVert #1 \bigg \rVert}
+
+\newcommand{\recomplex}[1]{#1}
+\newcommand{\imcomplex}[1]{#1i}
+\newcommand{\complex}[2]{#1 + i#2}
+\newcommand{\polarcomplex}[2]{#1e^{#2i}}
+\newcommand{\tricomplex}[2]{\cos(#1) + i\sin(#2)}
+
+\newcommand{\cartesiancoord}{Oft}
+\newcommand{\complexcoord}{O \Re \Im}
+
+\newcommand{\ifc}{\text{nếu }}
+\newcommand{\otherwise}{\text{các trường hợp khác}}
+
+\newcommand{\scalemath}[2]{\scalebox{#1}{\mbox{\ensuremath{\displaystyle #2}}}}
+
+\newcommand{\definition}[1]{\textbf{\textit{#1}}}
+
+\newcommand{\formularef}[1]{(\ref{#1})}
+\newcommand{\enumentry}[1]{\textit{#1}}
+\newcommand{\name}[1]{\text{#1}}
+
+\newcommand{\figref}[1]{Hình~\ref{#1}}
+\newcommand{\tableref}[1]{Bảng~\ref{#1}}
+\newcommand{\labelref}[2]{#1~\ref{#2}}
+
+
+\newcommand{\chapterref}[1]{Chương~\ref{#1}}
+\newcommand{\sectionref}[1]{Mục~\ref{#1}}
+\newcommand{\subsectionref}[1]{Tiểu mục~\ref{#1}}
+\newcommand{\appendixref}[1]{Phụ lục~\ref{#1}}
+
+\newcommand{\urlsrc}[1]{(nguồn~\url{#1})}
+\newcommand{\citesrc}[1]{(nguồn~\cite{#1})}
+
+\newcommand{\srccaption}[2]{\caption[#1]{#1 #2}}
+
+\newcommand{\numberedeq}{\addtocounter{equation}{1}\tag{\theequation}}
+\newcommand{\bigO}{\name{O}}
+
+\newcommand{\Waveform}{\text{Waveform}}
+\newcommand{\Spectrum}{\text{Spectrum}}
+\newcommand{\Spectrogram}{\text{Spectrogram}}
+
+\newcommand{\waveform}{\text{waveform}}
+\newcommand{\spectrum}{\text{spectrum}}
+\newcommand{\spectrogram}{\text{spectrogram}}
+
+\newcommand{\subsub}[1]{\noindent \textbf{#1}.}
+
+% \newcommand{\theorem}{Theorem}
+
+\usepackage{fancyhdr}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\fancypagestyle{fancy}{
+	\fancyhf{}
+	\renewcommand{\headrulewidth}{0.4pt}
+	\renewcommand{\footrulewidth}{0pt}
+	\fancyhead[OR]{\bfseries \nouppercase{\rightmark}}
+	\fancyhead[EL]{\bfseries \nouppercase{\leftmark}}
+	\fancyfoot[OR, EL]{\thepage}
+}
+
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
+	\fancyfoot[OR, EL]{\thepage}
+}
+\fancypagestyle{addpagenumbersforpdfimports}{
+	\fancyhead{}
+	\renewcommand{\headrulewidth}{0pt}
+	\fancyfoot{}
+	\fancyfoot[R]{\thepage}
+}
+
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\newcommand\HRule{\rule{\textwidth}{1pt}}
+
 \begin{document}
+	
+	\tolerance=1
+	\emergencystretch=\maxdimen
+	\hyphenpenalty=10000
+	\hbadness=10000
+	
+	\setlength{\abovedisplayskip}{-2.5mm}
+	\setlength{\belowdisplayskip}{0pt}
+	\setlength{\abovedisplayshortskip}{-2.5mm}
+	%\setlength{\belowdisplayshortskip}{-0.5pt}
+
 \begin{titlepage}
+	\begin{tikzpicture}[remember picture, overlay]
+		\draw[line width = 4pt] ($(current page.north west) + (1in + 5,-1in+30)$) rectangle ($(current page.south east) + (-1in+30,1in-20)$);
+		\draw[line width = 1pt] ($(current page.north west) + (1in,-1in+35)$) rectangle ($(current page.south east) + (-1in+35,1in-25)$);
+	  \end{tikzpicture}
+
+	
 	\begin{center}
-		ĐẠI HỌC QUỐC GIA THÀNH PHỐ HỒ CHÍ MINH \\
-		TRƯỜNG ĐẠI HỌC BÁCH KHOA \\
-		KHOA KHOA HỌC \& KỸ THUẬT MÁY TÍNH
+		\setupfont{13pt}
+	ĐẠI HỌC QUỐC GIA THÀNH PHỐ HỒ CHÍ MINH \\
+	TRƯỜNG ĐẠI HỌC BÁCH KHOA \\
+	KHOA KHOA HỌC VÀ KỸ THUẬT MÁY TÍNH 
 	\end{center}
 
-	\vspace{1cm}
+\vspace{1cm}
 
-	\begin{figure}[h!]
-		\begin{center}
-			\includegraphics[width=5cm]{img/hcmut.png}
-		\end{center}
-	\end{figure}
-
-	\vspace{1cm}
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=50mm]{img/hcmut.png}
+\end{center}
+\end{figure}
 
 
-	\begin{tabular}{p{14cm}}
-		\begin{center}
-			\textbf{{\LARGE BÁO CÁO ĐỒ ÁN CHUYÊN NGÀNH}}\\
-			\vspace{0.25cm}
-			\textbf{{\LARGE (CO4029)}}\\
-		\end{center}
-		~~ \\
-		\hline
-		\begin{center}
-			\textbf{{\Large XÂY DỰNG HỆ THỐNG QUẢN LÝ CỬA HÀNG THỜI TRANG DỰA TRÊN VIỆC TỰ ĐỘNG HÓA QUY TRÌNH NGHIỆP VỤ}}
-		\end{center}
-		~~ \\
-		\hline
+\begin{center}
+	\begin{tabular}{c}
+  %       \centering{\textbf{{\Large BÁO CÁO }}}
+  %       \newline
+		% \multicolumn{1}{l}{\textbf{{\Large ĐỒ ÁN CHUYÊN NGÀNH }}}
+        \textbf{{\Large BÁO CÁO}} \\
+        \textbf{{\Large ĐỒ ÁN CHUYÊN NGÀNH}}
 	\end{tabular}
-
-	\vspace{1.5cm}
-
-
-	\begin{center}
-		\begin{tabular}{m{1.5 cm}m{5.5cm}}
-			\textbf{GVHD:} & Trương Thị Thái Minh \\
-			& Nguyễn An Khương \\
-			\\ \\
-		\end{tabular}\\
-		\begin{tabular}{m{5cm}m{2cm}}
-			\hline
-			\textbf{Họ tên}     & \textbf{MSSV} \\
-			\hline
-			Bùi Lương Vinh Hiển & 1913380       \\
-			Trần Tuấn Phong     & 1914641       \\
-			Trần Nguyễn Hữu Thọ & 1915347       \\
-		\end{tabular}
-	\end{center}
+\end{center}
 
 
-	\vspace{1.5cm}
-	\begin{center}
-		{\footnotesize Tp. Hồ Chí Minh, tháng 12/2022}
-	\end{center}
+
+
+\begin{center}
+\begin{tabular}{c}
+\textbf{{\LARGE XÂY DỰNG HỆ THỐNG QUẢN LÝ}}\\
+\textbf{{\LARGE CỬA HÀNG THỜI TRANG DỰA TRÊN}}\\
+\textbf{{\LARGE VIỆC TỰ ĐỘNG HÓA QUY TRÌNH NGHIỆP VỤ}}
+\end{tabular}
+\end{center}
+
+\vspace{0.2cm}
+
+\begin{center}
+	\setupfont{14pt}
+	\begin{tabular}{rl}
+		\textbf{Ngành:} & Khoa học máy tính
+	\end{tabular}
+\end{center}
+
+\vspace{1cm}
+
+\begin{table}[h]
+	\setupfont{13pt}
+\begin{tabular}{rll}
+\hspace{5 cm}	& \textbf{HỘI ĐỒNG:} 	& Công nghệ phần mềm  \\
+				& \textbf{GVHD:} 		& ThS. Trương Thị Thái Minh\\
+				&						& TS. Nguyễn An Khương\\
+				& \textbf{TKHĐ:}		& Trương Thị Thái Minh\\
+				&&\multicolumn{1}{c}{\bf---o0o---}\vspace{2mm}\\
+				& \textbf{SVTH 1:} 		& Bùi Lương Vinh Hiển (1913380)       \\
+				& \textbf{SVTH 2:} 		& Trần Tuấn Phong (1914641)       \\
+				& \textbf{SVTH 3:} 		& Trần Nguyễn Hữu Thọ (1915347)       \\
+\end{tabular}
+\end{table}
+
+\begin{center}
+{\setupfont{12pt} Thành phố Hồ Chí Minh, 12/2022}
+\end{center}
 \end{titlepage}
+
 
 \newpage
 \tableofcontents
