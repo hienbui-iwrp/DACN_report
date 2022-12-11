@@ -880,7 +880,261 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía qu�
 	      \end{quote}
 \end{itemize}
 
-=======
+\subsubsubsection*{Branch Service}
+\begin{itemize}
+	\item readListBranch
+	\begin{quote}
+		GET /api/branch-service/
+	\end{quote}
+
+
+	\item readBranchDetail
+	\begin{quote}
+		GET /api/branch-service/{branchId}
+	\end{quote}
+
+	\item updateBranch
+	\begin{quote}
+		PUT /api/branch-service/statistic/{branchId}
+		\begin{itemize}
+			\item name: string
+			\item capacity: int 
+			\item address: string
+			\item open: dateTime
+			\item close: dateTime
+		\end{itemize}
+	\end{quote}
+
+	\item updateBranchManager
+	\begin{quote}
+		PUT /api/branch-service/manager/{branchId}
+		\begin{itemize}
+			\item staffId: string (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item addBranch
+	\begin{quote}
+		POST /api/branch-service/
+		\begin{itemize}
+			\item name: string (Required)
+			\item capacity: int (Required)
+			\item address: string (Required)
+			\item open: dateTime (Required)
+			\item close: dateTime (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item deleteBranch
+	\begin{quote}
+		DELETE /api/branch-service/{branchId}
+	\end{quote}
+
+	\item readBranchStaff
+	\begin{quote}
+		GET /api/branch-service/staff/{branchId}
+	\end{quote}
+
+	\item readBranchStatistic
+	\begin{quote}
+		GET /api/branch-service/statistic/{branchId}
+		\begin{itemize}
+			\item time: enum (Required)
+		\end{itemize}
+	\end{quote}
+\end{itemize}
+
+\subsubsubsection*{Account Service}
+\begin{itemize}
+	\item readListAccount
+	\begin{quote}
+		GET /api/account-service/
+	\end{quote}
+
+	\item Authentication
+	\begin{quote}
+		GET /api/account-service/{username}
+		\begin{itemize}
+			\item password: string (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item filterAccount
+	\begin{quote}
+		GET /api/account-service?keyword=\{keyword\}
+	\end{quote}
+
+	\item updateRole
+	\begin{quote}
+		PUT /api/account-service/role/{username}
+		\begin{itemize}
+			\item role: enum (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item addAccount
+	\begin{quote}
+		POST /api/account-service/add
+		\begin{itemize}
+			\item password: string (Required)
+			\item username: string (Required)
+			\item role: enum (Required)
+		\end{itemize}
+	\end{quote}
+\end{itemize}
+
+\subsubsubsection*{Staff Service}
+\begin{itemize}
+	\item readListStaff
+	\begin{quote}
+		GET /api/staff-service/staff
+	\end{quote}
+
+	\item readDetailStaff
+	\begin{quote}
+		GET /api/staff-service/staff/{staffId}
+	\end{quote}
+
+	\item getAttendanceStaff
+	\begin{quote}
+		GET /api/staff-service/staff/attendance/{staffId}
+	\end{quote}
+
+	\item filterStaff
+	\begin{quote}
+		GET /api/staff-service/staff?keyword={keyword}
+	\end{quote}
+
+	\item addStaff
+	\begin{quote}
+		POST /api/staff-service/staff
+		\begin{itemize}
+			\item name: string (Required)
+			\item birthDate: date (Required)
+			\item homeTown: string (Required)
+			\item citizenId: string (Required)
+			\item phone: string (Required)
+			\item address: string (Required)
+			\item workingPlace: enum (Required)
+			\item role: enum (Required)
+			\item salary: int (Required)
+			\item username: enum
+			\item password: enum
+		\end{itemize}
+	\end{quote}
+
+	\item updateStaff
+	\begin{quote}
+		POST /api/staff-service/staff/{staffId}
+		\begin{itemize}
+			\item name: string (Required)
+			\item birthDate: date (Required)
+			\item homeTown: string (Required)
+			\item citizenId: string (Required)
+			\item phone: string (Required)
+			\item address: string (Required)
+			\item workingPlace: enum (Required)
+			\item role: enum (Required)
+			\item salary: int (Required)
+			\item username: enum
+			\item password: enum
+		\end{itemize}
+	\end{quote}
+
+	\item deleteStaff
+	\begin{quote}
+		DELETE /api/staff-service/staff/{staffId}
+	\end{quote}
+
+	\item createAddRequest
+	\begin{quote}
+		POST /api/staff-service/request/
+		\begin{itemize}
+			\item name: string (Required)
+			\item birthDate: date (Required)
+			\item homeTown: string (Required)
+			\item citizenId: string (Required)
+			\item phone: string (Required)
+			\item address: string (Required)
+			\item workingPlace: enum (Required)
+			\item role: enum (Required)
+			\item salary: int (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item createDeleteRequest
+	\begin{quote}
+		POST /api/staff-service/request/{staffId}
+	\end{quote}
+
+	\item updateRequestStatus
+	\begin{quote}
+		POST /api/staff-service/request/{requestId}
+		\begin{itemize}
+			\item status: bool (Required)
+		\end{itemize}
+	\end{quote}
+
+\end{itemize}
+
+\subsubsubsection*{Statistic Service}
+\begin{itemize}
+	\item getStatistic
+	\begin{quote}
+		GET /api/statistic-service
+		\begin{itemize}
+			\item branchId: string (Required)
+			\item start: dateTime (Required)
+			\item end: dateTime (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item getRevenue
+	\begin{quote}
+		GET /api/statistic-service/revenue
+		\begin{itemize}
+			\item branchId: string
+			\item gender: enum
+			\item type: enum
+			\item start: dateTime (Required)	
+			\item end: dateTime (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item getRevenue1Goods
+	\begin{quote}
+		GET /api/statistic-service/revenue/{goodsId}
+		\begin{itemize}
+			\item start: dateTime (Required)	
+			\item end: dateTime (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item getProfit
+	\begin{quote}
+		GET /api/statistic-service/profit
+		\begin{itemize}
+			\item branchId: string
+			\item gender: enum
+			\item type: enum
+			\item start: dateTime (Required)	
+			\item end: dateTime (Required)
+		\end{itemize}
+	\end{quote}
+
+	\item getProfit1Goods
+	\begin{quote}
+		GET /api/statistic-service/profit/{goodsId}
+		\begin{itemize}
+			\item start: dateTime (Required)	
+			\item end: dateTime (Required)
+		\end{itemize}
+	\end{quote}
+
+\end{itemize}
+
+
+
 
 \subsubsection{Shared APIs}
 Module này dùng để chứa các API được xuất ra ngoài cho bất kì đối tượng người dùng nào
@@ -896,7 +1150,6 @@ Module này dùng để chứa các API được xuất ra ngoài cho bất kì 
 	      \end{quote}
 \end{itemize}
 
-s
 
 
 
