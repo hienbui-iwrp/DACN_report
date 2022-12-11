@@ -614,6 +614,10 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía qu�
 	\item updateManager
 	      \begin{quote}
 		      PUT /api/warehouse-service/manager
+			  \begin{itemize}
+				\item managerId: string (Required)
+				\item warehouseId: string (Required)
+			\end{itemize}
 	      \end{quote}
 
 	\item getStaff
@@ -624,21 +628,42 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía qu�
 	\item addStaff
 	      \begin{quote}
 		      POST /api/warehouse-service/staff
+			  \begin{itemize}
+				\item staffId: string (Required)
+				\item warehouseId: string (Required)
+			\end{itemize}
 	      \end{quote}
 
 	\item updateStaff
 	      \begin{quote}
 		      PUT /api/warehouse-service/staff
+			  \begin{itemize}
+				\item managerId: string (Required)
+				\item warehouseId: string (Required)
+			\end{itemize}
 	      \end{quote}
 
 	\item deleteStaff
 	      \begin{quote}
 		      DELETE /api/warehouse-service/staff
+			  \begin{itemize}
+				\item managerId: string (Required)
+			\end{itemize}
 	      \end{quote}
 
 	\item addWarehouse
 	      \begin{quote}
 		      POST /api/warehouse-service/warehouse
+			  \begin{itemize}
+				\item warehouseId: string (Required)
+				\item warehouseName: string (Required)
+				\item capacity: int (Required)
+				\item established_date: Date
+				\item street_no: string (Required)
+				\item ward: string (Required)
+				\item district: string (Required)
+				\item city: string (Required)
+			\end{itemize}
 	      \end{quote}
 
 	\item getWarehouse
@@ -649,11 +674,24 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía qu�
 	\item updateWarehouse
 	      \begin{quote}
 		      PUT /api/warehouse-service/warehouse
+			  \begin{itemize}
+				\item warehouseId: string (Required)
+				\item warehouseName: string (Required)
+				\item capacity: int (Required)
+				\item established_date: Date
+				\item street_no: string (Required)
+				\item ward: string (Required)
+				\item district: string (Required)
+				\item city: string (Required)
+			\end{itemize}
 	      \end{quote}
 
 	\item deleteWarehouse
 	      \begin{quote}
 		      DELETE /api/warehouse-service/warehouse
+			  \begin{itemize}
+				\item warehouseId: string (Required)
+			\end{itemize}
 	      \end{quote}
 \end{itemize}
 
@@ -663,48 +701,104 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía qu�
 	      \begin{quote}
 		      GET /api/goods-service/goods{goodsId}
 		      \begin{itemize}
-			      \item goodsId: string (Required)
+			      \item goods_code: string (Required)
 		      \end{itemize}
 	      \end{quote}
 
 	\item updateGoods
 	      \begin{quote}
 		      PUT /api/goods-service/goods
+			  \begin{itemize}
+				\item goods_code: string (Required)
+				\item size: string (Required)
+				\item color: string (Required)
+				\item goods_name: string (Required)
+				\item type: string (Required)
+				\item gender: int (Required)
+				\item age: string (Required)
+				\item manufacturer: string (Required)
+				\item for_sale: bool
+				\item unit_price: int (Required)
+				\item description: string
+			  \end{itemize}
 	      \end{quote}
 
 	\item addGoods
 	      \begin{quote}
 		      POST /api/goods-service/goods
+			  \begin{itemize}
+				\item goods_code: string (Required)
+				\item size: string (Required)
+				\item color: string (Required)
+				\item goods_name: string (Required)
+				\item type: string (Required)
+				\item gender: int (Required)
+				\item age: string (Required)
+				\item manufacturer: string (Required)
+				\item for_sale: bool
+				\item unit_price: int (Required)
+				\item description: string
+			  \end{itemize}
 	      \end{quote}
 
 	\item deleteGoods
 	      \begin{quote}
 		      DELETE /api/goods-service/goods
+			  \begin{itemize}
+				\item goods_code: string (Required)
+			  \end{itemize}
 	      \end{quote}
 
 	\item createImport
 	      \begin{quote}
 		      POST /api/goods-service/import
+			  \begin{itemize}
+				\item goods_code: string (Required)
+				\item dest_warehouse: string (Required)
+				\item quantity: int (Required)
+			  \end{itemize}
 	      \end{quote}
 
 	\item createExport
 	      \begin{quote}
 		      POST /api/goods-service/export
+			  \begin{itemize}
+				\item goods_code: string (Required)
+				\item source_warehouse: string (Required)
+				\item quantity: int (Required)
+			  \end{itemize}
 	      \end{quote}
 
 	\item createWHTransfer
 	      \begin{quote}
 		      POST /api/goods-service/wh-transfer
+			  \begin{itemize}
+				\item goods_code: string (Required)
+				\item source_warehouse: string (Required)
+				\item dest_warehouse: string (Required)
+				\item quantity: int (Required)
+			  \end{itemize}
 	      \end{quote}
 
 	\item createReturnManufact
 	      \begin{quote}
 		      POST /api/goods-service/return-manufact
+			  \begin{itemize}
+				\item goods_code: string (Required)
+				\item source_warehouse: string (Required)
+				\item manufacturer: string (Required)
+				\item quantity: int (Required)
+			  \end{itemize}
 	      \end{quote}
 
 	\item createCustReturn
 	      \begin{quote}
 		      POST /api/goods-service/cust-return
+			  \begin{itemize}
+				\item goods_code: string (Required)
+				\item dest_warehouse: string (Required)
+				\item quantity: int (Required)
+			  \end{itemize}
 	      \end{quote}
 \end{itemize}
 
