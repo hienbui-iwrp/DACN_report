@@ -5,7 +5,7 @@
 
 \hspace*{0.5cm}Để chọn lựa kiến trục phù hợp với hế thống, chúng ta xem xét ưu điểm và nhược điểm của từng loại kiến trúc.\\
 
-\begin{table}
+\begin{table}[h]
 	\begin{tabular}{|p{3cm}|p{12cm}|}
 		\hline
 		\textbf{Tên kiến trúc} & Layer\\
@@ -22,8 +22,7 @@
 	\caption{Kiến trúc Layer}
 \end{table}
 
-
-\begin{table}
+\begin{table}[h]
 	\begin{tabular}{|p{3cm}|p{12cm}|}
 		\hline
 		\textbf{Tên kiến trúc} & Service-Based\\
@@ -40,7 +39,7 @@
 	\caption{Kiến trúc Service-based}
 \end{table}
 
-\begin{table}
+\begin{table}[h]
 	\begin{tabular}{|p{3cm}|p{12cm}|}
 		\hline
 		\textbf{Tên kiến trúc} & Microservices\\
@@ -57,7 +56,9 @@
 	\caption{Kiến trúc Microservices}
 \end{table}
 
-\begin{table}
+\newpage
+
+\begin{table}[h]
 	\begin{tabular}{|p{3cm}|p{12cm}|}
 		\hline
 		\textbf{Tên kiến trúc} & Event-Driven\\
@@ -73,6 +74,7 @@
 	\end{tabular}
 	\caption{Kiến trúc Event-Driven}
 \end{table}
+
 
 Từ những thông tin trên, để phù hợp với hệ thống có khả năng mở rộng, thay đổi cao nhóm chọn kiến trúc Microservices. Bên cạnh đó nhóm sẽ kết hợp với kiến trúc Event-Driven để đảm bảo hiệu năng của hệ thống đối với các tác vụ bất đồng bộ
 
@@ -114,23 +116,28 @@ Module này bao gồm các class dùng để hiển thị UI đối với phía 
 	\newline
 	\caption{Lược đồ class của Module CustomerUI}
 \end{figure}
-\textbf{Mô tả:}
+
 \begin{quote}
 
 	\subsubsubsection*{CustomerUI}
-	Giao diện chính của khách hàng khi truy cập vào trang web của hệ thống.
+	Giao diện chính của khách hàng khi truy cập vào trang web của hệ thống.\\
+	Phương thức:
 	\begin{itemize}
 		\item render(): Hiển thị lên màn hình của khách hàng.
 	\end{itemize}
+	
 	\subsubsubsection*{NavBar}
-	Thành phần luôn có của giao diện của khách hàng hiển thị các lựa chọn truy cập nhanh cho khách hàng.
+	Thành phần luôn có của giao diện của khách hàng hiển thị các lựa chọn truy cập nhanh cho khách hàng.\\
+	Phương thức:
 	\begin{itemize}
 		\item render(): Hiển thị lên màn hình của khách hàng.
 		\item hoverItem(): Hiển thị lên màn hình giao diện các lựa chọn khi người dùng rê chuột đến các thể loại ở thanh navbar.
 		\item selectItem(): Hiển thị lên màn hình giao diện tương ứng với lựa chọn của khách hàng trên thanh navbar.
 	\end{itemize}
+	
 	\subsubsubsection*{Header}
-	Thành phần luôn có của giao diện của khách hàng hiển thị các thông tin về tài khoản của khách hàng cũng như logo và chức năng tìm kiếm cho khách hàng.
+	Thành phần luôn có của giao diện của khách hàng hiển thị các thông tin về tài khoản của khách hàng cũng như logo và chức năng tìm kiếm cho khách hàng.\\
+	Phương thức:
 	\begin{itemize}
 		\item render(): Hiển thị lên màn hình của khách hàng.
 		\item showHome(): Hiển thị về trang chủ mặc định của hệ thống.
@@ -140,8 +147,10 @@ Module này bao gồm các class dùng để hiển thị UI đối với phía 
 		\item showCustomerInfo(): Hiển thị lên màn hình thông tin chi tiết tài khoản của khách hàng khi đã đăng nhập.
 		\item showProductByName(): Hiển thị lên màn hình danh sách các sản phẩm khi người dùng chọn tìm kiếm.
 	\end{itemize}
+	
 	\subsubsubsection*{Footer}
-	Thành phần luôn có của giao diện của khách hàng hiển thị các thông tin về hệ thống.
+	Thành phần luôn có của giao diện của khách hàng hiển thị các thông tin về hệ thống.\\
+	Phương thức:
 	\begin{itemize}
 		\item render(): Hiển thị lên màn hình của khách hàng.
 		\item showHome(): Hiển thị về trang chủ mặc định của hệ thống.
@@ -150,29 +159,37 @@ Module này bao gồm các class dùng để hiển thị UI đối với phía 
 		\item showCustomerOrder(): Hiển thị lên màn hình trang danh sách các đơn hàng của khách hàng khi đã đăng nhập.
 		\item showIntroduction(): Hiển thị lên màn hình trang giới thiệu về hệ thống cửa hàng.
 	\end{itemize}
+	
 	\subsubsubsection*{Home}
-	Màn hình mặc định của người dùng sau khi truy cập vào trang web của hệ thống.
+	Màn hình mặc định của người dùng sau khi truy cập vào trang web của hệ thống.\\
+	Phương thức:
 	\begin{itemize}
 		\item render(): Hiển thị lên màn hình của khách hàng.
 		\item renderEvent(): Hiển thị thông tin các sự kiện đang diễn ra.
 		\item renderListTypeProduct(): Hiển thị danh sách các sản phẩm nổi bật theo từng thể loại.
 	\end{itemize}
+	
 	\subsubsubsection*{ListProduct}
-	Màn hình hiển thị danh sách tất cả sản phẩm của hệ thống cho khách hàng.
+	Màn hình hiển thị danh sách tất cả sản phẩm của hệ thống cho khách hàng.\\
+	Phương thức:
 	\begin{itemize}
 		\item render(): Hiển thị lên màn hình của khách hàng.
 		\item renderFollowType(): Hiển thị danh sách sản phẩm theo đặc điểm và thể loại.
 		\item renderListProduct(): Hiển thị danh sách các sản phẩm.
 	\end{itemize}
-	\subsubsubsection*{ProductDetail} Màn hình hiển thị danh sách tất cả sản phẩm của hệ thống cho khách hàng.
+	
+	\subsubsubsection*{ProductDetail} Màn hình hiển thị danh sách tất cả sản phẩm của hệ thống cho khách hàng.\\
+	Phương thức:
 	\begin{itemize}
 		\item render(): Hiển thị lên màn hình của khách hàng.
 		\item showInstructionSize(): Hiển thị lên màn hình thông tin hướng dẫn chọn size.
 		\item renderImageProduct(): Hiển thị hình ảnh sản phẩm mà khách hàng chọn.
 		\item changeQuantity(): Thay đổi số lượng sản phẩm để thêm vào giỏ hàng.
 	\end{itemize}
+	
 	\subsubsubsection*{Cart}
-	Màn hình hiển thị thông tin giỏ hàng của khách hàng.
+	Màn hình hiển thị thông tin giỏ hàng của khách hàng.\\
+	Phương thức:
 	\begin{itemize}
 		\item render(): Hiển thị lên màn hình của khách hàng.
 		\item renderListProduct(): Hiển thị danh sách sản phẩm có trong giỏ hàng.
@@ -180,8 +197,10 @@ Module này bao gồm các class dùng để hiển thị UI đối với phía 
 		\item changeQuantity(): Thay đổi số lượng sản phẩm trong giỏ hàng.
 		\item renderTotalPrice(): Hiển thị tổng giá tiền của các sản phẩm được chọn trong giỏ hàng.
 	\end{itemize}
+	
 	\subsubsubsection*{Payment}
-	Màn hình hiển thị trang thanh toán cho khách hàng.
+	Màn hình hiển thị trang thanh toán cho khách hàng.\\
+	Phương thức:
 	\begin{itemize}
 		\item render(): Hiển thị lên màn hình của khách hàng.
 		\item renderOrder(): Hiển thị đơn hàng.
@@ -190,15 +209,19 @@ Module này bao gồm các class dùng để hiển thị UI đối với phía 
 		\item renderShipFee(): Hiển thị giá tiền vận chuyển đơn hàng.
 		\item ShowPaymentOnline(): Hiển thị màn hình thanh toán online.
 	\end{itemize}
+	
 	\subsubsubsection*{ Manager Order}
-	Màn hình hiển thị danh sách các đơn hàng của khách hàng.
+	Màn hình hiển thị danh sách các đơn hàng của khách hàng.\\
+	Phương thức:
 	\begin{itemize}
 		\item render(): Hiển thị lên màn hình của khách hàng.
 		\item renderListOrder(): Hiển thị danh sách đơn hàng.
 		\item showOrderDetail(): Hiển thị thông tin chi tiết của đơn hàng.
 	\end{itemize}
+	
 	\subsubsubsection*{Order Detail}
-	Màn hình hiển thị thông tin chi tiết đơn hàng của khách hàng.
+	Màn hình hiển thị thông tin chi tiết đơn hàng của khách hàng.\\
+	Phương thức:
 	\begin{itemize}
 		\item render(): Hiển thị lên màn hình của khách hàng.
 		\item renderStatus(): Hiển thị trạng thái của đơn hàng.
@@ -206,8 +229,10 @@ Module này bao gồm các class dùng để hiển thị UI đối với phía 
 		\item renderListProduct(): Hiển thị danh sách sản phẩm có trong đơn hàng.
 		\item renderCost(): Hiển thị danh sách các khoản chi phí của đơn hàng.
 	\end{itemize}
+	
 	\subsubsubsection*{Forgot Password}
-	Màn hình hiển thị trang tạo lại mật khẩu cho tài khoản của khách hàng.
+	Màn hình hiển thị trang tạo lại mật khẩu cho tài khoản của khách hàng.\\
+	Phương thức:
 	\begin{itemize}
 		\item render(): Hiển thị lên màn hình của khách hàng.
 		\item showPassword(): Hiển thị mật khẩu khỏi trạng thái bị ẩn.
@@ -218,8 +243,10 @@ Module này bao gồm các class dùng để hiển thị UI đối với phía 
 		\item validateConfirmPassword(): Kiểm tra thông tin nhập lại mật khẩu của khách hàng.
 		\item updatePassword(): Gửi thông tin cập nhật mật khẩu mới cho tài khoản.
 	\end{itemize}
+	
 	\subsubsubsection*{Register}
-	Màn hình hiển thị trang đăng ký tài khoản cho khách hàng.
+	Màn hình hiển thị trang đăng ký tài khoản cho khách hàng.\\
+	Phương thức:
 	\begin{itemize}
 		\item render(): Hiển thị lên màn hình của khách hàng.
 		\item showPassword(): Hiển thị mật khẩu khỏi trạng thái bị ẩn.
@@ -228,8 +255,10 @@ Module này bao gồm các class dùng để hiển thị UI đối với phía 
 		\item confirmOtp(): Gửi xác nhận mã OTP.
 		\item validateConfirmPassword(): Kiểm tra thông tin nhập lại mật khẩu của khách hàng.
 	\end{itemize}
+	
 	\subsubsubsection*{Customer Info}
-	Màn hình hiển thị trang thông tin chi tiết tài khoản của khách hàng.
+	Màn hình hiển thị trang thông tin chi tiết tài khoản của khách hàng.\\
+	Phương thức:
 	\begin{itemize}
 		\item render(): Hiển thị lên màn hình của khách hàng.
 		\item renderInfo(): Hiển thị thông tin chung của khách hàng.
@@ -245,11 +274,12 @@ Module này bao gồm các class dùng để hiển thị UI đối với phía 
 \subsubsection{LoginUI}
 LoginUI là một class dùng để hiển thị trang đăng nhập cho cả phía khách hàng và quản trị viên
 \begin{figure}[!htp]
-	\centering
-	\includegraphics[width=2cm]{img/Architecture/UI/loginUI.png}
-	\newline
+	\begin{center}
+		\includegraphics[width=3cm]{img/Architecture/UI/loginUI.png}
+	\end{center}
 	\caption{Lược đồ class của LoginUI}
 \end{figure}
+
 Phương thức:
 \begin{itemize}
 	\item showPassword(): Hiện mật khẩu
@@ -1149,7 +1179,6 @@ Module này dùng để chứa các API được xuất ra ngoài cho bất kì 
 
 
 
-
 \subsection{Tầng Web Service}
 
 Lược đồ class ở tậng Web Service được xây dựng theo các thành phần sau:
@@ -1165,7 +1194,7 @@ Lược đồ class ở tậng Web Service được xây dựng theo các thành
 	\end{itemize}
 \end{itemize}
 
-
+\newpage
 
 \subsubsection{Customer Order Service}
 \begin{figure}[!htp]
@@ -1210,6 +1239,8 @@ Thuộc tính:
 	\item message: Thông điệp của phản hồi
 	\item value: Các dữ liệu trả về đối với các yêu cầu
 \end{itemize}
+
+\newpage
 
 
 \subsubsection{Cart Service}
@@ -1259,6 +1290,9 @@ Thuộc tính:
 	\item value: Các dữ liệu trả về đối với các yêu cầu.
 \end{itemize}
 
+\newpage
+
+
 \subsubsection{Customer Service}
 \begin{figure}[!htp]
 	\centering
@@ -1298,6 +1332,9 @@ Thuộc tính:
 	\item message: Thông điệp của phản hồi
 	\item value: Các dữ liệu trả về đối với các yêu cầu
 \end{itemize}
+
+\newpage
+
 
 \subsubsection{Order Service}
 \begin{figure}[!htp]
@@ -1346,12 +1383,13 @@ Thuộc tính:
 	\item result: Các dữ liệu trả về đối với các yêu cầu HTTP GET
 \end{itemize}
 
+\newpage
 
 
 \subsubsection{Account Service}
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[width=11cm]{img/Architecture/service/AccountService.png}
+	\includegraphics[width=14cm]{img/Architecture/service/AccountService.png}
 	\newline
 	\caption{Lược đồ class của Account Service}
 \end{figure}
@@ -1392,12 +1430,13 @@ Thuộc tính:
 	\item value: Các dữ liệu trả về đối với các yêu cầu HTTP GET
 \end{itemize}
 
+\newpage
 
 
 \subsubsection{Staff Service}
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[width=11cm]{img/Architecture/service/StaffService.png}
+	\includegraphics[width=13cm]{img/Architecture/service/StaffService.png}
 	\newline
 	\caption{Lược đồ class của Staff Service}
 \end{figure}
@@ -1448,12 +1487,13 @@ Thuộc tính:
 	\item value: Các dữ liệu trả về đối với các yêu cầu HTTP GET
 \end{itemize}
 
+\newpage
 
 
 \subsubsection{Branch Service}
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[width=10cm]{img/Architecture/service/BranchService.png}
+	\includegraphics[width=13cm]{img/Architecture/service/BranchService.png}
 	\newline
 	\caption{Lược đồ class của Branch Service}
 \end{figure}
@@ -1498,6 +1538,8 @@ Thuộc tính:
 	\item message: Thông điệp của phản hồi
 	\item value: Các dữ liệu trả về đối với các yêu cầu HTTP GET
 \end{itemize}
+
+\newpage
 
 
 \subsubsection{Event Service}
@@ -1544,6 +1586,10 @@ Thuộc tính:
 	\item message: Thông điệp của phản hồi
 	\item value: Các dữ liệu trả về đối với các yêu cầu
 \end{itemize}
+
+\newpage
+
+
 
 \subsubsection{Warehouse Service}
 \begin{figure}[!htp]
@@ -1597,6 +1643,9 @@ Thuộc tính:
 	\item value: Các dữ liệu trả về đối với các yêu cầu
 \end{itemize}
 
+\newpage
+
+
 
 \subsubsection{Statistic Service}
 \begin{figure}[!htp]
@@ -1648,11 +1697,14 @@ Thuộc tính:
 	\item Tầng BFF: Đóng vai trò trong việc kiểm tra các hoạt động trung gian khi nhận yêu cầu từ phía người dùng
 	\item Tầng Web Service: Bao gồm các dịch vụ Web
 \end{itemize}
+\newpage
+
+
 
 \subsubsection{Goods Service}
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[width=17cm]{img/Architecture/service/GoodsService.png}
+	\includegraphics[width=17.5cm]{img/Architecture/service/GoodsService.png}
 	\newline
 	\caption{Lược đồ class của Goods Service}
 \end{figure}
@@ -1706,24 +1758,29 @@ Thuộc tính:
 
 
 \newpage
+
+
+
 \subsubsection{Giao tiếp đồng bộ giữa các Services}
 
-\par Để hiện thực việc giao tiếp đồng bộ giữa các service, chúng ta có hai cách tiếp cận là giao tiếp thông qua bộ điều phối trung tâm (Orchestration) và giao tiếp trực tiếp giữa các service (Choreography). Với cách tiếp cận Choreography, các service sẽ gọi trực tiếp với nhau tùy theo mục đích của mình. Còn với cách tiếp cận Orchestration, một service trung gian sẽ được tạo ra để phục vụ cho việc giao tiếp giữa các service trong hệ thống; mục đích của service này là để quản lý và điều phối các lần gọi nhau giữa các service. 
+\hspace*{0.5cm} Để hiện thực việc giao tiếp đồng bộ giữa các service, chúng ta có hai cách tiếp cận là giao tiếp thông qua bộ điều phối trung tâm (Orchestration) và giao tiếp trực tiếp giữa các service (Choreography). Với cách tiếp cận Choreography, các service sẽ gọi trực tiếp với nhau tùy theo mục đích của mình. Còn với cách tiếp cận Orchestration, một service trung gian sẽ được tạo ra để phục vụ cho việc giao tiếp giữa các service trong hệ thống; mục đích của service này là để quản lý và điều phối các lần gọi nhau giữa các service. 
 \par Ví dụ, với hệ thống có hai service Customer Wishlist và Customer Demographics. Service Customer Wishlist được dùng để quản lý danh sách yêu thích của người dùng, còn service Customer Demographics được dùng để quản lý thông tin người dùng. Hiện tại, người dùng 123 có nhu cầu lấy thông tin chi tiết về danh sách yêu thích của mình. Do service Customer Wishlist chưa lưu tất cả các thông tin cần thiết, nên nó cần gọi service Customer Demographics để lấy thêm dữ liệu.
 
 \par Nếu sử dụng Choreography, sơ đồ giao tiếp giữa các service được trình bày như sau:
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[width=17cm]{img/Architecture/choreography.PNG}
+	\includegraphics[width=8cm]{img/Architecture/choreography.PNG}
 	\newline
 	\caption{Giao tiếp giữa các service bằng Choreography \cite{archChoreography}}
 \end{figure}
+
 Đối với phương pháp giao tiếp Choreography, service Customer Wishlist gọi trực tiếp đến service Customer Demographics để lấy thông tin từ user mà không đi qua trung gian nào cả. Và service Customer Demographics cũng trả về kết quả trực tiếp cho service Customer Wishlist.
 
 \par Nếu sử dụng Orchestration, sơ đồ giao tiếp giữa các service được trình bày như sau:
+
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[width=17cm]{img/Architecture/orchestration.PNG}
+	\includegraphics[width=8cm]{img/Architecture/orchestration.PNG}
 	\newline
 	\caption{Giao tiếp giữa các service bằng Orchestration \cite{archOrchestration}}
 \end{figure}
@@ -1733,10 +1790,10 @@ Thuộc tính:
 
 \par Ở hệ thống này, nhóm lựa chọn phương pháp Choreography để hiện thực việc giao tiếp giữa các service, để đảm bảo tính phân chia rõ ràng và ít phụ thuộc (loosely-coupled) giữa các service, đồng thời hạn chế các nhược điểm khi luồng thực thi trong những lần gọi là không phức tạp.
 
-\subsubsubsection{Customer order Service}
+\subsubsubsection{Giao tiếp của Customer order Service}
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[width=10cm]{img/Architecture/service/customer-order-call.png}
+	\includegraphics[width=8cm]{img/Architecture/service/customer-order-call.png}
 	\newline
 	\caption{Lược đồ giao tiếp đồng bộ của Customer order Service với các dịch vụ khác}
 \end{figure}
@@ -1750,7 +1807,7 @@ Thuộc tính:
 \end{itemize}
 
 
-\subsubsubsection{Cart Service}
+\subsubsubsection{Giao tiếp của Cart Service}
 \begin{figure}[!htp]
 	\centering
 	\includegraphics[width=8cm]{img/Architecture/service/cart-call.png}
@@ -1764,7 +1821,7 @@ Thuộc tính:
 \end{itemize}
 
 \newpage
-\subsubsubsection{Staff Service}
+\subsubsubsection{Giao tiếp của Staff Service}
 \begin{figure}[!htp]
 	\centering
 	\includegraphics[width=7cm]{img/Architecture/service/staff-call.png}
@@ -1778,10 +1835,10 @@ Thuộc tính:
 	\item \textbf{Branch service}: Staff service gọi tới Branch service để thực hiện cập nhật lại thông tin quản lý khi đổi quyền của nhân viên.
 \end{itemize}
 
-\subsubsubsection{Account Service}
+\subsubsubsection{Giao tiếp của Account Service}
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[width=8cm]{img/Architecture/service/account-call.png}
+	\includegraphics[width=6cm]{img/Architecture/service/account-call.png}
 	\newline
 	\caption{Lược đồ giao tiếp đồng bộ của Account Service với các dịch vụ khác}
 \end{figure}
@@ -1804,7 +1861,7 @@ Dưới đây là các giao tiếp bất đồng bộ có trong hệ thống:
 
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[width=10cm]{img/Architecture/kafka.png}
+	\includegraphics[width=13cm]{img/Architecture/kafka.png}
 	\newline
 	\caption{Giao tiếp bất đồng bộ giữa các services}
 \end{figure}
