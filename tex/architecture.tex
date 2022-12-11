@@ -736,8 +736,8 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía qu�
 				\item warehouseId: string (Required)
 				\item warehouseName: string (Required)
 				\item capacity: int (Required)
-				\item established_date: Date
-				\item street_no: string (Required)
+				\item established\_date: Date
+				\item street\_no: string (Required)
 				\item ward: string (Required)
 				\item district: string (Required)
 				\item city: string (Required)
@@ -756,8 +756,8 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía qu�
 				\item warehouseId: string (Required)
 				\item warehouseName: string (Required)
 				\item capacity: int (Required)
-				\item established_date: Date
-				\item street_no: string (Required)
+				\item established\_date: Date
+				\item street\_no: string (Required)
 				\item ward: string (Required)
 				\item district: string (Required)
 				\item city: string (Required)
@@ -779,7 +779,7 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía qu�
 	      \begin{quote}
 		      GET /api/goods-service/goods{goodsId}
 		      \begin{itemize}
-			      \item goods_code: string (Required)
+			      \item goods\_code: string (Required)
 		      \end{itemize}
 	      \end{quote}
 
@@ -787,16 +787,16 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía qu�
 	      \begin{quote}
 		      PUT /api/goods-service/goods
 			  \begin{itemize}
-				\item goods_code: string (Required)
+				\item goods\_code: string (Required)
 				\item size: string (Required)
 				\item color: string (Required)
-				\item goods_name: string (Required)
+				\item goods\_name: string (Required)
 				\item type: string (Required)
 				\item gender: int (Required)
 				\item age: string (Required)
 				\item manufacturer: string (Required)
-				\item for_sale: bool
-				\item unit_price: int (Required)
+				\item for\_sale: bool
+				\item unit\_price: int (Required)
 				\item description: string
 			  \end{itemize}
 	      \end{quote}
@@ -805,16 +805,16 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía qu�
 	      \begin{quote}
 		      POST /api/goods-service/goods
 			  \begin{itemize}
-				\item goods_code: string (Required)
+				\item goods\_code: string (Required)
 				\item size: string (Required)
 				\item color: string (Required)
-				\item goods_name: string (Required)
+				\item goods\_name: string (Required)
 				\item type: string (Required)
 				\item gender: int (Required)
 				\item age: string (Required)
 				\item manufacturer: string (Required)
-				\item for_sale: bool
-				\item unit_price: int (Required)
+				\item for\_sale: bool
+				\item unit\_price: int (Required)
 				\item description: string
 			  \end{itemize}
 	      \end{quote}
@@ -823,7 +823,7 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía qu�
 	      \begin{quote}
 		      DELETE /api/goods-service/goods
 			  \begin{itemize}
-				\item goods_code: string (Required)
+				\item goods\_code: string (Required)
 			  \end{itemize}
 	      \end{quote}
 
@@ -831,8 +831,8 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía qu�
 	      \begin{quote}
 		      POST /api/goods-service/import
 			  \begin{itemize}
-				\item goods_code: string (Required)
-				\item dest_warehouse: string (Required)
+				\item goods\_code: string (Required)
+				\item dest\_warehouse: string (Required)
 				\item quantity: int (Required)
 			  \end{itemize}
 	      \end{quote}
@@ -841,8 +841,8 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía qu�
 	      \begin{quote}
 		      POST /api/goods-service/export
 			  \begin{itemize}
-				\item goods_code: string (Required)
-				\item source_warehouse: string (Required)
+				\item goods\_code: string (Required)
+				\item source\_warehouse: string (Required)
 				\item quantity: int (Required)
 			  \end{itemize}
 	      \end{quote}
@@ -851,9 +851,9 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía qu�
 	      \begin{quote}
 		      POST /api/goods-service/wh-transfer
 			  \begin{itemize}
-				\item goods_code: string (Required)
-				\item source_warehouse: string (Required)
-				\item dest_warehouse: string (Required)
+				\item goods\_code: string (Required)
+				\item source\_warehouse: string (Required)
+				\item dest\_warehouse: string (Required)
 				\item quantity: int (Required)
 			  \end{itemize}
 	      \end{quote}
@@ -862,8 +862,8 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía qu�
 	      \begin{quote}
 		      POST /api/goods-service/return-manufact
 			  \begin{itemize}
-				\item goods_code: string (Required)
-				\item source_warehouse: string (Required)
+				\item goods\_code: string (Required)
+				\item source\_warehouse: string (Required)
 				\item manufacturer: string (Required)
 				\item quantity: int (Required)
 			  \end{itemize}
@@ -873,8 +873,8 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía qu�
 	      \begin{quote}
 		      POST /api/goods-service/cust-return
 			  \begin{itemize}
-				\item goods_code: string (Required)
-				\item dest_warehouse: string (Required)
+				\item goods\_code: string (Required)
+				\item dest\_warehouse: string (Required)
 				\item quantity: int (Required)
 			  \end{itemize}
 	      \end{quote}
@@ -1002,7 +1002,7 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía qu�
 
 	\item filterStaff
 	\begin{quote}
-		GET /api/staff-service/staff?keyword={keyword}
+		GET /api/staff-service/staff?keyword=\{keyword\}
 	\end{quote}
 
 	\item addStaff
@@ -1025,17 +1025,16 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía qu�
 
 	\item updateStaff
 	\begin{quote}
-		POST /api/staff-service/staff/{staffId}
+		PUT /api/staff-service/staff/{staffId}
 		\begin{itemize}
-			\item name: string (Required)
-			\item birthDate: date (Required)
-			\item homeTown: string (Required)
-			\item citizenId: string (Required)
-			\item phone: string (Required)
-			\item address: string (Required)
-			\item workingPlace: enum (Required)
-			\item role: enum (Required)
-			\item salary: int (Required)
+			\item birthDate: date
+			\item homeTown: string
+			\item citizenId: string
+			\item phone: string
+			\item address: string
+			\item workingPlace: enum
+			\item role: enum
+			\item salary: int
 			\item username: enum
 			\item password: enum
 		\end{itemize}
@@ -1048,7 +1047,7 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía qu�
 
 	\item createAddRequest
 	\begin{quote}
-		POST /api/staff-service/request/
+		POST /api/staff-service/request/add
 		\begin{itemize}
 			\item name: string (Required)
 			\item birthDate: date (Required)
@@ -1064,12 +1063,12 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía qu�
 
 	\item createDeleteRequest
 	\begin{quote}
-		POST /api/staff-service/request/{staffId}
+		POST /api/staff-service/request/delete/{staffId}
 	\end{quote}
 
 	\item updateRequestStatus
 	\begin{quote}
-		POST /api/staff-service/request/{requestId}
+		PUT /api/staff-service/request/{requestId}
 		\begin{itemize}
 			\item status: bool (Required)
 		\end{itemize}
@@ -1083,7 +1082,6 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía qu�
 	\begin{quote}
 		GET /api/statistic-service
 		\begin{itemize}
-			\item branchId: string (Required)
 			\item start: dateTime (Required)
 			\item end: dateTime (Required)
 		\end{itemize}
@@ -1132,7 +1130,6 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía qu�
 	\end{quote}
 
 \end{itemize}
-
 
 
 
