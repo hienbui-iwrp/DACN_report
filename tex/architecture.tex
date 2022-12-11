@@ -406,15 +406,24 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía khá
 	      \begin{quote}
 		      GET: /api/customer-service/customer/{customerId}
 		      \begin{itemize}
-			      \item username: string (Required)
+			      \item customerId: string (Required)
 		      \end{itemize}
 	      \end{quote}
 
 	\item updateCustomerInfo
 	      \begin{quote}
-		      PUT /api/customer-service/customer/{customerid}
+		      PUT /api/customer-service/customer/{customerId}
 		      \begin{itemize}
-			      \item customer: CustomerModel (Required)
+			      \item customerId: string (Required)
+			      \item userName: string
+			      \item name: string
+			      \item phone: string
+			      \item gender: string
+			      \item ages: string
+			      \item street: string
+			      \item ward: string
+			      \item district: string
+			      \item province: string
 		      \end{itemize}
 	      \end{quote}
 
@@ -422,7 +431,10 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía khá
 	      \begin{quote}
 		      POST /api/customer-service/customer
 		      \begin{itemize}
-			      \item customer: CustomerModel (Required)
+			      \item userName: string (Required)
+			      \item name: string (Required)
+			      \item phone: string (Required)
+			      \item password: string (Required)
 		      \end{itemize}
 	      \end{quote}
 \end{itemize}
@@ -439,7 +451,7 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía khá
 
 	\item getCart
 	      \begin{quote}
-		      POST /api/cart-service/cart/{customerId}
+		      GET /api/cart-service/cart/{customerId}
 		      \begin{itemize}
 			      \item customerId: string (Required)
 		      \end{itemize}
@@ -450,7 +462,14 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía khá
 		      POST /api/cart-service/cart/{customerId}
 		      \begin{itemize}
 			      \item cartId: string (Required)
-			      \item product: GoodInCartModel (Required)
+			      \item product: GoodsInCart (Required)\\
+							GoodInCart:
+							\begin{itemize}
+								\item goodsId: string 
+								\item color: string 
+								\item size: string 
+								\item quantity: string 
+							\end{itemize}
 		      \end{itemize}
 	      \end{quote}
 
@@ -459,7 +478,13 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía khá
 		      DELETE /api/cart-service/cart/{cartId}
 		      \begin{itemize}
 			      \item cartId: string (Required)
-			      \item product: Good (Required)
+			      \item product: Goods (Required)\\
+							Goods:
+							\begin{itemize}
+								\item goodsId: string 
+								\item color: string 
+								\item size: string
+							\end{itemize}
 		      \end{itemize}
 	      \end{quote}
 
@@ -476,12 +501,19 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía khá
 		      PUT /api/cart-service/cart/{cartId}
 		      \begin{itemize}
 			      \item cartId: string (Required)
-			      \item product: GoodInCartModel (Required)
+			      \item product: GoodsInCart (Required)\\
+							GoodInCart:
+							\begin{itemize}
+								\item goodsId: string 
+								\item color: string 
+								\item size: string 
+								\item quantity: string 
+							\end{itemize}
 		      \end{itemize}
 	      \end{quote}
 \end{itemize}
 
-\subsubsubsection*{Make Order Service}
+\subsubsubsection*{Customer Order Service}
 \begin{itemize}
 	\item getListOrder
 	      \begin{quote}
@@ -499,6 +531,52 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía khá
 			      \item orderId: string (Required)
 		      \end{itemize}
 	      \end{quote}
+
+	\item makeOrder
+	      \begin{quote}
+		      POST /api/make-order-service/order
+		      \begin{itemize}
+			      \item transactionDate: DateTime (Required)
+			      \item totalAmount: float (Required)
+			      \item isOnline: bool (Required)
+			      \item customerId: string (Required when isOnline == true)
+			      \item shippingFee: float (Required when isOnline == true)
+			      \item storeId: string (Required when isOnline == false)
+			      \item goods: [GoodsInOrder] (Required)\\
+							GoodsInOrder:
+							\begin{itemize}
+								\item goodsId: string 
+								\item color: string 
+								\item size: string 
+								\item quantity: string 
+								\item unitPrice: float 
+								\item taxAmount: float 
+								\item totalPrice: float 
+								\item description: string
+							\end{itemize}
+		      \end{itemize}
+	      \end{quote}
+	\item calcShipFee
+	      \begin{quote}
+		      POST /api/make-order-service/ship-fee
+		      \begin{itemize}
+			      \item address: Address (Required)\\
+							Address:
+							\begin{itemize}
+								\item street: string 
+								\item ward: string
+								\item district: string
+								\item province: string
+							\end{itemize}
+		      \end{itemize}
+	      \end{quote}
+	\item makePayment
+	      \begin{quote}
+		      POST /api/make-order-service/payment
+		      \begin{itemize}
+			      \item cost: float (Required)
+		      \end{itemize}
+	      \end{quote}			
 \end{itemize}
 
 \subsubsubsection*{Order Service}
