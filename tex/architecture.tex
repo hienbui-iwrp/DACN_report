@@ -884,6 +884,45 @@ Thuộc tính:
 	\newline
 	\caption{Lược đồ class của Order Service}
 \end{figure}
+\subsubsubsection*{OrderRepository}
+Thuộc tính:
+\begin{itemize}
+	\item orderModel: chứa đối tượng OrderModel
+	\item orderGoodsModel: chứa đối tượng OrderGoodsModel
+	\item onlineOrderModel: chứa đối tượng OnlineOrderModel
+	\item offlineOrderModel: chứa đối tượng OfflineOrderModel 
+	\item onlineOrderStatusModel: chứa đối tượng OnlineOrderStatusModel
+\end{itemize}
+Phương thức:
+\begin{itemize}
+	\item createOrder(orderGoods: list<OrderGoodsModel>): Tạo đơn hàng.
+	\item readOrder(orderId: string): Lấy thông tin đơn hàng.
+	\item updateOnlineOrderStatus(orderId: string, status: string): Cập nhật trạng thái đơn hàng.
+	\item readOnlineOrderStatus(orderId: string): Lấy thông tin trạng thái đơn hàng.
+\end{itemize}
+
+\subsubsubsection*{OrderController}
+Thuộc tính:
+\begin{itemize}
+	\item repository: Chứa đối tượng IOrderRepository
+	\item orderId: mã đơn hàng
+\end{itemize}
+Phương thức:
+\begin{itemize}
+	\item createOrder(orderData: OrderModel): tạo đơn hàng.
+	\item readOrder(orderId: string): Lấy dữ liệu đơn hàng.
+	\item updateOnlineOrderStatus(orderId: string, status: string): Cập nhật trạng thái đơn hàng.
+	\item readOnlineOrderStatus(orderId): Lấy thông tin trạng thái đơn hàng.
+\end{itemize}
+
+
+\subsubsubsection*{GetOrderResponse - GetOnlineOrderResponse - GetOfflineOrderResponse - UpdateResponse}
+Thuộc tính:
+\begin{itemize}
+	\item statusCode: Mã trạng thái của phản hồi
+	\item message: Thông điệp của phản hồi
+	\item result: Các dữ liệu trả về đối với các yêu cầu HTTP GET
+\end{itemize}
 
 
 
@@ -1091,6 +1130,50 @@ Thuộc tính:
 	\newline
 	\caption{Lược đồ class của Warehouse Service}
 \end{figure}
+\subsubsubsection*{WarehouseRepository}
+Thuộc tính:
+\begin{itemize}
+	\item warehouseModel: Chứa đối tượng WarehouseModel
+	\item staffModel: Chứa đối tượng WarehouseStaffModel
+	\item staffInWarehouseModel: Chứa đối tượng StaffInWarehouseModel
+	\item managerModel: Chứa đối tượng ManagerModel
+\end{itemize}
+Phương thức:
+\begin{itemize}
+	\item readManager(): Lấy thông tin quản lý kho.
+	\item updateManager(): Cập nhật quản lý kho.
+	\item readStaff(): Lấy thông tin nhân viên kho.
+	\item createStaff(): Thêm nhân viên kho.
+	\item updateStaff(): Cập nhật thông tin nhân viên kho.
+	\item deleteStaff(): Xóa nhân viên kho.
+	\item createWarehouse(): Thêm kho mới.
+	\item readWarehouse(): Lấy dữ liệu kho.
+	\item updateWarehouse(): Cập nhật dữ liệu kho.
+	\item deleteWarehouse(): Xóa kho
+\end{itemize}
+
+\subsubsubsection*{WarehouseController}
+Phương thức:
+\begin{itemize}
+	\item getManager(warehouseId: string): Lấy thông tin quản lý kho.
+	\item updateManager(warehouseId: string, managerId: string): Cập nhật quản lý cho kho.
+	\item getStaff(warehouseId: string): Lấy dữ liệu nhân viên của kho.
+	\item addStaff(staffId: string, warehouseId: string): Thêm nhân viên vào kho.
+	\item updateStaff(staffId: string, warehouseId: string): Cập nhật thông tin làm việc của nhân viên.
+	\item deleteStaff(staffId): Xóa nhân viên.
+	\item addWarehouse(warehouseData: WarehouseModel): Thêm kho mới.
+	\item getWarehouse(warehouseId): Lấy thông tin kho.
+	\item updateWarehouse(warehouseData: WarehouseModel): Cập nhật thông tin kho.
+	\item deleteWarehouse(warehouseId: string): Xóa kho.
+\end{itemize}
+
+\subsubsubsection*{GetWarehouseResponse - GetStaffResponse - GetManagerResponse - UpdateResponse}
+Thuộc tính:
+\begin{itemize}
+	\item statusCode: Mã trạng thái của phản hồi
+	\item message: Thông điệp của phản hồi
+	\item value: Các dữ liệu trả về đối với các yêu cầu
+\end{itemize}
 
 
 \subsubsection{Statistic Service}
@@ -1151,6 +1234,53 @@ Thuộc tính:
 	\newline
 	\caption{Lược đồ class của Goods Service}
 \end{figure}
+\subsubsubsection*{GoodsRepository}
+Thuộc tính:
+\begin{itemize}
+	\item goodsModel: Chứa đối tượng GoodsModel
+	\item goodsImageModel: Chứa đối tượng GoodsImageModel
+	\item goodsInWarehouseModel: Chứa đối tượng GoodsInWarehouseModel
+\end{itemize}
+Phương thức:
+\begin{itemize}
+	\item readGoods(): Lấy thông tin hàng.
+	\item updateGoods(): Cập nhật thông tin hàng.
+	\item createGoods(): Thêm hàng.
+	\item deleteGoods(): Xóa hàng.
+	\item importGoods(): Nhập hàng.
+	\item exportGoods(): Xuất hàng.
+	\item whTransfer(): Luân chuyển hàng.
+	\item returnManufact(): Trả hàng về nhà cung cấp.
+	\item custReturn(): Người dùng trả hàng.
+\end{itemize}
+
+\subsubsubsection*{GoodsController}
+Thuộc tính:
+\begin{itemize}
+	\item repository: chứa đối tượng IGoodsRepository.
+	\item goodsId: mã hàng.
+	\item warehouseId: mã kho.
+\end{itemize}
+Phương thức:
+\begin{itemize}
+	\item getGoods(goodsId: string): Lấy thông tin hàng.
+	\item updateGoods(goodsData: GoodsModel): Cập nhật thông tin hàng.
+	\item addGoods(goodsData: GoodsModel, warehouseId: string): Tạo hàng và thêm vào kho.
+	\item deleteGoods(goodsId: string): Xóa hàng.
+	\item createImport(importWH: string, goodsId: string, quantity: int): Tạo yêu cầu nhập kho.
+	\item createExport(exportWH: string, goodsId: string, quantity: int): Tạo yêu cầu xuất kho.
+	\item createWHTransfer(sourceWH: string, destWH: string, goodsId: string, quantity: int): Tạo yêu cầu luân chuyển hàng.
+	\item createReturnManufact(sourceWH: string, manufact: string, goodsId: string, quantity: int): Tạo yêu cầu trả hàng về nhà cung cấp.
+	\item createCustReturn(destWH: string, goodsId: string, quantity: int): Tạo dữ liệu người dùng trả hàng.
+\end{itemize}
+
+\subsubsubsection*{GetGoodsResponse - GetGoodsInWarehouseResponse - UpdateResponse}
+Thuộc tính:
+\begin{itemize}
+	\item statusCode: Mã trạng thái của phản hồi
+	\item message: Thông điệp của phản hồi
+	\item result: Các dữ liệu trả về đối với các yêu cầu
+\end{itemize}
 
 
 \newpage
