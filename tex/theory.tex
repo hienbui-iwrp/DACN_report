@@ -4,68 +4,67 @@
 \subsubsection{Tổng quan về BPMN}
 \hspace*{0.5cm}BPMN(Business Process Modeling Notation) là một lược đồ tập hợp các kí hiệu để mô hình hóa trực quan các quy trình nghiệp vụ xử lý . BPMN giúp các doanh nghiệp trực quan hóa các hoạt động và các luồng thông tin để thực hiện quy trình nghiệp vụ.
 \begin{figure}[!htp]
-	\centering
-	\includegraphics[width=10cm]{img/theory/BPMN/BPMN_sample.png}
-	\newline
-	\caption{Ví dụ về lược đồ BPMN}
+    \centering
+    \includegraphics[width=10cm]{img/theory/BPMN/BPMN_sample.png}
+    \newline
+    \caption{Ví dụ về lược đồ BPMN}
 \end{figure}
-
-
-
+ 
+ 
+ 
 \subsubsection{Lợi ích của BPMN}
 \begin{itemize}
-	\item Giúp các bên liên quan có thể hiểu rõ quy trình nghiệp vụ của hệ thống
-	\item Thu hẹp khoảng cách giửa bộ phận thiết kế và bộ phận nghiệp vụ
-	\item Dễ dàng mô tả các nghiệp vụ phức tạp
+    \item Giúp các bên liên quan có thể hiểu rõ quy trình nghiệp vụ của hệ thống
+    \item Thu hẹp khoảng cách giữa bộ phận thiết kế và bộ phận nghiệp vụ
+    \item Dễ dàng mô tả các nghiệp vụ phức tạp
 \end{itemize}
-
+ 
 \subsubsection{Các thành phần của BPMN}
 \subsubsubsection*{Swimlane}
 Swimlane bao gồm Pool và Lane:
 \begin{itemize}
-	\item Pool: Đại diện cho một tổ chức, phòng ban, một vai trò hoặc một hệ thống nào đó.
-	\item Lane: Đại diện các cá nhân riêng lẻ, người sẽ làm các hoạt động cụ thể.
+    \item Pool: Đại diện cho một tổ chức, phòng ban, một vai trò hoặc một hệ thống nào đó.
+    \item Lane: Đại diện các cá nhân riêng lẻ, người sẽ làm các hoạt động cụ thể.
 \end{itemize}
 \newpage
 \begin{figure}[!htp]
-	\centering
-	\includegraphics[width=10cm]{img/theory/BPMN/BPMN_swimlane.png}
-	\newline
-	\caption{Lược đồ BPMN bao gồm 1 pool(Hệ thống cứa hàng) và 2 lane (Nhân viên, Quản lý chi nhánh)}
+    \centering
+    \includegraphics[width=10cm]{img/theory/BPMN/BPMN_swimlane.png}
+    \newline
+    \caption{Lược đồ BPMN bao gồm 1 pool(Hệ thống cửa hàng) và 2 lane (Nhân viên, Quản lý chi nhánh)}
 \end{figure}
-
 \subsubsubsection*{Activities}
-Mô tả công việc trong quy trình, được kí hiệu bằng một kình chử nhật bo tròn 4 góc. Bao gồm 4 loại:
+Mô tả công việc trong quy trình, được kí hiệu bằng một hình chữ nhật bo tròn 4 góc, bao gồm 4 loại:
 \begin{itemize}
-	\item Task: Các việc nhỏ, đơn lẻ
-	      \begin{figure}[!htp]
-		      \begin{center}
-			      \includegraphics[width=2cm]{img/theory/BPMN/Task.png}
-		      \end{center}
-		      \caption{Task \cite{theoryBPMN0}}
-	      \end{figure}
-	\item Event Sub-Process: Một quy trình con nằm trong một quy trình lớn, chức nhiều task
-	      \begin{figure}[!htp]
-		      \begin{center}
-			      \includegraphics[width=2cm]{img/theory/BPMN/Event Sub-process.png}
-		      \end{center}
-		      \caption{Event Sub-Process \cite{theoryBPMN0}}
-	      \end{figure}
-	\item Transaction: Các giao dịch, bao gồm các task nhỏ khác logic với nhau
-	      \begin{figure}[!htp]
-		      \begin{center}
-			      \includegraphics[width=2cm]{img/theory/BPMN/Transaction.png}
-		      \end{center}
-		      \caption{Transaction \cite{theoryBPMN0}}
-	      \end{figure}
-	\item Call Activity: Gọi một quy trình khác đã được định nghĩa trong hệ thống, thay vì phải định nghĩa lại nhiều lần
-	      \begin{figure}[!htp]
-
-		      \begin{center}
-			      \includegraphics[width=2cm]{img/theory/BPMN/Call Activity.png}
-		      \end{center}
-		      \caption{Call Activity \cite{theoryBPMN0}}
-	      \end{figure}
+    \item Task: Các việc nhỏ, đơn lẻ
+          \begin{figure}[!htp]
+              \begin{center}
+                  \includegraphics[width=2cm]{img/theory/BPMN/Task.png}
+              \end{center}
+              \caption{Task \cite{theoryBPMN0}}
+          \end{figure}
+    \item Event Sub-Process: Một quy trình con nằm trong một quy trình lớn, chức nhiều task
+          \begin{figure}[!htp]
+              \begin{center}
+                  \includegraphics[width=2cm]{img/theory/BPMN/Event Sub-process.png}
+              \end{center}
+              \caption{Event Sub-Process \cite{theoryBPMN0}}
+          \end{figure}
+    \item Transaction: Các giao dịch, bao gồm các task nhỏ khác logic với nhau
+          \begin{figure}[!htp]
+              \begin{center}
+                  \includegraphics[width=2cm]{img/theory/BPMN/Transaction.png}
+              \end{center}
+              \caption{Transaction \cite{theoryBPMN0}}
+          \end{figure}
+    \item Call Activity: Gọi một quy trình khác đã được định nghĩa trong hệ thống, thay vì phải định nghĩa lại nhiều lần
+          \begin{figure}[!htp]
+ 
+              \begin{center}
+                  \includegraphics[width=2cm]{img/theory/BPMN/Call Activity.png}
+              \end{center}
+              \caption{Call Activity \cite{theoryBPMN0}}
+          \end{figure}
 \end{itemize}
 
 
@@ -85,17 +84,17 @@ Sự kiện là một tác động đến quy trình nghiệp vụ có thể là
 
 
 \subsubsubsection*{Gateways}
-Các cổng có nhiệm vụ chính là kiểm soát dòng chảy của quy trình nghiệp vụ. Cổng thường kí hiệu hình thoi, bên trong là kí hiệu các loại.
+Các cổng có nhiệm vụ chính là kiểm soát dòng chảy của quy trình nghiệp vụ. Cổng thường kí hiệu hình thoi, bên trong là ký hiệu các loại.
 \begin{itemize}
-	\item Start: Các sự kiện mở đầu quy trình nghiệp vụ
-	\item Intermediate: Các sự kiện xảy ra giữa các quy trình nghiệp vụ
-	\item End: Các sự kiện kết thúc quy trình nghiệp vụ
+    \item Start: Các sự kiện mở đầu quy trình nghiệp vụ
+    \item Intermediate: Các sự kiện xảy ra giữa các quy trình nghiệp vụ
+    \item End: Các sự kiện kết thúc quy trình nghiệp vụ
 \end{itemize}
 \begin{figure}[!htp]
-	\begin{center}
-		\includegraphics[width=8cm]{img/theory/BPMN/Gateway.png}
-	\end{center}
-	\caption{Các loại cổng phổ biến trong BPMN \cite{theoryBPMN1}}
+    \begin{center}
+        \includegraphics[width=8cm]{img/theory/BPMN/Gateway.png}
+    \end{center}
+    \caption{Các loại cổng phổ biến trong BPMN \cite{theoryBPMN1}}
 \end{figure}
 
 
@@ -118,28 +117,28 @@ BPEL bao gồm các thành phần nguyên tố và các thành phần cấu trú
 
 Bên cạnh thành nguyên tố, các thành phần cấu trúc chứa nhiều tác vụ bên trong:
 \begin{itemize}
-	\item $<sequence>$: Các tác vụ thực hiện tuần tự
-	\item $<flow>$: Các tác vụ thực hiện song song
-	\item $<switch>$: Thực hiện các tác vụ rẽ nhánh
-	\item $<while>$: Thực hiện các vọng lặp
+    \item $<sequence>$: Các tác vụ thực hiện tuần tự
+    \item $<flow>$: Các tác vụ thực hiện song song
+    \item $<switch>$: Thực hiện các tác vụ rẽ nhánh
+    \item $<while>$: Thực hiện các vòng lặp
 \end{itemize}
-
+ 
 Ngoài ra, còn có $<partnerLink>$ dùng để xác định các đối tác, các dịch vụ web sử dụng, $<variable>$ để định nghĩa các biến cần thiết trong quy trình
 
 
 \subsubsection{Ví dụ về BPEL}
-
-\hspace*{0.5cm} Để hiểu rõ về quy trình được mô tả bằng BPEL, ta xem xét ví dụ về quy trình sắp xếp chuyến đi cho nhân viên \cite{theoryBPEL}. Đầu tiên, chúng ta sẽ kiếm tra hạng vé của nhân viên, giả sử rằng có một dịch vụ web Employee Travel sẽ làm việc này. Sau đó, chúng ta kiểm tra giá vé của hai hãng: American Airlines và Delta Airlines để chọn ra giá vé thấp hơn và trả lại kết quả. Quy trình này được minh họa như sau:
-
+ 
+\hspace*{0.5cm} Để hiểu rõ về quy trình được mô tả bằng BPEL, ta xem xét ví dụ về quy trình sắp xếp chuyến đi cho nhân viên \cite{theoryBPEL}. Đầu tiên, chúng ta sẽ kiểm tra hạng vé của nhân viên, giả sử rằng có một dịch vụ web Employee Travel sẽ làm việc này. Sau đó, chúng ta kiểm tra giá vé của hai hãng: American Airlines và Delta Airlines để chọn ra giá vé thấp hơn và trả lại kết quả. Quy trình này được minh họa như sau:
+ 
 \begin{figure}[!htp]
-	\begin{center}
-		\includegraphics[width=10cm]{img/theory/BPEL/Sample.png}
-	\end{center}
-	\caption{Ví dụ về quy trình BPEL sắp xếp chuyến đi \cite{theoryBPEL}}
+    \begin{center}
+        \includegraphics[width=10cm]{img/theory/BPEL/Sample.png}
+    \end{center}
+    \caption{Ví dụ về quy trình BPEL sắp xếp chuyến đi \cite{theoryBPEL}}
 \end{figure}
 
-Trong ví dụ này, các partner của hệ thống sẽ bao gồm Client, Employee Travel Status Web Service, American Airlines Web Service, Detal Airlines Web Service. Chúng ta sẽ xây dựng một quy trình BPEL bất đồng bộ, giả định rằng dịch vụ web Employee Travel là đồng bộ vì dữ liệu nhân viên đã có sẵn trong hệ thống chúng ta. 
-
+Trong ví dụ này, các partner của hệ thống sẽ bao gồm Client, Employee Travel Status Web Service, American Airlines Web Service, Delta Airlines Web Service. Chúng ta sẽ xây dựng một quy trình BPEL bất đồng bộ, giả định rằng dịch vụ web Employee Travel là đồng bộ vì dữ liệu nhân viên đã có sẵn trong hệ thống chúng ta.
+ 
 Quy trình BPEL chi tiết như sau: Đầu tiên Client sẽ gửi một yêu cầu bất đồng bộ kèm theo thông tin chuyến đi đến hệ thống. Hệ thống sẽ nhận thông tin và thực hiện lệnh gọi đồng bộ sang dịch vụ web Employee Travel để lấy thông tin hạng vé của nhân viên này. Tiếp theo, hệ thống sẽ thực hiện 2 lệnh gọi bất đồng bộ đồng thời đến 2 dịch vụ web của American Airlines và Delta Airlines để xác định giá vé. Sau khi hệ thống nhận được phản hồi kết quả của 2 hãng hàng không, hệ thống thực hiện so sánh để tìm giá vé thấp hơn và trả lại kết quả cho Client.
 
 \subsubsection{Các bước xây dựng quy trình BPEL}

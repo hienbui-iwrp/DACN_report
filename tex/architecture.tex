@@ -2,426 +2,426 @@
 
 \section{Kiến trúc hệ thống}
 \subsection{Lựa chọn kiến trúc}
-
-\hspace*{0.5cm}Để chọn lựa kiến trục phù hợp với hế thống, chúng ta xem xét ưu điểm và nhược điểm của từng loại kiến trúc.\\
-
+ 
+\hspace*{0.5cm}Để chọn lựa kiến trúc phù hợp với hệ thống, chúng ta xem xét ưu điểm và nhược điểm của từng loại kiến trúc.\\
+ 
 \begin{table}[h]
-	\begin{tabular}{|p{3cm}|p{12cm}|}
-		\hline
-		\textbf{Tên kiến trúc} & Layer\\
-		\hline
-		\textbf{Mô tả}         & Kiến trúc được xây dựng thành nhiều lớp, các thành phần trong cùng một lớp có cùng nhiệm vụ với nhau; mỗi lớp sẽ cung cấp dịch vụ cho tầng trên của nó \\
-		\hline
-		\textbf{Ưu điểm}       & Có bản chất là hệ thống nguyên khối nên đơn giản, dễ xây dựng, chi phí thấp khi xây dựng bảo trì đồng thời có thể tăng tính tin cậy dựa vào số lượng các lớp \\
-		\hline
-		\textbf{Nhược điểm}    & Khả năng co giản, mở rộng thấp; hiệu xuất thấp vì không thể xử lý các tác vụ song song; khả năng chịu lỗi kém\\
-		\hline
-		\textbf{Sử dụng cho}   & Sử dụng trong các hệ thống nhỏ, không yêu cầu hiệu năng cao; các hệ thống được xây dựng trên một hệ thống có sẵn trước đó \\
-		\hline
-	\end{tabular}
-	\caption{Kiến trúc Layer}
+    \begin{tabular}{|p{3cm}|p{12cm}|}
+        \hline
+        \textbf{Tên kiến trúc} & Layer\\
+        \hline
+        \textbf{Mô tả}         & Kiến trúc được xây dựng thành nhiều lớp, các thành phần trong cùng một lớp có cùng nhiệm vụ với nhau; mỗi lớp sẽ cung cấp dịch vụ cho tầng trên của nó \\
+        \hline
+        \textbf{Ưu điểm}       & Có bản chất là hệ thống nguyên khối nên đơn giản, dễ xây dựng, chi phí thấp khi xây dựng bảo trì đồng thời có thể tăng tính tin cậy dựa vào số lượng các lớp \\
+        \hline
+        \textbf{Nhược điểm}    & Khả năng co giản, mở rộng thấp; hiệu xuất thấp vì không thể xử lý các tác vụ song song; khả năng chịu lỗi kém\\
+        \hline
+        \textbf{Sử dụng cho}   & Sử dụng trong các hệ thống nhỏ, không yêu cầu hiệu năng cao; các hệ thống được xây dựng trên một hệ thống có sẵn trước đó \\
+        \hline
+    \end{tabular}
+    \caption{Kiến trúc Layer}
 \end{table}
-
+ 
 \begin{table}[h]
-	\begin{tabular}{|p{3cm}|p{12cm}|}
-		\hline
-		\textbf{Tên kiến trúc} & Service-Based\\
-		\hline
-		\textbf{Mô tả}         & Kiến trúc được xây dựng thành các lớp phân tán, sử dụng các dịch vụ web kết nối tới một cơ sở dữ liệu nguyên khối     \\
-		\hline
-		\textbf{Ưu điểm}       & Sử dụng chung một cơ sở dữ liệu nên độ tin cậy, tính nhất quán dữ liệu cao; khả năng chịu lỗi tốt \\
-		\hline
-		\textbf{Nhược điểm}    & Sủ dụng một cơ sở dữ liệu duy nhất nên khả năng co giản mở rộng không linh hoạt   \\
-		\hline
-		\textbf{Sử dụng cho}   & Phù hợp với các hệ thống không quá lớn, các hệ thống phân chi thành từng domain                   \\
-		\hline
-	\end{tabular}
-	\caption{Kiến trúc Service-based}
+    \begin{tabular}{|p{3cm}|p{12cm}|}
+        \hline
+        \textbf{Tên kiến trúc} & Service-Based\\
+        \hline
+        \textbf{Mô tả}         & Kiến trúc được xây dựng thành các lớp phân tán, sử dụng các dịch vụ web kết nối tới một cơ sở dữ liệu nguyên khối     \\
+        \hline
+        \textbf{Ưu điểm}       & Sử dụng chung một cơ sở dữ liệu nên độ tin cậy, tính nhất quán dữ liệu cao; khả năng chịu lỗi tốt \\
+        \hline
+        \textbf{Nhược điểm}    & Sử dụng một cơ sở dữ liệu duy nhất nên khả năng co giãn mở rộng không linh hoạt   \\
+        \hline
+        \textbf{Sử dụng cho}   & Phù hợp với các hệ thống không quá lớn, các hệ thống phân chia thành từng domain                   \\
+        \hline
+    \end{tabular}
+    \caption{Kiến trúc Service-based}
 \end{table}
-
+ 
 \begin{table}[h]
-	\begin{tabular}{|p{3cm}|p{12cm}|}
-		\hline
-		\textbf{Tên kiến trúc} & Microservices\\
-		\hline
-		\textbf{Mô tả}         & Kiến trúc phân tán được xây dựng dựa trên điều phối các dịch vụ web tách biệt, hoạt động độc lập hoàn toàn các thành phần bao gồm cả cơ sở dữ liệu    \\
-		\hline
-		\textbf{Ưu điểm}       & Xây dựng dựa trên các dịch vụ web độc lập hoàn toàn nên khả năng co giản, mở rộng cao; khả năng chịu lỗi tốt; dễ dàng thay đổi\\
-		\hline
-		\textbf{Nhược điểm}    & Các dịch vụ web phải giao tiếp nhiều do đó hiệu xuất không được đảm bảo; xây dựng khó khăn và chi phí lớn; khó duy trì tính nhất quán dữ liệu \\
-		\hline
-		\textbf{Sử dụng cho}   & Phù hợp với các hệ thống lớn, yêu cầu khả năng mở rộng cao torng tương lai                  \\
-		\hline
-	\end{tabular}
-	\caption{Kiến trúc Microservices}
+    \begin{tabular}{|p{3cm}|p{12cm}|}
+        \hline
+        \textbf{Tên kiến trúc} & Microservices\\
+        \hline
+        \textbf{Mô tả}         & Kiến trúc phân tán được xây dựng dựa trên điều phối các dịch vụ web tách biệt, hoạt động độc lập hoàn toàn các thành phần bao gồm cả cơ sở dữ liệu    \\
+        \hline
+        \textbf{Ưu điểm}       & Xây dựng dựa trên các dịch vụ web độc lập hoàn toàn nên khả năng co giãn, mở rộng cao; khả năng chịu lỗi tốt; dễ dàng thay đổi\\
+        \hline
+        \textbf{Nhược điểm}    & Các dịch vụ web phải giao tiếp nhiều do đó hiệu xuất không được đảm bảo; xây dựng khó khăn và chi phí lớn; khó duy trì tính nhất quán dữ liệu \\
+        \hline
+        \textbf{Sử dụng cho}   & Phù hợp với các hệ thống lớn, yêu cầu khả năng mở rộng cao trong tương lai                  \\
+        \hline
+    \end{tabular}
+    \caption{Kiến trúc Microservices}
 \end{table}
-
+ 
 \newpage
-
+ 
 \begin{table}[h]
-	\begin{tabular}{|p{3cm}|p{12cm}|}
-		\hline
-		\textbf{Tên kiến trúc} & Event-Driven\\
-		\hline
-		\textbf{Mô tả}         & Kiển trúc không đồng bộ phân tán được xây dựng dựa trên các thành phần xử lý sự kiện không đồng bộ tách rời nhau \\
-		\hline
-		\textbf{Ưu điểm}       & Hiệu năng cao do thực hiệc các tác vụ bất đồng bộ tách rời; khả năng mở rộng cao; khả năng chịu lỗi tốt \\
-		\hline
-		\textbf{Nhược điểm}    & Khó xây dựng và khó kiểm thử \\
-		\hline
-		\textbf{Sử dụng cho}   & Phù hợp với các hệ thống yêu cầu hiệu năng cao \\
-		\hline
-	\end{tabular}
-	\caption{Kiến trúc Event-Driven}
+    \begin{tabular}{|p{3cm}|p{12cm}|}
+        \hline
+        \textbf{Tên kiến trúc} & Event-Driven\\
+        \hline
+        \textbf{Mô tả}         & Kiến trúc không đồng bộ phân tán được xây dựng dựa trên các thành phần xử lý sự kiện không đồng bộ tách rời nhau \\
+        \hline
+        \textbf{Ưu điểm}       & Hiệu năng cao do thực hiện các tác vụ bất đồng bộ tách rời; khả năng mở rộng cao; khả năng chịu lỗi tốt \\
+        \hline
+        \textbf{Nhược điểm}    & Khó xây dựng và khó kiểm thử \\
+        \hline
+        \textbf{Sử dụng cho}   & Phù hợp với các hệ thống yêu cầu hiệu năng cao \\
+        \hline
+    \end{tabular}
+    \caption{Kiến trúc Event-Driven}
 \end{table}
-
-
+ 
+ 
 Từ những thông tin trên, để phù hợp với hệ thống có khả năng mở rộng, thay đổi cao nhóm chọn kiến trúc Microservices. Bên cạnh đó nhóm sẽ kết hợp với kiến trúc Event-Driven để đảm bảo hiệu năng của hệ thống đối với các tác vụ bất đồng bộ
 
-
 \subsection{Tổng quan kiến trúc}
-
+ 
 \begin{figure}[!htp]
-	\centering
-	\includegraphics[width=6in]{img/Architecture/general-architect.png}
-	\newline
-	\caption{Tổng quan kiến trúc hệ thống}
+    \centering
+    \includegraphics[width=6in]{img/Architecture/general-architect.png}
+    \newline
+    \caption{Tổng quan kiến trúc hệ thống}
 \end{figure}
-
-Hệ thống được xây dựng dữa trên kiến Microservice và được chia thành nhiều tầng:
+ 
+Hệ thống được xây dựng dựa trên kiến Microservice và được chia thành nhiều tầng:
 \begin{itemize}
-	\item Tầng User Interface: Tầng giao diện tương tác với người dùng
-	\item Tầng BPEL: Tầng xây dựng quy trình BPEL, điều phối các quy trình nghiệp vụ trong hệ thống
-	\item Tầng API Gateway: Tầng xuất các Api từ các dịch vụ web đưa đến quy trình BPEL
-	\item Tầng BFF: Đóng vai trò trong việc kiểm tra các hoạt động trung gian khi nhận yêu cầu từ phía người dùng
-	\item Tầng Web Service: Bao gồm các dịch vụ web
+    \item Tầng User Interface: Tầng giao diện tương tác với người dùng
+    \item Tầng BPEL: Tầng xây dựng quy trình BPEL, điều phối các quy trình nghiệp vụ trong hệ thống
+    \item Tầng API Gateway: Tầng xuất các Api từ các dịch vụ web đưa đến quy trình BPEL
+    \item Tầng BFF: Đóng vai trò trong việc kiểm tra các hoạt động trung gian khi nhận yêu cầu từ phía người dùng
+    \item Tầng Web Service: Bao gồm các dịch vụ web
 \end{itemize}
-
+ 
 Bên cạnh các thành phần trên, để hiện thực việc giao tiếp bất đồng bộ giữa các dịch vụ web, hệ thống sử dụng Kafka. Đây là một hàng đợi thông điệp pub/sub dùng để lưu trữ và gửi đi các thông điệp.
-Ta có thể tạo nên các \textbf{topic} trong Kafka. Các dịch vụ web có thể publish thông điệp lên một hoặc nhiều topic, 
-và khi một dịch vụ web subscribe vào một topic, nó có thể nhận dữ liệu từ topic đó. 
-Khi một thông điệp được gửi lên từ một dịch vụ Web, thông điệp sẽ được lưu trong hàng đợi thông điệp. 
-Những dịch vụ web subscribe vào topic này sau đó sẽ nhận được thông điệp này để xử lý. 
-Khi việc xử lý thất bại, bao gồm cả việc gửi thông điệp đến các subscriber thất bại, chúng ta có thể gửi lại thông điệp đó. 
+Ta có thể tạo nên các \textbf{topic} trong Kafka. Các dịch vụ web có thể publish thông điệp lên một hoặc nhiều topic,
+và khi một dịch vụ web subscribe vào một topic, nó có thể nhận dữ liệu từ topic đó.
+Khi một thông điệp được gửi lên từ một dịch vụ Web, thông điệp sẽ được lưu trong hàng đợi thông điệp.
+Những dịch vụ web subscribe vào topic này sau đó sẽ nhận được thông điệp này để xử lý.
+Khi việc xử lý thất bại, bao gồm cả việc gửi thông điệp đến các subscriber thất bại, chúng ta có thể gửi lại thông điệp đó.
 Vì điểm mạnh về multiple-sub và multiple-pub (một dịch vụ web có thể publish lên nhiều topic, cũng như có thể subscribe vào nhiều topic), cùng với việc hỗ trợ retry khi xảy ra lỗi, mà Kafka được nhóm lựa chọn sử dụng trong hệ thống.
-
+ 
 \par Trong hệ thống, nhóm tổ chức các topic theo nhu cầu gửi thông điệp bất đồng bộ đến các dịch vụ web đích. Theo cách tổ chức này, một topic sẽ chỉ được subscribe bởi một dịch vụ web, và đó là dịch vụ web đích nhận và xử lý thông điệp. Trong khi đó, có thể có nhiều dịch vụ web subscribe vào một topic, tùy theo nhu cầu của các dịch vụ web.
+
 
 \subsection{Tầng User Interface}
 \subsubsection{CustomerUI}
 Module này bao gồm các class dùng để hiển thị UI đối với phía khách hàng
 \begin{figure}[!htp]
-	\centering
-	\includegraphics[width=17cm]{img/Architecture/UI/customer UI.png}
-	\newline
-	\caption{Lược đồ class của Module CustomerUI}
+    \centering
+    \includegraphics[width=17cm]{img/Architecture/UI/customer UI.png}
+    \newline
+    \caption{Lược đồ class của Module CustomerUI}
 \end{figure}
-
+ 
 \begin{quote}
-
-	\subsubsubsection*{CustomerUI}
-	Giao diện chính của khách hàng khi truy cập vào trang web của hệ thống.\\
-	Phương thức:
-	\begin{itemize}
-		\item render(): Hiển thị lên màn hình của khách hàng.
-	\end{itemize}
-	
-	\subsubsubsection*{NavBar}
-	Thành phần luôn có của giao diện của khách hàng hiển thị các lựa chọn truy cập nhanh cho khách hàng.\\
-	Phương thức:
-	\begin{itemize}
-		\item render(): Hiển thị lên màn hình của khách hàng.
-		\item hoverItem(): Hiển thị lên màn hình giao diện các lựa chọn khi người dùng rê chuột đến các thể loại ở thanh navbar.
-		\item selectItem(): Hiển thị lên màn hình giao diện tương ứng với lựa chọn của khách hàng trên thanh navbar.
-	\end{itemize}
-	
-	\subsubsubsection*{Header}
-	Thành phần luôn có của giao diện của khách hàng hiển thị các thông tin về tài khoản của khách hàng cũng như logo và chức năng tìm kiếm cho khách hàng.\\
-	Phương thức:
-	\begin{itemize}
-		\item render(): Hiển thị lên màn hình của khách hàng.
-		\item showHome(): Hiển thị về trang chủ mặc định của hệ thống.
-		\item showCustomerOrder(): Hiển thị lên màn hình danh sách đơn hàng của khách hàng khi đã đăng nhập.
-		\item showCart(): Hiển thị lên màn hình thông tin giỏ hàng của khách hàng khi đã đăng nhập.
-		\item showLogin(): Hiển thị lên màn hình trang đăng nhập cho khách hàng khi chưa đăng nhập.
-		\item showCustomerInfo(): Hiển thị lên màn hình thông tin chi tiết tài khoản của khách hàng khi đã đăng nhập.
-		\item showProductByName(): Hiển thị lên màn hình danh sách các sản phẩm khi người dùng chọn tìm kiếm.
-	\end{itemize}
-	
-	\subsubsubsection*{Footer}
-	Thành phần luôn có của giao diện của khách hàng hiển thị các thông tin về hệ thống.\\
-	Phương thức:
-	\begin{itemize}
-		\item render(): Hiển thị lên màn hình của khách hàng.
-		\item showHome(): Hiển thị về trang chủ mặc định của hệ thống.
-		\item showProduct(): Hiển thị lên màn hình danh sách tất cả sản phẩm của hệ thống.
-		\item showInstructionSize(): Hiển thị lên màn hình thông tin hướng dẫn chọn size.
-		\item showCustomerOrder(): Hiển thị lên màn hình trang danh sách các đơn hàng của khách hàng khi đã đăng nhập.
-		\item showIntroduction(): Hiển thị lên màn hình trang giới thiệu về hệ thống cửa hàng.
-	\end{itemize}
-	
-	\subsubsubsection*{Home}
-	Màn hình mặc định của người dùng sau khi truy cập vào trang web của hệ thống.\\
-	Phương thức:
-	\begin{itemize}
-		\item render(): Hiển thị lên màn hình của khách hàng.
-		\item renderEvent(): Hiển thị thông tin các sự kiện đang diễn ra.
-		\item renderListTypeProduct(): Hiển thị danh sách các sản phẩm nổi bật theo từng thể loại.
-	\end{itemize}
-	
-	\subsubsubsection*{ListProduct}
-	Màn hình hiển thị danh sách tất cả sản phẩm của hệ thống cho khách hàng.\\
-	Phương thức:
-	\begin{itemize}
-		\item render(): Hiển thị lên màn hình của khách hàng.
-		\item renderFollowType(): Hiển thị danh sách sản phẩm theo đặc điểm và thể loại.
-		\item renderListProduct(): Hiển thị danh sách các sản phẩm.
-	\end{itemize}
-	
-	\subsubsubsection*{ProductDetail} Màn hình hiển thị danh sách tất cả sản phẩm của hệ thống cho khách hàng.\\
-	Phương thức:
-	\begin{itemize}
-		\item render(): Hiển thị lên màn hình của khách hàng.
-		\item showInstructionSize(): Hiển thị lên màn hình thông tin hướng dẫn chọn size.
-		\item renderImageProduct(): Hiển thị hình ảnh sản phẩm mà khách hàng chọn.
-		\item changeQuantity(): Thay đổi số lượng sản phẩm để thêm vào giỏ hàng.
-	\end{itemize}
-	
-	\subsubsubsection*{Cart}
-	Màn hình hiển thị thông tin giỏ hàng của khách hàng.\\
-	Phương thức:
-	\begin{itemize}
-		\item render(): Hiển thị lên màn hình của khách hàng.
-		\item renderListProduct(): Hiển thị danh sách sản phẩm có trong giỏ hàng.
-		\item showProductDetail(): Chuyển đến trang thông tin chi tiết của sản phẩm.
-		\item changeQuantity(): Thay đổi số lượng sản phẩm trong giỏ hàng.
-		\item renderTotalPrice(): Hiển thị tổng giá tiền của các sản phẩm được chọn trong giỏ hàng.
-	\end{itemize}
-	
-	\subsubsubsection*{Payment}
-	Màn hình hiển thị trang thanh toán cho khách hàng.\\
-	Phương thức:
-	\begin{itemize}
-		\item render(): Hiển thị lên màn hình của khách hàng.
-		\item renderOrder(): Hiển thị đơn hàng.
-		\item renderTotalCost(): Hiển thị toán bộ chi phí đơn hàng.
-		\item renderAddress(): Hiển thị địa chỉ đơn hàng.
-		\item renderShipFee(): Hiển thị giá tiền vận chuyển đơn hàng.
-		\item ShowPaymentOnline(): Hiển thị màn hình thanh toán online.
-	\end{itemize}
-	
-	\subsubsubsection*{ Manager Order}
-	Màn hình hiển thị danh sách các đơn hàng của khách hàng.\\
-	Phương thức:
-	\begin{itemize}
-		\item render(): Hiển thị lên màn hình của khách hàng.
-		\item renderListOrder(): Hiển thị danh sách đơn hàng.
-		\item showOrderDetail(): Hiển thị thông tin chi tiết của đơn hàng.
-	\end{itemize}
-	
-	\subsubsubsection*{Order Detail}
-	Màn hình hiển thị thông tin chi tiết đơn hàng của khách hàng.\\
-	Phương thức:
-	\begin{itemize}
-		\item render(): Hiển thị lên màn hình của khách hàng.
-		\item renderStatus(): Hiển thị trạng thái của đơn hàng.
-		\item renderListTransport(): Hiển thị danh sách thông tin quá trình vận chuyển.
-		\item renderListProduct(): Hiển thị danh sách sản phẩm có trong đơn hàng.
-		\item renderCost(): Hiển thị danh sách các khoản chi phí của đơn hàng.
-	\end{itemize}
-	
-	\subsubsubsection*{Forgot Password}
-	Màn hình hiển thị trang tạo lại mật khẩu cho tài khoản của khách hàng.\\
-	Phương thức:
-	\begin{itemize}
-		\item render(): Hiển thị lên màn hình của khách hàng.
-		\item showPassword(): Hiển thị mật khẩu khỏi trạng thái bị ẩn.
-		\item confirmAccount(): Xác nhận tài khoản muốn đổi mật khẩu.
-		\item renderConfirmOtp(): Hiển thị màn hình xác nhận mã OTP.
-		\item confirmOtp(): Gửi xác nhận mã OTP.
-		\item showUpdatePassword(): Hiển thị trang cập nhật mật khẩu mới cho tài khoản.
-		\item validateConfirmPassword(): Kiểm tra thông tin nhập lại mật khẩu của khách hàng.
-		\item updatePassword(): Gửi thông tin cập nhật mật khẩu mới cho tài khoản.
-	\end{itemize}
-	
-	\subsubsubsection*{Register}
-	Màn hình hiển thị trang đăng ký tài khoản cho khách hàng.\\
-	Phương thức:
-	\begin{itemize}
-		\item render(): Hiển thị lên màn hình của khách hàng.
-		\item showPassword(): Hiển thị mật khẩu khỏi trạng thái bị ẩn.
-		\item register(): gửi thông tin xác nhận.
-		\item renderConfirmOtp(): Hiển thị màn hình xác nhận mã OTP.
-		\item confirmOtp(): Gửi xác nhận mã OTP.
-		\item validateConfirmPassword(): Kiểm tra thông tin nhập lại mật khẩu của khách hàng.
-	\end{itemize}
-	
-	\subsubsubsection*{Customer Info}
-	Màn hình hiển thị trang thông tin chi tiết tài khoản của khách hàng.\\
-	Phương thức:
-	\begin{itemize}
-		\item render(): Hiển thị lên màn hình của khách hàng.
-		\item renderInfo(): Hiển thị thông tin chung của khách hàng.
-		\item renderAddress(): Hiển thị thông tin địa chỉ các khách hàng.
-		\item saveEdit(): gửi đi thông tin tài khoản đã chỉnh sửa.
-		\item showChangePassword(): hiển thị màn hình đổi mật khẩu.
-		\item changePassword(): gửi thông tin đổi mật khẩu của tài khoản.
-		\item validateConfirmPassword(): Kiểm tra thông tin nhập lại mật khẩu của khách hàng.
-	\end{itemize}
-
+ 
+    \subsubsubsection*{CustomerUI}
+    Giao diện chính của khách hàng khi truy cập vào trang web của hệ thống.\\
+    Phương thức:
+    \begin{itemize}
+        \item render(): Hiển thị lên màn hình của khách hàng.
+    \end{itemize}
+   
+    \subsubsubsection*{NavBar}
+    Thành phần luôn có của giao diện của khách hàng hiển thị các lựa chọn truy cập nhanh cho khách hàng.\\
+    Phương thức:
+    \begin{itemize}
+        \item render(): Hiển thị lên màn hình của khách hàng.
+        \item hoverItem(): Hiển thị lên màn hình giao diện các lựa chọn khi người dùng rê chuột đến các thể loại ở thanh navbar.
+        \item selectItem(): Hiển thị lên màn hình giao diện tương ứng với lựa chọn của khách hàng trên thanh navbar.
+    \end{itemize}
+   
+    \subsubsubsection*{Header}
+    Thành phần luôn có của giao diện của khách hàng hiển thị các thông tin về tài khoản của khách hàng cũng như logo và chức năng tìm kiếm cho khách hàng.\\
+    Phương thức:
+    \begin{itemize}
+        \item render(): Hiển thị lên màn hình của khách hàng.
+        \item showHome(): Hiển thị về trang chủ mặc định của hệ thống.
+        \item showCustomerOrder(): Hiển thị lên màn hình danh sách đơn hàng của khách hàng khi đã đăng nhập.
+        \item showCart(): Hiển thị lên màn hình thông tin giỏ hàng của khách hàng khi đã đăng nhập.
+        \item showLogin(): Hiển thị lên màn hình trang đăng nhập cho khách hàng khi chưa đăng nhập.
+        \item showCustomerInfo(): Hiển thị lên màn hình thông tin chi tiết tài khoản của khách hàng khi đã đăng nhập.
+        \item showProductByName(): Hiển thị lên màn hình danh sách các sản phẩm khi người dùng chọn tìm kiếm.
+    \end{itemize}
+   
+    \subsubsubsection*{Footer}
+    Thành phần luôn có của giao diện của khách hàng hiển thị các thông tin về hệ thống.\\
+    Phương thức:
+    \begin{itemize}
+        \item render(): Hiển thị lên màn hình của khách hàng.
+        \item showHome(): Hiển thị về trang chủ mặc định của hệ thống.
+        \item showProduct(): Hiển thị lên màn hình danh sách tất cả sản phẩm của hệ thống.
+        \item showInstructionSize(): Hiển thị lên màn hình thông tin hướng dẫn chọn size.
+        \item showCustomerOrder(): Hiển thị lên màn hình trang danh sách các đơn hàng của khách hàng khi đã đăng nhập.
+        \item showIntroduction(): Hiển thị lên màn hình trang giới thiệu về hệ thống cửa hàng.
+    \end{itemize}
+   
+    \subsubsubsection*{Home}
+    Màn hình mặc định của người dùng sau khi truy cập vào trang web của hệ thống.\\
+    Phương thức:
+    \begin{itemize}
+        \item render(): Hiển thị lên màn hình của khách hàng.
+        \item renderEvent(): Hiển thị thông tin các sự kiện đang diễn ra.
+        \item renderListTypeProduct(): Hiển thị danh sách các sản phẩm nổi bật theo từng thể loại.
+    \end{itemize}
+   
+    \subsubsubsection*{ListProduct}
+    Màn hình hiển thị danh sách tất cả sản phẩm của hệ thống cho khách hàng.\\
+    Phương thức:
+    \begin{itemize}
+        \item render(): Hiển thị lên màn hình của khách hàng.
+        \item renderFollowType(): Hiển thị danh sách sản phẩm theo đặc điểm và thể loại.
+        \item renderListProduct(): Hiển thị danh sách các sản phẩm.
+    \end{itemize}
+   
+    \subsubsubsection*{ProductDetail} Màn hình hiển thị danh sách tất cả sản phẩm của hệ thống cho khách hàng.\\
+    Phương thức:
+    \begin{itemize}
+        \item render(): Hiển thị lên màn hình của khách hàng.
+        \item showInstructionSize(): Hiển thị lên màn hình thông tin hướng dẫn chọn size.
+        \item renderImageProduct(): Hiển thị hình ảnh sản phẩm mà khách hàng chọn.
+        \item changeQuantity(): Thay đổi số lượng sản phẩm để thêm vào giỏ hàng.
+    \end{itemize}
+   
+    \subsubsubsection*{Cart}
+    Màn hình hiển thị thông tin giỏ hàng của khách hàng.\\
+    Phương thức:
+    \begin{itemize}
+        \item render(): Hiển thị lên màn hình của khách hàng.
+        \item renderListProduct(): Hiển thị danh sách sản phẩm có trong giỏ hàng.
+        \item showProductDetail(): Chuyển đến trang thông tin chi tiết của sản phẩm.
+        \item changeQuantity(): Thay đổi số lượng sản phẩm trong giỏ hàng.
+        \item renderTotalPrice(): Hiển thị tổng giá tiền của các sản phẩm được chọn trong giỏ hàng.
+    \end{itemize}
+   
+    \subsubsubsection*{Payment}
+    Màn hình hiển thị trang thanh toán cho khách hàng.\\
+    Phương thức:
+    \begin{itemize}
+        \item render(): Hiển thị lên màn hình của khách hàng.
+        \item renderOrder(): Hiển thị đơn hàng.
+        \item renderTotalCost(): Hiển thị toàn bộ chi phí đơn hàng.
+        \item renderAddress(): Hiển thị địa chỉ đơn hàng.
+        \item renderShipFee(): Hiển thị giá tiền vận chuyển đơn hàng.
+        \item ShowPaymentOnline(): Hiển thị màn hình thanh toán online.
+    \end{itemize}
+   
+    \subsubsubsection*{ Manager Order}
+    Màn hình hiển thị danh sách các đơn hàng của khách hàng.\\
+    Phương thức:
+    \begin{itemize}
+        \item render(): Hiển thị lên màn hình của khách hàng.
+        \item renderListOrder(): Hiển thị danh sách đơn hàng.
+        \item showOrderDetail(): Hiển thị thông tin chi tiết của đơn hàng.
+    \end{itemize}
+   
+    \subsubsubsection*{Order Detail}
+    Màn hình hiển thị thông tin chi tiết đơn hàng của khách hàng.\\
+    Phương thức:
+    \begin{itemize}
+        \item render(): Hiển thị lên màn hình của khách hàng.
+        \item renderStatus(): Hiển thị trạng thái của đơn hàng.
+        \item renderListTransport(): Hiển thị danh sách thông tin quá trình vận chuyển.
+        \item renderListProduct(): Hiển thị danh sách sản phẩm có trong đơn hàng.
+        \item renderCost(): Hiển thị danh sách các khoản chi phí của đơn hàng.
+    \end{itemize}
+   
+    \subsubsubsection*{Forgot Password}
+    Màn hình hiển thị trang tạo lại mật khẩu cho tài khoản của khách hàng.\\
+    Phương thức:
+    \begin{itemize}
+        \item render(): Hiển thị lên màn hình của khách hàng.
+        \item showPassword(): Hiển thị mật khẩu khỏi trạng thái bị ẩn.
+        \item confirmAccount(): Xác nhận tài khoản muốn đổi mật khẩu.
+        \item renderConfirmOtp(): Hiển thị màn hình xác nhận mã OTP.
+        \item confirmOtp(): Gửi xác nhận mã OTP.
+        \item showUpdatePassword(): Hiển thị trang cập nhật mật khẩu mới cho tài khoản.
+        \item validateConfirmPassword(): Kiểm tra thông tin nhập lại mật khẩu của khách hàng.
+        \item updatePassword(): Gửi thông tin cập nhật mật khẩu mới cho tài khoản.
+    \end{itemize}
+   
+    \subsubsubsection*{Register}
+    Màn hình hiển thị trang đăng ký tài khoản cho khách hàng.\\
+    Phương thức:
+    \begin{itemize}
+        \item render(): Hiển thị lên màn hình của khách hàng.
+        \item showPassword(): Hiển thị mật khẩu khỏi trạng thái bị ẩn.
+        \item register(): gửi thông tin xác nhận.
+        \item renderConfirmOtp(): Hiển thị màn hình xác nhận mã OTP.
+        \item confirmOtp(): Gửi xác nhận mã OTP.
+        \item validateConfirmPassword(): Kiểm tra thông tin nhập lại mật khẩu của khách hàng.
+    \end{itemize}
+   
+    \subsubsubsection*{Customer Info}
+    Màn hình hiển thị trang thông tin chi tiết tài khoản của khách hàng.\\
+    Phương thức:
+    \begin{itemize}
+        \item render(): Hiển thị lên màn hình của khách hàng.
+        \item renderInfo(): Hiển thị thông tin chung của khách hàng.
+        \item renderAddress(): Hiển thị thông tin địa chỉ các khách hàng.
+        \item saveEdit(): gửi đi thông tin tài khoản đã chỉnh sửa.
+        \item showChangePassword(): hiển thị màn hình đổi mật khẩu.
+        \item changePassword(): gửi thông tin đổi mật khẩu của tài khoản.
+        \item validateConfirmPassword(): Kiểm tra thông tin nhập lại mật khẩu của khách hàng.
+    \end{itemize}
+ 
 \end{quote}
-
+ 
 \subsubsection{LoginUI}
 LoginUI là một class dùng để hiển thị trang đăng nhập cho cả phía khách hàng và quản trị viên
 \begin{figure}[!htp]
-	\begin{center}
-		\includegraphics[width=3cm]{img/Architecture/UI/loginUI.png}
-	\end{center}
-	\caption{Lược đồ class của LoginUI}
+    \begin{center}
+        \includegraphics[width=3cm]{img/Architecture/UI/loginUI.png}
+    \end{center}
+    \caption{Lược đồ class của LoginUI}
 \end{figure}
-
+ 
 Phương thức:
 \begin{itemize}
-	\item showPassword(): Hiện mật khẩu
-	\item login(username: string, password: string)(): Đăng nhập vào hệ thống
+    \item showPassword(): Hiện mật khẩu
+    \item login(username: string, password: string)(): Đăng nhập vào hệ thống
 \end{itemize}
-
+ 
 \subsubsection{AdminUI}
 Module này bao gồm các class dùng để hiển thị UI đối với phía quản trị viên
-
+ 
 \begin{figure}[!htp]
-	\centering
-	\includegraphics[width=17cm]{img/Architecture/UI/adminUI.png}
-	\newline
-	\caption{Lược đồ class của Module AdminUI}
+    \centering
+    \includegraphics[width=17cm]{img/Architecture/UI/adminUI.png}
+    \newline
+    \caption{Lược đồ class của Module AdminUI}
 \end{figure}
-
+ 
 \subsubsubsection*{AdminUI}
 Phương thức:
 \begin{itemize}
-	\item render(): Hiển thị màn hình admin
+    \item render(): Hiển thị màn hình admin
 \end{itemize}
-
+ 
 \subsubsubsection*{Branch}
 Màn hình quản lý chi nhánh\\
 Phương thức:
 \begin{itemize}
-	\item showAddForm(): Hiển thị biểu mẫu thêm mới
-	\item addBranch(): Thêm chi nhánh mới
-	\item showEditForm(branchId: string): Hiển thị biểu mẫu chỉnh sửa
-	\item updateBranch(branchId: string, info: BranchModel): Cập nhật thông tin chi nhánh
+    \item showAddForm(): Hiển thị biểu mẫu thêm mới
+    \item addBranch(): Thêm chi nhánh mới
+    \item showEditForm(branchId: string): Hiển thị biểu mẫu chỉnh sửa
+    \item updateBranch(branchId: string, info: BranchModel): Cập nhật thông tin chi nhánh
 \end{itemize}
-
+ 
 \subsubsubsection*{BranchDetail}
 Màn hình hiển thị thông tin chi tiết chi nhánh\\
 Phương thức:
 \begin{itemize}
-	\item showEditForm(branchId: string): Hiển thị biểu mẫu chỉnh sửa
-	\item updateBranch(branchId: string, info: BranchModel): Cập nhật thông tin chi nhánh
-	\item deleteBranch(branchId: string): Xóa chi nhánh
-	\item showChart(branchId: string, time: enum): Hiển thị biểu đồ kinh doanh
+    \item showEditForm(branchId: string): Hiển thị biểu mẫu chỉnh sửa
+    \item updateBranch(branchId: string, info: BranchModel): Cập nhật thông tin chi nhánh
+    \item deleteBranch(branchId: string): Xóa chi nhánh
+    \item showChart(branchId: string, time: enum): Hiển thị biểu đồ kinh doanh
 \end{itemize}
-
+ 
 \subsubsubsection*{Staff}
 Màn hình quản lý nhân viên\\
 Phương thức:
 \begin{itemize}
-	\item showAddForm(): Hiển thị biểu mẫu thêm mới
-	\item addStaff(info: StaffModel): Thêm một nhân viên
-	\item filterByBranch(branchId: string): Tìm nhân viên theo chi nhánh
-	\item searchStaff(keyword: string): Tìm kiếm chi nhánh theo từ khóa
-	\item showEditForm(staffId: string): Hiển thị biểu mẫu chỉnh sửa
-	\item updateStaff(branchId: string, info: BranchModel): Cập nhật thông tin chi nhánh
+    \item showAddForm(): Hiển thị biểu mẫu thêm mới
+    \item addStaff(info: StaffModel): Thêm một nhân viên
+    \item filterByBranch(branchId: string): Tìm nhân viên theo chi nhánh
+    \item searchStaff(keyword: string): Tìm kiếm chi nhánh theo từ khóa
+    \item showEditForm(staffId: string): Hiển thị biểu mẫu chỉnh sửa
+    \item updateStaff(branchId: string, info: BranchModel): Cập nhật thông tin chi nhánh
 \end{itemize}
-
+ 
 \subsubsubsection*{StaffRequest}
 Màn hình quản lý yêu cầu thêm, xóa nhân viên\\
 Phương thức:
 \begin{itemize}
-	\item acceptRequest(requestId: string): Xác nhận yêu cầu
-	\item denyRequest(requestId: string): Hủy bỏ yêu cầu
-	\item showStafffFom(staffId: string): Hiển thị biểu mẫu thông tin nhân viên
+    \item acceptRequest(requestId: string): Xác nhận yêu cầu
+    \item denyRequest(requestId: string): Hủy bỏ yêu cầu
+    \item showStafffFom(staffId: string): Hiển thị biểu mẫu thông tin nhân viên
 \end{itemize}
-
-
+ 
+ 
 \subsubsubsection*{StaffDetail}
 Màn hình hiển thị thông tin chi tiết nhân viên\\
 Phương thức:
 \begin{itemize}
-	\item showEditForm(staffId: string): Hiển thị biểu mẫu chỉnh sửa
-	\item updateStaff(info: StaffModel): Cập nhật thông tin nhân viên
-	\item deleteBranch(staffId: string): Xóa nhân viên
+    \item showEditForm(staffId: string): Hiển thị biểu mẫu chỉnh sửa
+    \item updateStaff(info: StaffModel): Cập nhật thông tin nhân viên
+    \item deleteBranch(staffId: string): Xóa nhân viên
 \end{itemize}
-
+ 
 \subsubsubsection*{Account}
 Màn hình quản lý tài khoản\\
 Phương thức:
 \begin{itemize}
-	\item searchAccount(keyword: string): Tìm kiếm tài khoản theo từ khóa
+    \item searchAccount(keyword: string): Tìm kiếm tài khoản theo từ khóa
 \end{itemize}
-
-
+ 
+ 
 \subsubsubsection*{AccountDetail}
 Màn hình hiển thị thông tin chi tiết tài khoản\\
 Phương thức:
 \begin{itemize}
-	\item showOrder(month: date): Hiển thị danh sách đơn hàng
-	\item showOrderDetail(orderId: string): Hiển thị biểu mẫu chi tiết đơn hàng
+    \item showOrder(month: date): Hiển thị danh sách đơn hàng
+    \item showOrderDetail(orderId: string): Hiển thị biểu mẫu chi tiết đơn hàng
 \end{itemize}
-
+ 
 \subsubsubsection*{Event}
 Màn hình quản lý sự kiện\\
 Phương thức:
 \begin{itemize}
-	\item addEvent(): Thêm một sự kiện mới
+    \item addEvent(): Thêm một sự kiện mới
 \end{itemize}
-
+ 
 \subsubsubsection*{EventDetail}
 Màn hình hiển thị thông tin chi tiết sự kiện\\
 Phương thức:
 \begin{itemize}
-	\item showListGood(): Hiển thị danh sách tất cả hàng
-	\item searchGood(keyword: string): Tùm kiếm danh sách hàng theo từ khóa
-	\item updateEvent(info: EventModel): Cập nhật thông tin sự kiện
+    \item showListGood(): Hiển thị danh sách tất cả hàng
+    \item searchGood(keyword: string): Tùm kiếm danh sách hàng theo từ khóa
+    \item updateEvent(info: EventModel): Cập nhật thông tin sự kiện
 \end{itemize}
-
+ 
 \subsubsubsection*{Goods}
 Màn hình quản lý hàng hóa\\
 Phương thức:
 \begin{itemize}
-	\item searchGoods(keyword: string): Tìm kiếm hàng theo từ khóa
-	\item addGoods(info: GoodsModel): Thêm một sản phẩm
+    \item searchGoods(keyword: string): Tìm kiếm hàng theo từ khóa
+    \item addGoods(info: GoodsModel): Thêm một sản phẩm
 \end{itemize}
-
+ 
 \subsubsubsection*{GoodsDetail}
 Màn hình hiển thị thông tin chi tiết hàng hóa\\
 Phương thức:
 \begin{itemize}
-	\item updateImage(goodsId: string, image: list<string>): Cập nhật hình ảnh sản phẩm
-	\item searchGoods(keyword: string): Tìm kiếm hàng theo từ khóa
+    \item updateImage(goodsId: string, image: list<string>): Cập nhật hình ảnh sản phẩm
+    \item searchGoods(keyword: string): Tìm kiếm hàng theo từ khóa
 \end{itemize}
-
+ 
 \subsubsubsection*{GoodsEdit}
 Màn hình hiển thị biểu mẫu vận chuyển hàng hóa\\
 Phương thức:
 \begin{itemize}
-	\item updateGoods(info: GoodsModel): Cập nhật thông tin sản phẩm
+    \item updateGoods(info: GoodsModel): Cập nhật thông tin sản phẩm
 \end{itemize}
-
+ 
 \subsubsubsection*{OrderOffline}
 Màn hình quản lý các đơn hàng trực tiếp\\
 Phương thức:
 \begin{itemize}
-	\item filter(branchId: string, start: date, end: date): Tìm kiếm đơn hàng theo thời gian, chi nhánh
-	\item searchOrder(keyword: string): Tìm kiếm đơn hàng theo từ khóa
+    \item filter(branchId: string, start: date, end: date): Tìm kiếm đơn hàng theo thời gian, chi nhánh
+    \item searchOrder(keyword: string): Tìm kiếm đơn hàng theo từ khóa
 \end{itemize}
-
+ 
 \subsubsubsection*{OrderOnline}
 Màn hình quản lý các đơn hàng trực tuyến\\
 Phương thức:
 \begin{itemize}
-	\item filter(start: date, end: date): Tìm kiếm đơn hàng theo thời gian
-	\item searchOrder(keyword: string): Tìm kiếm đơn hàng theo từ khóa
+    \item filter(start: date, end: date): Tìm kiếm đơn hàng theo thời gian
+    \item searchOrder(keyword: string): Tìm kiếm đơn hàng theo từ khóa
 \end{itemize}
 
 
@@ -1180,18 +1180,18 @@ Module này dùng để chứa các API được xuất ra ngoài cho bất kì 
 
 
 \subsection{Tầng Web Service}
-
-Lược đồ class ở tậng Web Service được xây dựng theo các thành phần sau:
+ 
+Lược đồ class ở tầng Web Service được xây dựng theo các thành phần sau:
 \begin{itemize}
-	\item Repository: Class dùng để truy cập trực tiếp đến dữ liệu trong Database
-	\item Model: Class dùng để chứa thông tin nhận lên từ Database
-	\item Controllers: Class dùng để xử lý các logic nghiệp vụ
-	\item Response: Class chứa thông tin trả về khi có yêu cầu từ bên ngoài
-	\item Các Interface: Giúp đảm bảo nguyên lý \textbf{Dependency inversion principle} của \textbf{SOLID}
-	\begin {itemize}
-		\item IRepository: Cung cấp các api cho các class Controller
-		\item IController: Cung cấp các api để bên ngoài dịch vụ web truy cập đến
-	\end{itemize}
+    \item Repository: Class dùng để truy cập trực tiếp đến dữ liệu trong Database
+    \item Model: Class dùng để chứa thông tin nhận lên từ Database
+    \item Controllers: Class dùng để xử lý các logic nghiệp vụ
+    \item Response: Class chứa thông tin trả về khi có yêu cầu từ bên ngoài
+    \item Các Interface: Giúp đảm bảo nguyên lý \textbf{Dependency inversion principle} của \textbf{SOLID}
+    \begin {itemize}
+        \item IRepository: Cung cấp các api cho các class Controller
+        \item IController: Cung cấp các api để bên ngoài dịch vụ web truy cập đến
+    \end{itemize}
 \end{itemize}
 
 \newpage
@@ -1848,26 +1848,26 @@ Thuộc tính:
 \end{itemize}
 
 \subsubsection{Giao tiếp bất đồng bộ giữa các Services}
-
-
+ 
+ 
 \hspace*{0.5cm} Giao tiếp bất đồng bộ diễn ra ở các tác vụ không yêu cầu phản hồi kết quả ngay, thay vào đó yêu cầu gọi sẽ được lưu lại và xử lý sau. Việc giao tiếp bất đồng bộ giảm việc sử dụng tài nguyên của hệ thống, trong khi vẫn đảm bảo được kết quả trả về.
-
-\par Khi phía client gửi một yêu cầu (request) đến phía server, client sẽ chờ server xử lý xong toàn bộ quá trình theo quy trình nghiệp vụ rồi mới kết thúc. 
-Đối với các tác vụ lớn hoặc yêu cầu thời gian xử lý lớn, phía client sẽ phải chờ lâu, và điều này làm hao phí tài nguyên của hệ thống. Bằng việc áp dụng giao tiếp bất đồng bộ vào các tác vụ thích hợp, hệ thống sẽ giảm được việc sử dụng tài nguyên hệ thống khi client phải phản hồi lâu từ server. 
-Các request trước khi được xử lý bằng giao tiếp bất đồng bộ sẽ được kiểm tra kĩ về mặt dữ liệu, để đảm bảo các lỗi liên quan đến dữ liệu request sẽ không xuất hiện khi xử lý sau. Sau khi xử lý request, kết quả sẽ được gửi về cho phía client. 
+ 
+\par Khi phía client gửi một yêu cầu (request) đến phía server, client sẽ chờ server xử lý xong toàn bộ quá trình theo quy trình nghiệp vụ rồi mới kết thúc.
+Đối với các tác vụ lớn hoặc yêu cầu thời gian xử lý lớn, phía client sẽ phải chờ lâu, và điều này làm hao phí tài nguyên của hệ thống. Bằng việc áp dụng giao tiếp bất đồng bộ vào các tác vụ thích hợp, hệ thống sẽ giảm được việc sử dụng tài nguyên hệ thống khi client phải phản hồi lâu từ server.
+Các request trước khi được xử lý bằng giao tiếp bất đồng bộ sẽ được kiểm tra kĩ về mặt dữ liệu, để đảm bảo các lỗi liên quan đến dữ liệu request sẽ không xuất hiện khi xử lý sau. Sau khi xử lý request, kết quả sẽ được gửi về cho phía client.
 Phía server sau khi hoàn thành bước kiểm tra dữ liệu và xử lý các tác vụ đồng bộ, sẽ gửi thông điệp vào message queue để gửi đến dịch vụ web đích. Khi việc thêm thông điệp vào message queue thành công, phía server sẽ trả về thành công cho phía client, không cần phía client phải chờ toàn bộ quy trình nghiệp vụ phải xử lý xong.\\
-
+ 
 Dưới đây là các giao tiếp bất đồng bộ có trong hệ thống:
-
+ 
 \begin{figure}[!htp]
-	\centering
-	\includegraphics[width=13cm]{img/Architecture/kafka.png}
-	\newline
-	\caption{Giao tiếp bất đồng bộ giữa các services}
+    \centering
+    \includegraphics[width=13cm]{img/Architecture/kafka.png}
+    \newline
+    \caption{Giao tiếp bất đồng bộ giữa các services}
 \end{figure}
-
+ 
 \begin{itemize}
-	\item Customer Topic: Customer Service khi thêm một khách hàng mới sẽ gửi dữ liệu đến để Cart Service cập nhật thêm giỏ hàng tương ứng
-	\item MakeOrder Topic: Customer Oder Service khi nhận được thông tin đơn hàng mới sẽ gửi dữ liệu cập nhật thông tin đơn hàng đó cho Order Service
-	\item Statistic Topic: Khi Order Service đã cập nhật thông tin đơn hàng mới sẽ gửi thông tin đơn hàng cho Statistic Service để thống kê
+    \item Customer Topic: Customer Service khi thêm một khách hàng mới sẽ gửi dữ liệu đến để Cart Service cập nhật thêm giỏ hàng tương ứng
+    \item MakeOrder Topic: Customer Order Service khi nhận được thông tin đơn hàng mới sẽ gửi dữ liệu cập nhật thông tin đơn hàng đó cho Order Service
+    \item Statistic Topic: Khi Order Service đã cập nhật thông tin đơn hàng mới sẽ gửi thông tin đơn hàng cho Statistic Service để thống kê
 \end{itemize}
