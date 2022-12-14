@@ -1,37 +1,37 @@
 % !TeX root = ..\main.tex
 \section{Thiết kế cơ sở dữ liệu}
 \par Nhóm lựa chọn kiến trúc Microservice cho hệ thống, với việc chia ra các service nhỏ và mỗi service có một database riêng phục vụ cho nghiệp vụ của riêng service đó, nên ở đây các database được thiết kế riêng lẻ cho từng service.
-
+ 
 \subsection{ERD/EERD}
 \subsubsection{Service Khách hàng}
 \begin{figure}[!htp]
-	\begin{center}
-		\includegraphics[width=9cm]{img/database/erd/eerd-customer.png}
-		\newline
-		\caption{ERD cho database của service Khách hàng}
-	\end{center}
+    \begin{center}
+        \includegraphics[width=9cm]{img/database/erd/eerd-customer.png}
+        \newline
+        \caption{ERD cho database của service Khách hàng}
+    \end{center}
 \end{figure}
-
+ 
 \par Database của service Khách hàng bao gồm hai thực thể là Khách hàng và Tài khoản của khách hàng. Thực thể khách hàng chứa các thông tin cá nhân của khách hàng, bao gồm các thuộc tính:
 \begin{itemize}
-	\item Mã khách hàng: thuộc tính khóa, là mã của khách hàng.
-	\item Tên: Là tên của khách hàng.
-	\item Giới tính: Là giới tính của khách hàng.
-	\item Email: Là email của khách hàng.
-	\item Số điện thoại: Là số điện thoại của khách hàng.
-	\item Số nhà, đường: Là địa chỉ sô nhà, đường của khách hàng ở.
-	\item Phường / xã: Là địa chỉ phường / xã của khách hàng ở.
-	\item Quận / huyện: Là địa chỉ quận / huyện của khách hàng ở.
-	\item Tỉnh / thành phố: Là địa chỉ tỉnh / thành phố của khách hàng ở.
+    \item Mã khách hàng: thuộc tính khóa, là mã của khách hàng.
+    \item Tên: Là tên của khách hàng.
+    \item Giới tính: Là giới tính của khách hàng.
+    \item Email: Là email của khách hàng.
+    \item Số điện thoại: Là số điện thoại của khách hàng.
+    \item Số nhà, đường: Là địa chỉ số nhà, đường của khách hàng ở.
+    \item Phường / xã: Là địa chỉ phường / xã của khách hàng ở.
+    \item Quận / huyện: Là địa chỉ quận / huyện của khách hàng ở.
+    \item Tỉnh / thành phố: Là địa chỉ tỉnh / thành phố của khách hàng ở.
 \end{itemize}
-
+ 
 \par Thực thể Tài khoản của khách hàng bao gồm các thuộc tính:
 \begin{itemize}
-	\item Tên đăng nhập: tên đăng nhập của tài khoản của khách hàng.
+    \item Tên đăng nhập: tên đăng nhập của tài khoản của khách hàng.
 \end{itemize}
-
+ 
 \par Khách hàng và Tài khoản có mối quan hệ thuộc, đây là mối quan hệ bắt buộc, 1-1: một khách hàng chỉ thuộc 1 tài khoản và 1 tài khoản chỉ dùng cho 1 khách hàng.
-
+ 
 \newpage
 
 \subsubsection{Service Giỏ hàng}

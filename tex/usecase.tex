@@ -1,20 +1,19 @@
 % !TeX root = ..\main.tex
 \section{Lược đồ Use-case}
-    \subsection{Toàn hệ thống}
-        \begin{figure}[!htp]
-            \centering    \includegraphics[width=16.5cm]{img/UseCase/UseCase-full.drawio.png}
-            \newline
-            \caption{Use case Hệ thống quản lý cửa hàng thời trang}
-        \end{figure}
-    \textbf{Lưu ý:} Các Usecase không yêu cầu đăng nhập:
-    \begin{itemize}
-        \item Đăng kí
-        \item Tạo mới mật khẩu
-        \item Xem danh sách sản phẩm
-        \item Lọc sản phẩm
-        \item Điểm danh
-    \end{itemize}
-
+\subsection{Toàn hệ thống}
+\begin{figure}[!htp]
+    \centering    \includegraphics[width=16.5cm]{img/UseCase/UseCase-full.drawio.png}
+    \newline
+    \caption{Use case Hệ thống quản lý cửa hàng thời trang}
+\end{figure}
+\textbf{Lưu ý:} Các Usecase không yêu cầu đăng nhập:
+\begin{itemize}
+\item Đăng ký
+\item Tạo mới mật khẩu
+\item Xem danh sách sản phẩm
+\item Lọc sản phẩm
+\item Điểm danh
+\end{itemize}
 \newpage
 
 
@@ -88,6 +87,8 @@
     \end{longtable}
                     
             \end{center}
+
+
     \subsubsection{Lọc sản phẩm theo từ khóa} 
             \begin{center}
             
@@ -150,6 +151,7 @@
     \end{longtable}
     \end{center}
     
+
     \subsubsection{Lọc sản phẩm theo sự kiện }
             \begin{center}
             
@@ -212,6 +214,8 @@
     \end{longtable}
                     
             \end{center}
+
+
     \subsubsection{Lọc sản phẩm theo đặc điểm } 
             \begin{center}
             
@@ -274,7 +278,9 @@
     \end{longtable}
                     
             \end{center}
-    \subsubsection{Xem thông tin chi tiết sản phẩm } 
+    
+    
+            \subsubsection{Xem thông tin chi tiết sản phẩm } 
          \begin{longtable}{| p{.20\textwidth} | p{.80\textwidth} |} 
     \hline
     \textbf{Use-case name} 
@@ -329,6 +335,8 @@
     \hline
     \caption{Đặc tả use-case \textbf{xem thông tin chi tiết sản phẩm}}
     \end{longtable}
+
+
     \subsubsection{ Thêm sản phẩm vào giỏ hàng}    
             
             \begin{longtable}{| p{.20\textwidth} | p{.80\textwidth} |} 
@@ -918,40 +926,40 @@ Quản trị viên chọn mục "sự kiện".
          \caption{Use case quản lý chi nhánh}
         \end{figure}
         \subsubsection{Thêm chi nhánh}
-            \begin{longtable}{| p{.20\textwidth} | p{.80\textwidth} |} 
+            \begin{longtable}{| p{.20\textwidth} | p{.80\textwidth} |}
                 \hline
-                    \textbf{Use-case name} 
-                & 
+                    \textbf{Use-case name}
+                &
                     Thêm chi nhánh
                 \\
                 %%%%%%%%%%%%%%%%
                 \hline
-                    \textbf{Actor} 
-                & 
+                    \textbf{Actor}
+                &
                     Quản lý chi nhánh
                 \\
                 %%%%%%%%%%%%%%%%
                 \hline
-                    \textbf{Description} 
-                & 
+                    \textbf{Description}
+                &
                     Quản lý chi nhánh có thể thêm chi nhánh mới
                 \\
                 %%%%%%%%%%%%%%%%
                 \hline
-                    \textbf{Preconditions} 
+                    \textbf{Preconditions}
                 &
                     Quản lý chi nhánh đã đăng nhập
                 \\
                 %%%%%%%%%%%%%%%%
                 \hline
-                    \textbf{Postconditions} 
-                & 
+                    \textbf{Postconditions}
+                &
                     Chi nhánh mới được cập nhật
                 \\
                 %%%%%%%%%%%%%%%%
                 \hline
-                    \textbf{Trigger} 
-                & 
+                    \textbf{Trigger}
+                &
                     Quản lý chi nhánh chọn vào quản lý chi nhánh
                 \\
                 %%%%%%%%%%%%%%%%
@@ -959,17 +967,17 @@ Quản trị viên chọn mục "sự kiện".
                 \begin{flushleft}
                     \textbf{Normal flow}
                 \end{flushleft}
-                & 
+                &
                 1. Hệ thống hiển thị danh sách chi nhánh
-                    
+                   
                     2. Quản lý chi nhánh chọn thêm mới
-                    
+                   
                     3. Hệ thống hiển thị biểu mẫu nhập thông tin
-                    
+                   
                     4. Quản trị viên nhập thông tin chi nhánh mới
-                    
+                   
                     5. Quản trị viên nhập chọn xác nhận
-                    
+                   
                     6. Hệ thống cập nhật chi nhánh mới
                 \\
                 %%%%%%%%%%%%%%%%
@@ -979,18 +987,18 @@ Quản trị viên chọn mục "sự kiện".
                 \end{flushleft}
                 &
                 5.1. Quản trị viên nhập chọn hủy
-                    \begin{quote} 
+                    \begin{quote}
                     5.1.1. Kết thúc
                     \end{quote}
                 \\
                 %%%%%%%%%%%%%%%%
                 \hline
                 \begin{flushleft}
-                    \textbf{Exceptions} 
+                    \textbf{Exceptions}
                 \end{flushleft}
                 &
                 6.1. Tên chi nhánh bị trùng
-                    \begin{quote} 
+                    \begin{quote}
                     6.1.1. Quay về bước 3
                     \end{quote}
                 \\
@@ -998,42 +1006,42 @@ Quản trị viên chọn mục "sự kiện".
                  %%%%%%%%%%%%%%%%
                 \caption{Đặc tả use-case \textbf{thêm chi nhánh}}
             \end{longtable}
-            
+           
         \subsubsection{Chỉnh sửa thông tin chi nhánh}
-            \begin{longtable}{| p{.20\textwidth} | p{.80\textwidth} |} 
+            \begin{longtable}{| p{.20\textwidth} | p{.80\textwidth} |}
                 \hline
-                    \textbf{Use-case name} 
-                & 
+                    \textbf{Use-case name}
+                &
                     Chỉnh sửa tin chi nhánh
                 \\
                 %%%%%%%%%%%%%%%%
                 \hline
-                    \textbf{Actor} 
-                & 
+                    \textbf{Actor}
+                &
                     Quản lý chi nhánh
                 \\
                 %%%%%%%%%%%%%%%%
                 \hline
-                    \textbf{Description} 
-                & 
-                    Quản lý chi nhánh có thể chỉnh sửa thông tin chi nhánh 
+                    \textbf{Description}
+                &
+                    Quản lý chi nhánh có thể chỉnh sửa thông tin chi nhánh
                 \\
                 %%%%%%%%%%%%%%%%
                 \hline
-                    \textbf{Preconditions} 
+                    \textbf{Preconditions}
                 &
                     Quản lý chi nhánh đã đăng nhập
                 \\
                 %%%%%%%%%%%%%%%%
                 \hline
-                    \textbf{Postconditions} 
-                & 
+                    \textbf{Postconditions}
+                &
                     Thông tin chi nhánh được cập nhật
                 \\
                 %%%%%%%%%%%%%%%%
                 \hline
-                    \textbf{Trigger} 
-                & 
+                    \textbf{Trigger}
+                &
                     Quản lý chi nhánh chọn vào quản lý chi nhánh
                 \\
                 %%%%%%%%%%%%%%%%
@@ -1041,17 +1049,17 @@ Quản trị viên chọn mục "sự kiện".
                 \begin{flushleft}
                     \textbf{Normal flow}
                 \end{flushleft}
-                & 
+                &
                 1. Hệ thống hiển thị danh sách chi nhánh
-                
+               
                     2. Quản lý chi nhánh tìm kiếm chi nhánh và chọn chỉnh sửa
-                    
+                   
                     3. Hệ thống hiển thị biểu mẫu nhập thông tin
-                    
+                   
                     4. Quản lý chi nhánh chỉnh sửa thông tin chi nhánh
-                    
+                   
                     5. Quản lý chi nhánh nhập chọn xác nhận
-                    
+                   
                     6. Hệ thống cập nhật thông tin  chi nhánh
                 \\
                 %%%%%%%%%%%%%%%%
@@ -1061,18 +1069,18 @@ Quản trị viên chọn mục "sự kiện".
                 \end{flushleft}
                 &
                 5.1. Quản lý chi nhánh chọn hủy
-                    \begin{quote} 
+                    \begin{quote}
                     5.1.1. Kết thúc
                     \end{quote}
                 \\
                 %%%%%%%%%%%%%%%%
                 \hline
                 \begin{flushleft}
-                    \textbf{Exceptions} 
+                    \textbf{Exceptions}
                 \end{flushleft}
                 &
                 6.1. Tên chi nhánh bị trùng
-                    \begin{quote} 
+                    \begin{quote}
                     6.1.1. Quay về bước 3
                     \end{quote}
                 \\
@@ -1080,54 +1088,54 @@ Quản trị viên chọn mục "sự kiện".
                  %%%%%%%%%%%%%%%%
                 \caption{Đặc tả use-case \textbf{chỉnh sửa chi nhánh}}
             \end{longtable}
-            
+           
         \subsubsection{Xem thông tin chi tiết chi nhánh}
-            \begin{longtable}{| p{.20\textwidth} | p{.80\textwidth} |} 
+            \begin{longtable}{| p{.20\textwidth} | p{.80\textwidth} |}
                 \hline
-                    \textbf{Use-case name} 
-                & 
+                    \textbf{Use-case name}
+                &
                     Xem thông tin chi tiết chi nhánh
                 \\
                 %%%%%%%%%%%%%%%%
                 \hline
-                    \textbf{Actor} 
-                & 
+                    \textbf{Actor}
+                &
                     Quản lý chi nhánh
                 \\
                 %%%%%%%%%%%%%%%%
                 \hline
-                    \textbf{Description} 
-                & 
-                    Quản lý chi nhánh có thể xem thông tin chi nhánh 
+                    \textbf{Description}
+                &
+                    Quản lý chi nhánh có thể xem thông tin chi nhánh
                 \\
                 %%%%%%%%%%%%%%%%
                 \hline
-                    \textbf{Preconditions} 
+                    \textbf{Preconditions}
                 &
                     Quản lý chi nhánh đã đăng nhập
                 \\
                 %%%%%%%%%%%%%%%%
                 \hline
-                    \textbf{Postconditions} 
-                & 
+                    \textbf{Postconditions}
+                &
                     Nhận được thông tin chi nhánh
                 \\
                 %%%%%%%%%%%%%%%%
                 \hline
-                    \textbf{Trigger} 
-                & 
-                    Quản lý chi nhánh truy cập quán lý chi nhánh 
+                    \textbf{Trigger}
+                &
+                    Quản lý chi nhánh truy cập quản lý chi nhánh
                 \\
                 %%%%%%%%%%%%%%%%
                 \hline
                 \begin{flushleft}
                     \textbf{Normal flow}
                 \end{flushleft}
-                & 
+                &
                 1. Hệ thống hiển thị danh sách các chi nhánh
-                
+               
                     2. Quản lý chi nhánh tìm kiếm và chọn chi nhánh muốn xem
-                    
+                   
                     3. Hệ thống hiển thị thông tin chi nhánh đã chọn
                 \\
                 %%%%%%%%%%%%%%%%
@@ -1138,7 +1146,7 @@ Quản trị viên chọn mục "sự kiện".
                 \\
                 %%%%%%%%%%%%%%%%
                 \hline
-                    \textbf{Exceptions} 
+                    \textbf{Exceptions}
                 &
                     Không
                 \\
@@ -1146,62 +1154,62 @@ Quản trị viên chọn mục "sự kiện".
                  %%%%%%%%%%%%%%%%
                 \caption{Đặc tả use-case \textbf{xem thông tin chi tiết chi nhánh}}
             \end{longtable}
-            
+           
         \subsubsection{Xóa chi nhánh}
-            \begin{longtable}{| p{.20\textwidth} | p{.80\textwidth} |} 
+            \begin{longtable}{| p{.20\textwidth} | p{.80\textwidth} |}
                 \hline
-                    \textbf{Use-case name} 
-                & 
+                    \textbf{Use-case name}
+                &
                     Xóa chi nhánh
                 \\
                 %%%%%%%%%%%%%%%%
                 \hline
-                    \textbf{Actor} 
-                & 
+                    \textbf{Actor}
+                &
                     Quản lý chi nhánh
                 \\
                 %%%%%%%%%%%%%%%%
                 \hline
-                    \textbf{Description} 
-                & 
-                    Quản lý chi nhánh có thể xóa chi nhánh 
+                    \textbf{Description}
+                &
+                    Quản lý chi nhánh có thể xóa chi nhánh
                 \\
                 %%%%%%%%%%%%%%%%
                 \hline
-                    \textbf{Preconditions} 
+                    \textbf{Preconditions}
                 &
                     Quản lý chi nhánh đã đăng nhập
                 \\
                 %%%%%%%%%%%%%%%%
                 \hline
-                    \textbf{Postconditions} 
-                & 
+                    \textbf{Postconditions}
+                &
                     Chi nhánh bị xóa khỏi hệ thống
                 \\
                 %%%%%%%%%%%%%%%%
                 \hline
-                    \textbf{Trigger} 
-                & 
-                    Quản lý chi nhánh chọn quản lý chi nhánh             
+                    \textbf{Trigger}
+                &
+                    Quản lý chi nhánh chọn quản lý chi nhánh            
                 \\
                 %%%%%%%%%%%%%%%%
                 \hline
                 \begin{flushleft}
                     \textbf{Normal flow}
                 \end{flushleft}
-                & 
+                &
                 1. Hệ thống hiển thị danh sách chi nhánh
-                
+               
                     2. Quản lý chi nhánh tìm và chọn chi nhánh muốn xóa
                    
                   3. Hệ thống hiển thị thông tin chi tiết chi nhánh
-
+ 
                     4. Quản lý chi nhánh chọn xóa chi nhánh
-                    
+                   
                     5. Hệ thống yêu cầu xác nhận
-                    
+                   
                     6. Quản lý chi nhánh chọn xác nhận
-                    
+                   
                     7. Hệ thống cập nhật thông tin
                 \\
                 %%%%%%%%%%%%%%%%
@@ -1211,13 +1219,13 @@ Quản trị viên chọn mục "sự kiện".
                 \end{flushleft}
                 &
                 6.1. Quản trị viên chọn hủy
-                    \begin{quote} 
+                    \begin{quote}
                     6.1.1. Quay lại bước 3
                     \end{quote}
                 \\
                 %%%%%%%%%%%%%%%%
                 \hline
-                    \textbf{Exceptions} 
+                    \textbf{Exceptions}
                 &
                     Không
                 \\
@@ -1225,7 +1233,6 @@ Quản trị viên chọn mục "sự kiện".
                  %%%%%%%%%%%%%%%%
                 \caption{Đặc tả use-case \textbf{xóa chi nhánh}}
             \end{longtable}
-    
         
 
     \subsection{Quản lý hoạt động kinh doanh}
