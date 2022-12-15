@@ -1,4 +1,4 @@
-\documentclass[a4paper]{report}
+\documentclass[a4paper, oneside, 13pt]{report}
 \usepackage{vntex}
 % \usepackage[english,vietnam]{babel}
 \usepackage[utf8]{inputenc}
@@ -34,6 +34,7 @@
 \usepackage{setspace}
 \usepackage{epsfig}
 \usepackage{tikz}
+\usepackage{times}
 \usetikzlibrary{arrows,snakes,backgrounds}
 \usepackage[unicode]{hyperref}
 \hypersetup{urlcolor=blue,linkcolor=black,citecolor=black,colorlinks=true} 
@@ -54,9 +55,10 @@
 	\geometry{
 		a4paper,
 		total={160mm,240mm},  % fix over page
-		left=30mm,
-		top=30mm,
-		right=20mm 
+		left=3cm,
+		top=2cm,
+		right=2cm,
+		bottom=2cm, 
 	}
 }
 \thesislayout
@@ -223,7 +225,7 @@
 
 	
 	\begin{center}
-		\setupfont{13pt}
+		\setupfont{14pt}
 	ĐẠI HỌC QUỐC GIA THÀNH PHỐ HỒ CHÍ MINH \\
 	TRƯỜNG ĐẠI HỌC BÁCH KHOA \\
 	KHOA KHOA HỌC VÀ KỸ THUẬT MÁY TÍNH 
@@ -239,27 +241,29 @@
 
 
 \begin{center}
+\setupfont{15pt}
 	\begin{tabular}{c}
   %       \centering{\textbf{{\Large BÁO CÁO }}}
   %       \newline
 		% \multicolumn{1}{l}{\textbf{{\Large ĐỒ ÁN CHUYÊN NGÀNH }}}
-        \textbf{{\Large BÁO CÁO}} \\
-        \textbf{{\Large ĐỒ ÁN CHUYÊN NGÀNH}}
+        \textbf{{BÁO CÁO}} \\
+        \textbf{{ĐỒ ÁN CHUYÊN NGÀNH}}
 	\end{tabular}
 \end{center}
 
-
-
+\vspace*{0.5cm}
 
 \begin{center}
-\begin{tabular}{c}
-\textbf{{\LARGE XÂY DỰNG HỆ THỐNG QUẢN LÝ}}\\
-\textbf{{\LARGE CỬA HÀNG THỜI TRANG DỰA TRÊN}}\\
-\textbf{{\LARGE VIỆC TỰ ĐỘNG HÓA QUY TRÌNH NGHIỆP VỤ}}
-\end{tabular}
+\setupfont{17pt}
+	\begin{tabular}{c}
+	\textbf{{XÂY DỰNG HỆ THỐNG QUẢN LÝ}}\\
+	\textbf{{CỬA HÀNG THỜI TRANG DỰA TRÊN}}\\
+	\textbf{{VIỆC TỰ ĐỘNG HÓA QUY TRÌNH NGHIỆP VỤ}}
+	\end{tabular}
 \end{center}
 
-\vspace{0.2cm}
+\vspace{0.5cm}
+
 
 \begin{center}
 	\setupfont{14pt}
@@ -291,6 +295,28 @@
 
 
 \newpage
+\newpage
+\setlength{\parskip}{2.5mm}
+\thispagestyle{plain}
+	\begin{center}
+		\section*{Lời cam đoan}
+		\addcontentsline{toc}{chapter}{Lời cam đoan}
+	\end{center}
+	
+	Tôi xin cam đoan đây là công trình nghiên cứu của riêng tôi dưới sự hướng dẫn của TS. Nguyễn An Khương, TS. Nguyễn Tiến Thịnh, KS. Nguyễn Tấn Đức, KS. Nguyễn Hữu Hồng Huy. Nội dung nghiên cứu và các kết quả đều là trung thực và chưa từng được công bố trước đây. Các số liệu được sử dụng cho quá trình phân tích, nhận xét được chính tôi thu thập từ nhiều nguồn khác nhau và sẽ được ghi rõ trong phần tài liệu tham khảo. Ngoài ra, tôi cũng có sử dụng một số nhận xét, đánh giá và số liệu của các tác giả khác, cơ quan tổ chức khác. Tất cả đều có trích dẫn và chú thích nguồn gốc. Nếu phát hiện có bất kì sự gian lận nào, tôi xin hoàn toàn chịu trách nhiệm về nội dung luận văn tốt nghiệp của mình. Trường đại học Bách Khoa thành phố Hồ Chí Minh không liên quan đến những vi phạm tác quyền, bản quyền do tôi gây ra trong quá trình thực hiện.
+	
+	\vspace{1cm}
+	
+	\begin{center}
+		\begin{tabular}{c c c}
+			KÝ TÊN: \rule{4cm}{0.15mm} &\hspace{4cm}& NGÀY: \rule{4cm}{0.15mm}
+		\end{tabular}
+	\end{center}
+\setlength{\parskip}{0mm}
+
+\newpage
+
+
 \tableofcontents
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -303,45 +329,45 @@
 
 % Cơ sở lý thuyết
 \chapter{Cơ sở lý thuyết}
-\input{tex/theory}
+% \input{tex/theory}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Thiết kế hệ thống}
 % Requirement
-\input{tex/Requirement}
+% \input{tex/Requirement}
 
 \newpage
 % Usecase
-\input{tex/usecase}
+% \input{tex/usecase}
 
 \newpage
 % BPMN
-\input{tex/BPMN-diagram}
+% \input{tex/BPMN-diagram}
 
 \newpage
 % Architecture
-\input{tex/architecture}
+% \input{tex/architecture}
 
 \newpage
 % Database
-\input{tex/database}
+% \input{tex/database}
 
 \newpage
 % UI
-\input{tex/UI}
+% \input{tex/UI}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Công nghệ}
 % technology
-\input{tex/technology}
+% \input{tex/technology}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Tổng kết}
 % summary
-\input{tex/summary}
+% \input{tex/summary}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
