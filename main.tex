@@ -1,4 +1,4 @@
-\documentclass[a4paper, oneside, 13pt]{report}
+\documentclass[a4paper, oneside, 12pt]{report}
 \usepackage{vntex}
 % \usepackage[english,vietnam]{babel}
 \usepackage[utf8]{inputenc}
@@ -34,6 +34,7 @@
 \usepackage{setspace}
 \usepackage{epsfig}
 \usepackage{tikz}
+\usepackage{afterpage}
 \usepackage{times}
 \usetikzlibrary{arrows,snakes,backgrounds}
 \usepackage[unicode]{hyperref}
@@ -118,8 +119,12 @@
 
 \thesislayout
 
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
 \newcommand{\setupfont}[1]{\fontsize{#1}{#1}\selectfont}
-
 \DeclareMathOperator*{\argmax}{arg\,max}
 \DeclareMathOperator*{\argmin}{arg\,min}
 
@@ -277,7 +282,7 @@
 \begin{table}[h]
 	\setupfont{13pt}
 \begin{tabular}{rll}
-\hspace{5 cm}	& \textbf{HỘI ĐỒNG:} 	& Công nghệ phần mềm  \\
+\hspace{5 cm}	& \textbf{HỘI ĐỒNG:} 	& Đồ án chuyên ngành 18   \\
 				& \textbf{GVHD:} 		& ThS. Trương Thị Thái Minh\\
 				&						& TS. Nguyễn An Khương\\
 				& \textbf{TKHĐ:}		& Trương Thị Thái Minh\\
@@ -293,9 +298,14 @@
 \end{center}
 \end{titlepage}
 
+\setupfont{13pt}
 
-\newpage
-\newpage
+\clearpage
+\thispagestyle{empty}
+\hfill
+\clearpage
+
+
 \setlength{\parskip}{2.5mm}
 \thispagestyle{plain}
 	\begin{center}
@@ -303,12 +313,14 @@
 		\addcontentsline{toc}{chapter}{Lời cam đoan}
 	\end{center}
 	
-	Tôi xin cam đoan đây là công trình nghiên cứu của riêng tôi dưới sự hướng dẫn của TS. Nguyễn An Khương, TS. Nguyễn Tiến Thịnh, KS. Nguyễn Tấn Đức, KS. Nguyễn Hữu Hồng Huy. Nội dung nghiên cứu và các kết quả đều là trung thực và chưa từng được công bố trước đây. Các số liệu được sử dụng cho quá trình phân tích, nhận xét được chính tôi thu thập từ nhiều nguồn khác nhau và sẽ được ghi rõ trong phần tài liệu tham khảo. Ngoài ra, tôi cũng có sử dụng một số nhận xét, đánh giá và số liệu của các tác giả khác, cơ quan tổ chức khác. Tất cả đều có trích dẫn và chú thích nguồn gốc. Nếu phát hiện có bất kì sự gian lận nào, tôi xin hoàn toàn chịu trách nhiệm về nội dung luận văn tốt nghiệp của mình. Trường đại học Bách Khoa thành phố Hồ Chí Minh không liên quan đến những vi phạm tác quyền, bản quyền do tôi gây ra trong quá trình thực hiện.
+	Nhóm xin cam đoan đây là công trình nghiên cứu của Nhóm dưới sự hướng dẫn của ThS. Trương Thị Thái Minh. Nội dung phân tích và thiết kế hệ thống của nhóm đều là trung thực. Các lý thuyết được sử dụng cho quá trình phân tích, xây dựng được chính nhóm thu thập từ nhiều nguồn khác nhau và sẽ được ghi rõ trong phần tài liệu tham khảo. Nếu phát hiện có bất kì sự gian lận nào, nhóm xin hoàn toàn chịu trách nhiệm về nội dung đồ án chuyên ngành của mình. Trường đại học Bách Khoa thành phố Hồ Chí Minh không liên quan đến những vi phạm tác quyền, bản quyền do nhóm gây ra trong quá trình thực hiện.
 	
 	\vspace{1cm}
 	
 	\begin{center}
 		\begin{tabular}{c c c}
+			KÝ TÊN: \rule{4cm}{0.15mm} &\hspace{4cm}& NGÀY: \rule{4cm}{0.15mm} \\ \\
+			KÝ TÊN: \rule{4cm}{0.15mm} &\hspace{4cm}& NGÀY: \rule{4cm}{0.15mm} \\ \\
 			KÝ TÊN: \rule{4cm}{0.15mm} &\hspace{4cm}& NGÀY: \rule{4cm}{0.15mm}
 		\end{tabular}
 	\end{center}
@@ -316,6 +328,42 @@
 
 \newpage
 
+\setlength{\parskip}{2.5mm}
+\thispagestyle{plain}
+	\begin{center}
+		\section*{Lời cảm ơn}
+		\addcontentsline{toc}{chapter}{Lời cảm ơn}
+	\end{center}
+	
+	Trong suốt thời gian học tập và rèn luyện tại Trường Đại học Bách Khoa Thành phố Hồ Chí Minh đến nay, nhóm đã nhận được rất nhiều sự quan tâm, giúp đỡ của quý thầy cô và bạn bè. Với lòng biết ơn sâu sắc và chân thành nhất, nhóm xin gửi đến quý thầy cô ở Khoa Khoa Học và Kỹ Thuật Máy Tính - Trường Đại học Bách Khoa Thành phố Hồ Chí Minh, đã cùng với tri thức và tâm huyết của mình để truyền đạt vốn kiến thức quý báu cho mỗi thành viên trong suốt thời gian học tập tại trường. Đặc biệt tôi xin gửi lời cảm ơn chân thành đến cô Trương Thị Thái Minh. Người thầy đã tận tâm hướng dẫn, theo dõi và hỗ trợ nhóm trong suốt quá trình thực hiện đồ án chuyên ngành. Ngoài những lời khuyên và kiến thức về chuyên môn, trong quá trình làm việc cùng với cô một thời gian dài nhóm còn học được những đức tính tốt, những kỹ năng cần thiết để trở một người làm khoa học thật thụ như khả năng tư duy phản biện, tư duy sáng tạo, sự cần cù, sự trung thực và sự cẩn thận chính xác.
+		
+	% Sau cùng, tôi muốn dành những tình cảm sâu sắc trân trọng nhất gửi đến ba mẹ tôi, những người đã hi sinh rất nhiều vì tôi, lo lắng mọi thứ cho tương lai của tôi, tạo cho tôi mọi cơ hội học tập ở những môi trường tốt nhất. Ba mẹ luôn là nguồn động lực to lớn thôi thúc tôi vượt qua những rào cản của bản thân mà tiến về phía trước. Con cám ơn ba mẹ rất nhiều.
+
+\setlength{\parskip}{0mm}
+
+\newpage
+
+\setlength{\parskip}{2.5mm}
+\thispagestyle{plain}
+	\begin{center}
+		\section*{Tóm tắt đề tài}
+		\addcontentsline{toc}{chapter}{Tóm tắt đề tài}
+	\end{center}
+	
+	% %Trong thời kì dịch bệnh diễn biến phức tạp, các hoạt động giao tiếp trực tuyến trở nên phiển biến. Nhưng không phải ai cũng có đầy đủ những yêu cầu cần thiết để có thể hoạt động một cách hiệu quả. Một trong những tác nhân chính đó là tiếng ồn. 
+	
+	% Từ lâu, các hoạt động trực tuyến đã trở nên phổ biến, đặc biệt là trong tình hình dịch bệnh hiện nay. Nhưng hiệu quả của các hoạt động trực tuyến rất dễ bị ảnh hưởng bởi tiếng ồn từ môi trường xung quanh người hoạt động. Để hạn chế điều này, mọi người thường sử dụng các sản phẩm phần mềm được thương mại hóa và các tai nghe lọc nhiễu đắt tiền. Nhưng không phải ai cũng có thể tiếp cận được những sản phẩm này. Do đó, trong đề tài này, chúng tôi đặt ra vấn đề giải quyết tiếng ồn lẫn bên trong âm thanh, loại bỏ chúng trong khi vẫn phải đảm bảo chất lượng giọng nói đầu ra. Bằng cách sử dụng học sâu, chúng tôi mong muốn có thể loại bỏ được phần nào những khó khăn trong hoạt động nghe nhìn trực tuyến của mọi người.
+	
+	% Để có thể lọc được nhiễu ra khỏi giọng nói, chúng tôi tiến hành tham khảo một số mô hình đạt giải cao trong cuộc thi Deep Noise Suppression (DNS) \cite{dns} của Microsoft. Dựa trên các đặc điểm của mô hình và dữ liệu mà chúng tôi quan sát được, chúng tôi đề xuất ra hàm tăng cường mất mát và mô hình trong luận văn của mình. Mô hình này sau đó được huấn luyện trên hàm mất mát tăng cường của chúng tôi và sau đó được sử dụng vào ứng dụng. Chúng tôi so sánh kết quả độ đo của mô hình với các mô hình khác, so sánh sự ổn định của mô hình với các ngôn ngữ khác nhau và cả các ứng dụng đã được đi vào sử dụng cả mã nguồn mở và thương mại. Mô hình này sau đó  được sử dụng vào ứng dụng của chúng tôi và đáp ứng được kì vọng về độ trễ cũng như chất lượng của giọng nói đầu ra.
+	
+	% Với các công trình nghiên cứu và ứng dụng được thực hiện trong luận văn này, chúng tôi mong muốn góp một phần công sức của mình vào việc cải thiện chất lượng học tập, vui chơi trực tuyến của mọi người.
+
+\setlength{\parskip}{0mm}
+
+\clearpage
+\thispagestyle{empty}
+\hfill
+\clearpage
 
 \tableofcontents
 
