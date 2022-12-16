@@ -14,7 +14,7 @@
         \hline
         \textbf{Ưu điểm}       & Có bản chất là hệ thống nguyên khối nên đơn giản, dễ xây dựng, chi phí thấp khi xây dựng bảo trì đồng thời có thể tăng tính tin cậy dựa vào số lượng các lớp \\
         \hline
-        \textbf{Nhược điểm}    & Khả năng co giản, mở rộng thấp; hiệu xuất thấp vì không thể xử lý các tác vụ song song; khả năng chịu lỗi kém\\
+        \textbf{Nhược điểm}    & Khả năng co giãn, mở rộng thấp; hiệu suất thấp vì không thể xử lý các tác vụ song song; khả năng chịu lỗi kém\\
         \hline
         \textbf{Sử dụng cho}   & Sử dụng trong các hệ thống nhỏ, không yêu cầu hiệu năng cao; các hệ thống được xây dựng trên một hệ thống có sẵn trước đó \\
         \hline
@@ -381,7 +381,7 @@ Màn hình hiển thị thông tin chi tiết sự kiện\\
 Phương thức:
 \begin{itemize}
     \item showListGood(): Hiển thị danh sách tất cả hàng
-    \item searchGood(keyword: string): Tùm kiếm danh sách hàng theo từ khóa
+    \item searchGood(keyword: string): Tìm kiếm danh sách hàng theo từ khóa
     \item updateEvent(info: EventModel): Cập nhật thông tin sự kiện
 \end{itemize}
  
@@ -493,7 +493,7 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía khá
 		      \begin{itemize}
 			      \item cartId: string (Required)
 			      \item product: GoodsInCart (Required)\\
-							GoodInCart:
+							GoodsInCart:
 							\begin{itemize}
 								\item goodsId: string 
 								\item color: string 
@@ -532,7 +532,7 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía khá
 		      \begin{itemize}
 			      \item cartId: string (Required)
 			      \item product: GoodsInCart (Required)\\
-							GoodInCart:
+							GoodsInCart:
 							\begin{itemize}
 								\item goodsId: string 
 								\item color: string 
@@ -1254,16 +1254,16 @@ Thuộc tính:
 \subsubsubsection*{CartRepository}
 Thuộc tính:
 \begin{itemize}
-	\item goodInCart: Chứa đối tượng GoodInCartModel
+	\item goodsInCart: Chứa đối tượng GoodsInCartModel
 \end{itemize}
 Phương thức:
 \begin{itemize}
 	\item createCart(customerId: string): tạo giỏ hàng cho tài khoản khách hàng
 	\item readCart(customerId: string): Lấy thông tin giỏ hàng thuộc tài khoản của khách hàng.
-	\item createProductToCart(customerId: string, product: GoodInCartModel): Thêm sản phẩm vào giỏ hàng.
+	\item createProductToCart(customerId: string, product: GoodsInCartModel): Thêm sản phẩm vào giỏ hàng.
 	\item deleteProductInCart(cartId: string, product: Good): Xóa sản phẩm khỏi giỏ hàng.
 	\item deleteAllProductInCart(cartId: string): Xóa toàn bộ sản phẩm khỏi giỏ hàng.
-	\item updateCart(customerId: string, product: GoodInCartModel): Cập nhật thông tin sản phẩm trong giỏ hàng.
+	\item updateCart(customerId: string, product: GoodsInCartModel): Cập nhật thông tin sản phẩm trong giỏ hàng.
 \end{itemize}
 
 \subsubsubsection*{CartController}
@@ -1275,11 +1275,11 @@ Phương thức:
 \begin{itemize}
 	\item addCart(customerId: string): Xử lý dữ liệu và gọi thêm giỏ hàng cho tài khoản khách hàng để trả về kết quả.
 	\item getCart(customerId: string): Xử lý dữ liệu và gọi lấy thông tin giỏ hàng thuộc tài khoản của khách hàng để trả về kết quả.
-	\item addProductToCart(customerId: string, product: GoodInCartModel): Xử lý dữ liệu và gọi thêm sản phẩm vào giỏ hàng để trả về kết quả.
+	\item addProductToCart(customerId: string, product: GoodsInCartModel): Xử lý dữ liệu và gọi thêm sản phẩm vào giỏ hàng để trả về kết quả.
 	\item removeProductInCart(cartId: string, product: Good): Xử lý dữ liệu và gọi xóa sản phẩm khỏi giỏ hàng để trả về kết quả.
 	\item removeAllProductInCart(castId: string): Xử lý dữ liệu và gọi xóa toàn bộ sản phẩm khỏi giỏ hàng để trả về kết quả.
-	\item getListProductInfo(cartId: string, listGood: list<GoodInCartModel>): Xử lý dữ liệu và gọi xóa toàn bộ sản phẩm khỏi giỏ hàng để trả về kết quả.
-	\item editCart(cartId: string, product: GoodInCartModel): Xử lý dữ liệu và gọi cập nhật thông tin sản phẩm trong giỏ hàng để trả về kết quả.
+	\item getListProductInfo(cartId: string, listGood: list<GoodsInCartModel>): Xử lý dữ liệu và gọi xóa toàn bộ sản phẩm khỏi giỏ hàng để trả về kết quả.
+	\item editCart(cartId: string, product: GoodsInCartModel): Xử lý dữ liệu và gọi cập nhật thông tin sản phẩm trong giỏ hàng để trả về kết quả.
 \end{itemize}
 
 \subsubsubsection*{GetResponse - AddResponse - UpdateResponse - DeleteResponse}
@@ -1401,7 +1401,7 @@ Thuộc tính:
 \end{itemize}
 Phương thức:
 \begin{itemize}
-	\item getAcount(keyword: string): Lấy danh sách tài khoản theo từ khóa
+	\item getAccount(keyword: string): Lấy danh sách tài khoản theo từ khóa
 	\item createAccount(info: AccountModel): Tạo một tài khoản mới
 	\item updateAccount(info: AccountModel): Cập nhật thông tin một tài khoản
 \end{itemize}
