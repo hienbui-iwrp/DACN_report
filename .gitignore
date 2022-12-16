@@ -8,5 +8,7 @@
 *.synctex*
 *.gz
 *.pdf
+*.lof
+*.lot
 
 */*.aux
