@@ -1,0 +1,145 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Ví dụ về lược đồ BPMN\relax }}{21}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Lược đồ BPMN bao gồm 1 pool(Hệ thống cửa hàng) và 2 lane (Nhân viên, Quản lý chi nhánh)\relax }}{22}{figure.caption.11}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Task \cite {theoryBPMN0}\relax }}{22}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Event Sub-Process \cite {theoryBPMN0}\relax }}{22}{figure.caption.14}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Transaction \cite {theoryBPMN0}\relax }}{22}{figure.caption.15}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Call Activity \cite {theoryBPMN0}\relax }}{22}{figure.caption.16}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Các loại sự kiện trong BPMN \cite {theoryBPMN1}\relax }}{23}{figure.caption.18}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Các loại cổng phổ biến trong BPMN \cite {theoryBPMN1}\relax }}{23}{figure.caption.20}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Ví dụ về quy trình BPEL sắp xếp chuyến đi \cite {theoryBPEL}\relax }}{24}{figure.caption.21}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Use case Hệ thống quản lý cửa hàng thời trang\relax }}{30}{figure.caption.22}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Use case đặt hàng trực tuyến\relax }}{31}{figure.caption.23}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Use case quản lý sự kiện\relax }}{36}{figure.caption.24}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Use case quản lý chi nhánh\relax }}{39}{figure.caption.25}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Use case quản lý hoạt động kinh doanh\relax }}{41}{figure.caption.26}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Use case quản lý nhân viên\relax }}{43}{figure.caption.27}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Use case quản lý tài khoản\relax }}{47}{figure.caption.28}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Use case quản lý kho\relax }}{49}{figure.caption.29}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Use case quản lý hàng hóa\relax }}{55}{figure.caption.30}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Use case quản lý đơn hàng\relax }}{55}{figure.caption.31}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Lược đồ BPMN cho quy trình quản lý kho\relax }}{58}{figure.caption.32}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Lược đồ BPMN cho quy trình lưu hóa đơn từ cửa hàng\relax }}{58}{figure.caption.33}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Lược đồ BPMN cho quy trình khách hàng yêu cầu xuất hóa đơn\relax }}{59}{figure.caption.34}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Lược đồ BPMN cho quy trình cập nhật trạng thái đơn hàng\relax }}{59}{figure.caption.35}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Lược đồ BPMN cho quy trình khách hàng mua hàng\relax }}{60}{figure.caption.36}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Lược đồ BPMN cho quy trình con tìm kiếm sản phẩm\relax }}{60}{figure.caption.37}%
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Lược đồ BPMN cho quy trình con chọn loại sản phẩm mà khách hàng muốn tìm\relax }}{60}{figure.caption.38}%
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Lược đồ BPMN cho quy trình xem xét thông tin chi tiết của sản phẩm\relax }}{61}{figure.caption.39}%
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Lược đồ BPMN cho quy trình thêm sản phẩm vào giỏ hàng\relax }}{61}{figure.caption.40}%
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Lược đồ BPMN cho quy trình thêm nhanh sản phẩm vào giỏ hàng\relax }}{62}{figure.caption.41}%
+\contentsline {figure}{\numberline {3.21}{\ignorespaces Lược đồ BPMN cho quy trình quản lý giỏ hàng\relax }}{62}{figure.caption.42}%
+\contentsline {figure}{\numberline {3.22}{\ignorespaces Lược đồ BPMN cho quy trình mua hàng\relax }}{63}{figure.caption.43}%
+\contentsline {figure}{\numberline {3.23}{\ignorespaces Lược đồ BPMN cho quy trình tính toán chi phí đơn hàng\relax }}{63}{figure.caption.44}%
+\contentsline {figure}{\numberline {3.24}{\ignorespaces Lược đồ BPMN cho quy trình thanh toán đơn hàng\relax }}{64}{figure.caption.45}%
+\contentsline {figure}{\numberline {3.25}{\ignorespaces Lược đồ BPMN cho quy trình thêm sự kiện\relax }}{64}{figure.caption.46}%
+\contentsline {figure}{\numberline {3.26}{\ignorespaces Lược đồ BPMN cho quy trình chỉnh sửa sự kiện\relax }}{64}{figure.caption.47}%
+\contentsline {figure}{\numberline {3.27}{\ignorespaces Lược đồ BPMN cho quy trình xóa sự kiện\relax }}{65}{figure.caption.48}%
+\contentsline {figure}{\numberline {3.28}{\ignorespaces Lược đồ BPMN cho quy trình khách hàng mua hàng trực tiếp\relax }}{65}{figure.caption.49}%
+\contentsline {figure}{\numberline {3.29}{\ignorespaces Lược đồ BPMN cho quy trình đăng nhập\relax }}{66}{figure.caption.50}%
+\contentsline {figure}{\numberline {3.30}{\ignorespaces Lược đồ BPMN cho quy trình đăng ký tài khoản mới\relax }}{66}{figure.caption.51}%
+\contentsline {figure}{\numberline {3.31}{\ignorespaces Lược đồ BPMN cho quy trình làm mới mật khẩu\relax }}{67}{figure.caption.52}%
+\contentsline {figure}{\numberline {3.32}{\ignorespaces Lược đồ BPMN cho quy trình quản lý chi nhánh\relax }}{67}{figure.caption.53}%
+\contentsline {figure}{\numberline {3.33}{\ignorespaces Lược đồ BPMN cho quy trình quản lý nhân viên\relax }}{68}{figure.caption.54}%
+\contentsline {figure}{\numberline {3.34}{\ignorespaces Lược đồ BPMN cho quy trình tạo yêu cầu thêm, xóa nhân viên\relax }}{69}{figure.caption.56}%
+\contentsline {figure}{\numberline {3.35}{\ignorespaces Tổng quan kiến trúc hệ thống\relax }}{71}{figure.caption.61}%
+\contentsline {figure}{\numberline {3.36}{\ignorespaces Lược đồ class của Module CustomerUI\relax }}{72}{figure.caption.62}%
+\contentsline {figure}{\numberline {3.37}{\ignorespaces Lược đồ class của LoginUI\relax }}{76}{figure.caption.77}%
+\contentsline {figure}{\numberline {3.38}{\ignorespaces Lược đồ class của Module AdminUI\relax }}{77}{figure.caption.78}%
+\contentsline {figure}{\numberline {3.39}{\ignorespaces Lược đồ class của Customer Order Service\relax }}{91}{figure.caption.107}%
+\contentsline {figure}{\numberline {3.40}{\ignorespaces Lược đồ class của Cart Service\relax }}{93}{figure.caption.111}%
+\contentsline {figure}{\numberline {3.41}{\ignorespaces Lược đồ class của Customer Service\relax }}{95}{figure.caption.115}%
+\contentsline {figure}{\numberline {3.42}{\ignorespaces Lược đồ class của Order Service\relax }}{97}{figure.caption.119}%
+\contentsline {figure}{\numberline {3.43}{\ignorespaces Lược đồ class của Account Service\relax }}{99}{figure.caption.123}%
+\contentsline {figure}{\numberline {3.44}{\ignorespaces Lược đồ class của Staff Service\relax }}{101}{figure.caption.127}%
+\contentsline {figure}{\numberline {3.45}{\ignorespaces Lược đồ class của Branch Service\relax }}{103}{figure.caption.131}%
+\contentsline {figure}{\numberline {3.46}{\ignorespaces Lược đồ class của Event Service\relax }}{105}{figure.caption.135}%
+\contentsline {figure}{\numberline {3.47}{\ignorespaces Lược đồ class của Warehouse Service\relax }}{107}{figure.caption.139}%
+\contentsline {figure}{\numberline {3.48}{\ignorespaces Lược đồ class của Statistic Service\relax }}{109}{figure.caption.143}%
+\contentsline {figure}{\numberline {3.49}{\ignorespaces Lược đồ class của Goods Service\relax }}{111}{figure.caption.147}%
+\contentsline {figure}{\numberline {3.50}{\ignorespaces Giao tiếp giữa các service bằng Choreography \cite {archChoreography}\relax }}{113}{figure.caption.151}%
+\contentsline {figure}{\numberline {3.51}{\ignorespaces Giao tiếp giữa các service bằng Orchestration \cite {archOrchestration}\relax }}{113}{figure.caption.152}%
+\contentsline {figure}{\numberline {3.52}{\ignorespaces Lược đồ giao tiếp đồng bộ của Customer order Service với các dịch vụ khác\relax }}{114}{figure.caption.153}%
+\contentsline {figure}{\numberline {3.53}{\ignorespaces Lược đồ giao tiếp đồng bộ của Cart Service với các dịch vụ khác\relax }}{115}{figure.caption.154}%
+\contentsline {figure}{\numberline {3.54}{\ignorespaces Lược đồ giao tiếp đồng bộ của Staff Service với các dịch vụ khác\relax }}{116}{figure.caption.155}%
+\contentsline {figure}{\numberline {3.55}{\ignorespaces Lược đồ giao tiếp đồng bộ của Account Service với các dịch vụ khác\relax }}{116}{figure.caption.156}%
+\contentsline {figure}{\numberline {3.56}{\ignorespaces Giao tiếp bất đồng bộ giữa các services\relax }}{117}{figure.caption.157}%
+\contentsline {figure}{\numberline {3.57}{\ignorespaces ERD cho database của service Khách hàng\relax }}{118}{figure.caption.158}%
+\contentsline {figure}{\numberline {3.58}{\ignorespaces ERD cho database của service Giỏ hàng\relax }}{119}{figure.caption.159}%
+\contentsline {figure}{\numberline {3.59}{\ignorespaces ERD cho database của service Đơn hàng của khách hàng\relax }}{120}{figure.caption.160}%
+\contentsline {figure}{\numberline {3.60}{\ignorespaces ERD cho database của service Sự kiện\relax }}{121}{figure.caption.161}%
+\contentsline {figure}{\numberline {3.61}{\ignorespaces ERD cho database của service Hàng hóa\relax }}{122}{figure.caption.162}%
+\contentsline {figure}{\numberline {3.62}{\ignorespaces ERD cho database của service Đơn hàng\relax }}{123}{figure.caption.163}%
+\contentsline {figure}{\numberline {3.63}{\ignorespaces ERD cho database của service Kho\relax }}{124}{figure.caption.164}%
+\contentsline {figure}{\numberline {3.64}{\ignorespaces ERD cho database của service chi nhánh\relax }}{125}{figure.caption.165}%
+\contentsline {figure}{\numberline {3.65}{\ignorespaces ERD cho database của service tài khoản\relax }}{126}{figure.caption.166}%
+\contentsline {figure}{\numberline {3.66}{\ignorespaces ERD cho database của service nhân viên\relax }}{127}{figure.caption.167}%
+\contentsline {figure}{\numberline {3.67}{\ignorespaces ERD cho database của service thống kê\relax }}{128}{figure.caption.168}%
+\contentsline {figure}{\numberline {3.68}{\ignorespaces Ánh xạ cho database của service Khách hàng\relax }}{128}{figure.caption.169}%
+\contentsline {figure}{\numberline {3.69}{\ignorespaces Ánh xạ cho database của service Giỏ hàng\relax }}{129}{figure.caption.170}%
+\contentsline {figure}{\numberline {3.70}{\ignorespaces Ánh xạ cho database của service Đơn hàng của khách hàng\relax }}{130}{figure.caption.171}%
+\contentsline {figure}{\numberline {3.71}{\ignorespaces Ánh xạ cho database của service Sự kiện\relax }}{131}{figure.caption.172}%
+\contentsline {figure}{\numberline {3.72}{\ignorespaces Ánh xạ cho database của service Hàng hóa\relax }}{131}{figure.caption.173}%
+\contentsline {figure}{\numberline {3.73}{\ignorespaces Ánh xạ cho database của service Đơn hàng\relax }}{132}{figure.caption.174}%
+\contentsline {figure}{\numberline {3.74}{\ignorespaces Ánh xạ cho database của service Kho\relax }}{134}{figure.caption.175}%
+\contentsline {figure}{\numberline {3.75}{\ignorespaces Ánh xạ cho database của service chi nhánh\relax }}{135}{figure.caption.176}%
+\contentsline {figure}{\numberline {3.76}{\ignorespaces Ánh xạ cho database của service tài khoản\relax }}{136}{figure.caption.177}%
+\contentsline {figure}{\numberline {3.77}{\ignorespaces Ánh xạ cho database của service nhân viên\relax }}{136}{figure.caption.178}%
+\contentsline {figure}{\numberline {3.78}{\ignorespaces Ánh xạ cho database của service thống kê\relax }}{137}{figure.caption.179}%
+\contentsline {figure}{\numberline {3.79}{\ignorespaces Giao diện đăng nhập\relax }}{138}{figure.caption.180}%
+\contentsline {figure}{\numberline {3.80}{\ignorespaces Giao diện đăng ký tài khoản người dùng\relax }}{138}{figure.caption.181}%
+\contentsline {figure}{\numberline {3.81}{\ignorespaces Giao diện tạo lại mật khẩu người dùng\relax }}{139}{figure.caption.182}%
+\contentsline {figure}{\numberline {3.82}{\ignorespaces Giao diện xác nhận OTP\relax }}{140}{figure.caption.183}%
+\contentsline {figure}{\numberline {3.83}{\ignorespaces Giao diện tạo lại mật khẩu mới\relax }}{140}{figure.caption.184}%
+\contentsline {figure}{\numberline {3.84}{\ignorespaces Giao diện phần header\relax }}{141}{figure.caption.185}%
+\contentsline {figure}{\numberline {3.85}{\ignorespaces Giao diện phần footer\relax }}{142}{figure.caption.186}%
+\contentsline {figure}{\numberline {3.86}{\ignorespaces Giao diện trang chủ khi người dùng truy cập vào trang web\relax }}{143}{figure.caption.187}%
+\contentsline {figure}{\numberline {3.87}{\ignorespaces Giao diện thông tin chi tiết của sản phẩm\relax }}{144}{figure.caption.188}%
+\contentsline {figure}{\numberline {3.88}{\ignorespaces Giao diện hướng dẫn chọn size cho sản phẩm\relax }}{145}{figure.caption.189}%
+\contentsline {figure}{\numberline {3.89}{\ignorespaces Giao diện quản lý giỏ hàng.\relax }}{146}{figure.caption.190}%
+\contentsline {figure}{\numberline {3.90}{\ignorespaces Giao diện thanh toán.\relax }}{147}{figure.caption.191}%
+\contentsline {figure}{\numberline {3.91}{\ignorespaces Giao diện quản lý đơn hàng của khách hàng.\relax }}{148}{figure.caption.192}%
+\contentsline {figure}{\numberline {3.92}{\ignorespaces Giao diện xem chi tiết đơn hàng của khách hàng.\relax }}{149}{figure.caption.193}%
+\contentsline {figure}{\numberline {3.93}{\ignorespaces Giao diện xem thông tin tài khoản của khách hàng.\relax }}{150}{figure.caption.194}%
+\contentsline {figure}{\numberline {3.94}{\ignorespaces Giao diện đổi mật khẩu cho tài khoản.\relax }}{151}{figure.caption.195}%
+\contentsline {figure}{\numberline {3.95}{\ignorespaces Giao diện phần chung cho quản trị viên\relax }}{152}{figure.caption.196}%
+\contentsline {figure}{\numberline {3.96}{\ignorespaces Giao diện cập nhật mật khẩu\relax }}{152}{figure.caption.197}%
+\contentsline {figure}{\numberline {3.97}{\ignorespaces Giao diện quản lý chi nhánh\relax }}{153}{figure.caption.198}%
+\contentsline {figure}{\numberline {3.98}{\ignorespaces Giao diện form thêm, chỉnh sửa chi nhánh\relax }}{153}{figure.caption.199}%
+\contentsline {figure}{\numberline {3.99}{\ignorespaces Giao diện thông tin chi tiết chi nhánh\relax }}{154}{figure.caption.200}%
+\contentsline {figure}{\numberline {3.100}{\ignorespaces Giao diện quản lý hoạt động kinh doanh\relax }}{155}{figure.caption.201}%
+\contentsline {figure}{\numberline {3.101}{\ignorespaces Giao diện quản lý nhân viên\relax }}{156}{figure.caption.202}%
+\contentsline {figure}{\numberline {3.102}{\ignorespaces Giao diện thêm, chỉnh sửa nhân viên\relax }}{156}{figure.caption.203}%
+\contentsline {figure}{\numberline {3.103}{\ignorespaces Giao diện thông tin chi tiết nhân viên\relax }}{157}{figure.caption.204}%
+\contentsline {figure}{\numberline {3.104}{\ignorespaces Giao diện quản lý yêu cầu nhân viên\relax }}{158}{figure.caption.205}%
+\contentsline {figure}{\numberline {3.105}{\ignorespaces Giao diện yêu cầu thêm nhân viên\relax }}{158}{figure.caption.206}%
+\contentsline {figure}{\numberline {3.106}{\ignorespaces Giao diện yêu cầu xóa nhân viên\relax }}{159}{figure.caption.207}%
+\contentsline {figure}{\numberline {3.107}{\ignorespaces Giao diện quản lý tài khoản\relax }}{159}{figure.caption.208}%
+\contentsline {figure}{\numberline {3.108}{\ignorespaces Giao diện thông tin chi tiết tài khoản\relax }}{160}{figure.caption.209}%
+\contentsline {figure}{\numberline {3.109}{\ignorespaces Giao diện thông tin chi tiết tài khoản\relax }}{160}{figure.caption.210}%
+\contentsline {figure}{\numberline {3.110}{\ignorespaces Giao diện quản lý kho\relax }}{161}{figure.caption.211}%
+\contentsline {figure}{\numberline {3.111}{\ignorespaces Giao diện thêm, chỉnh sửa thông tin kho\relax }}{161}{figure.caption.212}%
+\contentsline {figure}{\numberline {3.112}{\ignorespaces Giao diện quản lý sự kiện\relax }}{162}{figure.caption.213}%
+\contentsline {figure}{\numberline {3.113}{\ignorespaces Giao diện thêm, chỉnh sửa thông tin sự kiện\relax }}{162}{figure.caption.214}%
+\contentsline {figure}{\numberline {3.114}{\ignorespaces Giao diện chọn hàng cho sự kiện\relax }}{163}{figure.caption.215}%
+\contentsline {figure}{\numberline {3.115}{\ignorespaces Giao diện quản lý hàng hóa\relax }}{163}{figure.caption.216}%
+\contentsline {figure}{\numberline {3.116}{\ignorespaces Giao diện chỉnh sửa thông tin hàng\relax }}{164}{figure.caption.217}%
+\contentsline {figure}{\numberline {3.117}{\ignorespaces Giao diện vận chuyển hàng\relax }}{165}{figure.caption.218}%
+\contentsline {figure}{\numberline {3.118}{\ignorespaces Giao diện quản lý đơn hàng trực tuyến\relax }}{166}{figure.caption.219}%
+\contentsline {figure}{\numberline {3.119}{\ignorespaces Giao diện chi tiết đơn hàng trực tuyến\relax }}{166}{figure.caption.220}%
+\contentsline {figure}{\numberline {3.120}{\ignorespaces Giao diện quản lý đơn hàng cửa hàng\relax }}{167}{figure.caption.221}%
+\contentsline {figure}{\numberline {3.121}{\ignorespaces Giao diện chi tiết đơn hàng cửa hàng\relax }}{167}{figure.caption.222}%
+\contentsline {figure}{\numberline {3.122}{\ignorespaces Giao diện của người quản lý chi nhánh\relax }}{168}{figure.caption.223}%
+\contentsline {figure}{\numberline {3.123}{\ignorespaces Giao diện của người trưởng chi nhánh\relax }}{168}{figure.caption.224}%
+\contentsline {figure}{\numberline {3.124}{\ignorespaces Giao diện của người quản lý hàng hóa\relax }}{169}{figure.caption.225}%
+\contentsline {figure}{\numberline {3.125}{\ignorespaces Giao diện của người quản lý kho \relax }}{169}{figure.caption.226}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Logo React \cite {technologyReact}\relax }}{170}{figure.caption.227}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Logo Ant Design \cite {technologyAntd}\relax }}{171}{figure.caption.228}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Logo DvaJs \cite {technologyDva}\relax }}{172}{figure.caption.229}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Mô hình data flow trong dva \cite {technologyDvaAdvance}\relax }}{173}{figure.caption.230}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Logo Golang\relax }}{173}{figure.caption.231}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Biểu đồ Gantt cho kế hoạch đồ án tốt nghiệp\relax }}{176}{figure.caption.232}%
