@@ -1,5 +1,5 @@
 % !TeX root = ..\main.tex
-\section{Thiết kế lược đồ BPMN}
+\section{Thiết kế quy trình nghiệp vụ}
 
 Các lược đồ BPMN được nhóm thiết kế trên app Bizagi.
 
@@ -45,6 +45,8 @@ Quy trình bắt đầu khi người dùng tạo yêu cầu xuất hóa đơn. L
 
 Quy trình bắt đầu khi bên giao vận gửi dữ liệu cập nhật trạng thái mới của đơn hàng về cho hệ thống quản lý đơn. Bên quản lý đơn sau khi nhận được trạng thái đơn hàng đã cập nhật sẽ tiến hành cập nhật trạng thái đơn hàng trong hệ thống.
 
+\newpage
+
 \subsection{Khách hàng mua hàng}
 \begin{figure}[!htp]
     \centering
@@ -65,6 +67,7 @@ Quy trình bắt đầu khi người dùng bắt đầu truy cập vào trang we
  
 Đây là một quy trình con chứa quy trình tìm kiếm sản phẩm mà người dùng muốn tìm kiếm. Bắt đầu từ việc chọn cách duyệt bằng cách duyệt theo ngẫu hứng hay duyệt theo ý muốn. Khi người dũng duyệt theo ý muốn thì thực hiện quy trình con "Chọn loại sản phẩm" để chọn những loại sản phẩm theo ý muốn của khách hàng. Sau khi chọn loại sản phẩm thì hệ thống sẽ nhận thông tin và xử lý, sau đó phản hồi kết quả và người dùng kiểm tra kết quả tìm kiếm và kết thúc quy trình con này.
  
+\newpage
 \begin{figure}[!htp]
     \centering
     \includegraphics[width=12cm]{img/BPMN/customer_buy/customer_select_type.png}
@@ -73,8 +76,7 @@ Quy trình bắt đầu khi người dùng bắt đầu truy cập vào trang we
 \end{figure}
  
 Đây là một quy trình con chứa quy trình chọn loại sản phẩm mà người dùng muốn tìm kiếm. Bắt đầu từ việc chọn loại duyệt thì người dùng có thể chọn duyệt theo thể loại hoặc duyệt theo tên tìm kiếm hoặc duyệt theo sự kiện.
- 
-\newpage
+
  
 \begin{figure}[!htp]
     \centering
@@ -96,7 +98,6 @@ Quy trình bắt đầu khi người dùng bắt đầu truy cập vào trang we
  
 Đây là một quy trình con chứa quy trình thêm sản phẩm vào giỏ hàng, sau khi khách hàng xem thông tin chi tiết và muốn mua sản phẩm thì người dùng các thông tin sản phẩm mà khách hàng muốn thêm sau đó xác nhận thêm vào giỏ hàng. Thông tin sản phẩm khách hàng chọn thêm vào giỏ hàng được gửi đi và hệ thống thực hiện kiểm tra tài khoản khách hàng đã đăng nhập chưa, sau khi xác nhận được đã đăng nhập thì hệ thống kiểm tra thông tin và cập nhật thông tin sản phẩm vào giỏ hàng, sau đó gửi kết quả về phía khách hàng. Sau khi nhận được kết quả thì người dùng kiểm tra kết quả và kết thúc quy trình.
  
-\newpage
  
 \begin{figure}[!htp]
     \centering
@@ -169,7 +170,7 @@ Quy trình được bắt đầu bởi sự kiện nhận thông tin cho sự ki
 \end{figure}
 
 Quy trình được bắt đầu bởi sự kiện nhận thông tin thay đổi sự kiện, sau khi nhận được thông tin sự kiện cần cập nhật thì quản trị viên chọn sự cần cần sửa, sau đó nhập thông tin cho sự kiện và xác nhận cập nhật sự kiện. Sau khi thông tin cập nhật sự kiện được gửi đi thì hệ thống sẽ kiểm tra thông tin sự kiện có hợp lệ hay không, nếu hợp lệ thì cập nhật lại sự kiện vào hệ thống và kết thúc quy trình, nếu không hợp lệ thì quản trị viên cần quay lại task nhập lại thông tin cho sự kiện.
-
+\newpage
 \subsubsection{Xóa sự kiện}
 
 \begin{figure}[!htp]
@@ -192,6 +193,8 @@ Quy trình được bắt đầu bởi sự kiện nhận thông tin xóa sự k
 
 Khách hàng sau khi đến cửa hàng sẽ thực hiện chọn sản phẩm và thông báo cho nhân viên sản phẩm của mình. Nhân viên thực hiện nhập đơn hàng và báo giá cho khách hàng. Khách hàng nhận thông tin và thực hiện thanh toán. Nhân viên nhân tiền và cập nhật hóa đơn trên hệ thống
 
+\newpage
+
 \subsection{Đăng nhập}
 \begin{figure}[!htp]
 	\centering
@@ -201,8 +204,6 @@ Khách hàng sau khi đến cửa hàng sẽ thực hiện chọn sản phẩm v
 \end{figure}
 
 Người dùng truy cập hệ thống nhập thông tin đăng nhập và chọn đăng nhập. Hệ thống thực hiện kiểm tra thông tin và trả thông báo thành công hoặc thất bại. Nếu thất bại sẽ yêu cầu người dùng đăng nhập lại
-
-\newpage
 
 \subsection{Đăng ký tài khoản}
 \begin{figure}[!htp]
@@ -246,8 +247,6 @@ Khi quản trị viên truy cập, hệ thống sẽ lấy danh sách chi nhánh
 \end{figure}
 
 Khi quản trị viên truy cập, hệ thống sẽ lấy danh sách nhân viên. Quản trị viên thực hiện thêm mới hoặc xem thông tin nhân viên. Nêu thêm mới, quản trị viên sẽ nhập thông tin nhân viên mới và cập nhật hệ thống, nếu có thông tin không hợp lệ, hệ thống sẽ yêu cầu nhập lại thông tin. Nếu xem thông nhân viên, hệ thống sẽ lấy thông tin chi tiết của nhân viên đó. Quản trị viên có thể chỉ xem thông tin nhân viên, chỉnh sửa thông tin hoặc xóa nhân viên. Nếu chọn xóa, hệ thống sẽ kiểm tra và xóa nếu hợp lệ, ngược lại sẽ hiện thông tin chi tiết nhân viên. Nếu chọn chỉnh sửa, hệ thống yêu cầu nhập thông tin sẽ kiểm tra thông tin nếu hợp lệ sẽ cập nhật thông tin, ngược lại sẽ yêu cầu nhập lại thông tin
-
-\newpage
 
 \subsubsection*{Tạo yêu cầu thêm, xóa nhân viên}
 \begin{figure}[!htp]
