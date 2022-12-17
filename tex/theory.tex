@@ -1,7 +1,6 @@
 % !TeX root = ..\main.tex
-\section{Cơ sở lý thuyết}
-\subsection{Lược đồ BPMN}
-\subsubsection{Tổng quan về BPMN}
+\section{Lược đồ BPMN}
+\subsection{Tổng quan về BPMN}
 \hspace*{0.5cm}BPMN(Business Process Modeling Notation) là một lược đồ tập hợp các kí hiệu để mô hình hóa trực quan các quy trình nghiệp vụ xử lý . BPMN giúp các doanh nghiệp trực quan hóa các hoạt động và các luồng thông tin để thực hiện quy trình nghiệp vụ.
 \begin{figure}[!htp]
     \centering
@@ -12,14 +11,14 @@
  
  
  
-\subsubsection{Lợi ích của BPMN}
+\subsection{Lợi ích của BPMN}
 \begin{itemize}
     \item Giúp các bên liên quan có thể hiểu rõ quy trình nghiệp vụ của hệ thống
     \item Thu hẹp khoảng cách giữa bộ phận thiết kế và bộ phận nghiệp vụ
     \item Dễ dàng mô tả các nghiệp vụ phức tạp
 \end{itemize}
  
-\subsubsection{Các thành phần của BPMN}
+\subsection{Các thành phần của BPMN}
 \subsubsubsection*{Swimlane}
 Swimlane bao gồm Pool và Lane:
 \begin{itemize}
@@ -100,10 +99,10 @@ Các cổng có nhiệm vụ chính là kiểm soát dòng chảy của quy trì
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Ngôn ngữ BPEL}
-\subsubsection{Tổng quan về BPEL}
+\section{Ngôn ngữ BPEL}
+\subsection{Tổng quan về BPEL}
 \hspace*{0.5cm} BPEL hay BPEL4WS(Business Process Execution Language for Web Services) là ngôn ngữ dùng để định nghĩa và thực thi các quy trình nghiệp vụ sử dụng các dịch vụ web. Ngôn ngữ BPEL được xây dựng dựa trên nền tảng XML hỗ trợ các dịch vụ web: SOAP, WSDL, UDDI. BPEL xây dựng một dịch vụ web dựa trên việc điều phối, phối hợp các dịch vụ web độc lập khác để hình thành nên một dịch vụ web mới.
-\subsubsection{Các thành phần trong BPEL}
+\subsection{Các thành phần trong BPEL}
 BPEL bao gồm các thành phần nguyên tố và các thành phần cấu trúc. Các thành phần nguyên tố bao gồm:
 \begin{itemize}
 	\item $<invoke>$: Gọi một dịch vụ web khác
@@ -126,7 +125,7 @@ Bên cạnh thành nguyên tố, các thành phần cấu trúc chứa nhiều t
 Ngoài ra, còn có $<partnerLink>$ dùng để xác định các đối tác, các dịch vụ web sử dụng, $<variable>$ để định nghĩa các biến cần thiết trong quy trình
 
 
-\subsubsection{Ví dụ về BPEL}
+\subsection{Ví dụ về BPEL}
  
 \hspace*{0.5cm} Để hiểu rõ về quy trình được mô tả bằng BPEL, ta xem xét ví dụ về quy trình sắp xếp chuyến đi cho nhân viên \cite{theoryBPEL}. Đầu tiên, chúng ta sẽ kiểm tra hạng vé của nhân viên, giả sử rằng có một dịch vụ web Employee Travel sẽ làm việc này. Sau đó, chúng ta kiểm tra giá vé của hai hãng: American Airlines và Delta Airlines để chọn ra giá vé thấp hơn và trả lại kết quả. Quy trình này được minh họa như sau:
  
@@ -141,7 +140,7 @@ Trong ví dụ này, các partner của hệ thống sẽ bao gồm Client, Empl
  
 Quy trình BPEL chi tiết như sau: Đầu tiên Client sẽ gửi một yêu cầu bất đồng bộ kèm theo thông tin chuyến đi đến hệ thống. Hệ thống sẽ nhận thông tin và thực hiện lệnh gọi đồng bộ sang dịch vụ web Employee Travel để lấy thông tin hạng vé của nhân viên này. Tiếp theo, hệ thống sẽ thực hiện 2 lệnh gọi bất đồng bộ đồng thời đến 2 dịch vụ web của American Airlines và Delta Airlines để xác định giá vé. Sau khi hệ thống nhận được phản hồi kết quả của 2 hãng hàng không, hệ thống thực hiện so sánh để tìm giá vé thấp hơn và trả lại kết quả cho Client.
 
-\subsubsection{Các bước xây dựng quy trình BPEL}
+\subsection{Các bước xây dựng quy trình BPEL}
 Để xây dựng ví dụ trên, ta cần thực hiện các bước sau:
 \begin{enumerate}
 	\item Xác định các dịch vụ web liên quan: Xác định các dịch vụ web tương tác đối với hệ thống (Employee Travel Web Service, American Airlines Web Service, Delta Airlines Web Service)
@@ -153,8 +152,8 @@ Quy trình BPEL chi tiết như sau: Đầu tiên Client sẽ gửi một yêu c
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Chuyển đổi BPMN sang BPEL}
-\par Việc chuyển đổi từ BPMN sang BPEL sẽ giúp tự động hóa quy trình nghiệp vụ. BPMN ở dạng diagram, là mô hình và công cụ để người dùng nghiệp vụ và lập trình viên có thể làm việc và giao tiếp với nhau. 
+\section{Chuyển đổi BPMN sang BPEL}
+\hspace*{0.5cm} \par Việc chuyển đổi từ BPMN sang BPEL sẽ giúp tự động hóa quy trình nghiệp vụ. BPMN ở dạng diagram, là mô hình và công cụ để người dùng nghiệp vụ và lập trình viên có thể làm việc và giao tiếp với nhau. 
 Còn để thực thi được nghiệp vụ, chúng ta cần ngôn ngữ thực thi, ở đây là BPEL. Vậy nên việc chuyển đổi từ BPMN sang BPEL là bước quan trọng trong việc tự động hóa quy trình nghiệp vụ.
 
 \par Đầu tiên, ta đề cập đến các cấu trúc well-structured trong BPMN. Đây là các cấu trúc cơ bản, và dễ dàng để convert sang BPEL, do đó đây sẽ là nền tảng trong việc chuyển đổi. Các cấu trúc well-structured bao gồm:
