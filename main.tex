@@ -65,7 +65,7 @@
 \thesislayout
 
 %\usepackage{fancyhdr}
-\setlength{\headheight}{40pt}
+\setlength{\headheight}{25pt}
 \pagestyle{fancy}
 \fancyhead{} % clear all header fields
 \fancyhead[L]{
@@ -75,9 +75,10 @@
     %\put(0,-8){\epsfig{width=10mm,figure=hcmut.eps}}
    \end{picture}&
 	% \includegraphics[width=8mm, height=8mm]{hcmut.png} & %
+
 	\begin{tabular}{l}
-		\textbf{\bf \ttfamily Trường Đại Học Bách Khoa Tp.Hồ Chí Minh}\\
-		\textbf{\bf \ttfamily Khoa Khoa Học \& Kỹ Thuật Máy Tính}
+		\textbf{ Trường Đại Học Bách Khoa Tp.Hồ Chí Minh}\\
+		\textbf{ Khoa Khoa Học \& Kỹ Thuật Máy Tính}
 	\end{tabular} 	
  \end{tabular}
 }
@@ -176,7 +177,9 @@
 \newcommand{\waveform}{\text{waveform}}
 \newcommand{\spectrum}{\text{spectrum}}
 \newcommand{\spectrogram}{\text{spectrogram}}
-
+\newcommand\Tstrut{\rule{0pt}{2.6ex}}       % "top" strut
+\newcommand\Bstrut{\rule[-0.9ex]{0pt}{0pt}} % "bottom" strut
+\newcommand{\TBstrut}{\Tstrut\Bstrut} % top&bottom struts
 \newcommand{\subsub}[1]{\noindent \textbf{#1}.}
 
 % \newcommand{\theorem}{Theorem}
@@ -366,13 +369,13 @@
 
 % Cơ sở lý thuyết
 \chapter{Cơ sở lý thuyết}
-\input{tex/theory}
+% \input{tex/theory}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Thiết kế hệ thống}
 % Requirement
-\input{tex/Requirement}
+% \input{tex/Requirement}
 
 \newpage
 % Usecase
@@ -380,25 +383,25 @@
 
 \newpage
 % BPMN
-\input{tex/BPMN-diagram}
+% \input{tex/BPMN-diagram}
 
 \newpage
 % Architecture
-\input{tex/architecture}
+% \input{tex/architecture}
 
 \newpage
 % Database
-\input{tex/database}
+% \input{tex/database}
 
 \newpage
 % UI
-\input{tex/UI}
+% \input{tex/UI}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Công nghệ}
 % technology
-\input{tex/technology}
+% \input{tex/technology}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
