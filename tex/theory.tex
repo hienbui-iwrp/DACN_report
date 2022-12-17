@@ -1,7 +1,7 @@
 % !TeX root = ..\main.tex
 \section{Lược đồ BPMN}
 \subsection{Tổng quan về BPMN}
-\hspace*{0.5cm}BPMN(Business Process Modeling Notation) là một lược đồ tập hợp các kí hiệu để mô hình hóa trực quan các quy trình nghiệp vụ xử lý . BPMN giúp các doanh nghiệp trực quan hóa các hoạt động và các luồng thông tin để thực hiện quy trình nghiệp vụ.
+\hspace*{0.5cm}BPMN (Business Process Modeling Notation) là một lược đồ tập hợp các kí hiệu để mô hình hóa trực quan các quy trình nghiệp vụ xử lý. BPMN giúp các doanh nghiệp trực quan hóa các hoạt động và các luồng thông tin để thực hiện quy trình nghiệp vụ.
 \begin{figure}[!htp]
     \centering
     \includegraphics[width=10cm]{img/theory/BPMN/BPMN_sample.png}
@@ -13,9 +13,9 @@
  
 \subsection{Lợi ích của BPMN}
 \begin{itemize}
-    \item Giúp các bên liên quan có thể hiểu rõ quy trình nghiệp vụ của hệ thống
-    \item Thu hẹp khoảng cách giữa bộ phận thiết kế và bộ phận nghiệp vụ
-    \item Dễ dàng mô tả các nghiệp vụ phức tạp
+    \item Giúp các bên liên quan có thể hiểu rõ quy trình nghiệp vụ của hệ thống.
+    \item Thu hẹp khoảng cách giữa bộ phận kỹ thuật và bộ phận nghiệp vụ.
+    \item Dễ dàng mô tả các nghiệp vụ phức tạp.
 \end{itemize}
  
 \subsection{Các thành phần của BPMN}
@@ -101,7 +101,7 @@ Các cổng có nhiệm vụ chính là kiểm soát dòng chảy của quy trì
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Ngôn ngữ BPEL}
 \subsection{Tổng quan về BPEL}
-\hspace*{0.5cm} BPEL hay BPEL4WS(Business Process Execution Language for Web Services) là ngôn ngữ dùng để định nghĩa và thực thi các quy trình nghiệp vụ sử dụng các dịch vụ web. Ngôn ngữ BPEL được xây dựng dựa trên nền tảng XML hỗ trợ các dịch vụ web: SOAP, WSDL, UDDI. BPEL xây dựng một dịch vụ web dựa trên việc điều phối, phối hợp các dịch vụ web độc lập khác để hình thành nên một dịch vụ web mới.
+\hspace*{0.5cm} BPEL hay BPEL4WS (Business Process Execution Language for Web Services) là ngôn ngữ dùng để định nghĩa và thực thi các quy trình nghiệp vụ sử dụng các dịch vụ web. Ngôn ngữ BPEL được xây dựng dựa trên nền tảng XML hỗ trợ các dịch vụ web: SOAP, WSDL, UDDI. BPEL xây dựng một dịch vụ web dựa trên việc điều phối, phối hợp các dịch vụ web độc lập khác để hình thành nên một dịch vụ web mới.
 \subsection{Các thành phần trong BPEL}
 BPEL bao gồm các thành phần nguyên tố và các thành phần cấu trúc. Các thành phần nguyên tố bao gồm:
 \begin{itemize}
@@ -136,9 +136,9 @@ Ngoài ra, còn có $<partnerLink>$ dùng để xác định các đối tác, c
     \caption{Ví dụ về quy trình BPEL sắp xếp chuyến đi \cite{theoryBPEL}}
 \end{figure}
 
-Trong ví dụ này, các partner của hệ thống sẽ bao gồm Client, Employee Travel Status Web Service, American Airlines Web Service, Delta Airlines Web Service. Chúng ta sẽ xây dựng một quy trình BPEL bất đồng bộ, giả định rằng dịch vụ web Employee Travel là đồng bộ vì dữ liệu nhân viên đã có sẵn trong hệ thống chúng ta.
+Trong ví dụ này, các partner của hệ thống bao gồm Client, Employee Travel Status Web Service, American Airlines Web Service, Delta Airlines Web Service. Chúng ta sẽ xây dựng một quy trình BPEL bất đồng bộ, giả định rằng dịch vụ web Employee Travel là đồng bộ vì dữ liệu nhân viên đã có sẵn trong hệ thống chúng ta.
  
-Quy trình BPEL chi tiết như sau: Đầu tiên Client sẽ gửi một yêu cầu bất đồng bộ kèm theo thông tin chuyến đi đến hệ thống. Hệ thống sẽ nhận thông tin và thực hiện lệnh gọi đồng bộ sang dịch vụ web Employee Travel để lấy thông tin hạng vé của nhân viên này. Tiếp theo, hệ thống sẽ thực hiện 2 lệnh gọi bất đồng bộ đồng thời đến 2 dịch vụ web của American Airlines và Delta Airlines để xác định giá vé. Sau khi hệ thống nhận được phản hồi kết quả của 2 hãng hàng không, hệ thống thực hiện so sánh để tìm giá vé thấp hơn và trả lại kết quả cho Client.
+Quy trình BPEL chi tiết như sau. Đầu tiên Client sẽ gửi một yêu cầu bất đồng bộ kèm theo thông tin chuyến đi đến hệ thống. Hệ thống sẽ nhận thông tin và thực hiện lệnh gọi đồng bộ sang dịch vụ web Employee Travel để lấy thông tin hạng vé của nhân viên này. Tiếp theo, hệ thống sẽ thực hiện 2 lệnh gọi bất đồng bộ đồng thời đến 2 dịch vụ web của American Airlines và Delta Airlines để xác định giá vé. Sau khi hệ thống nhận được phản hồi kết quả của 2 hãng hàng không, hệ thống thực hiện so sánh để tìm giá vé thấp hơn và trả lại kết quả cho Client.
 
 \subsection{Các bước xây dựng quy trình BPEL}
 Để xây dựng ví dụ trên, ta cần thực hiện các bước sau:
