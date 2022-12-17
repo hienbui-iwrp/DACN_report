@@ -3,7 +3,9 @@
 \section{Kiến trúc hệ thống}
 \subsection{Lựa chọn kiến trúc}
  
-\hspace*{0.5cm}Để chọn lựa kiến trúc phù hợp với hệ thống, chúng ta xem xét ưu điểm và nhược điểm của từng loại kiến trúc.\\
+\hspace*{0.5cm}Có thể thấy, hệ thống quản lý cửa hàng thời trang của chúng ta là một hệ thống lớn, có nhiều nghiệp vụ lớn khác nhau. Các nghiệp vụ lớn này tách biệt với nhau, và tương tác với nhau để lấy dữ liệu cần thiết. Các nghiệp vụ này có nhu cầu lưu trữ dữ liệu lớn theo như nhu cầu của chuyên môn. Do đó, kiến trúc hệ thống cần là một kiến trúc phù hợp với các hệ thống lớn, có thể tách biệt nghiệp vụ và lưu trữ dữ liệu, đồng thời có khả năng mở rộng cao. Ngoài ra, để tăng hiệu năng hệ thống và trải nghiệm người dùng, hệ thống còn xem xét để xử lý một vài yêu cầu theo hướng bất đồng bộ, do đó kiến trúc hệ thống có hỗ trợ việc xử lý bất đồng bộ sẽ là một lựa chọn hợp lý.
+
+Để chọn lựa kiến trúc phù hợp với hệ thống, chúng ta xem xét ưu điểm và nhược điểm của một vài kiến trúc.\\
  
 \begin{table}[h]
     \begin{tabular}{|p{3cm}|p{12cm}|}
@@ -27,7 +29,7 @@
         \hline
         \textbf{Tên kiến trúc} & Service-Based\\
         \hline
-        \textbf{Mô tả}         & Kiến trúc được xây dựng thành các lớp phân tán, sử dụng các dịch vụ web kết nối tới một cơ sở dữ liệu nguyên khối     \\
+        \textbf{Mô tả}         & Kiến trúc được xây dựng thành các lớp phân tán, sử dụng các service kết nối tới một cơ sở dữ liệu nguyên khối     \\
         \hline
         \textbf{Ưu điểm}       & Sử dụng chung một cơ sở dữ liệu nên độ tin cậy, tính nhất quán dữ liệu cao; khả năng chịu lỗi tốt \\
         \hline
@@ -38,17 +40,19 @@
     \end{tabular}
     \caption{Kiến trúc Service-based}
 \end{table}
+
+\newpage
  
 \begin{table}[h]
     \begin{tabular}{|p{3cm}|p{12cm}|}
         \hline
         \textbf{Tên kiến trúc} & Microservices\\
         \hline
-        \textbf{Mô tả}         & Kiến trúc phân tán được xây dựng dựa trên điều phối các dịch vụ web tách biệt, hoạt động độc lập hoàn toàn các thành phần bao gồm cả cơ sở dữ liệu    \\
+        \textbf{Mô tả}         & Kiến trúc phân tán được xây dựng dựa trên các service tách biệt, các thành phần hoạt động độc lập, kể cả cơ sở dữ liệu    \\
         \hline
-        \textbf{Ưu điểm}       & Xây dựng dựa trên các dịch vụ web độc lập hoàn toàn nên khả năng co giãn, mở rộng cao; khả năng chịu lỗi tốt; dễ dàng thay đổi\\
+        \textbf{Ưu điểm}       & Xây dựng dựa trên các service độc lập nên khả năng co giãn, mở rộng cao; khả năng chịu lỗi tốt; dễ dàng thay đổi\\
         \hline
-        \textbf{Nhược điểm}    & Các dịch vụ web phải giao tiếp nhiều do đó hiệu xuất không được đảm bảo; xây dựng khó khăn và chi phí lớn; khó duy trì tính nhất quán dữ liệu \\
+        \textbf{Nhược điểm}    & Chi phí lớn trong việc xây dựng và vận hành hệ thống; khó đảm bảo tính toàn vẹn dữ liệu \\
         \hline
         \textbf{Sử dụng cho}   & Phù hợp với các hệ thống lớn, yêu cầu khả năng mở rộng cao trong tương lai                  \\
         \hline
@@ -69,14 +73,14 @@
         \hline
         \textbf{Nhược điểm}    & Khó xây dựng và khó kiểm thử \\
         \hline
-        \textbf{Sử dụng cho}   & Phù hợp với các hệ thống yêu cầu hiệu năng cao \\
+        \textbf{Sử dụng cho}   & Phù hợp với các hệ thống yêu cầu hiệu năng cao, gồm các thành phần tách rời và cần xử lý bất đồng bộ \\
         \hline
     \end{tabular}
     \caption{Kiến trúc Event-Driven}
 \end{table}
  
  
-Từ những thông tin trên, để phù hợp với hệ thống có khả năng mở rộng, thay đổi cao nhóm chọn kiến trúc Microservices. Bên cạnh đó nhóm sẽ kết hợp với kiến trúc Event-Driven để đảm bảo hiệu năng của hệ thống đối với các tác vụ bất đồng bộ
+Từ những thông tin trên, để phù hợp với hệ thống, nhóm chọn kiến trúc Microservices. Bên cạnh đó nhóm sẽ kết hợp với kiến trúc Event-Driven để đảm bảo hiệu năng của hệ thống đối với các tác vụ bất đồng bộ.
 
 \subsection{Tổng quan kiến trúc}
  
@@ -89,22 +93,16 @@ Từ những thông tin trên, để phù hợp với hệ thống có khả nă
  
 Hệ thống được xây dựng dựa trên kiến Microservice và được chia thành nhiều tầng:
 \begin{itemize}
-    \item Tầng User Interface: Tầng giao diện tương tác với người dùng
-    \item Tầng BPEL: Tầng xây dựng quy trình BPEL, điều phối các quy trình nghiệp vụ trong hệ thống
-    \item Tầng API Gateway: Tầng xuất các Api từ các dịch vụ web đưa đến quy trình BPEL
-    \item Tầng BFF: Đóng vai trò trong việc kiểm tra các hoạt động trung gian khi nhận yêu cầu từ phía người dùng
-    \item Tầng Web Service: Bao gồm các dịch vụ web
+    \item Tầng User Interface: Tầng giao diện tương tác với người dùng.
+    \item Tầng BPEL: Tầng xây dựng quy trình BPEL, điều phối các quy trình nghiệp vụ trong hệ thống.
+    \item Tầng API Gateway: Tầng xuất các API từ các service đưa đến quy trình BPEL.
+    \item Tầng BFF: Đóng vai trò trong việc kiểm tra các hoạt động trung gian khi nhận yêu cầu từ phía người dùng.
+    \item Tầng Web Service: Bao gồm các service nội bộ của hệ thống.
 \end{itemize}
  
-Bên cạnh các thành phần trên, để hiện thực việc giao tiếp bất đồng bộ giữa các dịch vụ web, hệ thống sử dụng Kafka. Đây là một hàng đợi thông điệp pub/sub dùng để lưu trữ và gửi đi các thông điệp.
-Ta có thể tạo nên các \textbf{topic} trong Kafka. Các dịch vụ web có thể publish thông điệp lên một hoặc nhiều topic,
-và khi một dịch vụ web subscribe vào một topic, nó có thể nhận dữ liệu từ topic đó.
-Khi một thông điệp được gửi lên từ một dịch vụ Web, thông điệp sẽ được lưu trong hàng đợi thông điệp.
-Những dịch vụ web subscribe vào topic này sau đó sẽ nhận được thông điệp này để xử lý.
-Khi việc xử lý thất bại, bao gồm cả việc gửi thông điệp đến các subscriber thất bại, chúng ta có thể gửi lại thông điệp đó.
-Vì điểm mạnh về multiple-sub và multiple-pub (một dịch vụ web có thể publish lên nhiều topic, cũng như có thể subscribe vào nhiều topic), cùng với việc hỗ trợ retry khi xảy ra lỗi, mà Kafka được nhóm lựa chọn sử dụng trong hệ thống.
+Bên cạnh các thành phần trên, để hiện thực việc giao tiếp bất đồng bộ giữa các service, hệ thống sử dụng Kafka. Đây là một hàng đợi thông điệp pub/sub dùng để lưu trữ và gửi đi các thông điệp. Với Kafka, ta có thể tạo nên các \textbf{topic}. Các service có thể publish thông điệp lên một hoặc nhiều topic, và khi một service subscribe vào một topic, nó có thể nhận dữ liệu từ topic đó. Khi một thông điệp được gửi lên từ một service, thông điệp sẽ được lưu trong hàng đợi thông điệp. Những service subscribe vào topic này sau đó sẽ nhận được thông điệp này để xử lý. Khi việc xử lý thất bại, bao gồm cả việc gửi thông điệp đến các subscriber thất bại, chúng ta có thể gửi lại thông điệp đó. Vì điểm mạnh về multiple-sub và multiple-pub (một service có thể publish lên nhiều topic, cũng như có thể subscribe vào nhiều topic), cùng với việc hỗ trợ retry khi xảy ra lỗi, mà Kafka được nhóm lựa chọn sử dụng trong hệ thống.\\
  
-\par Trong hệ thống, nhóm tổ chức các topic theo nhu cầu gửi thông điệp bất đồng bộ đến các dịch vụ web đích. Theo cách tổ chức này, một topic sẽ chỉ được subscribe bởi một dịch vụ web, và đó là dịch vụ web đích nhận và xử lý thông điệp. Trong khi đó, có thể có nhiều dịch vụ web subscribe vào một topic, tùy theo nhu cầu của các dịch vụ web.
+ Trong hệ thống, nhóm tổ chức các topic theo nhu cầu gửi thông điệp bất đồng bộ đến các service đích. Theo cách tổ chức này, một topic sẽ chỉ được subscribe bởi một service, và đó là service đích nhận và xử lý thông điệp. Trong khi đó, có thể có nhiều service subscribe vào một topic, tùy theo nhu cầu của các service.
 
 
 \subsection{Tầng User Interface}
@@ -1190,7 +1188,7 @@ Lược đồ class ở tầng Web Service được xây dựng theo các thành
     \item Các Interface: Giúp đảm bảo nguyên lý \textbf{Dependency inversion principle} của \textbf{SOLID}
     \begin {itemize}
         \item IRepository: Cung cấp các api cho các class Controller
-        \item IController: Cung cấp các api để bên ngoài dịch vụ web truy cập đến
+        \item IController: Cung cấp các api để bên ngoài service truy cập đến
     \end{itemize}
 \end{itemize}
 
@@ -1693,9 +1691,9 @@ Thuộc tính:
 \begin{itemize}
 	\item Tầng User Interface: Tầng giao diện tương tác với người dùng
 	\item Tầng BPEL: Tầng xây dựng quy trình BPEL, điều phối các quy trình nghiệp vụ trong hệ thống
-	\item Tầng API Gateway: Tầng xuất các Api từ các dịch vụ web đưa đến quy trình BPEL
+	\item Tầng API Gateway: Tầng xuất các Api từ các service đưa đến quy trình BPEL
 	\item Tầng BFF: Đóng vai trò trong việc kiểm tra các hoạt động trung gian khi nhận yêu cầu từ phía người dùng
-	\item Tầng Web Service: Bao gồm các dịch vụ Web
+	\item Tầng Web Service: Bao gồm các service
 \end{itemize}
 \newpage
 
@@ -1763,10 +1761,11 @@ Thuộc tính:
 
 \subsubsection{Giao tiếp đồng bộ giữa các Services}
 
-\hspace*{0.5cm} Để hiện thực việc giao tiếp đồng bộ giữa các service, chúng ta có hai cách tiếp cận là giao tiếp thông qua bộ điều phối trung tâm (Orchestration) và giao tiếp trực tiếp giữa các service (Choreography). Với cách tiếp cận Choreography, các service sẽ gọi trực tiếp với nhau tùy theo mục đích của mình. Còn với cách tiếp cận Orchestration, một service trung gian sẽ được tạo ra để phục vụ cho việc giao tiếp giữa các service trong hệ thống; mục đích của service này là để quản lý và điều phối các lần gọi nhau giữa các service. 
-\par Ví dụ, với hệ thống có hai service Customer Wishlist và Customer Demographics. Service Customer Wishlist được dùng để quản lý danh sách yêu thích của người dùng, còn service Customer Demographics được dùng để quản lý thông tin người dùng. Hiện tại, người dùng 123 có nhu cầu lấy thông tin chi tiết về danh sách yêu thích của mình. Do service Customer Wishlist chưa lưu tất cả các thông tin cần thiết, nên nó cần gọi service Customer Demographics để lấy thêm dữ liệu.
+\hspace*{0.5cm} Để hiện thực việc giao tiếp đồng bộ giữa các service, chúng ta có hai cách tiếp cận là giao tiếp thông qua bộ điều phối trung tâm (Orchestration) và giao tiếp trực tiếp giữa các service (Choreography). Với cách tiếp cận Choreography, các service sẽ gọi trực tiếp với nhau tùy theo mục đích của mình. Còn với cách tiếp cận Orchestration, một service trung gian sẽ được tạo ra để phục vụ cho việc giao tiếp giữa các service trong hệ thống; mục đích của service này là để quản lý và điều phối các lần gọi nhau giữa các service.\\
 
-\par Nếu sử dụng Choreography, sơ đồ giao tiếp giữa các service được trình bày như sau:
+Ví dụ, với hệ thống có hai service Customer Wishlist và Customer Demographics. Service Customer Wishlist được dùng để quản lý danh sách yêu thích của người dùng, còn service Customer Demographics được dùng để quản lý thông tin người dùng. Hiện tại, người dùng 123 có nhu cầu lấy thông tin chi tiết về danh sách yêu thích của mình. Do service Customer Wishlist chưa lưu tất cả các thông tin cần thiết, nên nó cần gọi service Customer Demographics để lấy thêm dữ liệu.\\
+
+Nếu sử dụng Choreography, sơ đồ giao tiếp giữa các service được trình bày như sau:
 \begin{figure}[!htp]
 	\centering
 	\includegraphics[width=8cm]{img/Architecture/choreography.PNG}
@@ -1774,9 +1773,9 @@ Thuộc tính:
 	\caption{Giao tiếp giữa các service bằng Choreography \cite{archChoreography}}
 \end{figure}
 
-Đối với phương pháp giao tiếp Choreography, service Customer Wishlist gọi trực tiếp đến service Customer Demographics để lấy thông tin từ user mà không đi qua trung gian nào cả. Và service Customer Demographics cũng trả về kết quả trực tiếp cho service Customer Wishlist.
+Đối với phương pháp giao tiếp Choreography, service Customer Wishlist gọi trực tiếp đến service Customer Demographics để lấy thông tin từ user mà không đi qua trung gian nào cả. Và service Customer Demographics cũng trả về kết quả trực tiếp cho service Customer Wishlist.\\
 
-\par Nếu sử dụng Orchestration, sơ đồ giao tiếp giữa các service được trình bày như sau:
+Nếu sử dụng Orchestration, sơ đồ giao tiếp giữa các service được trình bày như sau:
 
 \begin{figure}[!htp]
 	\centering
@@ -1784,11 +1783,11 @@ Thuộc tính:
 	\newline
 	\caption{Giao tiếp giữa các service bằng Orchestration \cite{archOrchestration}}
 \end{figure}
-Đối với phương pháp giao tiếp Orchestration, một service trung gian được tạo ra, với vai trò điều phối việc gọi nhau để lấy thông tin giữa service Customer Wishlist và Customer Demographics. Khi nhận được yêu cầu lấy thông tin từ người dùng, service trung gian gọi đến các service đích để lấy thông tin: gọi đến Customer Wishlist để lấy thông tin danh sách yêu thích, và gọi đến Customer Demographics để lấy thông tin người dùng.
+Đối với phương pháp giao tiếp Orchestration, một service trung gian được tạo ra, với vai trò điều phối việc gọi nhau để lấy thông tin giữa service Customer Wishlist và Customer Demographics. Khi nhận được yêu cầu lấy thông tin từ người dùng, service trung gian gọi đến các service đích để lấy thông tin: gọi đến Customer Wishlist để lấy thông tin danh sách yêu thích, và gọi đến Customer Demographics để lấy thông tin người dùng.\\
 
-\par Mỗi phương pháp có các ưu điểm và nhược điểm riêng. Đối với Choreography, cách tiếp cận này giúp giảm đi tính phụ thuộc giữa các service (decoupled), và đây cũng là mục đích đối với hệ thống microservice. Tuy vậy, việc quản lý lỗi và quản lý luồng thực thi sẽ là vấn đề lớn ở phương pháp này. Còn đối với Orchestration, đây là phương pháp hợp lý cho các công việc có luồng nghiệp vụ phức tạp, tuy vậy sẽ tạo nên sự phụ thuộc lẫn nhau giữa các service.
+Mỗi phương pháp có các ưu điểm và nhược điểm riêng. Đối với Choreography, cách tiếp cận này giúp giảm đi tính phụ thuộc giữa các service (decoupled), và đây cũng là mục đích đối với hệ thống microservice. Tuy vậy, việc quản lý lỗi và quản lý luồng thực thi sẽ là vấn đề lớn ở phương pháp này. Còn đối với Orchestration, đây là phương pháp hợp lý cho các công việc có luồng nghiệp vụ phức tạp, tuy vậy sẽ tạo nên sự phụ thuộc lẫn nhau giữa các service.\\
 
-\par Ở hệ thống này, nhóm lựa chọn phương pháp Choreography để hiện thực việc giao tiếp giữa các service, để đảm bảo tính phân chia rõ ràng và ít phụ thuộc (loosely-coupled) giữa các service, đồng thời hạn chế các nhược điểm khi luồng thực thi trong những lần gọi là không phức tạp.
+Ở hệ thống này, nhóm lựa chọn phương pháp Choreography để hiện thực việc giao tiếp giữa các service, để đảm bảo tính phân chia rõ ràng và ít phụ thuộc (loosely-coupled) giữa các service, đồng thời hạn chế các nhược điểm khi luồng thực thi trong những lần gọi là không phức tạp.
 
 \subsubsubsection{Giao tiếp của Customer order Service}
 \begin{figure}[!htp]
@@ -1850,12 +1849,9 @@ Thuộc tính:
 \subsubsection{Giao tiếp bất đồng bộ giữa các Services}
  
  
-\hspace*{0.5cm} Giao tiếp bất đồng bộ diễn ra ở các tác vụ không yêu cầu phản hồi kết quả ngay, thay vào đó yêu cầu gọi sẽ được lưu lại và xử lý sau. Việc giao tiếp bất đồng bộ giảm việc sử dụng tài nguyên của hệ thống, trong khi vẫn đảm bảo được kết quả trả về.
+\hspace*{0.5cm} Giao tiếp bất đồng bộ diễn ra ở các tác vụ không yêu cầu phản hồi kết quả ngay, thay vào đó yêu cầu gọi sẽ được lưu lại và xử lý sau. Việc giao tiếp bất đồng bộ giảm việc sử dụng tài nguyên của hệ thống, trong khi vẫn đảm bảo được kết quả trả về.\\
  
-\par Khi phía client gửi một yêu cầu (request) đến phía server, client sẽ chờ server xử lý xong toàn bộ quá trình theo quy trình nghiệp vụ rồi mới kết thúc.
-Đối với các tác vụ lớn hoặc yêu cầu thời gian xử lý lớn, phía client sẽ phải chờ lâu, và điều này làm hao phí tài nguyên của hệ thống. Bằng việc áp dụng giao tiếp bất đồng bộ vào các tác vụ thích hợp, hệ thống sẽ giảm được việc sử dụng tài nguyên hệ thống khi client phải phản hồi lâu từ server.
-Các request trước khi được xử lý bằng giao tiếp bất đồng bộ sẽ được kiểm tra kĩ về mặt dữ liệu, để đảm bảo các lỗi liên quan đến dữ liệu request sẽ không xuất hiện khi xử lý sau. Sau khi xử lý request, kết quả sẽ được gửi về cho phía client.
-Phía server sau khi hoàn thành bước kiểm tra dữ liệu và xử lý các tác vụ đồng bộ, sẽ gửi thông điệp vào message queue để gửi đến dịch vụ web đích. Khi việc thêm thông điệp vào message queue thành công, phía server sẽ trả về thành công cho phía client, không cần phía client phải chờ toàn bộ quy trình nghiệp vụ phải xử lý xong.\\
+Khi phía client gửi một yêu cầu (request) đến phía server, client sẽ chờ server xử lý xong toàn bộ quá trình theo quy trình nghiệp vụ rồi mới kết thúc. Đối với các tác vụ lớn hoặc yêu cầu thời gian xử lý lớn, phía client sẽ phải chờ lâu, và điều này làm hao phí tài nguyên của hệ thống. Bằng việc áp dụng giao tiếp bất đồng bộ vào các tác vụ thích hợp, hệ thống sẽ giảm được việc sử dụng tài nguyên hệ thống khi client phải phản hồi lâu từ server. Các request trước khi được xử lý bằng giao tiếp bất đồng bộ sẽ được kiểm tra kĩ về mặt dữ liệu, để đảm bảo các lỗi liên quan đến dữ liệu request sẽ không xuất hiện khi xử lý sau. Sau khi xử lý request, kết quả sẽ được gửi về cho phía client. Phía server sau khi hoàn thành bước kiểm tra dữ liệu và xử lý các tác vụ đồng bộ, sẽ gửi thông điệp vào message queue để gửi đến service đích. Khi việc thêm thông điệp vào message queue thành công, phía server sẽ trả về thành công cho phía client, không cần phía client phải chờ toàn bộ quy trình nghiệp vụ phải xử lý xong.\\
  
 Dưới đây là các giao tiếp bất đồng bộ có trong hệ thống:
  
