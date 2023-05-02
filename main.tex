@@ -57,38 +57,21 @@
 		a4paper,
 		total={160mm,240mm},  % fix over page
 		left=3cm,
-		top=2cm,
+		top=3cm,
 		right=2cm,
-		bottom=2cm, 
+		bottom=2.5cm, 
 	}
 }
 \thesislayout
 
-%\usepackage{fancyhdr}
-\setlength{\headheight}{25pt}
+\usepackage{fancyhdr}
 \pagestyle{fancy}
-\fancyhead{} % clear all header fields
-\fancyhead[L]{
- \begin{tabular}{rl}
-    \begin{picture}(25,15)(0,0)
-    \put(0,-8){\includegraphics[width=8mm, height=8mm]{img/hcmut.png}}
-    %\put(0,-8){\epsfig{width=10mm,figure=hcmut.eps}}
-   \end{picture}&
-	% \includegraphics[width=8mm, height=8mm]{hcmut.png} & %
+\setlength{\headheight}{100pt}
+\fancyhead{}
+\fancyhead[L]{\leftmark}
 
-	\begin{tabular}{l}
-		\textbf{ Trường Đại Học Bách Khoa Tp.Hồ Chí Minh}\\
-		\textbf{ Khoa Khoa Học \& Kỹ Thuật Máy Tính}
-	\end{tabular} 	
- \end{tabular}
-}
-\fancyhead[R]{
-	\begin{tabular}{l}
-		\tiny \bf \\
-		\tiny \bf 
-	\end{tabular}  }
 \fancyfoot{} % clear all footer fields
-\fancyfoot[L]{\scriptsize \ttfamily Đồ án chuyên ngành}
+\fancyfoot[L]{\scriptsize \ttfamily Đồ án tốt nghiệp}
 \fancyfoot[R]{\scriptsize \ttfamily Trang {\thepage}/\pageref{LastPage}}
 \renewcommand{\headrulewidth}{0.3pt}
 \renewcommand{\footrulewidth}{0.3pt}
@@ -255,7 +238,7 @@
   %       \newline
 		% \multicolumn{1}{l}{\textbf{{\Large ĐỒ ÁN CHUYÊN NGÀNH }}}
         \textbf{{BÁO CÁO}} \\
-        \textbf{{ĐỒ ÁN CHUYÊN NGÀNH}}
+        \textbf{{ĐỒ ÁN TỐT NGHIỆP}}
 	\end{tabular}
 \end{center}
 
@@ -285,10 +268,10 @@
 \begin{table}[h]
 	\setupfont{13pt}
 \begin{tabular}{rll}
-\hspace{5 cm}	& \textbf{HỘI ĐỒNG:} 	& Đồ án chuyên ngành 18   \\
+\hspace{5 cm}	& \textbf{HỘI ĐỒNG:} 	&   \\
 				& \textbf{GVHD:} 		& ThS. Trương Thị Thái Minh\\
 				&						& TS. Nguyễn An Khương\\
-				& \textbf{TKHĐ:}		& ThS. Trương Thị Thái Minh\\
+				& \textbf{TKHĐ:}		& \\
 				&&\multicolumn{1}{c}{\bf---o0o---}\vspace{2mm}\\
 				& \textbf{SVTH 1:} 		& Bùi Lương Vinh Hiển - 1913380       \\
 				& \textbf{SVTH 2:} 		& Trần Tuấn Phong - 1914641       \\
@@ -367,41 +350,41 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Cơ sở lý thuyết
-\chapter{Cơ sở lý thuyết}
-\input{tex/theory}
+% % Cơ sở lý thuyết
+% \chapter{Cơ sở lý thuyết}
+% \input{tex/theory}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Thiết kế hệ thống}
-% Requirement
-\input{tex/Requirement}
+% \chapter{Thiết kế hệ thống}
+% % Requirement
+% \input{tex/Requirement}
+
+% % \newpage
+% % % Usecase
+% \input{tex/usecase}
+
+% % \newpage
+% % % BPMN
+% \input{tex/BPMN-diagram}
+% % 
+% % \newpage
+% % % Architecture
+% \input{tex/architecture}
+
+% % \newpage
+% % % Database
+% \input{tex/database}
 
 % \newpage
-% % Usecase
-\input{tex/usecase}
+% % UI
+% \input{tex/UI}
 
-% \newpage
-% % BPMN
-\input{tex/BPMN-diagram}
-% 
-% \newpage
-% % Architecture
-\input{tex/architecture}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \newpage
-% % Database
-\input{tex/database}
-
-\newpage
-% UI
-\input{tex/UI}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\chapter{Công nghệ}
-% technology
-\input{tex/technology}
+% \chapter{Công nghệ}
+% % technology
+% \input{tex/technology}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
