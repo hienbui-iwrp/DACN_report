@@ -1,24 +1,151 @@
 % !TeX root = ..\main.tex
 %%%%%%%%%%%%%%%%%%%%%%%%%  
-\section{Kiểm thử đơn vị (Unit Testing)}
-\hspace{0.5cm} Thực hiện test từng module nhỏ trong hệ thống.
+\section{Môi trường kiểm thử}
+
+\hspace*{0.5cm}Nhóm thực hiện kiểm thử trong môi trường sau đây:
+\\
+{
+    \setlength\extrarowheight{6pt}
+    \begin{longtable}{| p{.30\textwidth} | p{.40\textwidth} |}
+        \hline
+        \textbf{Hệ điều hành} & Window 10 64-bit \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \textbf{Trình duyệt} & Google Chrome version 112\\
+        %%%%%%%%%%%%%%%%%%
+        \hline
+        \textbf{Phương pháp} & Thủ công\\
+         \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \end{longtable} 
+}
+
+% Vì lý do giới hạn số lượng trang của báo cáo, nhóm xin phép trình bày một vài trường hợp kiểm thử tiêu biểu, những trường hợp kiểm thử khác nhóm sẽ đính kèm theo link
+
+\section{Quản lý sự kiện}
+
+\subsubsection{Xem thông tin chi tiết sự kiện}
+{
+    \setlength\extrarowheight{6pt}
+    \begin{longtable}{| p{2.5cm}| p{1cm}| p{5.5cm}| p{4.5cm} | p{1.5cm} |}
+        \hline
+        \textbf{Test case} & \textbf{Step name} & \textbf{Step descriptions} & \textbf{Expected Result} & \textbf{Result} \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \multirow[c]{2}{2.5cm}{Xem chi tiết sự kiện} & 1 & Truy cập hệ thống quản lý sự kiện & Hệ thống hiển thị danh sách sự kiện & Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 2 & Chọn vào sự kiện "Sale hè năng động" & Hệ thống hiển thị thông tin chi tiết của sự kiện & Đạt \\
+         \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \end{longtable}
+}
+
+\newpage
+\subsubsection{Thêm sự kiện mới}
+{
+    \setlength\extrarowheight{6pt}
+    \begin{longtable}{| p{2.5cm}| p{1cm}| p{5.5cm}| p{4.5cm} | p{1.5cm} |}
+        \hline
+        \textbf{Test case} & \textbf{Step name} & \textbf{Step descriptions} & \textbf{Expected Result} & \textbf{Result} \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \multirow[t]{2}{2.5cm}{Thêm sự kiện mới} & 1 & Truy cập hệ thống quản lý sự kiện & Hệ thống hiển thị danh sách sự kiện & Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 2 & Chọn vào nút "Thêm mới" & Hệ thống hiển thị trang thêm mới sự kiện & Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+        & 3 & Nhập dữ liệu vào form:
+        \begin{itemize}
+            \item Tên sự kiện: Sự kiện mới
+            \item Ngày: 01/05/2023 \& 30/05/2023
+            \item Mức giảm: 10
+            \item Thời điểm: 00:00 \& 23:00 
+        \end{itemize} & Hệ thống vẫn hiển thị trang thêm mới sự kiện & Đạt \\
+        \cline{2-5}
+         %%%%%%%%%%%%%%%%%%
+         & 4 & Chọn vào nút "Chọn sản phẩm" & Hệ thống hiển thị danh sách các sản phẩm & Đạt \\
+         \cline{2-5}
+         %%%%%%%%%%%%%%%%%%
+         & 5 & Chọn sản phẩm "Giày sneaker nam/nử 35135GW" và chọn "Lưu" & Hệ thống hiển thị trang thêm mới sự kiện với danh sách hàng vừa chọn & Đạt \\
+         \cline{2-5}
+         %%%%%%%%%%%%%%%%%%
+         & 6 & Chọn vào nút "Lưu" & Hệ thống hiển thị thông báo thành công & Đạt \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    
+        \multirow[t]{2}{2.5cm}{Hủy thêm sự kiện mới} & 1 & Truy cập hệ thống quản lý sự kiện & Hệ thống hiển thị danh sách sự kiện & Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 2 & Chọn vào nút "Thêm mới" & Hệ thống hiển thị trang thêm mới sự kiện & Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+        & 3 & Nhập dữ liệu vào form:
+        \begin{itemize}
+            \item Tên sự kiện: Sự kiện mới
+            \item Ngày: 01/05/2023 \& 30/05/2023
+            \item Mức giảm: 10
+            \item Thời điểm: 00:00 \& 23:00 
+        \end{itemize} & Hệ thống vẫn hiển thị trang thêm mới sự kiện & Đạt \\
+        \cline{2-5}
+         %%%%%%%%%%%%%%%%%%
+         & 4 & Chọn vào nút "Hủy" & Hệ thống hiển thị danh sách sự kiện & Đạt \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \end{longtable} 
+}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Kiểm thử tích hợp (Integration Testing)}
-\hspace{0.5cm} Kiểm tra việc truyền dữ liệu giữa các module, tích hợp kiểm tra các hàm lại với nhau
+\subsubsection{Chỉnh sửa sự kiện}
+{
+    \setlength\extrarowheight{6pt}
+    \begin{longtable}{| p{2.5cm}| p{1cm}| p{5.5cm}| p{4.5cm} | p{1.5cm} |}
+        \hline
+        \textbf{Test case} & \textbf{Step name} & \textbf{Step descriptions} & \textbf{Expected Result} & \textbf{Result} \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \multirow[t]{2}{2.5cm}{Chỉnh sửa sự kiện} & 1 & Truy cập hệ thống quản lý sự kiện & Hệ thống hiển thị danh sách sự kiện & Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 2 & Chọn vào sự kiện "Sale phụ kiện nữ" & Hệ thống hiển thị trang chỉnh sửa thông tin sự kiệu & Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+        & 3 & Sửa dữ liệu trong form:
+        \begin{itemize}
+            \item Tên sự kiện: Sale phụ kiện nữ 123
+            \item Ngày: 01/05/2023 \& 30/05/2023
+            \item Mức giảm: 10
+            \item Thời điểm: 00:00 \& 23:59 
+        \end{itemize} & Hệ thống vẫn hiển thị trang thêm mới sự kiện & Đạt \\
+        \cline{2-5}
+         %%%%%%%%%%%%%%%%%%
+         & 4 & Chọn vào nút có icon thùng rác ở sản phẩm "Túi nữ NF2\_W53009" & Hệ thống vẫn hiển thị trang thêm mới sự kiện với danh sách sản phẩm thay đổi & Đạt \\
+         \cline{2-5}
+         %%%%%%%%%%%%%%%%%%
+         & 5 & Chọn vào nút "Lưu" & Hệ thống hiển thị thông báo thành công & Đạt \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    
+        \multirow[t]{2}{2.5cm}{Hủy chỉnh sửa sự kiện} & 1 & Truy cập hệ thống quản lý sự kiện & Hệ thống hiển thị danh sách sự kiện & Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 2 & Chọn vào sự kiện "Sale phụ kiện nữ" & Hệ thống hiển thị trang chỉnh sửa thông tin sự kiệu & Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+        & 3 & Sửa dữ liệu trong form:
+        \begin{itemize}
+            \item Tên sự kiện: Sale phụ kiện nữ 123
+            \item Ngày: 01/05/2023 \& 30/05/2023
+            \item Mức giảm: 10
+            \item Thời điểm: 00:00 \& 23:59 
+        \end{itemize} & Hệ thống vẫn hiển thị trang thêm mới sự kiện & Đạt \\
+        \cline{2-5}
+         %%%%%%%%%%%%%%%%%%
+         & 4 & Chọn vào nút "Hủy" & Hệ thống hiển thị danh sách sự kiện & Đạt \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \end{longtable} 
+}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Kiểm thử hệ thống (System Testing)}
-\hspace{0.5cm} Kiểm thử một hệ thống đã được tích hợp hoàn chỉnh để xác minh rằng nó đúng yêu cầu của phần mềm, nằm trong phạm vi kiểm thử hộp đen
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Kiểm thử chấp nhận (Acceptance Testing)}
-\hspace{0.5cm} Kiểm thử phía khách hàng
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
+\section{Quản lý chi nhánh}
+Kịch bản kiểm thử quản lý chi nhánh được trình bày trong link sau:
+\href{https://docs.google.com/spreadsheets/d/1e5iL2fXoOtwzTa8q8sMNZtwCF4_jOcqC/edit#gid=1624626876}{Kịch bản kiểm thử quản lý chi nhánh}.
