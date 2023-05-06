@@ -14,13 +14,413 @@
         \textbf{Trình duyệt} & Google Chrome version 112\\
         %%%%%%%%%%%%%%%%%%
         \hline
-        \textbf{Phương pháp} & Thủ công\\
+        \textbf{Phương pháp} & Use-case testing\\
+         \hline
+        \textbf{Cách thức kiểm thử} & Thủ công\\
          \hline
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \end{longtable} 
 }
 
+
+Use case testing là một phương pháp kiểm thử phần mềm tập trung vào các tình huống sử dụng cụ thể của ứng dụng. Đây là một phương pháp kiểm thử hướng đối tượng, nó tập trung vào việc kiểm tra các chức năng và tính năng của phần mềm từ góc độ của người dùng. Cụ thể, use case testing được sử dụng để kiểm tra xem liệu phần mềm có hoạt động đúng như các kịch bản sử dụng mà người dùng mong đợi hay không.\\
+
+Các use case được xác định trong quá trình phân tích yêu cầu phần mềm, nó mô tả một chuỗi các hành động và tình huống mà người dùng sẽ thực hiện để sử dụng phần mềm. Use case testing sử dụng các kịch bản này để kiểm tra hành vi của phần mềm trong các tình huống khác nhau. Nó có thể giúp đảm bảo rằng phần mềm được xây dựng để đáp ứng các yêu cầu của người dùng và hoạt động đúng như kỳ vọng.\\
+
+Vì vậy, nhóm chọn sử dụng phương pháp Use-case testing để kiểm thử cho hệ thống mà nhóm đã phát triển. Với use case testing, nhóm phát triển có thể đảm bảo rằng ứng dụng sẽ được hoạt động đúng như kỳ vọng và đáp ứng các yêu cầu của người dùng. Nó là một phương pháp kiểm thử quan trọng và hiệu quả để đảm bảo tính toàn vẹn, độ tin cậy và hiệu quả của phần mềm.
+
 % Vì lý do giới hạn số lượng trang của báo cáo, nhóm xin phép trình bày một vài trường hợp kiểm thử tiêu biểu, những trường hợp kiểm thử khác nhóm sẽ đính kèm theo link
+
+\section{Đặt hàng trực tuyến}
+
+\subsection{Xem danh sách các sản phẩm}
+{
+    \setlength\extrarowheight{6pt}
+    \begin{longtable}{| p{2.5cm}| p{1cm}| p{5.5cm}| p{4.5cm} | p{1.5cm} |}
+        \hline
+        \textbf{Test case} & \textbf{Step name} & \textbf{Step descriptions} & \textbf{Expected Result} & \textbf{Result} \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \multirow[t]{2}{2.5cm}{Xem danh sách tất cả sản phẩm} & 
+        1 & 
+        Truy cập vào trang chủ của hệ thống & 
+        Hệ thống hiển thị trang chủ của hệ thống & 
+        Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 2 & 
+         Chọn vào "Sản phẩm" & 
+         Hệ thống hiển thị toàn bộ sản phẩm có bán trong cửa hàng & 
+         Đạt \\
+         \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \multirow[t]{2}{2.5cm}{Xem danh sách sản phẩm nổi bật} & 
+        1 & 
+        Truy cập vào trang chủ của hệ thống & 
+        Hệ thống hiển thị trang chủ của hệ thống, bên trong có các sản phẩm nổi bật của hệ thống & 
+        Đạt \\
+        %%%%%%%%%%%%%%%%%%
+         \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \end{longtable}
+}
+
+\subsection{Lọc sản phẩm theo đặc điểm}
+{
+    \setlength\extrarowheight{6pt}
+    \begin{longtable}{| p{2.5cm}| p{1cm}| p{5.5cm}| p{4.5cm} | p{1.5cm} |}
+        \hline
+        \textbf{Test case} & \textbf{Step name} & \textbf{Step descriptions} & \textbf{Expected Result} & \textbf{Result} \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \multirow[t]{2}{2.5cm}{Lọc sản phẩm theo đặc điểm trong trang tất cả sản phẩm} & 
+        1 & 
+        Truy cập vào trang chủ của hệ thống & 
+        Hệ thống hiển thị trang chủ của hệ thống & 
+        Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+        & 2 & 
+        Chọn vào "Sản phẩm" & 
+        Hệ thống hiển thị toàn bộ sản phẩm có bán trong cửa hàng & 
+        Đạt \\
+       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 3 & 
+         Chọn vào ô "Giới tính"& 
+         Hệ thống hiển thị các lựa chọn về giới tính & 
+         Đạt \\
+       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 4 & 
+         Chọn vào ô "Nam"& 
+         Hệ thống hiển thị các sản phẩm dành cho giới tính nam & 
+         Đạt \\
+        \hline
+        \multirow[t]{2}{2.5cm}{Lọc sản phẩm theo đặc điểm nhanh qua header} & 
+        1 & 
+        Truy cập vào trang chủ của hệ thống & 
+        Hệ thống hiển thị trang chủ của hệ thống & 
+        Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+        & 2 & 
+        Chọn vào "Nam" trên phần header & 
+         Hệ thống hiển thị các sản phẩm dành cho giới tính nam &  
+         Đạt \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \end{longtable}
+}
+
+\subsection{Lọc danh sách sản phẩm theo từ khóa}
+{
+    \setlength\extrarowheight{6pt}
+    \begin{longtable}{| p{2.5cm}| p{1cm}| p{5.5cm}| p{4.5cm} | p{1.5cm} |}
+        \hline
+        \textbf{Test case} & \textbf{Step name} & \textbf{Step descriptions} & \textbf{Expected Result} & \textbf{Result} \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \multirow[t]{2}{2.5cm}{Xem danh sách tất cả sản phẩm} & 
+        1 & 
+        Truy cập vào trang chủ của hệ thống & 
+        Hệ thống hiển thị trang chủ của hệ thống & 
+        Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 2 & 
+         Nhập vào ô "Tìm kiếm" : "áo thun" & 
+         Hệ thống hiển thị các sản phẩm có chứa từ khóa "áo thun" & 
+         Đạt \\
+         \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \end{longtable}
+}
+
+\subsection{Xem thông tin chi tiết sản phẩm}
+{
+    \setlength\extrarowheight{6pt}
+    \begin{longtable}{| p{2.5cm}| p{1cm}| p{5.5cm}| p{4.5cm} | p{1.5cm} |}
+        \hline
+        \textbf{Test case} & \textbf{Step name} & \textbf{Step descriptions} & \textbf{Expected Result} & \textbf{Result} \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \multirow[t]{2}{2.5cm}{Xem thông tin chi tiết của sản phẩm} & 
+        1 & 
+        Chọn vào "Sản phẩm" & 
+        Hệ thống hiển thị toàn bộ sản phẩm có bán trong cửa hàng & 
+        Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 2 & 
+         Chọn vào thẻ sản phẩm "GIÀY THỂ THAO MEN IS22-24502" & 
+         Hệ thống hiển thị thông tin chi tiết của sản phẩm "GIÀY THỂ THAO MEN IS22-24502" & 
+         Đạt \\
+         \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \multirow[t]{2}{2.5cm}{Xem thông tin chi tiết của sản phẩm qua giỏ hàng} & 
+        1 & 
+        Chọn vào icon "Giỏ hàng" trên header & 
+        Hệ thống hiển thị toàn bộ sản phẩm có trong hàng & 
+        Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 2 & 
+         Chọn vào thẻ tên sản phẩm "GIÀY THỂ THAO MEN IS22-24502" & 
+         Hệ thống hiển thị thông tin chi tiết của sản phẩm "GIÀY THỂ THAO MEN IS22-24502" & 
+         Đạt \\
+         \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \multirow[t]{2}{2.5cm}{Xem thông tin chi tiết của sản phẩm qua lịch sử mua hàng} & 
+        1 & 
+        Chọn vào icon "Đơn hàng" trên header & 
+        Hệ thống hiển thị toàn bộ đơn hàng chưa nhận & 
+        Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 2 & 
+         Chọn vào thẻ chứa sản phẩm "GIÀY THỂ THAO MEN IS22-24502" & 
+         Hệ thống hiển thị thông tin chi tiết đơn hàng chứa sản phẩm "GIÀY THỂ THAO MEN IS22-24502" & 
+         Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 3 & 
+         Chọn vào thẻ tên sản phẩm "GIÀY THỂ THAO MEN IS22-24502" & 
+         Hệ thống hiển thị thông tin chi tiết của sản phẩm "GIÀY THỂ THAO MEN IS22-24502" & 
+         Đạt \\
+         \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \end{longtable}
+}
+
+\subsection{Thêm sản phẩm vào giỏ hàng}
+{
+    \setlength\extrarowheight{6pt}
+    \begin{longtable}{| p{2.5cm}| p{1cm}| p{5.5cm}| p{4.5cm} | p{1.5cm} |}
+        \hline
+        \textbf{Test case} & \textbf{Step name} & \textbf{Step descriptions} & \textbf{Expected Result} & \textbf{Result} \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \multirow[t]{2}{2.5cm}{Thêm sản phẩm vào giỏ hàng} & 
+        1 & 
+        Chọn vào "Sản phẩm" & 
+        Hệ thống hiển thị toàn bộ sản phẩm có bán trong cửa hàng & 
+        Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 2 & 
+         Chọn vào thẻ sản phẩm "GIÀY THỂ THAO MEN IS22-24502" & 
+         Hệ thống hiển thị thông tin chi tiết của sản phẩm "GIÀY THỂ THAO MEN IS22-24502" & 
+         Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 3 & 
+         Chọn vào thẻ màu sắc "Xanh" & 
+         Hệ thống hiển thị giá cho sản phẩm "GIÀY THỂ THAO MEN IS22-24502" với màu sắc "Xanh" & 
+         Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 4 & 
+         Chọn vào nút "+" để tăng số lượng & 
+         Hệ thống hiển thị tăng số lượng lên thành "2" & 
+         Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 5 & 
+         Chọn vào nút "Thêm vào giỏ hàng" để thêm vào giỏ hàng & 
+         Hệ thống hiển thị thông báo thêm vào giỏ hàng thành công & 
+         Đạt \\
+         \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \multirow[t]{2}{2.5cm}{Thêm nhanh sản phẩm vào giỏ hàng} & 
+        1 & 
+        Chọn vào "Sản phẩm" & 
+        Hệ thống hiển thị toàn bộ sản phẩm có bán trong cửa hàng & 
+        Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 2 & 
+         Chọn vào nút chứa icon "Thêm vào giỏ hàng" trong thẻ sản phẩm "GIÀY THỂ THAO MEN IS22-24502" & 
+         Hệ thống hiển thị thông báo thêm vào giỏ hàng thành công & 
+         Đạt \\
+         \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \multirow[t]{2}{2.5cm}{Thêm sản phẩm vào giỏ hàng từ lịch sử mua hàng} & 
+        1 & 
+        Chọn vào icon "Đơn hàng" trên header & 
+        Hệ thống hiển thị toàn bộ đơn hàng chưa nhận & 
+        Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 2 & 
+         Chọn vào nút "Mua lại" của thẻ chứa sản phẩm "GIÀY THỂ THAO MEN IS22-24502" & 
+         Hệ thống hiển thị trang giỏ hàng và trong đó chứa thẻ "GIÀY THỂ THAO MEN IS22-24502" & 
+         Đạt \\
+         \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \end{longtable}
+}
+
+\subsection{Mua hàng trực tuyến}
+{
+    \setlength\extrarowheight{6pt}
+    \begin{longtable}{| p{2.5cm}| p{1cm}| p{5.5cm}| p{4.5cm} | p{1.5cm} |}
+        \hline
+        \textbf{Test case} & \textbf{Step name} & \textbf{Step descriptions} & \textbf{Expected Result} & \textbf{Result} \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \multirow[t]{2}{2.5cm}{Mua hàng trực tuyển} & 
+        1 & 
+        Chọn vào "Giỏ hàng" trên header & 
+        Hệ thống hiển thị danh sách các sản phẩm trong giỏ hàng & 
+        Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 2 & 
+         Chọn vào thẻ sản phẩm "GIÀY THỂ THAO MEN IS22-24502" & 
+         Hệ thống hiển thị sản phẩm "GIÀY THỂ THAO MEN IS22-24502" đã được chọn & 
+         Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 3 & 
+         Chọn vào nút "Thanh toán" & 
+         Hệ thống chuyển đến trang thanh toán cùng với thông tin sản phẩm "GIÀY THỂ THAO MEN IS22-24502" & 
+         Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 4 & 
+         Nhập dữ liệu vào biểu mẫu thanh toán:
+         \begin{itemize}
+            \item Tên: Trần Tuấn
+            \item Số điện thoại: 0987123456
+            \item Email: trantuan@gmail.com
+            \item Tỉnh / thành phố: Bình Dương
+            \item Quận / huyện: Dĩ An
+            \item Phường / xã: Đông Hòa
+            \item Số nhà, đường: 151 Lương Định của
+            \item Chọn "Thanh toán trực tiếp"
+            \item Chọn chấp nhận chính sách
+         \end{itemize}
+         & 
+         Hệ thống hiển thị giá vận chuyển và tổng đơn hàng & 
+         Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 5 & 
+         Chọn vào nút "Đặt hàng" để đặt hàng & 
+         Hệ thống hiển thị thông báo đặt hàng thành công & 
+         Đạt \\
+         \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \multirow[t]{2}{2.5cm}{Đặt hàng nhưng chưa có sản phẩm trong giỏ hàng} & 
+        1 & 
+        Chọn vào "Giỏ hàng" trên header & 
+        Hệ thống hiển thị "Bạn chưa có sản phẩm nào trong giỏ hàng." & 
+        Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 2 & 
+        Chọn vào nút "Xem sản phẩm" & 
+        Hệ thống hiển thị trang sản phẩm cho người dùng & 
+        Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 3 & 
+         Chọn vào nút icon "Thêm vào giỏ hàng" thẻ sản phẩm "GIÀY THỂ THAO MEN IS22-24502" & 
+         Hệ thống thông báo thêm vào giỏ hàng thành công & 
+         Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 4 & 
+         Chọn vào "Giỏ hàng" trên header & 
+        Hệ thống hiển thị danh sách các sản phẩm trong giỏ hàng & 
+        Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 5 & 
+         Chọn vào thẻ sản phẩm "GIÀY THỂ THAO MEN IS22-24502" & 
+         Hệ thống hiển thị sản phẩm "GIÀY THỂ THAO MEN IS22-24502" đã được chọn & 
+         Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 6 & 
+         Chọn vào nút "Thanh toán" & 
+         Hệ thống chuyển đến trang thanh toán cùng với thông tin sản phẩm "GIÀY THỂ THAO MEN IS22-24502" & 
+         Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 7 & 
+         Nhập dữ liệu vào biểu mẫu thanh toán:
+         \begin{itemize}
+            \item Tên: Trần Tuấn
+            \item Số điện thoại: 0987123456
+            \item Email: trantuan@gmail.com
+            \item Tỉnh / thành phố: Bình Dương
+            \item Quận / huyện: Dĩ An
+            \item Phường / xã: Đông Hòa
+            \item Số nhà, đường: 151 Lương Định của
+            \item Chọn "Thanh toán trực tiếp"
+            \item Chọn chấp nhận chính sách
+         \end{itemize}
+         & 
+         Hệ thống hiển thị giá vận chuyển và tổng đơn hàng & 
+         Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 8 & 
+         Chọn vào nút "Đặt hàng" để đặt hàng & 
+         Hệ thống hiển thị thông báo đặt hàng thành công & 
+         Đạt \\
+         \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \multirow[t]{2}{2.5cm}{Người dùng không muốn hoàn tất đặt hàng} & 
+        1 & 
+        Chọn vào "Giỏ hàng" trên header & 
+        Hệ thống hiển thị danh sách các sản phẩm trong giỏ hàng & 
+        Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 2 & 
+         Chọn vào thẻ sản phẩm "GIÀY THỂ THAO MEN IS22-24502" & 
+         Hệ thống hiển thị sản phẩm "GIÀY THỂ THAO MEN IS22-24502" đã được chọn & 
+         Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 3 & 
+         Chọn vào nút "Thanh toán" & 
+         Hệ thống chuyển đến trang thanh toán cùng với thông tin sản phẩm "GIÀY THỂ THAO MEN IS22-24502" & 
+         Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 4 & 
+         Nhập dữ liệu vào biểu mẫu thanh toán:
+         \begin{itemize}
+            \item Tên: Trần Tuấn
+            \item Số điện thoại: 0987123456
+            \item Email: trantuan@gmail.com
+            \item Tỉnh / thành phố: Bình Dương
+            \item Quận / huyện: Dĩ An
+            \item Phường / xã: Đông Hòa
+            \item Số nhà, đường: 151 Lương Định của
+            \item Chọn "Thanh toán trực tiếp"
+            \item Chọn chấp nhận chính sách
+         \end{itemize}
+         & 
+         Hệ thống hiển thị giá vận chuyển và tổng đơn hàng & 
+         Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 5 & 
+         Chọn vào logo trang web trên header để không hoàn tất đặt hàng & 
+         Hệ thống hiển thị trang chủ & 
+         Đạt \\
+         \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \end{longtable}
+}
+
+\newpage
 
 \section{Quản lý sự kiện}
 
