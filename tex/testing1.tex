@@ -1,0 +1,153 @@
+% !TeX root = ..\main.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%  
+
+\section{Quản lý kho}
+\subsection{ Xem thông tin chi tiết kho}
+{
+    \setlength\extrarowheight{6pt}
+    \begin{longtable}{| p{2.5cm}| p{1cm}| p{5.5cm}| p{4.5cm} | p{1.5cm} |}
+        \hline
+        \textbf{Test case} & \textbf{Step name} & \textbf{Step descriptions} & \textbf{Expected Result} & \textbf{Result} \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \multirow[t]{2}{2.5cm}{ Xem thông tin chi tiết kho} & 1 & Truy cập hệ thống quản lý kho & Hệ thống hiển thị danh sách kho & Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 2 & Chọn vào kho "Philip Bùi" & Hệ thống hiển thị thông tin chi tiết của kho & Đạt \\
+         \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \end{longtable}
+}
+
+\subsection{Thêm kho}
+{
+    \setlength\extrarowheight{6pt}
+    \begin{longtable}{| p{2.5cm}| p{1cm}| p{5.5cm}| p{4.5cm} | p{1.5cm} |}
+        \hline
+        \textbf{Test case} & \textbf{Step name} & \textbf{Step descriptions} & \textbf{Expected Result} & \textbf{Result} \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \multirow[t]{2}{2.5cm}{Thêm kho} & 1 & Truy cập hệ thống quản lý kho & Hệ thống hiển thị danh sách kho & Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 2 & Chọn vào nút "Thêm mới" & Hệ thống hiển thị biểu mẫu thêm mới kho & Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+        & 3 & Nhập dữ liệu vào biểu mẫu:
+        \begin{itemize}
+            \item Họ tên: kho mới
+            \item Email: nvmoi@gmail.com
+            \item Ngày sinh: 01/01/2000
+            \item Điện thoại: 037462843
+            \item Quê quán: Bình Dương
+            \item Nơi làm việc: Chi nhánh Bình Dương
+            \item Căn cước: 332857485623
+            \item Vị trí: kho
+            \item Giới tính: Nam
+            \item Lương: 5000000
+            \item Đường: Lê Văn Việt
+            \item Phường: Kp.1
+            \item Quận: Thủ Đức 
+            \item Tỉnh: Tp.Hồ Chí Minh
+        \end{itemize} & Hệ thống vẫn hiển thị biểu mẫu thêm mới & Đạt \\
+        \cline{2-5}
+         %%%%%%%%%%%%%%%%%%
+         & 4 & Chọn vào nút "Lưu" & Hệ thống hiển thị thông báo thành công & Đạt \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    
+        \multirow[t]{2}{2.5cm}{Hủy thêm kho} & 1 & Truy cập hệ thống quản lý kho & Hệ thống hiển thị danh sách kho & Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 2 & Chọn vào nút "Thêm mới" & Hệ thống hiển thị trang thêm mới kho & Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+        & 3 & Nhập dữ liệu vào biểu mẫu:
+        \begin{itemize}
+            \item Họ tên: kho mới
+            \item Email: nvmoi@gmail.com
+            \item Ngày sinh: 01/01/2000
+            \item Điện thoại: 037462843
+            \item Quê quán: Bình Dương
+            \item Nơi làm việc: Chi nhánh Bình Dương
+            \item Căn cước: 332857485623
+            \item Vị trí: kho
+            \item Giới tính: Nam
+            \item Lương: 5000000
+            \item Đường: Lê Văn Việt
+            \item Phường: Kp.1
+            \item Quận: Thủ Đức 
+            \item Tỉnh: Tp.Hồ Chí Minh
+        \end{itemize} & Hệ thống vẫn hiển thị trang thêm mới kho & Đạt \\
+        \cline{2-5}
+         %%%%%%%%%%%%%%%%%%
+         & 4 & Chọn vào nút "Hủy" & Hệ thống tắt biểu mẫu thêm mới & Đạt \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \end{longtable} 
+}
+
+
+\subsection{Chỉnh sửa kho}
+{
+    \setlength\extrarowheight{6pt}
+    \begin{longtable}{| p{2.5cm}| p{1cm}| p{5.5cm}| p{4.5cm} | p{1.5cm} |}
+        \hline
+        \textbf{Test case} & \textbf{Step name} & \textbf{Step descriptions} & \textbf{Expected Result} & \textbf{Result} \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \multirow[t]{2}{2.5cm}{Chỉnh sửa kho} & 1 & Truy cập hệ thống quản lý kho & Hệ thống hiển thị danh sách kho & Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 2 & Chọn vào chỉnh sửa kho "Philip Bùi" & Hệ thống hiển thị biểu mẫu chỉnh sửa thông tin sự kiệu & Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+        & 3 & Sửa dữ liệu trong biểu mẫu:
+        \begin{itemize}
+            \item Họ tên: Philip Bùi 123
+            \item Ngày sinh: 01/01/2000
+            \item Điện thoại: 037462843
+            \item Quê quán: Bình Dương
+            \item Nơi làm việc: Chi nhánh Bình Dương
+            \item Căn cước: 332857485623
+            \item Vị trí: kho
+            \item Giới tính: Nam
+            \item Lương: 5000000
+            \item Đường: Lê Văn Việt
+            \item Phường: Kp.1
+            \item Quận: Thủ Đức 
+            \item Tỉnh: Tp.Hồ Chí Minh
+        \end{itemize} & Hệ thống vẫn hiển thị biểu mẫu & Đạt \\
+        \cline{2-5}
+         %%%%%%%%%%%%%%%%%%
+         & 4 & Chọn nút "Lưu" & Hệ thống hiển thị thông báo thành công & Đạt \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    
+        \multirow[t]{2}{2.5cm}{Chỉnh sửa kho} & 1 & Truy cập hệ thống quản lý kho & Hệ thống hiển thị danh sách kho & Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+         & 2 & Chọn vào chỉnh sửa kho "Philip Bùi" & Hệ thống hiển thị biểu mẫu chỉnh sửa thông tin sự kiệu & Đạt \\
+        %%%%%%%%%%%%%%%%%%
+        \cline{2-5}
+        & 3 & Sửa dữ liệu trong biểu mẫu:
+        \begin{itemize}
+            \item Họ tên: Philip Bùi 123
+            \item Ngày sinh: 01/01/2000
+            \item Điện thoại: 037462843
+            \item Quê quán: Bình Dương
+            \item Nơi làm việc: Chi nhánh Bình Dương
+            \item Căn cước: 332857485623
+            \item Vị trí: kho
+            \item Giới tính: Nam
+            \item Lương: 5000000
+            \item Đường: Lê Văn Việt
+            \item Phường: Kp.1
+            \item Quận: Thủ Đức 
+            \item Tỉnh: Tp.Hồ Chí Minh
+        \end{itemize} & Hệ thống vẫn hiển thị biểu mẫu & Đạt \\
+        \cline{2-5}
+         %%%%%%%%%%%%%%%%%%
+         & 4 & Chọn nút "Hủy" & Hệ thống tắt biểu mẫu chỉnh sửa & Đạt \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \end{longtable} 
+}
