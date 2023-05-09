@@ -1,38 +1,30 @@
 % !TeX root = ..\main.tex
 \section{Thiết kế cơ sở dữ liệu}
 \par Nhóm lựa chọn kiến trúc Microservice cho hệ thống, với việc chia ra các service nhỏ và mỗi service có một database riêng phục vụ cho nghiệp vụ của riêng service đó, nên ở đây các database được thiết kế riêng lẻ cho từng service.
- 
+
 \subsection{ERD/EERD}
 \subsubsection{Service Khách hàng}
 \begin{figure}[!htp]
-    \begin{center}
-        \includegraphics[width=9cm]{img/database/erd/eerd-customer.png}
-        \newline
-        \caption{ERD cho database của service Khách hàng}
-    \end{center}
+	\begin{center}
+		\includegraphics[width=6cm]{img/database/erd/eerd-customer.png}
+		\newline
+		\caption{ERD cho database của service Khách hàng}
+	\end{center}
 \end{figure}
- 
-\par Database của service Khách hàng bao gồm hai thực thể là Khách hàng và Tài khoản của khách hàng. Thực thể khách hàng chứa các thông tin cá nhân của khách hàng, bao gồm các thuộc tính:
+
+\par Database của service Khách hàng chứa thực thể là Khách hàng, chứa các thông tin cá nhân của khách hàng, bao gồm các thuộc tính:
 \begin{itemize}
-    \item Mã khách hàng: thuộc tính khóa, là mã của khách hàng.
-    \item Tên: Là tên của khách hàng.
-    \item Giới tính: Là giới tính của khách hàng.
-    \item Email: Là email của khách hàng.
-    \item Số điện thoại: Là số điện thoại của khách hàng.
-    \item Số nhà, đường: Là địa chỉ số nhà, đường của khách hàng ở.
-    \item Phường / xã: Là địa chỉ phường / xã của khách hàng ở.
-    \item Quận / huyện: Là địa chỉ quận / huyện của khách hàng ở.
-    \item Tỉnh / thành phố: Là địa chỉ tỉnh / thành phố của khách hàng ở.
+	\item Mã khách hàng: thuộc tính khóa, là mã của khách hàng.
+	\item Tên: Là tên của khách hàng.
+	\item Giới tính: Là giới tính của khách hàng.
+	\item Email: Là email của khách hàng.
+	\item Số điện thoại: Là số điện thoại của khách hàng.
+	\item Số nhà, đường: Là địa chỉ số nhà, đường của khách hàng ở.
+	\item Phường / xã: Là địa chỉ phường / xã của khách hàng ở.
+	\item Quận / huyện: Là địa chỉ quận / huyện của khách hàng ở.
+	\item Tỉnh / thành phố: Là địa chỉ tỉnh / thành phố của khách hàng ở.
 \end{itemize}
- 
-\par Thực thể Tài khoản của khách hàng bao gồm các thuộc tính:
-\begin{itemize}
-    \item Tên đăng nhập: tên đăng nhập của tài khoản của khách hàng.
-\end{itemize}
- 
-\par Khách hàng và Tài khoản có mối quan hệ thuộc, đây là mối quan hệ bắt buộc, 1-1: một khách hàng chỉ thuộc 1 tài khoản và 1 tài khoản chỉ dùng cho 1 khách hàng.
- 
-\newpage
+
 
 \subsubsection{Service Giỏ hàng}
 \begin{figure}[!htp]
@@ -46,8 +38,7 @@
 \par Database của service Giỏ hàng bao gồm hai thực thể là Giỏ hàng và Hàng trong giỏ hàng. Thực thể Giỏ hàng chứa thông tin về giỏ hàng, bao gồm các thuộc tính:
 \begin{itemize}
 	\item Mã giỏ hàng: thuộc tính khóa, là mã của giỏ hàng.
-	\item Mã khách hàng: là mã khách hàng của khách hàng chủ của giỏ hàng đó.
-	\item Số lượng món: là thuộc tính dẫn xuất, số lượng loại sản phẩm có trong giỏ hàng.
+	\item Tên đăng nhập: là mã khách hàng của khách hàng chủ của giỏ hàng đó.
 \end{itemize}
 
 \par Thực thể Hàng trong giỏ hàng chứa thông tin của mặt hàng trong trong giỏ hàng đó. Thực thể này bao gồm các thuộc tính:
@@ -55,48 +46,10 @@
 	\item Mã hàng: thuộc tính khóa, là mã của loại hàng đó.
 	\item Kích thước: thuộc tính khóa, là kích thước của loại hàng đó.
 	\item Màu: thuộc tính khóa, là màu sắc của loại hàng đó.
+	\item Số lượng: số lượng loại hàng đó trong giỏ.
 \end{itemize}
 
 \par Giỏ hàng và Hàng có mối quan hệ chứa, Mối quan hệ là M-N. Giỏ hàng tham gia vào mối quan hệ với ràng buộc tham gia không bắt buộc: Giỏ hàng có thể chứa hàng hoặc không, có thể chứa hàng với số lượng khác nhau. Hàng tham gia vào mối quan hệ với ràng buộc tham gia không bắt buộc, một hàng có thể có hoặc không thuộc giỏ hàng nào. Mối quan hệ này có các thuộc tính:
-\begin{itemize}
-	\item Số lượng: số lượng của món hàng có trong giỏ hàng.
-\end{itemize}
-
-\newpage
-
-\subsubsection{Service Đơn hàng của khách hàng}
-\begin{figure}[!htp]
-	\begin{center}
-		\includegraphics[width=13cm]{img/database/erd/eerd-customer-order.png}
-		\newline
-		\caption{ERD cho database của service Đơn hàng của khách hàng}
-	\end{center}
-\end{figure}
-
-\par Database của service Đơn hàng của khách hàng bao gồm hai thực thể là Đơn hàng và Hàng trong đơn hàng. Thực thể Đơn hàng chứa thông tin về đơn hàng, bao gồm các thuộc tính:
-\begin{itemize}
-	\item Mã đơn hàng: thuộc tính khóa, là mã của đơn hàng.
-	\item Mã khách hàng: là mã khách hàng của khách hàng chủ của đơn hàng đó.
-	\item Ngày giao dịch: là ngày thực hiện giao dịch của đơn hàng.
-	\item Phí ship: là phí vận chuyển của đơn hàng.
-	\item Mong đợi: là thời gian ước tính để giao đơn hàng.
-	\item Tổng giá tiền: là thuộc tính dẫn xuất, là tổng giá tiền của đơn hàng.
-	\item Thông tin trạng thái: là thuộc tính đa trị, là trạng thái của đơn hàng, bao gồm 2 thuộc tính con là Trạng thái và Thời gian. Trạng thái là trạng thái của đơn hàng và thời gian là thời điểm xảy ra trạng thái của đơn hàng.
-\end{itemize}
-
-\par Thực thể Hàng trong đơn hàng chứa thông tin của mặt hàng trong trong đơn hàng đó. Thực thể này bao gồm các thuộc tính:
-\begin{itemize}
-	\item Mã hàng: thuộc tính khóa, là mã của loại hàng đó.
-	\item Kích thước: thuộc tính khóa, là kích thước của loại hàng đó.
-	\item Màu: thuộc tính khóa, là màu sắc của loại hàng đó.
-	\item Số lượng: là số lượng của loại hàng trong đơn hàng.
-	\item Đơn giá: là giá tiền của loại hàng trong đơn hàng.
-	\item Thuế: là thuế được thu trên loại hàng đó trong đơn hàng.
-	\item Thành tiền: là thuộc tính dẫn xuất, giá tiền cuối cùng được tính cho loại hàng đó trong đơn hàng.
-\end{itemize}
-
-\par Đơn hàng và Hàng có mối quan hệ Bao gồm, đây là quan hệ bắt buộc, Mối quan hệ là 1-N: đơn hàng bắt buộc có hàng, và có thể có nhiều hàng; hàng trong đơn hàng bắt buộc phải thuộc về một đơn hàng, và chỉ thuộc về duy nhất một đơn hàng.
-
 \newpage
 
 \subsubsection{Service Sự kiện}
@@ -112,9 +65,11 @@
 \begin{itemize}
 	\item Mã sự kiện: thuộc tính khóa, là mã của sự kiện.
 	\item Tên: là của sự kiện.
-	\item Giảm giá: là giá trị giảm giá của sự kiện đối với các mặt hàng trong sự kiện.
+	\item Mức giảm: là giá trị giảm giá của sự kiện đối với các mặt hàng trong sự kiện.
+	\item Ảnh: ảnh minh họa.
 	\item Thời gian bắt đầu: là thời gian bắt đầu sự kiện.
 	\item Thời gian kết thúc: là thời gian kết thúc sự kiện.
+	\item Ngày tạo: là thời gian tạo sự kiện.
 \end{itemize}
 
 \par Thực thể Hàng trong sự kiện chứa thông tin của mặt hàng trong trong sự kiện đó. Thực thể này bao gồm các thuộc tính:
@@ -150,6 +105,7 @@
 	\item Mô tả: thông tin thêm về mặt hàng.
 	\item Loại: thể loại của mặt hàng.
 	\item Số lượng hiện tại: thuộc tính dẫn xuất, là số lượng còn tồn hiện tại của mặt hàng.
+	\item Ngày tạo: ngày thêm hàng vào hệ thống.
 \end{itemize}
 
 \par Thực thể Hàng trong kho chỉ thông tin của mặt hàng trong một kho nào đó. Thực thể này bao gồm các thuộc tính:
@@ -166,7 +122,7 @@
 \subsubsection{Service Đơn hàng}
 \begin{figure}[!htp]
 	\begin{center}
-		\includegraphics[width=13cm]{img/database/erd/shop_online-đơnhàng.png}
+		\includegraphics[width=15cm]{img/database/erd/shop_online-đơnhàng.png}
 		\newline
 		\caption{ERD cho database của service Đơn hàng}
 	\end{center}
@@ -176,21 +132,30 @@
 \par Thực thể Đơn hàng gồm các thuộc tính:
 \begin{itemize}
 	\item Mã đơn hàng: thuộc tính khóa, chỉ mã của đơn hàng.
+	\item Mã công khai: mã của đơn hàng mà khách hàng thấy.
 	\item Ngày giao dịch: ngày thực hiện giao dịch mua hàng và sinh ra đơn hàng.
 	\item Tổng giá tiền: thuộc tính dẫn xuất, là tổng giá tiền của đơn hàng.
 \end{itemize}
 
-\par Thực thể Đơn hàng online có thêm các thuộc tính:
+\par Thực thể Đơn hàng trực tuyến có thêm các thuộc tính:
 \begin{itemize}
 	\item Mã khách hàng: là mã khách hàng đã mua hàng online.
 	\item Phí ship: giá tiền cho việc vận chuyển đơn hàng.
-	\item Mong đợi: ngày giao hàng mong đợi.
+	\item Ngày dự định: ngày giao hàng mong đợi.
 	\item Thông tin trạng thái: thuộc tính phức hợp, bao gồm các thông tin Trạng thái và Thời gian chỉ các trạng thái và thời gian đạt đến trạng thái đó của đơn hàng.
+	\item Tên người nhận: tên của người nhận.
+	\item Email: Là email của người nhận.
+	\item Số điện thoại: Là số điện thoại của người nhận.
+	\item Số nhà, đường: Là địa chỉ số nhà, đường của khách hàng ở.
+	\item Phường / xã: Là địa chỉ phường / xã của người nhận.
+	\item Quận / huyện: Là địa chỉ quận / huyện của người nhận.
+	\item Tỉnh / thành phố: Là địa chỉ tỉnh / thành phố của người nhận.
 \end{itemize}
 
 \par Thực thể Đơn hàng cửa hàng có thêm thuộc tính:
 \begin{itemize}
 	\item Mã cửa hàng: mã cửa hàng bán hàng trong đơn hàng.
+	\item Mmã nhân viên: nhân viên thực hiện giao dịch
 \end{itemize}
 
 \par Thực thể Hàng bao gồm các thuộc tính:
@@ -202,6 +167,8 @@
 	\item Đơn giá: giá tiền một đơn vị của hàng trong đơn hàng.
 	\item Thuế: giá tiền thuế của hàng trong đơn hàng.
 	\item Thành tiền: thuộc tính dẫn xuất, là tổng giá tiền (đơn giá * số lượng) + thuế.
+	\item Tên hàng: tên của món Hàng
+	\item Ảnh: ảnh minh  họa của hàng
 \end{itemize}
 
 \par Đơn hàng và Hàng có quan hệ Bao gồm, đây là quan hệ bắt buộc, 1-N: đơn hàng bắt buộc có hàng, và có thể có nhiều hàng; hàng trong đơn hàng bắt buộc phải thuộc về một mặt hàng, và chỉ thuộc về duy nhất một mặt hàng.
@@ -209,7 +176,7 @@
 \subsubsection{Service Kho}
 \begin{figure}[!htp]
 	\begin{center}
-		\includegraphics[width=11cm]{img/database/erd/shop_online-Kho.png}
+		\includegraphics[width=9cm]{img/database/erd/shop_online-Kho.png}
 		\newline
 		\caption{ERD cho database của service Kho}
 	\end{center}
@@ -222,12 +189,12 @@
 	\item Ngày thành lập: ngày mà kho đi vào sử dụng.
 	\item Địa chỉ: thuộc tính kết hợp, bao gồm các thuộc tính Số nhà, đường, Phường, Thành phố / Quận / Huyện, Tỉnh / Thành phố.
 	\item Sức chứa: sức chứa hàng tối đa của kho.
-	\item Còn lại: thuộc tính dẫn xuất, chỉ sức chứa còn lại mà kho có thể chứa hàng thêm.
 \end{itemize}
 
 \par Thực thể Nhân viên kho bao gồm các thuộc tính:
 \begin{itemize}
 	\item Mã nhân viên: thuộc tính khóa, là mã của nhân viên làm việc ở kho.
+	\item Vị trì: chức vụ của nhân viên.
 \end{itemize}
 
 \par Kho và nhân viên kho có mối quan hệ Bao gồm là mối quan hệ bắt buộc, M-N: kho bắt buộc có nhân viên, và có thể có nhiều nhân viên làm việc; nhân viên buộc phải làm việc ở ít nhất một kho, và có thể làm việc ở nhiều kho. Mối quan hệ này có các thuộc tính:
@@ -236,16 +203,11 @@
 	\item Ngày kết thúc: ngày nhân viên nghỉ làm việc tại kho đó.
 \end{itemize}
 
-\par Mỗi kho có một quản lý, nên kho và nhân viên quản lý có mối quan hệ Được quản lý bởi. Mối quan hệ là M-N. Kho tham gia vào mối quan hệ với ràng buộc tham gia bắt buộc: kho phải có quản lý, và theo thời gian có nhiều quản lý theo từng thời gian khác nhau. Quản lý - cũng là nhân viên kho, tham gia vào mối quan hệ với ràng buộc tham gia không bắt buộc, một nhân viên không cần phải làm quản lý, và qua thời gian có thể làm quản lý ở nhiều kho. Mối quan hệ này có các thuộc tính:
-\begin{itemize}
-	\item Ngày bắt đầu: ngày quản lý bắt đầu làm việc tại kho đó.
-	\item Ngày kết thúc: ngày quản lý nghỉ làm việc tại kho đó.
-\end{itemize}
 
 \subsubsection{Service chi nhánh}
 \begin{figure}[!htp]
 	\begin{center}
-		\includegraphics[width=13cm]{img/database/erd/branch.png}
+		\includegraphics[width=11cm]{img/database/erd/branch.png}
 		\newline
 		\caption{ERD cho database của service chi nhánh}
 	\end{center}
@@ -258,7 +220,7 @@ Database của service chi nhánh bao gồm hai thực thể là Nhân viên và
 	\item ngày tạo: Ngày tạo chi nhánh.
 	\item giờ mở: Giờ mở cửa mổi ngày của chi nhánh.
 	\item giờ đóng: Giờ đóng cửa mổi ngày của chi nhánh.
-	\item hình ảnh: Hình ảnh minh họa chi nhánh.
+	\item ngày tạo: Ngày thành lập chi nhánh.
 	\item đường/thôn: Tên đường của chi nhánh.
 	\item phường/xã: Phường xã của chi nhánh.
 	\item quận/huyện: Quận, huyện của chi nhánh.
@@ -291,28 +253,34 @@ Database của service tài khoản chỉ có thực thể tài khoản chứa t
 	\item tên đăng nhập: Thuộc tính khóa, là tên đăng nhập của tài khoản.
 	\item mật khẩu: Mật khẩu của tài khoản.
 	\item quyền: Quyền của tài khoản.
+	\item ngày tạo: ngày lập tài khoản.
+	\item email: email của tài khoản.
+	\item trạng thái: trạng thái tài khoản còn hoạt động không
 \end{itemize}
 
 
 \subsubsection{Service nhân viên}
 \begin{figure}[!htp]
 	\begin{center}
-		\includegraphics[width=16cm]{img/database/erd/staff.png}
+		\includegraphics[width=13cm]{img/database/erd/staff.png}
 		\newline
 		\caption{ERD cho database của service nhân viên}
 	\end{center}
 \end{figure}
 
-Database của service nhân viên chứa các thực thể Nhân viên, Bản yêu cầu, Tài khoản, Bản điểm danh. Thực thể Nhân viên bao gồm các thông tin của nhân viên:
+Database của service nhân viên chứa các thực thể Nhân viên, Bản yêu cầu, Tài khoản. Thực thể Nhân viên bao gồm các thông tin của nhân viên:
 \begin{itemize}
 	\item mã: thuộc tính khóa, là mã của nhân viên.
 	\item tên: Tên nhân viên.
-	\item cccd: Căn cước công dân chi nhánh
+	\item căn cước: Căn cước công dân chi nhánh
 	\item vị trí: Vị trí làm việc trong cửa hàng
 	\item lương: Mức lương của nhân viên
 	\item ngày vào: Ngày được nhận vào làm.
 	\item sdt: Số điện thoại của nhân viên.
 	\item email: Email của nhân viên.
+	\item nơi làm việc: nơi làm cua nhân viên.
+	\item quê quán: quê của nhân viên.
+	\item trạng thái: còn làm việc hay không.
 	\item đường/thôn: Tên đường của nhân viên.
 	\item phường/xã: Phường xã của nhân viên.
 	\item quận/huyện: Quận, huyện của nhân viên.
@@ -322,17 +290,9 @@ Database của service nhân viên chứa các thực thể Nhân viên, Bản y
 Thực thể Bản yêu cầu chứa thông tin về yêu cầu thêm, xóa nhân viên:
 \begin{itemize}
 	\item mã: thuộc tính khóa, là mã của yêu cầu.
-	\item ngày yêu cầu: Ngày tạo yêu cầu
-	\item loại yêu cầu: Loại của yêu cầu là thêm hay xóa
+	\item ngày tạo: Ngày tạo yêu cầu
+	\item loại: Loại của yêu cầu là thêm hay xóa
 	\item trạng thái: Trạng thái của yêu cầu đang chờ, được duyệt hoặc hủy bỏ
-\end{itemize}
-
-Thực thể Bản điểm danh chứa thông tin về hoạt động điểm danh của nhân viên:
-\begin{itemize}
-	\item ngày: thuộc tính khóa, là ngày làm việc của nhân viên.
-	\item thời gian vào: Thời gian bắt đầu vào làm trong ngày của nhân viên
-	\item thời gian ra: Thời gian kết thúc làm trong ngày của nhân viên
-	\item thời gian làm: Thời gian làm việc trong ngày của nhân viên
 \end{itemize}
 
 Thực thể Tài khoản chỉ chứa thông tin về tên tài khoản của nhân viên
@@ -340,9 +300,6 @@ Thực thể Tài khoản chỉ chứa thông tin về tên tài khoản của n
 Nhân viên và Bản yêu cầu có mối quan hệ Thuộc về: Mỗi bản yêu cầu đều phải thuộc về một nhân viên
 
 Nhân viên và Tài khoản có mối quan hệ Có: Chỉ có các nhân viên cấp quản lý mới sở hữu tài khoản
-
-Nhân viên và Bản điểm danh cầu có mối quan hệ Điểm danh: Tất cả bản điểm danh đều phải có nhân viên
-
 
 \subsubsection{Service thống kê}
 \begin{figure}[!htp]
@@ -368,7 +325,7 @@ Thực thể Hàng chỉ chứa một vài thông tin của hàng hóa được 
 	\item Loại: Loại của món hàng.
 	\item Số lượng: Số lượng của món hàng trong đơn.
 	\item Giới tính: Giới tính của món hàng.
-	\item chi phí: Giá nhập của món hàng.
+	\item Giá nhập: Giá nhập của món hàng.
 	\item đơn giá: Đơn giá bán ra của món hàng.
 \end{itemize}
 
@@ -414,10 +371,6 @@ Bảng dữ liệu Giỏ hàng trong service Giỏ hàng bao gồm các thuộc 
 \begin{itemize}
 	\item Mã giỏ hàng: varchar(100).
 	\item Mã khách hàng: varchar(100).
-	\item Số lượng: int.
-	\item Mã hàng: varchar(100).
-	\item Kích thước: varchar(5).
-	\item Màu: varchar(10).
 \end{itemize}
 
 Bảng dữ liệu Hàng trong service Giỏ hàng bao gồm các thuộc tính và kiểu dữ liệu như sau:
@@ -425,48 +378,8 @@ Bảng dữ liệu Hàng trong service Giỏ hàng bao gồm các thuộc tính 
 	\item Mã hàng: varchar(100).
 	\item Kích thước: varchar(5).
 	\item Màu: varchar(10).
-\end{itemize}
-
-\subsubsection{Service Đơn hàng của khách hàng}
-\begin{figure}[!htp]
-	\begin{center}
-		\includegraphics[width=1\textwidth]{img/database/mapping/mapping-customer-order.png}
-		\newline
-		\caption{Ánh xạ cho database của service Đơn hàng của khách hàng}
-	\end{center}
-\end{figure}
-
-Bảng dữ liệu Hàng trong service Đơn hàng của khách hàng bao gồm các thuộc tính và kiểu dữ liệu như sau:
-\begin{itemize}
-	\item Mã hàng: varchar(100).
-	\item Mã đơn hàng: varchar(100).
 	\item Số lượng: int.
-	\item Mã hàng: varchar(100).
-	\item Kích thước: varchar(5).
-	\item Màu: varchar(10).
-	\item Đơn giá: int.
-	\item Thành tiền: int.
-	\item Thuế: int.
-	\item Hình ảnh: varchar(100).
-\end{itemize}
-
-Bảng dữ liệu Đơn hàng trong service Đơn hàng của khách hàng bao gồm các thuộc tính và kiểu dữ liệu như sau:
-\begin{itemize}
-	\item Mã đơn hàng: varchar(100).
-	\item Ngày giao dịch: Date.
-	\item Tổng giá tiền: int.
-	\item Mã khách hàng: varchar(100).
-	\item Mong đợi: varchar(50).
-	\item Phí ship: int.
-	\item Mã khách hàng: varchar(100).
-	\item Phương thức thanh toán: varchar(100).
-\end{itemize}
-
-Bảng dữ liệu Thông tin trạng thái đơn hàng trong service Đơn hàng của khách hàng bao gồm các thuộc tính và kiểu dữ liệu như sau:
-\begin{itemize}
-	\item Mã đơn hàng: varchar(100).
-	\item Trạng thái: varchar(250).
-	\item Thời gian: DateTime.
+	\item Mã giỏ hàng: varchar(100).
 \end{itemize}
 
 \subsubsection{Service Sự kiện}
@@ -540,7 +453,7 @@ Bảng dữ liệu Hàng hóa trong kho trong service Hàng hóa gồm các thu�
 \subsubsection{Service Đơn hàng}
 \begin{figure}[!htp]
 	\begin{center}
-		\includegraphics[width=1\textwidth]{img/database/mapping/mapping-đơnhàng.png}
+		\includegraphics[width=17cm]{img/database/mapping/mapping-đơnhàng.png}
 		\newline
 		\caption{Ánh xạ cho database của service Đơn hàng}
 	\end{center}
@@ -555,7 +468,6 @@ Bảng dữ liệu Hàng trong service Đơn hàng bao gồm các thuộc tính 
 	\item Đơn giá: int.
 	\item Thành tiền: int.
 	\item Thuế: double.
-	\item Hình ảnh: varchar(100).
 \end{itemize}
 
 Bảng dữ liệu Đơn hàng trong service Đơn hàng bao gồm các thuộc tính và kiểu dữ liệu:
@@ -563,6 +475,7 @@ Bảng dữ liệu Đơn hàng trong service Đơn hàng bao gồm các thuộc 
 	\item Mã đơn hàng: varchar(100).
 	\item Ngày giao dịch: Date.
 	\item Tổng giá tiền: int.
+	\item Mã công khai: varchar(100).
 \end{itemize}
 
 Bảng dữ liệu Đơn hàng online trong service Đơn hàng bao gồm các thuộc tính và kiểu dữ liệu:
@@ -572,12 +485,21 @@ Bảng dữ liệu Đơn hàng online trong service Đơn hàng bao gồm các t
 	\item Phí ship: int.
 	\item Mã khách hàng: varchar(100).
 	\item Phương thức thanh toán: varchar(50).
+	\item đường: varchar(50).
+	\item phường xã:varchar(50).
+	\item quận huyện:varchar(50).
+	\item tỉnh thành: varchar(50).
+	\item tên người nhận: varchar(50).
+	\item sdt: varchar(13).
+	\item email: varchar(50).
+	\item ngày dự kiến: Date
 \end{itemize}
 
 Bảng dữ liệu Đơn hàng cửa hàng trong service Đơn hàng bao gồm các thuộc tính và kiểu dữ liệu:
 \begin{itemize}
 	\item Mã đơn hàng: varchar(100).
 	\item Mã cửa hàng: varchar(100).
+	\item Mã nhân viên: varchar(50).
 \end{itemize}
 
 Bảng dữ liệu Trạng thái đơn hàng online cửa hàng trong service Đơn hàng bao gồm các thuộc tính và kiểu dữ liệu:
@@ -601,20 +523,12 @@ Bảng dữ liệu Kho trong service Kho bao gồm các thuộc tính và kiểu
 \begin{itemize}
 	\item Mã kho: varchar(100).
 	\item Tên kho: varchar(100).
-	\item Sức chứa: int. 
+	\item Sức chứa: int.
 	\item Ngày thành lập: Date.
 	\item Số nhà\_đường: varchar(100).
 	\item Phường\_xã: varchar(100).
 	\item Quận\_huyện: varchar(100).
 	\item Tỉnh\_thành: varchar(100).
-\end{itemize}
-
-Bảng dữ liệu Nhân viên quản lý kho trong service Kho bao gồm các thuộc tính và kiểu dữ liệu:
-\begin{itemize}
-	\item Mã nhân viên: varchar(100).
-	\item Mã kho: varchar(100).
-	\item Ngày bắt đầu: Date.
-	\item Ngày kết thúc: Date.
 \end{itemize}
 
 Bảng dữ liệu Nhân viên thuộc kho trong service Kho bao gồm các thuộc tính và kiểu dữ liệu:
@@ -623,12 +537,9 @@ Bảng dữ liệu Nhân viên thuộc kho trong service Kho bao gồm các thu�
 	\item Mã kho: varchar(100).
 	\item Ngày bắt đầu: Date.
 	\item Ngày kết thúc: Date.
+	\item Vị trí: int.
 \end{itemize}
 
-Bảng dữ liệu Nhân viên kho trong service Kho gồm các thuộc tính và kiểu dữ liệu:
-\begin{itemize}
-	\item Mã nhân viên: varchar(100).
-\end{itemize}
 \newpage
 
 
@@ -655,13 +566,7 @@ Bảng "Chi nhánh" bao gồm các thuộc tính và kiểu dữ liệu như sau
 	\item giờ đóng cửa: time.
 \end{itemize}
 
-Bảng "Hình chi nhánh" bao gồm các thuộc tính và kiểu dữ liệu như sau:
-\begin{itemize}
-	\item mã: string.
-	\item hình ảnh: string.
-\end{itemize}
-
-Bảng "Quản lý chi nhánh" và "Nhân viên chi nhánh"  bao gồm các thuộc tính và kiểu dữ liệu như sau:
+Bảng "Làm tại" bao gồm các thuộc tính và kiểu dữ liệu như sau:
 \begin{itemize}
 	\item mã nhân viên: string.
 	\item mã kho: string.
@@ -673,7 +578,7 @@ Bảng "Quản lý chi nhánh" và "Nhân viên chi nhánh"  bao gồm các thu�
 \subsubsection{Service tài khoản}
 \begin{figure}[!htp]
 	\begin{center}
-		\includegraphics[width=5cm]{img/database/mapping/account.png}
+		\includegraphics[width=8cm]{img/database/mapping/account.png}
 	\end{center}
 	\caption{Ánh xạ cho database của service tài khoản}
 \end{figure}
@@ -683,6 +588,9 @@ Bảng "Tài khoản" bao gồm các thuộc tính và kiểu dữ liệu như s
 	\item tên đăng nhập: varchar(100).
 	\item mật khẩu: varchar(100).
 	\item quyền: int.
+	\item trạng thái: int.
+	\item email: varchar(100).
+	\item ngày tạo: Date
 \end{itemize}
 
 
@@ -709,22 +617,17 @@ Bảng "Nhân viên" bao gồm các thuộc tính và kiểu dữ liệu như sa
 	\item quận: varchar(50).
 	\item phường: varchar(50).
 	\item đường: varchar(50).
-	\item cmnd: varchar(50).
+	\item căn cước: varchar(50).
 	\item vị trí: int.
 	\item ngày vào: dateTime.
 	\item lương: int.
-	\item giới tính: int. 
-	\item sdt: varchar(12).  
-	\item email: varchar(100). 
+	\item nơi làm việc: varchar(50).
+	\item giới tính: int.
+	\item sdt: varchar(12).
+	\item email: varchar(100).
+	\item trạng thái: int.
 \end{itemize}
 
-Bảng "Bản điểm danh" bao gồm các thuộc tính và kiểu dữ liệu như sau:
-\begin{itemize}
-	\item mã nhân viên: varchar(100).
-	\item ngày: dateTime.
-	\item thời gian vào: time.
-	\item thời gian ra: time.
-\end{itemize}
 
 Bảng "Bản yêu cầu" bao gồm các thuộc tính và kiểu dữ liệu như sau:
 \begin{itemize}
@@ -752,14 +655,14 @@ Bảng "Hàng hóa" bao gồm các thuộc tính và kiểu dữ liệu như sau
 	\item màu: varchar(10).
 	\item loại: varchar(100).
 	\item giới tính: int.
-	\item chi phí: int.
+	\item giá nhập: int.
 	\item đơn giá: int.
 	\item số lượng: int.
-	\item đơn hàng: varchar(100).
+	\item mã đơn hàng: varchar(100).
 \end{itemize}
 
 \begin{itemize}
 	\item mã đơn hàng: varchar(100).
 	\item ngày giao dịch: dateTime.
-	\item mã cửa hàng: varchar(100).
+	\item chi nhánh: varchar(100).
 \end{itemize}
