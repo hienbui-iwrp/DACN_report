@@ -541,9 +541,9 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía khá
 	      \end{quote}
 \end{itemize}
 
-\subsubsubsection*{Customer Order Service}
+\subsubsubsection*{Order Service}
 \begin{itemize}
-	\item getListOrder
+	\item getListOrderCustomer
 	      \begin{quote}
 		      GET /api/order-service/orders/{customerId}
 		      \begin{itemize}
@@ -551,16 +551,7 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía khá
 		      \end{itemize}
 	      \end{quote}
 
-	\item getOrderDetail
-	      \begin{quote}
-		      GET /api/order-service/order-detail
-		      \begin{itemize}
-			      \item customerId: string (Required)
-			      \item orderId: string (Required)
-		      \end{itemize}
-	      \end{quote}
-
-	\item makeOrder
+	\item createOrderOnline
 	      \begin{quote}
 		      POST /api/make-order-service/order
 		      \begin{itemize}
@@ -605,31 +596,6 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía khá
 			      \item cost: float (Required)
 		      \end{itemize}
 	      \end{quote}
-\end{itemize}
-
-\subsubsubsection*{Order Service}
-\begin{itemize}
-	\item readOrder
-	      \begin{quote}
-		      GET /api/order-service/order/{orderId}
-		      \begin{itemize}
-			      \item orderId: string (Required)
-		      \end{itemize}
-	      \end{quote}
-
-	\item createOrder
-	      \begin{quote}
-		      POST /api/order-service/order
-		      \begin{itemize}
-			      \item transactionDate: DateTime (Required)
-			      \item totalAmount: int (Required)
-			      \item isOnline: bool (Required)
-			      \item customerId: string
-			      \item shippingFee: float
-			      \item storeId: string
-			      \item goods: [GoodsInOrder] (Required)
-		      \end{itemize}
-	      \end{quote}
 
 	\item readOnlineOrderStatus
 	      \begin{quote}
@@ -651,25 +617,16 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía khá
 
 \subsubsubsection*{Account Service}
 \begin{itemize}
-	\item Authentication
+	\item changePassword
 	      \begin{quote}
-		      GET /api/account-service/{username}
+		      PUT /api/account-service/password/change
 		      \begin{itemize}
-			      \item password: string (Required)
-		      \end{itemize}
-	      \end{quote}
-
-	\item addAccount
-	      \begin{quote}
-		      POST /api/account-service/add
-		      \begin{itemize}
-			      \item password: string (Required)
 			      \item username: string (Required)
-			      \item role: enum (Required)
+			      \item oldPassword: string (Required)
+			      \item password: string (Required)
 		      \end{itemize}
 	      \end{quote}
 \end{itemize}
-
 
 
 
@@ -979,14 +936,6 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía qu�
 		      GET /api/account-service/
 	      \end{quote}
 
-	\item Authentication
-	      \begin{quote}
-		      GET /api/account-service/{username}
-		      \begin{itemize}
-			      \item password: string (Required)
-		      \end{itemize}
-	      \end{quote}
-
 	\item filterAccount
 	      \begin{quote}
 		      GET /api/account-service?keyword=\{keyword\}
@@ -1007,6 +956,15 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía qu�
 			      \item password: string (Required)
 			      \item username: string (Required)
 			      \item role: enum (Required)
+		      \end{itemize}
+	      \end{quote}
+	\item changePassword
+	      \begin{quote}
+		      PUT /api/account-service/password/change
+		      \begin{itemize}
+			      \item username: string (Required)
+			      \item oldPassword: string (Required)
+			      \item password: string (Required)
 		      \end{itemize}
 	      \end{quote}
 \end{itemize}
@@ -1159,6 +1117,38 @@ Module này dùng để chứa các API được xuất ra ngoài cho phía qu�
 
 \end{itemize}
 
+\subsubsubsection*{Order Service}
+\begin{itemize}
+	\item getListOrder
+	      \begin{quote}
+		      GET /api/order-service/orders
+	      \end{quote}
+
+
+	\item createOrderOffline
+	      \begin{quote}
+		      POST /api/order-service/order
+		      \begin{itemize}
+			      \item transactionDate: DateTime (Required)
+			      \item totalAmount: int (Required)
+			      \item isOnline: bool (Required)
+			      \item customerId: string
+			      \item shippingFee: float
+			      \item storeId: string
+			      \item goods: [GoodsInOrder] (Required)
+		      \end{itemize}
+	      \end{quote}
+
+	\item getOrderDetail
+	      \begin{quote}
+		      GET /api/order-service/order-detail
+		      \begin{itemize}
+			      \item customerId: string (Required)
+			      \item orderId: string (Required)
+		      \end{itemize}
+	      \end{quote}
+\end{itemize}
+
 
 
 \subsubsection{Shared APIs}
@@ -1174,6 +1164,61 @@ Module này dùng để chứa các API được xuất ra ngoài cho bất kì 
 		      \end{itemize}
 	      \end{quote}
 \end{itemize}
+
+\subsubsubsection*{Event Service}
+\begin{itemize}
+	\item getCurrentEvent
+	      \begin{quote}
+		      GET /api/event-service/event/current
+	      \end{quote}
+
+	\item getEventByGoods
+	      \begin{quote}
+		      GET /api/event-service/event/goods/{goodsId}
+	      \end{quote}
+
+\end{itemize}
+
+\subsubsubsection*{Account Service}
+\begin{itemize}
+	\item signIn
+	      \begin{quote}
+		      POST /api/event-service/sign-in
+		      \begin{itemize}
+			      \item username: string (Required)
+			      \item password: string (Required)
+		      \end{itemize}
+	      \end{quote}
+
+	\item signUp
+	      \begin{quote}
+		      POST /api/event-service/sign-up
+		      \begin{itemize}
+			      \item username: string (Required)
+			      \item password: string (Required)
+			      \item email:	string (Required)
+			      \item phone:	string (Required)
+			      \item name:	string (Required)
+		      \end{itemize}
+	      \end{quote}
+	\item resetPassword
+	      \begin{quote}
+		      POST /api/event-service/reset-password/create
+		      \begin{itemize}
+			      \item username: string (Required)
+		      \end{itemize}
+	      \end{quote}
+	\item confirmOTP
+	      \begin{quote}
+		      POST /api/event-service/reset-password/OTP
+		      \begin{itemize}
+			      \item username: string (Required)
+			      \item otp:	string (Required)
+		      \end{itemize}
+	      \end{quote}
+
+\end{itemize}
+
 
 
 
@@ -1307,10 +1352,10 @@ Phương thức:
 \begin{itemize}
 	\item createOrderOnline(orderGoods: list<OrderGoodsModel>): Tạo đơn hàng.
 	\item createOrderOffline(orderGoods: list<OrderGoodsModel>): Tạo đơn hàng.
-	\item readListOrder(): Lấy danh sách tất cả đơn hang2 .
+	\item readListOrder(): Lấy danh sách tất cả đơn hàng .
 	\item updateOnlineOrderStatus(orderId: string, status: string): Cập nhật trạng thái đơn hàng.
 	\item readOnlineOrderStatus(orderId: string): Lấy thông tin trạng thái đơn hàng.
-	\item readListOrderCustomerr(customerId: string): Lấy danh sách đơn hàng theo mã khách hàng
+	\item readListOrderCustomer(customerId: string): Lấy danh sách đơn hàng theo mã khách hàng
 	\item readOrderDetail(orderId: string): Lấy thông tin chi tiết của đơn hàng.
 \end{itemize}
 
@@ -1380,6 +1425,8 @@ Phương thức:
 	\item addAccount(info: accountModel): Tạo một tài khoản mới
 	\item resetPassword(username: string, newPass: string): Tái thiết lập mật khẩu
 	\item updateRole(username: string, role: int): Cập nhật quyền tài khoản
+	\item changePassword(username: string, oldPassword: string, password: string): Đổi mật khẩu
+	\item createOtp(username: string): Tạo mã OTP
 \end{itemize}
 
 
@@ -1523,6 +1570,8 @@ Phương thức:
 	\item deleteEvent(eventId: string): xóa sự kiện khỏi hệ thống.g.
 	\item createEvent(event: EventModel): tạo sự kiện mới.
 	\item updateEvent(event: EventModel): cập nhật thông tin của sự kiện.
+	\item getEventByGoods(goodsId:string): Lấy các sự kiện theo hàng
+	\item getCurrentEvent(): Lấy tất cả sự kiện hiện tại
 \end{itemize}
 
 \subsubsubsection*{EventController}
@@ -1537,7 +1586,8 @@ Phương thức:
 	\item deleteEvent(eventId: string): Xử lý dữ liệu và gọi xóa sự kiện khỏi hệ thống.
 	\item addEvent(event: EventDetail): Xử lý dữ liệu và gọi tạo sự kiện mới.
 	\item updateEvent(event: EventDetail): Xử lý dữ liệu và gọi cập nhật thông tin của sự kiện.
-	\item getAllGood(): Xử lý dữ liệu và gọi lấy thông tin toàn bộ hàng.
+	\item getEventByyGoods(goodsId: string): Lấy danh sách sự kiện tác động đến hàng.
+	\item getCurrentEvent(): Lấy các sự kiện hiện tại
 \end{itemize}
 
 \subsubsubsection*{GetResponse - AddResponse - UpdateResponse - DeleteResponse}
@@ -1569,8 +1619,6 @@ Thuộc tính:
 \end{itemize}
 Phương thức:
 \begin{itemize}
-	\item readManager(): Lấy thông tin quản lý kho.
-	\item updateManager(): Cập nhật quản lý kho.
 	\item readStaff(): Lấy thông tin nhân viên kho.
 	\item createStaff(): Thêm nhân viên kho.
 	\item updateStaff(): Cập nhật thông tin nhân viên kho.
@@ -1578,14 +1626,11 @@ Phương thức:
 	\item createWarehouse(): Thêm kho mới.
 	\item readWarehouse(): Lấy dữ liệu kho.
 	\item updateWarehouse(): Cập nhật dữ liệu kho.
-	\item deleteWarehouse(): Xóa kho
 \end{itemize}
 
 \subsubsubsection*{WarehouseController}
 Phương thức:
 \begin{itemize}
-	\item getManager(warehouseId: string): Lấy thông tin quản lý kho.
-	\item updateManager(warehouseId: string, managerId: string): Cập nhật quản lý cho kho.
 	\item getStaff(warehouseId: string): Lấy dữ liệu nhân viên của kho.
 	\item addStaff(staffId: string, warehouseId: string): Thêm nhân viên vào kho.
 	\item updateStaff(staffId: string, warehouseId: string): Cập nhật thông tin làm việc của nhân viên.
@@ -1593,7 +1638,7 @@ Phương thức:
 	\item addWarehouse(warehouseData: WarehouseModel): Thêm kho mới.
 	\item getWarehouse(warehouseId): Lấy thông tin kho.
 	\item updateWarehouse(warehouseData: WarehouseModel): Cập nhật thông tin kho.
-	\item deleteWarehouse(warehouseId: string): Xóa kho.
+
 \end{itemize}
 
 \subsubsubsection*{GetWarehouseResponse - GetStaffResponse - GetManagerResponse - UpdateResponse}
@@ -1665,7 +1710,7 @@ Thuộc tính:
 \subsubsection{Goods Service}
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[width=17.5cm]{img/Architecture/service/GoodsService.png}
+	\includegraphics[width=13cm]{img/Architecture/service/GoodsService.png}
 	\newline
 	\caption{Lược đồ class của Goods Service}
 \end{figure}
@@ -1820,13 +1865,14 @@ Dưới đây là các giao tiếp bất đồng bộ có trong hệ thống:
 
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[width=13cm]{img/Architecture/kafka.png}
+	\includegraphics[width=16cm]{img/Architecture/kafka.png}
 	\newline
 	\caption{Giao tiếp bất đồng bộ giữa các services}
 \end{figure}
 
 \begin{itemize}
-	\item Customer Topic: Customer Service khi thêm một khách hàng mới sẽ gửi dữ liệu đến để Cart Service cập nhật thêm giỏ hàng tương ứng
-	\item MakeOrder Topic: Customer Order Service khi nhận được thông tin đơn hàng mới sẽ gửi dữ liệu cập nhật thông tin đơn hàng đó cho Order Service
+	\item Customer Topic: Khi một tài khoản được đăng kí, thông tin khách hàng sẽ được gởi đến customer service
+	\item Cart Topic: Khi một khách hàng được thêm mới, 1 cart sẽ được thêm tương ứng vào Cart service
 	\item Statistic Topic: Khi Order Service đã cập nhật thông tin đơn hàng mới sẽ gửi thông tin đơn hàng cho Statistic Service để thống kê
+	\item Branch Topic: Khi một nhân viên được thêm, thông tin nhân viên làm tại chi nhánh nào sẽ được cập nhật vào Branch Service
 \end{itemize}
