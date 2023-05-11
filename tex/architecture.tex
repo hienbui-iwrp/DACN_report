@@ -60,8 +60,6 @@
 	\caption{Kiến trúc Microservices}
 \end{table}
 
-\newpage
-
 \begin{table}[h]
 	\begin{tabular}{|p{3cm}|p{12cm}|}
 		\hline
@@ -82,11 +80,12 @@
 
 Từ những thông tin trên, để phù hợp với hệ thống, nhóm chọn kiến trúc Microservices. Bên cạnh đó nhóm sẽ kết hợp với kiến trúc Event-Driven để đảm bảo hiệu năng của hệ thống đối với các tác vụ bất đồng bộ.
 
+\newpage
 \subsection{Tổng quan kiến trúc}
 
 \begin{figure}[!htp]
 	\centering
-	\includegraphics[width=18cm]{img/Architecture/general-architect.png}
+	\hspace*{-1.6cm} \includegraphics[width=19cm]{img/Architecture/general-architect.png}
 	\newline
 	\caption{Tổng quan kiến trúc hệ thống}
 \end{figure}
@@ -1389,7 +1388,6 @@ Thuộc tính:
 	\item result: Các dữ liệu trả về đối với các yêu cầu HTTP GET
 \end{itemize}
 
-\newpage
 
 
 \subsubsection{Account Service}
@@ -1763,9 +1761,6 @@ Thuộc tính:
 \end{itemize}
 
 
-\newpage
-
-
 
 \subsubsection{Giao tiếp đồng bộ giữa các Services}
 
@@ -1797,7 +1792,7 @@ Mỗi phương pháp có các ưu điểm và nhược điểm riêng. Đối v�
 
 Ở hệ thống này, nhóm lựa chọn phương pháp Choreography để hiện thực việc giao tiếp giữa các service, để đảm bảo tính phân chia rõ ràng và ít phụ thuộc (loosely-coupled) giữa các service, đồng thời hạn chế các nhược điểm khi luồng thực thi trong những lần gọi là không phức tạp.
 
-\subsubsubsection{Giao tiếp của Customer order Service}
+\subsubsubsection{Giao tiếp của Order Service}
 \begin{figure}[!htp]
 	\centering
 	\includegraphics[width=8cm]{img/Architecture/service/customer-order-call.png}
@@ -1808,9 +1803,6 @@ Mỗi phương pháp có các ưu điểm và nhược điểm riêng. Đối v�
 \begin{itemize}
 	\item \textbf{Goods service}: Customer order service gọi tới Goods service để thực hiện lấy thông tin cần thiết của sản phẩm, sử dụng dữ liệu đó để tính toán cho đơn hàng cũng như tạo đơn hàng.
 	\item \textbf{Event service}: Customer order service gọi tới Event service để thực hiện lấy thông tin sự kiện giảm giá để tính toán giá tiền cho đơn hàng.
-	\item \textbf{Customer service}: Customer order service gọi tới Customer service để thực hiện lấy thông tin người dùng để tạo đơn hàng và tự đồng điền form.
-	\item \textbf{Transport service}: Customer order service gọi tới Transport service để thực hiện lấy thông tin giá tiền vận chuyển.
-	\item \textbf{Payment service}: Customer order service gọi tới Payment service để thực hiện thanh toán trực tuyến khi người dùng chọn phương thức thanh toán trực tuyến tương ứng.
 \end{itemize}
 
 

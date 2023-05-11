@@ -1,111 +1,115 @@
 % !TeX root = ..\main.tex
 \section{Yêu cầu hệ thống}
-    \subsection{Yêu cầu chức năng}
-        \hspace*{0.5cm}Quản lý chi nhánh:
-        \begin{quote}
-            \begin{itemize}
-                \item Quản lý có thể thêm chi nhánh mới
-                \item Quản lý có thể xóa chi nhánh
-                \item Quản lý có thể chỉnh sửa thông tin chi nhánh
-                \item Quản lý có thể thểm xem thông tin chi tiết chi nhánh
-            \end{itemize}
-        \end{quote}
-        
-        Quản lý nhân viên:
-        \begin{quote}
-            \begin{itemize}
-                \item Quản lý có thể thêm nhân viên mới
-                \item Quản lý có thể xóa nhân viên
-                \item Quản lý có thể chỉnh sửa thông tin nhân viên
-                \item Quản lý có thể thểm xem thông tin chi tiết nhân viên
-                \item Trưởng chi nhánh có thể yêu cầu cấp trên thêm nhân viên mới
-                \item Trưởng chi nhánh có thể yêu cầu cấp trên xóa nhân viên mới
-            \end{itemize}
-        \end{quote}
-        
-        Quản lý hoạt động kinh doanh:
-        \begin{quote}
-            \begin{itemize}
-                \item Quản lý có thể xem biểu đồ doanh thu, lợi nhuận của hệ thống
-            \end{itemize}
-        \end{quote}
-   
-        Quản lý tài khoản:
-        \begin{quote}
-            \begin{itemize}
-                \item Khách hàng có thể đăng ký tài khoản mới
-                \item Khách hàng có thể đổi mới mật khẩu khi quên
-                \item Khách hàng có thể chỉnh sửa thông tin cá nhân của mình
-                \item Quản lý có thể xem thông tin chi tiết khách hàng
-            \end{itemize}
-        \end{quote}
-    
-        Quản lý kho:
-        \begin{quote}
-            \begin{itemize}
-                \item Quản lý có thể thêm kho mới
-                \item Quản lý có thể xóa kho
-                \item Quản lý có thể chỉnh sửa thông tin kho
-                \item Quản lý có thể thểm xem thông tin chi tiết kho
-            \end{itemize}
-        \end{quote}
-        
-        Quản lý hàng hóa:
-        \begin{quote}
-            \begin{itemize}
-                \item Quản lý có thể thêm hàng mới vào kho
-                \item Quản lý có thể xóa hàng khỏi kho
-                \item Quản lý có thể chỉnh sửa thông tin hàng
-                \item Quản lý có thể thểm xem thông tin chi tiết hàng
-                \item Quản lý có thể chuyển hàng giữa các kho
-                \item Quản lý có thể xuất hàng hóa trong kho
-                \item Quản lý có thể nhận hàng trả lại của khách hàng
-            \end{itemize}
-        \end{quote}
-        
-        Quản lý đơn hàng:
-        \begin{quote}
-            \begin{itemize}
-                \item Quản lý có thể xem thông tin các đơn hàng trực tiếp
-                \item Quản lý có thể xem thông tin các đơn hàng trực tuyến
-                \item Dịch vụ giao vận có thể cập nhật trạng thái đơn hàng hiện tại
-                \item Khách hàng có thể xem trạng thái các đơn hàng của mình
-                \item Khách hàng có thể yêu cầu xuất hoá đơn các đơn hàng
-            \end{itemize}
-        \end{quote}
-        
-        Quản lý sự kiện:
-        \begin{quote}
-            \begin{itemize}
-                \item Quản lý có thể thêm sự kiện mới
-                \item Quản lý có thể xóa sự kiện
-                \item Quản lý có thể chỉnh sửa thông tin sự kiện
-                \item Quản lý có thể thểm xem thông tin chi tiết sự kiện
-            \end{itemize}
-        \end{quote}
-       
-        Đặt hàng:
-        \begin{quote}
-            \begin{itemize}
-                \item Khách hàng có thể xem danh sách tất cả sản phẩm
-                \item Khách hàng có thể xem thông tin chi tiết sản phẩm
-                \item Khách hàng có thể lọc sản phẩm theo tên, đặc điểm và sự kiện
-                \item Khách hàng có thể thêm sản phẩm vào giỏ hàng
-                \item Khách hàng có thể thanh toán đơn hàng trực tuyến hoặc trực tuyến
-            \end{itemize}
-        \end{quote}
-    
-    \subsection{Yêu cầu phi chức năng}
-        \begin{itemize}
-            \item Quy trình được điều chỉnh (không thêm dịch vụ mới) sẽ đáp ứng nhanh vào hệ thống thực tế (tối đa 12 tiếng).
-            \item Hệ thống không khả dụng tối đa 12 tiếng
-            \item Responsive với màn hình máy tính/laptop (>=768px), tablet(>=576px), Điện thoại(<576px).
-            \item Có thể hoạt động trên đa nền tảng, trên các browser như là chrome, Microsoft Edge, cốc cốc, firefox.
-            \item Xử lý đồng thời được tối đa 100 đơn hàng.
-            \item Thời gian response đáp ứng người dùng không quá 10s.
-            \item Người dùng có thể sử dụng hệ thống sau khi được training trong 1h.
-            \item Tỉ lệ lỗi tìm thấy sau hậu kiểm dưới 1\%.
-            \item Hệ thống đảm bảo bảo mật, ngăn chặn SQL injection, XSS.
-            \item Mật khẩu của user phải được hash theo giải thuật SHA-256.
-    
-        \end{itemize}
+\subsection{Yêu cầu chức năng}
+\hspace*{0.5cm}Quản lý chi nhánh:
+\begin{quote}
+    \begin{itemize}
+        \item Quản lý có thể thêm chi nhánh mới
+        \item Quản lý có thể xóa chi nhánh
+        \item Quản lý có thể chỉnh sửa thông tin chi nhánh
+        \item Quản lý có thể thểm xem thông tin chi tiết chi nhánh
+    \end{itemize}
+\end{quote}
+
+Quản lý nhân viên:
+\begin{quote}
+    \begin{itemize}
+        \item Quản lý có thể thêm nhân viên mới
+        \item Quản lý có thể xóa nhân viên
+        \item Quản lý có thể chỉnh sửa thông tin nhân viên
+        \item Quản lý có thể thểm xem thông tin chi tiết nhân viên
+        \item Trưởng chi nhánh có thể yêu cầu cấp trên thêm nhân viên mới
+        \item Trưởng chi nhánh có thể yêu cầu cấp trên xóa nhân viên mới
+    \end{itemize}
+\end{quote}
+
+Quản lý hoạt động kinh doanh:
+\begin{quote}
+    \begin{itemize}
+        \item Quản lý có thể xem biểu đồ doanh thu, lợi nhuận của hệ thống
+    \end{itemize}
+\end{quote}
+
+Quản lý tài khoản:
+\begin{quote}
+    \begin{itemize}
+        \item Khách hàng có thể đăng ký tài khoản mới
+        \item Khách hàng có thể đổi mới mật khẩu khi quên
+        \item Khách hàng có thể chỉnh sửa thông tin cá nhân của mình
+        \item Quản lý có thể xem thông tin chi tiết khách hàng
+    \end{itemize}
+\end{quote}
+
+Quản lý kho:
+\begin{quote}
+    \begin{itemize}
+        \item Quản lý có thể thêm kho mới
+        \item Quản lý có thể xóa kho
+        \item Quản lý có thể chỉnh sửa thông tin kho
+        \item Quản lý có thể thểm xem thông tin chi tiết kho
+    \end{itemize}
+\end{quote}
+
+Quản lý hàng hóa:
+\begin{quote}
+    \begin{itemize}
+        \item Quản lý có thể thêm hàng mới vào hệ tho6ng1
+        \item Quản lý có thể nhập hàng vào kho
+        \item Quản lý có thể xuất hàng khỏi kho
+        \item Quản lý có thể chỉnh sửa thông tin hàng
+        \item Quản lý có thể thểm xem thông tin chi tiết hàng
+        \item Quản lý có thể chuyển hàng giữa các kho
+        \item Quản lý có thể xuất hàng hóa trong kho
+        \item Quản lý có thể trả hàng về nơi sản xuất
+        \item Quản lý có thể nhận hàng trả lại của khách hàng
+    \end{itemize}
+\end{quote}
+
+Quản lý đơn hàng:
+\begin{quote}
+    \begin{itemize}
+        \item Quản lý có thể xem thông tin các đơn hàng trực tiếp
+        \item Quản lý có thể xem thông tin các đơn hàng trực tuyến
+        \item Dịch vụ giao vận có thể cập nhật trạng thái đơn hàng hiện tại
+        \item Khách hàng có thể xem trạng thái các đơn hàng của mình
+        \item Khách hàng có thể yêu cầu xuất hoá đơn các đơn hàng
+    \end{itemize}
+\end{quote}
+
+Quản lý sự kiện:
+\begin{quote}
+    \begin{itemize}
+        \item Quản lý có thể thêm sự kiện mới
+        \item Quản lý có thể xóa sự kiện
+        \item Quản lý có thể chỉnh sửa thông tin sự kiện
+        \item Quản lý có thể thểm xem thông tin chi tiết sự kiện
+    \end{itemize}
+\end{quote}
+
+Đặt hàng:
+\begin{quote}
+    \begin{itemize}
+        \item Khách hàng có thể xem danh sách tất cả sản phẩm
+        \item Khách hàng có thể xem thông tin chi tiết sản phẩm
+        \item Khách hàng có thể lọc sản phẩm theo tên, đặc điểm
+        \item Khách hàng có thể thêm sản phẩm vào giỏ hàng
+        \item Khách hàng có thể xóa sản phẩm khỏi giỏ hàng
+        \item Khách hàng có thể chỉnh sửa số lượng hàng trong giỏ hàng
+        \item Khách hàng có thể thanh toán đơn hàng trực tuyến hoặc trực tuyến
+    \end{itemize}
+\end{quote}
+
+\subsection{Yêu cầu phi chức năng}
+\begin{itemize}
+    \item Quy trình được điều chỉnh (không thêm dịch vụ mới) sẽ đáp ứng nhanh vào hệ thống thực tế (tối đa 12 tiếng).
+    \item Hệ thống không khả dụng tối đa 12 tiếng
+    \item Responsive với màn hình máy tính/laptop (>=768px), tablet(>=576px), Điện thoại(<576px).
+    \item Có thể hoạt động trên đa nền tảng, trên các browser như là chrome, Microsoft Edge, cốc cốc, firefox.
+    \item Xử lý đồng thời được tối đa 100 đơn hàng.
+    \item Thời gian response đáp ứng người dùng không quá 10s.
+    \item Người dùng có thể sử dụng hệ thống sau khi được training trong 1h.
+    \item Tỉ lệ lỗi tìm thấy sau hậu kiểm dưới 1\%.
+    \item Hệ thống đảm bảo bảo mật, ngăn chặn SQL injection, XSS.
+    \item Mật khẩu của user phải được hash theo giải thuật Bcrypt.
+
+\end{itemize}
