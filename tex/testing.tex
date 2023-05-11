@@ -2,46 +2,99 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%  
 
 \section{Kiểm thử đơn vị (Unit testing)}
+\subsection{Phương pháp thực hiện}
+
+Bản thân ngôn ngữ Golang có hỗ trợ thư viện \textbf{testing} để viết test, do đó nhóm sử dụng thư viện này để viết các bộ testcase.\\
+
+Nhóm thực hiện viết unit test cho các service trong hệ thống để đảm bảo tính đúng đắn của mã nguồn từ mức độ thấp nhất, và kiểm tra độ bao phủ của unit test với mã nguồn (hay còn được gọi là coverage). Code coverage là thông số cho biết mức độ mà mã nguồn đã được bao phủ bởi test, được ghi dưới dạng phần trăm câu lệnh đã được test đi qua. Đây là một thông số quan trọng để xác định mức độ tin cậy của code, thể hiện rằng các testcase đã bao đủ các trường hợp, các luồng đi trong code hay chưa. Nhóm đặt ra yêu cầu cho code coverage của mỗi service là ít nhất 75\% để đảm bảo chất lượng code trong mỗi service.\\
+
+Nhóm tiến hành viết unit test cho các hàm, viết các bộ testcase cho hàm. Bộ testcase bao gồm:
+\begin{itemize}
+    \item Tên (name): mô tả về kết quả đầu ra mong muốn và trường hợp mà testcase sẽ đi qua.
+    \item Các tham số cần thiết (args): các tham số mà hàm đang test cần.
+    \item Kết quả mong đợi (want): kết quả mong muốn nhận được sau khi chạy testcase trên hàm. Trường này có thể có hoặc không.
+    \item Lỗi mong đợi (wantErr): hàm có trả về lỗi hay không, true là có lỗi, false là không có lỗi. Trường này có thể có hoặc không.
+\end{itemize}
+
+Ở đây nhóm đưa ra ví dụ về việc viết unit test cho một hàm. Đây là unit test cho hàm ánh xạ dữ liệu của hàng hóa thuộc đơn hàng. Hàm sẽ nhận vào dữ liệu đọc từ database và ánh xạ cũng như tính toán các trường cần thiết. Các testcase mà nhóm xây dựng cho hàm này như sau:\\
+\newpage
+
+\begin{figure}[!htp]
+	\begin{center}
+		\includegraphics[width=10cm]{img/testing/unit_tc1.PNG}
+	\end{center}
+	\caption{Định nghĩa testcase cho unit test - Trường hợp mapping với dữ liệu đầu vào tồn tại}
+\end{figure}
+
+Testcase này kiểm tra việc ánh xạ đúng dữ liệu đầu vào với các trường đầu ra, và đảm bảo kết quả tính toán các trường \emph{TotalGoods} và \emph{TotalDiscount} theo công thức đề ra.\\
+\newpage
+
+\begin{figure}[!htp]
+	\begin{center}
+		\includegraphics[width=10cm]{img/testing/unit_tc2.PNG}
+	\end{center}
+	\caption{Định nghĩa testcase cho unit test - Trường hợp dữ liệu đầu vào rỗng}
+\end{figure}
+
+Testcase này bao quát một trường hợp ngách (edge case), đó là dữ liệu đầu vào rỗng. Với trường hợp này, mong muốn đầu ra là list hàng hóa rỗng và các trường \emph{TotalGoods}, \emph{TotalDiscount} đều là 0.\\
+
+Để chạy test cho service, đứng tại folder của service và chạy lệnh
+\begin{lstlisting}
+    make test
+\end{lstlisting}
+
+Lúc đó tất cả các unit test trong service đều được chạy và kết quả sau cùng sẽ được in ra. Ví dụ với service đơn hàng, kết quả test được in ra như sau:
+\begin{lstlisting}
+PASS
+coverage: 78.8% of statements
+ok      store-bpel/order_service/internal/controller    0.006s
+\end{lstlisting}
+
+Tương tự với các service khác, nhóm thu được kết quả test và kết quả coverage của tất cả các service.
+
+\subsection{Kết quả kiểm thử}
  {
   \setlength\extrarowheight{6pt}
-  \begin{longtable}{| p{4cm}| p{4cm}|}
+  \begin{longtable}{| p{4cm}| p{4cm}| p{4cm} |}
       \hline
-      \textbf{Service}  & \textbf{Coverage} \\
-      \hline
-      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-      Account Service   &                   \\
+      \textbf{Service}  & \textbf{Coverage} & \textbf{Kết quả} \\
       \hline
       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-      Branch Service    &                   \\
+      Account Service   &  77.6\%      & PASS           \\
       \hline
       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-      Cart Service      &                   \\
+      Branch Service    & 83.3\%      & PASS            \\
       \hline
       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-      Customer Service  &                   \\
+      Cart Service      & 82.4\%      & PASS            \\
       \hline
       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-      Event Service     &                   \\
+      Customer Service  & 80.0\%     & PASS              \\
       \hline
       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-      Goods Service     &                   \\
+      Event Service     & 80.0\%      & PASS             \\
       \hline
       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-      Order Service     &                   \\
+      Goods Service     & 76.0\%      & PASS             \\
       \hline
       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-      Staff Service     &                   \\
+      Order Service     & 78.8\%     & PASS              \\
       \hline
       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-      Statistic Service &                   \\
+      Staff Service     & 76.4\%     & PASS              \\
       \hline
       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-      Warehouse Service &                   \\
+      Statistic Service & 83.3\%     & PASS              \\
+      \hline
+      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      Warehouse Service & 76.9\%     & PASS              \\
       \hline
       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
       \caption{Kết quả của kiểm thử đơn vị}
   \end{longtable}
  }
+
+Có thể thấy tất cả service đều pass unit test và coverage đảm bảo lớn hơn 75\%, thỏa mãn yêu cầu nhóm đề ra.
 
 \section{Kiểm thử hệ thống (System testing)}
 \subsection{Môi trường kiểm thử}
