@@ -1,29 +1,25 @@
 % !TeX root = ..\main.tex
 %%%%%%%%%%%%%%%%%%%%%%%%%  
 \section{Những nhiệm vụ đã hoàn thành cho đề tài}
-\hspace{0.5cm} Trong giai đoạn đồ án tốt nghiệp, nhóm đã hoàn thành được việc phân tích và thiết kế hệ thống. Nhóm đã đề ra những yêu cầu cho hệ thống, các thành phần trong hệ thống và hiện thực hệ thống cũng như giao tiếp giữa các thành phần trong hệ thống. Hiện tại hệ thống đã hoàn thiện và được triển khai thành công.\\
+\hspace{0.5cm} Trong giai đoạn đồ án tốt nghiệp, nhóm đã hoàn thành công việc phân tích và thiết kế hệ thống. Nhóm đã đề ra những yêu cầu cho hệ thống, các thành phần trong hệ thống và hiện thực hệ thống cũng như giao tiếp giữa các thành phần trong hệ thống. Hiện tại hệ thống đã hoàn thiện và được triển khai thành công.\\
 
-Bên cạnh đó, nhóm còn thực hiện thiết kế các quy trình nghiệp vụ cho hệ thống. Các quy trình nghiệp vụ mà nhóm xây dựng đã bao quát nhiều khía cạnh mà một hệ thống quản lý cửa hàng thời trang cần, từ quản lý đến bán hàng. Từ những nghiệp vụ được xây dựng, nhóm đã thiết kế BPEL để đưa vào hệ thống, và ứng dụng việc tự động thay đổi quy trình nghiệp vụ dựa trên BPEL.\\
+Bên cạnh đó, nhóm còn thực hiện thiết kế các quy trình nghiệp vụ cho hệ thống. Các quy trình nghiệp vụ mà nhóm xây dựng đã bao quát nhiều khía cạnh mà một hệ thống quản lý cửa hàng thời trang cần, từ quản lý đến bán hàng. Từ những nghiệp vụ được xây dựng, nhóm đã được thiết kế BPEL để đưa vào hệ thống, và ứng dụng tự động thay đổi quy trình nghiệp vụ dựa trên BPEL.\\
 
-Ngoài ra, nhóm còn đưa ra bộ luật chuyển đổi từ BPMN sang BPEL. Bộ luật này là phương pháp chuyển đổi, và là công cụ để người làm nghiệp vụ và người làm kĩ thuật có thể giao tiếp với nhau dễ dàng để đưa BPMN sang BPEL một cách chính xác.
+Ngoài ra, nhóm còn đưa ra bộ luật chuyển đổi từ BPMN sang BPEL. Bộ luật này là phương pháp chuyển đổi, và là công cụ để người làm nghiệp vụ và người làm kỹ thuật có thể giao tiếp với nhau một cách dễ dàng để đưa BPMN sang BPEL một cách chính xác.
+
+
 
 \section{Hạn chế của đề tài}
 \hspace{0.5cm} Khi thực hiện chuyển đổi BPMN thành BPEL, các User Task trong BPMN sẽ được chuyển thành Human Task trong BPEL. Việc thực hiện các Human Task này yêu cầu phải thông qua ứng dụng BPM Worklist và được thực hiện bởi tài khoản được cung cấp từ Weblogic Server của Oracle và không thể được thực hiện từ xa (thông qua API), do đó việc thực hiện các Human Task chỉ phù hợp với các hệ thống quản lý nội bộ và làm việc trực tiếp với ứng dụng từ Oracle.\\
 
-Vì vậy, trong đề tài này, nhóm chỉ thực hiện xây dựng các quy trình BPEL mà trong đó hệ thống thực hiện tự động hoàn toàn mà không có các hành động xen giữa quy trình của con người để phù hợp với hệ thống bán hàng.
+Vì vậy, trong vấn đề này, nhóm chỉ thực hiện xây dựng các quy trình BPEL mà trong đó hệ thống thực hiện tự động hoàn toàn mà không có các hành động xen giữa quy trình của con người để phù hợp với hệ thống bán hàng.
 
-\section{Tiềm năng phát triển của đề tài}
-\hspace{0.5cm} Hệ thống có thể được áp dụng và mở rộng ra cho nhiều nghiệp vụ, đặc biệt là các nghiệp vụ liên quan đến thương mại điện tử vốn là nghiệp vụ của chính hệ thống. Do đối với cùng một mảng, các nghiệp vụ sẽ có phần giống nhau nên việc thay đổi và hiện thực cho nghiệp vụ mới sẽ mất ít thời gian. Bên cạnh đó việc phân chia rõ ràng giữa các thành phần trong hệ thống còn giúp việc cập nhật các thành phần theo yêu cầu và nghiệp vụ mới trở nên đơn giản hơn.\\
+\section{Tiềm năng phát triển của đề tài}
+\hspace{0.5cm} Hệ thống có thể được áp dụng và mở rộng cho nhiều nghiệp vụ, đặc biệt là các nnghiệp vụ liên quan đến thương mại điện tử vốn là nghiệp vụ của chính hệ thống. Đối với cùng một mảng, các nghiệp vụ sẽ có các phần giống nhau nên việc thay đổi và thực hiện cho nghiệp vụ mới sẽ mất ít thời gian. Bên cạnh đó việc phân chia rõ ràng giữa các thành phần trong hệ thống còn giúp việc cập nhật các thành phần theo yêu cầu và nghiệp vụ mới trở nên đơn giản hơn.\\
 
-Hệ thống còn có thể dễ dàng mở rộng và áp dụng những cập nhật mới của BPEL. Với hạn chế của BPEL đã được đề cập ở phần trước, hệ thống vẫn còn những nghiệp vụ, những luồng thực thi chưa áp dụng được BPEL cho việc quản lý quy trình nghiệp vụ. Tuy nhiên, trong tương lai nếu BPEL được cập nhật và các hạn chế trên được giải quyết, việc mở rộng BPEL trong hệ thống có thể được thực hiện nhanh chóng và dễ dàng. Các API được xuất ra công khai bên ngoài từ backend đều là SOAP API, và do BPEL thực hiện việc gọi API với SOAP, người dùng có thể dễ dàng mở rộng quy mô áp dụng BPEL trong hệ thống. Khi đó, người dùng chỉ cần thực hiện thay đổi ở BPEL mà không cần thay đổi gì ở frontend và backend.\\
-
-Trong đề tài này, nhóm cũng đã đề ra các luật chuyển đổi từ BPMN sang BPEL. Mặc dù vẫn còn nhiều trường hợp yêu cầu tiền xử lý BPMN cũng như chuyển đổi bằng tay để đảm bảo chính xác, bộ luật chuyển đổi BPMN sang BPEL mà nhóm đưa ra chính là cơ sở để có thể tự động hóa việc chuyển đổi BPMN sang BPEL mà không cần sự tham gia của con người.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%
+Hệ thống vẫn có thể dễ dàng mở rộng và áp dụng những cập nhật mới nhất của BPEL. Với hạn chế của BPEL đã được đề cập ở phần trước, hệ thống vẫn còn những nghiệp vụ, những luồng thực thi chưa được áp dụng được BPEL cho việc quản lý quy trình nghiệp vụ. Tuy nhiên, trong tương lai nếu BPEL được cập nhật và các hạn chế trên đã được giải quyết, việc mở rộng BPEL trong hệ thống có thể được thực hiện nhanh chóng và dễ dàng. Các API được xuất ra công khai bên ngoài backend đều là SOAP API, và BPEL thực hiện việc gọi API với SOAP, người dùng có thể dễ dàng mở rộng quy định áp dụng BPEL trong hệ thống. Khi đó, người dùng chỉ cần thực hiện thay đổi ở BPEL mà không cần thay đổi gì ở frontend và backend.\\
 
 
+Trong chủ đề này, nhóm cũng đã đề ra các luật chuyển đổi từ BPMN sang BPEL. Mặc dù vẫn còn nhiều trường hợp yêu cầu tiền xử lý BPMN cũng như chuyển đổi bằng tay để đảm bảo chính xác, bộ luật chuyển đổi BPMN sang BPEL mà nhóm đưa ra chính là cơ sở để có thể tự động hóa việc chuyển đổi BPMN sang BPEL mà không cần sự tham gia của con người.
 
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%
-% \subsection{Phân chia công việc}

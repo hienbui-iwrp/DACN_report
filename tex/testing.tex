@@ -6,53 +6,63 @@
 
 Bản thân ngôn ngữ Golang có hỗ trợ thư viện \textbf{testing} để viết test, do đó nhóm sử dụng thư viện này để viết các bộ testcase.\\
 
-Nhóm thực hiện viết unit test cho các service trong hệ thống để đảm bảo tính đúng đắn của mã nguồn từ mức độ thấp nhất, và kiểm tra độ bao phủ của unit test với mã nguồn (hay còn được gọi là coverage). Code coverage là thông số cho biết mức độ mà mã nguồn đã được bao phủ bởi test, được ghi dưới dạng phần trăm câu lệnh đã được test đi qua. Đây là một thông số quan trọng để xác định mức độ tin cậy của code, thể hiện rằng các testcase đã bao đủ các trường hợp, các luồng đi trong code hay chưa. Nhóm đặt ra yêu cầu cho code coverage của mỗi service là ít nhất 75\% để đảm bảo chất lượng code trong mỗi service.\\
+Nhóm thực hiện unit test cho các service trong hệ thống để đảm bảo tính đúng đắn của mã nguồn từ mức thấp nhất và kiểm tra mức độ bao phủ của unit test với mã nguồn (hay còn được gọi là coverage). Code coverage là một thông số cho biết mức độ mà mã nguồn đã được bao phủ bởi test, được ghi dưới dạng phần trăm câu lệnh đã được kiểm tra đi qua. Đây là một số thông số quan trọng để xác định mức độ tin cậy của mã, thể hiện rằng các testcase đã bao gồm đủ các trường hợp, các luồng đi trong mã hay chưa. Nhóm đặt ra yêu cầu cho code coverage của mỗi service là ít nhất 75\% để đảm bảo chất lượng mã trong mỗi service.\\
 
-Nhóm tiến hành viết unit test cho các hàm, viết các bộ testcase cho hàm. Bộ testcase bao gồm:
+
+
+Nhóm tiến hành viết unit test cho các hàm, viết các bộ testcase cho hàm. Bộ testcase bao gồm:
 \begin{itemize}
-    \item Tên (name): mô tả về kết quả đầu ra mong muốn và trường hợp mà testcase sẽ đi qua.
-    \item Các tham số cần thiết (args): các tham số mà hàm đang test cần.
-    \item Kết quả mong đợi (want): kết quả mong muốn nhận được sau khi chạy testcase trên hàm. Trường này có thể có hoặc không.
-    \item Lỗi mong đợi (wantErr): hàm có trả về lỗi hay không, true là có lỗi, false là không có lỗi. Trường này có thể có hoặc không.
+    \item Tên (name): mô tả về kết quả đầu ra mong muốn và trường hợp mà testcase sẽ đi qua.
+    \item Các tham số cần thiết (args): các tham số mà hàm đang test cần.
+    \item Kết quả mong đợi (want): kết quả mong muốn nhận được sau khi chạy testcase trên hàm. Trường này có thể có hoặc không.
+    \item Lỗi mong đợi (wantErr): hàm trả về có lỗi hay không, true là có lỗi, false là không có lỗi. Trường này có thể có hoặc không.
 \end{itemize}
 
-Ở đây nhóm đưa ra ví dụ về việc viết unit test cho một hàm. Đây là unit test cho hàm ánh xạ dữ liệu của hàng hóa thuộc đơn hàng. Hàm sẽ nhận vào dữ liệu đọc từ database và ánh xạ cũng như tính toán các trường cần thiết. Các testcase mà nhóm xây dựng cho hàm này như sau:\\
+
+
+Tại đây, nhóm đã đưa ra ví dụ về việc viết unit test cho một hàm. Đây là unit test cho hàm ánh xạ dữ liệu của hàng hóa thuộc đơn hàng. Hàm sẽ tiếp nhận dữ liệu đọc từ cơ sở dữ liệu và ánh xạ cũng như tính toán các trường cần thiết. Các testcase mà nhóm xây dựng cho hàm này như sau:\\
+
+
 \newpage
 
 \begin{figure}[!htp]
     \begin{center}
         \includegraphics[width=10cm]{img/testing/unit_tc1.PNG}
     \end{center}
-    \caption{Định nghĩa testcase cho unit test - Trường hợp mapping với dữ liệu đầu vào tồn tại}
+    \caption{Định nghĩa testcase cho unit test - Trường hợp mapping với dữ liệu đầu vào tồn tại}
 \end{figure}
 
-Testcase này kiểm tra việc ánh xạ đúng dữ liệu đầu vào với các trường đầu ra, và đảm bảo kết quả tính toán các trường \emph{TotalGoods} và \emph{TotalDiscount} theo công thức đề ra.\\
-\newpage
+
+Testcase này kiểm tra việc ánh xạ chính xác dữ liệu đầu vào với các trường đầu ra và đảm bảo kết quả tính toán các trường \emph{TotalGoods} và \emph{TotalDiscount} theo công thức đề ra.\\
+
 
 \begin{figure}[!htp]
     \begin{center}
         \includegraphics[width=10cm]{img/testing/unit_tc2.PNG}
     \end{center}
-    \caption{Định nghĩa testcase cho unit test - Trường hợp dữ liệu đầu vào rỗng}
+    \caption{Định nghĩa testcase cho unit test - Trường hợp dữ liệu đầu vào trống}
 \end{figure}
 
-Testcase này bao quát một trường hợp ngách (edge case), đó là dữ liệu đầu vào rỗng. Với trường hợp này, mong muốn đầu ra là list hàng hóa rỗng và các trường \emph{TotalGoods}, \emph{TotalDiscount} đều là 0.\\
+Testcase này bao quát một trường hợp ngách (edge case), đó là dữ liệu đầu vào trống. Với trường hợp này, mong muốn đầu ra là danh sách hàng hóa rỗng và các trường \emph{TotalGoods}, \emph{TotalDiscount} đều là 0.\\
 
-Để chạy test cho service, đứng tại folder của service và chạy lệnh
+
+Để chạy test cho service, đứng tại folder của service và chạy lệnh
 \begin{lstlisting}
     make test
 \end{lstlisting}
 
-Lúc đó tất cả các unit test trong service đều được chạy và kết quả sau cùng sẽ được in ra. Ví dụ với service đơn hàng, kết quả test được in ra như sau:
+Lúc đó tất cả các unit test trong service đều được chạy và kết quả sau cùng sẽ được in ra. Ví dụ với service đơn hàng, kết quả kiểm tra được in ra như sau:
+
 \begin{lstlisting}
 PASS
 coverage: 78.8% of statements
 ok      store-bpel/order_service/internal/controller    0.006s
 \end{lstlisting}
 
-Tương tự với các service khác, nhóm thu được kết quả test và kết quả coverage của tất cả các service.
+Tương tự với các service khác, nhóm thu được kết quả test và kết quả coverage của tất cả các service.
 
-\subsection{Kết quả kiểm thử}
+
+\subsection{Kết quả kiểm thử}
 {
     \setlength\extrarowheight{6pt}
     \begin{longtable}{| p{4cm}| p{4cm}| p{4cm} |}
@@ -94,89 +104,96 @@ Tương tự với các service khác, nhóm thu được kết quả tes
     \end{longtable}
 }
 
-Có thể thấy tất cả service đều pass unit test và coverage đảm bảo lớn hơn 75\%, thỏa mãn yêu cầu nhóm đề ra. Do đó ứng dụng đã qua bước kiểm thử đơn vị.
+Có thể thấy tất cả service đều pass unit test và coverage đảm bảo lớn hơn 75\%, thỏa yêu cầu nhóm đề ra. Do đó, ứng dụng đó đã qua bước kiểm thử đơn vị.
 
-\section{Kiểm thử tích hợp (Integration testing)}
-\subsection{Phương pháp thực hiện}
+\newpage
+\section{Kiểm thử tích hợp (Integration testing)}
+\subsection{Phương pháp thực hiện}
 
-Sau khi thực hiện kiểm thử đơn vị cho những đơn vị nhỏ nhất của hệ thống, nhóm tiến hành kiểm thử tích hợp để đảm bảo các thành phần đó khi kết hợp lại sẽ hoạt động tốt và đúng như kì vọng. Nhóm thực hiện kiểm thử tích hợp trên các API của các service trong hệ thống. Việc này đảm bảo độ chính xác và tin cậy của các API được xuất ra từ các service. Nhóm sẽ kiểm thử trên các API của các service với các bộ testcase bao gồm:
+Sau khi thực hiện kiểm thử đơn vị cho các đơn vị nhỏ nhất của hệ thống, nhóm tiến hành kiểm thử tích hợp để đảm bảo các thành phần khi kết hợp lại sẽ hoạt động tốt và đúng như kỳ vọng. Nhóm thực hiện kiểm thử tích hợp trên các API của các service trong hệ thống. Điều này đảm bảo độ chính xác và tin cậy của các API được xuất ra từ các service. Nhóm sẽ kiểm thử các API của service với các bộ testcase bao gồm:
 \begin{itemize}
-    \item Tên API: tên testcase, mô tả chức năng của API mà testcase hướng đến.
-    \item Đầu API: đường dẫn của API đang test.
-    \item Input: data test đầu vào.
-    \item Mong đợi: kết quả mong đợi của testcase.
-    \item Kết quả: kết quả thực nhận từ API.
+    \item Tên API: tên testcase, chức năng mô tả của API mà testcase hướng tới.
+    \item Đầu API: đường dẫn của API đang test.
+    \item Input: dữ liệu đầu vào.
+    \item Mong đợi: kết quả mong đợi của testcase.
+    \item Kết quả: kết quả nhận được từ API.
 \end{itemize}
 
-Với mỗi bộ testcase, nhóm tạo tập data mẫu trong database để xác định kết quả mong đợi và kiểm tra kết quả thực nhận. Để chạy các testcase, nhóm dùng ứng dụng Postman để gọi tới các API của các service. Nhóm định nghĩa đầu API muốn test, thêm dữ liệu đầu vào và gọi để xem kết quả mà API trả về. Với các API hay tác vụ có cập nhật dữ liệu vào database, cần kiểm tra lại dữ liệu trong database sau khi test để đảm bảo dữ liệu đúng như kì vọng.\\
+Với mỗi bộ testcase, nhóm tạo tập dữ liệu mẫu trong cơ sở dữ liệu để xác định kết quả mong đợi và kiểm tra kết quả thực nhận. Để chạy các testcase, nhóm sử dụng ứng dụng Postman để gọi tới API của các service. Nhóm định nghĩa đầu API muốn kiểm tra, thêm dữ liệu đầu vào và gọi để xem kết quả mà API trả về. Với các API hoặc tác vụ có cập nhật dữ liệu vào cơ sở dữ liệu, cần kiểm tra lại dữ liệu trong cơ sở dữ liệu sau khi kiểm tra để đảm bảo dữ liệu đúng như kỳ vọng.\\
 
-Nhóm đưa ra ví dụ cho việc kiểm thử cho các API lấy thông tin người dùng bằng id và thêm người dùng. Đầu tiên nhóm tạo ra dữ liệu mẫu trong database của service người dùng, bảng customer:
+Nhóm đưa ra ví dụ để kiểm thử các API lấy thông tin người dùng bằng id và thêm người dùng. Nhóm đầu tiên tạo ra dữ liệu mẫu trong cơ sở dữ liệu của service người dùng, bảng customer:
+
+
 
 \begin{figure}[!htp]
     \begin{center}
         \includegraphics[width=15cm]{img/testing/sample_db.PNG}
     \end{center}
-    \caption{Data mẫu được tạo ra}
+    \caption{Data mẫu được tạo ra}
 \end{figure}
 
+\newpage
 \begin{itemize}
-    \item API lấy thông tin người dùng.
-    \begin{itemize}
-        \item Đầu API: GET /api/customer-service/customer/\{username\}
-        \item Input: username = user1
-        \item Mong đợi:
-        \newpage
-        \begin{figure}[!htp]
-            \begin{center}
-                \includegraphics[width=10cm]{img/testing/inte_expected_1.PNG}
-            \end{center}
-            \caption{Kết quả mong đợi}
-        \end{figure}
-        \item Kết quả: kết quả việc gọi API bằng Postman:\\
-        \newpage
-        \begin{figure}[!htp]
-            \begin{center}
-                \includegraphics[width=15cm]{img/testing/inte_get_customer.PNG}
-            \end{center}
-            \caption{Gọi API lấy thông tin người dùng bằng Postman}
-        \end{figure}
-        Kết quả đầu ra đúng với kết quả mong đợi.
-    \end{itemize}
-    \item API thêm người dùng.
-    \begin{itemize}
-        \item Đầu API: POST /api/customer-service/customer
-        \item Input:
-        \begin{figure}[!htp]
-            \begin{center}
-                \includegraphics[width=10cm]{img/testing/inte_input_2.PNG}
-            \end{center}
-            \caption{Dữ liệu đầu vào cho testcase của API thêm người dùng}
-        \end{figure}
-        \item Mong đợi: người dùng được thêm thành công và dữ liệu trong database đúng với đầu vào.
-        \item Kết quả: kết quả việc gọi API bằng Postman và dữ liệu trong database sau khi gọi:\\
-        \newpage
-        \begin{figure}[!htp]
-            \begin{center}
-                \includegraphics[width=15cm]{img/testing/inte_got_2.PNG}
-            \end{center}
-            \caption{Gọi API thêm người dùng bằng Postman}
-        \end{figure}
-        \begin{figure}[!htp]
-            \begin{center}
-                \includegraphics[width=15cm]{img/testing/inte_got_db_2.PNG}
-            \end{center}
-            \caption{Dữ liệu trong database sau khi gọi API}
-        \end{figure}
-        Kết quả đầu ra đúng với kết quả mong đợi.
-    \end{itemize}
+    \item API lấy thông tin người dùng.
+          \begin{itemize}
+              \item API: GET /api/customer-service/customer/\{username\}
+              \item Input: username = user1
+              \item Mong đợi:
+
+                    \begin{figure}[!htp]
+                        \begin{center}
+                            \includegraphics[width=10cm]{img/testing/inte_expected_1.PNG}
+                        \end{center}
+                        \caption{Kết quả mong đợi}
+                    \end{figure}
+
+                    \newpage
+              \item Kêt quả: Kết quả việc gọi API bằng Postman:\\
+                    \begin{figure}[!htp]
+                        \begin{center}
+                            \includegraphics[width=15cm]{img/testing/inte_get_customer.PNG}
+                        \end{center}
+                        \caption{Gọi API lấy thông tin người dùng bằng Postman}
+                    \end{figure}
+
+                    Kết quả đầu ra đúng với kết quả mong đợi.
+          \end{itemize}
+    \item API thêm người dùng.
+          \begin{itemize}
+              \item Đầu API: POST /api/customer-service/customer
+              \item Input:
+                    \begin{figure}[!htp]
+                        \begin{center}
+                            \includegraphics[width=10cm]{img/testing/inte_input_2.PNG}
+                        \end{center}
+                        \caption{Dữ liệu đầu vào cho testcase của API thêm người dùng }
+
+                    \end{figure}
+              \item Mong đợi: người dùng được thêm thành công vào trong cơ sở dữ liệu đúng với đầu vào.
+              \item Kết quả: kết quả việc gọi API bằng Postman và dữ liệu trong cơ sở dữ liệu sau khi gọi:\\
+
+                    \begin{figure}[!htp]
+                        \begin{center}
+                            \includegraphics[width=15cm]{img/testing/inte_got_2.PNG}
+                        \end{center}
+                        \caption{Gọi API thêm người dùng bằng Postman}
+                    \end{figure}
+                    \begin{figure}[!htp]
+                        \begin{center}
+                            \includegraphics[width=15cm]{img/testing/inte_got_db_2.PNG}
+                        \end{center}
+                        \caption{Dữ liệu trong cơ sở dữ liệu sau khi gọi API}
+                    \end{figure}
+                    Kết quả đầu ra đúng với kết quả mong đợi.
+          \end{itemize}
 \end{itemize}
 
-\subsection{Kết quả kiểm thử}
+\subsection{Kết quả kiểm thử}
+Nhóm tiến hành tạo các data mẫu và thực hiện kiểm thử các API và service còn lại tương tự như các ví dụ trên. Kết quả đầu ra đúng như kỳ vọng cho từng API và cho tất cả các service. Do đó, ứng dụng đã qua bước kiểm thử tích hợp.
 
-Nhóm tiến hành tạo các data mẫu và thực hiện kiểm thử với các API và service còn lại tương tự như các ví dụ trên. Kết quả đầu ra đúng như kì vọng cho mỗi API và cho tất cả các service. Do đó ứng dụng đã qua bước kiểm thử tích hợp.
-
+\newpage
 \section{Kiểm thử hệ thống (System testing)}
-\subsection{Phương pháp thực hiện}
+\subsection{Phương pháp thực hiện}
 
 Use case testing là một phương pháp kiểm thử phần mềm tập trung vào các tình huống sử dụng cụ thể của ứng dụng. Đây là một phương pháp kiểm thử hướng đối tượng, nó tập trung vào việc kiểm tra các chức năng và tính năng của phần mềm từ góc độ của người dùng. Cụ thể, use case testing được sử dụng để kiểm tra xem liệu phần mềm có hoạt động đúng như các kịch bản sử dụng mà người dùng mong đợi hay không.\\
 
@@ -599,8 +616,6 @@ Vì vậy, nhóm chọn sử dụng phương pháp Use-case testing để kiểm
         \caption{Kịch bản kiểm thử mua hàng trực tuyến}
     \end{longtable}
 }
-
-\newpage
 
 \subsection{Quản lý sự kiện}
 
@@ -1468,4 +1483,4 @@ Vì vậy, nhóm chọn sử dụng phương pháp Use-case testing để kiểm
         \caption{Kịch bản kiểm thử xem thông tin chi tiết đơn hàng trực tiếp}
     \end{longtable}
 }
-Các kịch bản test đều được kết quả PASS. Do đó ứng dụng đã qua bước kiểm thử hệ thống.
+Các kịch bản kiểm tra đều đạt kết quả PASS. Do đó, ứng dụng đã qua bước kiểm thử hệ thống.

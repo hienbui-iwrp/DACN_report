@@ -48,7 +48,18 @@
 \usepackage{graphicx}
 \usepackage{wrapfig}
 
-
+\lstdefinestyle{myStyle}{
+    belowcaptionskip=1\baselineskip,
+    breaklines=true,
+    frame=none,
+    numbers=none,
+    basicstyle=\footnotesize\ttfamily,
+    keywordstyle=\bfseries\color{green!40!black},
+    commentstyle=\itshape\color{purple!40!black},
+    identifierstyle=\color{blue},
+    backgroundcolor=\color{gray!10!white},
+}
+\lstset{style=myStyle}
 
 \newtheorem{theorem}{{\bf Định lý}}
 \newtheorem{property}{{\bf Tính chất}}
@@ -348,79 +359,79 @@ Cuối cùng, nhóm xin gửi lời cám ơn đến quý thầy cô trong Khoa K
 \listoftables
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Giới thiệu
+\chapter{Tổng quan}
+\input{tex/intro}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Cơ sở lý thuyết
+\chapter{Cơ sở lý thuyết}
+\input{tex/theory}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% % Giới thiệu
-% \chapter{Tổng quan}
-% \input{tex/intro}
+\chapter{Thiết kế hệ thống}
+% Requirement
+\input{tex/Requirement}
 
-% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+% Usecase
+\input{tex/usecase}
 
-% %% Cơ sở lý thuyết
-% \chapter{Cơ sở lý thuyết}
-% \input{tex/theory}
+\newpage
+% BPMN
+\input{tex/BPMN-diagram}
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+% Architecture
+\input{tex/architecture}
 
-% \chapter{Thiết kế hệ thống}
-% % Requirement
-% \input{tex/Requirement}
-
-% \newpage
-% % Usecase
-% \input{tex/usecase}
-
-% \newpage
-% % BPMN
-% \input{tex/BPMN-diagram}
-
-% \newpage
-% % Architecture
-% \input{tex/architecture}
-
-% \newpage
-% % Database
-% \input{tex/database}
+\newpage
+% Database
+\input{tex/database}
 
 
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \chapter{Công nghệ}
-% % % technology
-% \input{tex/technology}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \chapter{Hiện thực hệ thống}
-% % file structure
-% \input{tex/file-structure}
-
-% % design pattern
-% % \input{tex/design-pattern}
-
-% \newpage
-% % UI
-% \input{tex/UI}
-
-% \newpage
-% % BPEL
-% \input{tex/BPEL}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \chapter{Kiểm thử phần mềm}
-% % summary
-% \input{tex/testing}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Công nghệ}
+% % technology
+\input{tex/technology}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Hiện thực hệ thống}
+% file structure
+\input{tex/file-structure}
+
+% design pattern
+% \input{tex/design-pattern}
+
+\newpage
+% UI
+\input{tex/UI}
+
+\newpage
+% BPEL
+\input{tex/BPEL}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Kiểm thử phần mềm}
+% summary
+\input{tex/testing}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Tổng kết}
 % process
 \input{tex/process}
 
-% % summary
-% \input{tex/summary}
+% summary
+\input{tex/summary}
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

@@ -1792,59 +1792,6 @@ Mỗi phương pháp có các ưu điểm và nhược điểm riêng. Đối v�
 
 Ở hệ thống này, nhóm lựa chọn phương pháp Choreography để hiện thực việc giao tiếp giữa các service, để đảm bảo tính phân chia rõ ràng và ít phụ thuộc (loosely-coupled) giữa các service, đồng thời hạn chế các nhược điểm khi luồng thực thi trong những lần gọi là không phức tạp.
 
-\subsubsubsection{Giao tiếp của Order Service}
-\begin{figure}[!htp]
-	\centering
-	\includegraphics[width=8cm]{img/Architecture/service/customer-order-call.png}
-	\newline
-	\caption{Lược đồ giao tiếp đồng bộ của Customer order Service với các dịch vụ khác}
-\end{figure}
-
-\begin{itemize}
-	\item \textbf{Goods service}: Customer order service gọi tới Goods service để thực hiện lấy thông tin cần thiết của sản phẩm, sử dụng dữ liệu đó để tính toán cho đơn hàng cũng như tạo đơn hàng.
-	\item \textbf{Event service}: Customer order service gọi tới Event service để thực hiện lấy thông tin sự kiện giảm giá để tính toán giá tiền cho đơn hàng.
-\end{itemize}
-
-
-\subsubsubsection{Giao tiếp của Cart Service}
-\begin{figure}[!htp]
-	\centering
-	\includegraphics[width=8cm]{img/Architecture/service/cart-call.png}
-	\newline
-	\caption{Lược đồ giao tiếp đồng bộ của Cart Service với các dịch vụ khác}
-\end{figure}
-
-\begin{itemize}
-	\item \textbf{Goods service}: Cart service gọi tới Goods service để thực hiện lấy thông tin cần thiết của sản phẩm, sử dụng dữ liệu đó để tính toán cho tổng giá tiền trong giỏ hàng.
-	\item \textbf{Event service}: Cart service gọi tới Event service để thực hiện lấy thông tin sự kiện giảm giá để tính toán giá tiền cho sản phẩm trong giỏ hàng.
-\end{itemize}
-
-\newpage
-\subsubsubsection{Giao tiếp của Staff Service}
-\begin{figure}[!htp]
-	\centering
-	\includegraphics[width=7cm]{img/Architecture/service/staff-call.png}
-	\newline
-	\caption{Lược đồ giao tiếp đồng bộ của Staff Service với các dịch vụ khác}
-\end{figure}
-
-\begin{itemize}
-	\item \textbf{Account service}: Staff service gọi tới Account service để thực hiện cập nhật hoặc thêm tài khoản của nhân viên.
-	\item \textbf{Warehouse service}: Staff service gọi tới Warehouse service để thực hiện cập nhật lại thông tin quản lý khi đổi quyền của nhân viên.
-	\item \textbf{Branch service}: Staff service gọi tới Branch service để thực hiện cập nhật lại thông tin quản lý khi đổi quyền của nhân viên.
-\end{itemize}
-
-\subsubsubsection{Giao tiếp của Account Service}
-\begin{figure}[!htp]
-	\centering
-	\includegraphics[width=6cm]{img/Architecture/service/account-call.png}
-	\newline
-	\caption{Lược đồ giao tiếp đồng bộ của Account Service với các dịch vụ khác}
-\end{figure}
-
-\begin{itemize}
-	\item \textbf{Customer service}: Account service gọi tới Customer service để thực hiện thêm người dùng tương ứng với tài khoản vừa được tạo.
-\end{itemize}
 
 \subsubsection{Giao tiếp bất đồng bộ giữa các Services}
 
@@ -1864,7 +1811,8 @@ Dưới đây là các giao tiếp bất đồng bộ có trong hệ thống:
 
 \begin{itemize}
 	\item Customer Topic: Khi một tài khoản được đăng kí, thông tin khách hàng sẽ được gởi đến customer service
-	\item Cart Topic: Khi một khách hàng được thêm mới, 1 cart sẽ được thêm tương ứng vào Cart service
+	\item Cart Topic: Khi một tài khoản được thêm mới, 1 cart sẽ được thêm tương ứng vào Cart service
+	\item Account Topic: Khi một nhân viên được thêm vào hệ thống, 1 tài khoản sẽ được cập nhật tương ứng bên account service
 	\item Statistic Topic: Khi Order Service đã cập nhật thông tin đơn hàng mới sẽ gửi thông tin đơn hàng cho Statistic Service để thống kê
 	\item Branch Topic: Khi một nhân viên được thêm, thông tin nhân viên làm tại chi nhánh nào sẽ được cập nhật vào Branch Service
 \end{itemize}
