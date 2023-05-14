@@ -1,30 +1,63 @@
 % !TeX root = ..\main.tex
 
 \section{Front-end}
+Để lựa chọn công nghệ phù hợp để hiện thực, nhóm sẽ thực hiên xem xét một số công nghệ phổ biến hiện nay
+
+\subsection{React}
+\hspace*{0.5cm} React là một thư viện Javascript dùng để xây dựng giao diện người dùng được phát triển bởi facebook\\
+
+\textbf{Ưu điểm \cite{technologyFE}:}
+\begin{itemize}
+    \item Các component có thể tái sử dụng của React đảm bảo rằng các lập trình viên không phải viết đi viết lại cùng một đoạn codes
+    \item Do tính phổ biến của react, việc tìm kiếm sự giúp đỡ, tài nguyên dành cho React là rất dễ dàng
+\end{itemize}
+
+\textbf{Nhược điểm \cite{technologyFE}:}
+\begin{itemize}
+    \item Các tài liệu không nhất quán.
+    \item Không hỗ trợ SEO
+\end{itemize}
+
+\subsection{Vue.js}
+
+\hspace*{0.5cm} Là framework của Javascript được phát triển bởi Google, là phiên bản tối giản của Angular.    \\
+
+
+\textbf{Ưu điểm \cite{technologyFE}:}
+\begin{itemize}
+    \item Các thành phần có thể được tạo ra từ HTML, CSS và JS truyền thống. Chính vì thế nó giúp các lập trình viên dễ dàng tìm hiểu. Dễ học hơn so với React.
+    \item Nhiều thư viện và công cụ hỗ trợ.
+    \item Đơn giản, dễ học
+\end{itemize}
+
+\textbf{Nhược điểm \cite{technologyFE}:}
+\begin{itemize}
+    \item Tài liệu còn ít, do ra đời muộn
+    \item Cộng động sử dụng ít hơn so với React
+\end{itemize}
+
 \subsection{Next.js}
 
 \hspace*{0.5cm} Next.js là một framework được phát triển bổ sung các khả năng render phía máy chủ (SSR). Next.js xây dựng dựa trên nền tảng là thư viện React, do đó các ứng dụng Next.js tương tự như các ứng dụng từ React nhưng được thêm các tính năng bổ sung.\\
 
-\begin{figure}[!htp]
-    \begin{center}
-        \includegraphics[width=5cm]{img/Technology/next.png}
-    \end{center}
-    \caption{Logo Next.js \cite{technologyNextjs}}
-\end{figure}
 
-Ưu điểm của Next.js \cite{technologyNextAdvance}:
+\textbf{Ưu điểm \cite{technologyNextAdvance}:}
 \begin{itemize}
     \item Dễ hiểu và dễ sử dụng: Có nền tảng từ ReactJs nên không khó để học và sử dụng với cộng đồng sử dụng lớn
     \item Hỗ trợ SEO: Next.js được bổ sung khả năng SSR, giúp hỗ trợ cho SEO tốt hơn nhiều so với React
 \end{itemize}
 
-Nhược điểm của Next.js \cite{technologyNextAdvance}::
+\textbf{Nhược điểm \cite{technologyNextAdvance}:}
 \begin{itemize}
     \item Quá phức tạp và không cần thiết đối với các ứng dụng đơn giản
     \item Thời gian build hệ thống lớn hơn so với React
 \end{itemize}
 
-\subsection{Ant Design}
+Vì nhóm xây dựng một hệ thống cửa hàng thời trang, do đó việc hỗ trợ SEO là một yếu tố không thể bỏ qua nên Next.js là công nghệ nhóm chọn để sử dụng. \\
+
+Bên cạnh đó nhóm còn sử dụng thư viện components để hỗ trợ việc hiện thực hệ thống:
+
+\subsection*{Ant Design}
 \hspace*{0.5cm} Ant Design là một thư viện của React cung cấp rất nhiều component có tính thông dụng cao, đa dạng và đầy đủ để đáp ứng các nhu cầu để không cần phải định nghĩa thêm các base component nữa. Ant Design có một cộng đồng sử dụng rất lớn, hiện tại số lượt started ở trên github của Ant Design đã đạt hơn 83 nghìn lượt \cite{technologyAntdStar}.
 
 \begin{figure}[!htp]
