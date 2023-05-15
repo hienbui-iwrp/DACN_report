@@ -48,6 +48,8 @@
 \usepackage{graphicx}
 \usepackage{wrapfig}
 
+\usepackage{tocbibind} % Sử dụng gói lệnh tocbibind
+
 \lstdefinestyle{myStyle}{
     belowcaptionskip=1\baselineskip,
     breaklines=true,
@@ -285,10 +287,10 @@
 	\begin{table}[h]
 		\setupfont{13pt}
 		\begin{tabular}{rll}
-			\hspace{5 cm} & \textbf{HỘI ĐỒNG:} & Hội đồng 21 Khoa học Máy tính                \\
+			\hspace{5 cm} & \textbf{HỘI ĐỒNG:} & Khoa học Máy tính 21                         \\
 			              & \textbf{GVHD:}     & TS. Trương Thị Thái Minh                     \\
 			              &                    & TS. Nguyễn An Khương                         \\
-			              & \textbf{TKHĐ:}     & TS. Trương Thị Thái Minh                     \\
+			              & \textbf{GVPB:}     & Phan Trung Hiếu                              \\
 			              &                    & \multicolumn{1}{c}{\bf---o0o---}\vspace{2mm} \\
 			              & \textbf{SVTH 1:}   & Bùi Lương Vinh Hiển - 1913380                \\
 			              & \textbf{SVTH 2:}   & Trần Tuấn Phong - 1914641                    \\
@@ -316,7 +318,7 @@
 	\addcontentsline{toc}{chapter}{Lời cam đoan}
 \end{center}
 
-Nhóm xin cam đoan đây là công trình nghiên cứu của riêng nhóm dưới sự hướng dẫn của ThS. Trương Thị Thái Minh, TS. Nguyễn An Khương. Nội dung phân tích và thiết kế hệ thống của nhóm đều là trung thực. Các lý thuyết được sử dụng cho quá trình phân tích, xây dựng được chính nhóm thu thập từ nhiều nguồn khác nhau và sẽ được ghi rõ trong phần tài liệu tham khảo. Ngoài ra, nhóm cũng có sử dụng một số nhận xét, đánh giá và số liệu của các tác giả khác, cơ quan tổ chức khác. Tất cả đều có trích dẫn và chú thích nguồn gốc. Nếu phát hiện có bất kì sự gian lận nào, nhóm xin hoàn toàn chịu trách nhiệm về nội dung đồ án tốt nghiệp của mình. Trường đại học Bách Khoa thành phố Hồ Chí Minh không liên quan đến những vi phạm tác quyền, bản quyền do nhóm gây ra trong quá trình thực hiện.
+Nhóm xin cam đoan đây là công trình nghiên cứu của riêng nhóm dưới sự hướng dẫn của TS. Trương Thị Thái Minh, TS. Nguyễn An Khương. Nội dung phân tích và thiết kế hệ thống của nhóm đều là trung thực. Các lý thuyết được sử dụng cho quá trình phân tích, xây dựng được chính nhóm thu thập từ nhiều nguồn khác nhau và sẽ được ghi rõ trong phần tài liệu tham khảo. Ngoài ra, nhóm cũng có sử dụng một số nhận xét, đánh giá và số liệu của các tác giả khác, cơ quan tổ chức khác. Tất cả đều có trích dẫn và chú thích nguồn gốc. Nếu phát hiện có bất kì sự gian lận nào, nhóm xin hoàn toàn chịu trách nhiệm về nội dung đồ án tốt nghiệp của mình. Trường đại học Bách Khoa thành phố Hồ Chí Minh không liên quan đến những vi phạm tác quyền, bản quyền do nhóm gây ra trong quá trình thực hiện.
 
 \vspace{1cm}
 
@@ -358,6 +360,39 @@ Cuối cùng, nhóm xin gửi lời cám ơn đến quý thầy cô trong Khoa K
 
 \listoftables
 
+\newpage
+\textbf{Các cụm từ viết tắt có trong bài:}
+{
+	\setlength\extrarowheight{6pt}
+	\begin{longtable}{| p{4cm} | p{11cm} |}
+
+		\hline
+		\textbf{Cụm từ viết tắt} & \textbf{Cụm từ đầy đủ}                              \\
+		\hline
+		%%%%%%%%%%%%%%%%%%%%%%
+		BPM                      & Business Process Management                         \\
+		\hline
+		%%%%%%%%%%%%%%%%%%%%%%
+		BPA                      & Business Process Automation                         \\
+		\hline
+		%%%%%%%%%%%%%%%%%%%%%%
+		BPMN                     & Business Process Management Notations               \\
+		\hline
+		%%%%%%%%%%%%%%%%%%%%%%
+		BPEL                     & Business Process Execution Language                 \\
+		\hline
+		%%%%%%%%%%%%%%%%%%%%%%
+		BPEL4WS                  & Business Process Execution Language for Web Service \\
+		\hline
+		%%%%%%%%%%%%%%%%%%%%%%
+		BFF                      & Backend For Frontend                                \\
+		\hline
+		%%%%%%%%%%%%%%%%%%%%%%
+		SEO                      & Search Engine Optimization                          \\
+		\hline
+	\end{longtable}
+
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -397,18 +432,14 @@ Cuối cùng, nhóm xin gửi lời cám ơn đến quý thầy cô trong Khoa K
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Công nghệ}
+\chapter{Hiện thực hệ thống}
 % % technology
 \input{tex/technology}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\chapter{Hiện thực hệ thống}
+\newpage
 % file structure
 \input{tex/file-structure}
 
-% design pattern
-% \input{tex/design-pattern}
 
 \newpage
 % UI
@@ -433,7 +464,7 @@ Cuối cùng, nhóm xin gửi lời cám ơn đến quý thầy cô trong Khoa K
 % summary
 \input{tex/summary}
 
-% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % refer
 \input{tex/refer}

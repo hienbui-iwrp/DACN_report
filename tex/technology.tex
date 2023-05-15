@@ -1,9 +1,10 @@
 % !TeX root = ..\main.tex
 
-\section{Front-end}
-Để lựa chọn công nghệ phù hợp cho frontend, nhóm sẽ thực hiện xem xét một số công nghệ phổ biến hiện nay.
+\section{Lựa chọn công nghệ}
+\subsection{Front-end}
+Để lựa chọn công nghệ phù hợp cho frontend, nhóm sẽ thực hiện việc xem xét một số công nghệ phổ biến hiện nay.
 
-\subsection{React}
+\subsubsection{React}
 \hspace*{0.5cm} React là một thư viện Javascript dùng để xây dựng giao diện người dùng được phát triển bởi facebook.\\
 
 \textbf{Ưu điểm \cite{technologyFE}:}
@@ -18,7 +19,7 @@
     \item Không hỗ trợ SEO.
 \end{itemize}
 
-\subsection{Vue.js}
+\subsubsection{Vue.js}
 
 \hspace*{0.5cm} Là framework của Javascript được phát triển bởi Google, là phiên bản tối giản của Angular.    \\
 
@@ -36,7 +37,7 @@
     \item Cộng động sử dụng ít hơn so với React.
 \end{itemize}
 
-\subsection{Next.js}
+\subsubsection{Next.js}
 
 \hspace*{0.5cm} Next.js là một framework được phát triển bổ sung các khả năng render phía máy chủ (SSR). Next.js xây dựng dựa trên nền tảng là thư viện React, do đó các ứng dụng Next.js tương tự như các ứng dụng từ React nhưng được thêm các tính năng bổ sung.\\
 
@@ -57,15 +58,15 @@ Vì nhóm xây dựng một hệ thống cửa hàng thời trang, do đó việ
 
 Bên cạnh đó nhóm còn sử dụng thư viện components để hỗ trợ việc hiện thực hệ thống:
 
-\subsection*{Ant Design}
+\subsubsection*{Ant Design}
 \hspace*{0.5cm} Ant Design là một thư viện của React cung cấp rất nhiều component có tính thông dụng cao, đa dạng và đầy đủ để đáp ứng các nhu cầu để không cần phải định nghĩa thêm các base component nữa. Ant Design có một cộng đồng sử dụng rất lớn, hiện tại số lượt starred ở trên github của Ant Design đã đạt hơn 83 nghìn lượt \cite{technologyAntdStar}.
 
-\begin{figure}[!htp]
-    \begin{center}
-        \includegraphics[width=5cm]{img/Technology/antd.jpg}
-    \end{center}
-    \caption{Logo Ant Design \cite{technologyAntd}}
-\end{figure}
+% \begin{figure}[!htp]
+%     \begin{center}
+%         \includegraphics[width=5cm]{img/Technology/antd.jpg}
+%     \end{center}
+%     \caption{Logo Ant Design \cite{technologyAntd}}
+% \end{figure}
 
 \hspace*{0.5cm} Ưu điểm của Ant Design bao gồm:
 \begin{itemize}
@@ -77,66 +78,65 @@ Bên cạnh đó nhóm còn sử dụng thư viện components để hỗ trợ 
 \end{itemize}
 
 
-\section{Back-end}
-Để lựa chọn công nghệ phù hợp cho backend, nhóm tiến hành xem xét một vài ngôn ngữ và framework phổ biến hiện nay. Nhóm sẽ phân tích ngôn ngữ Python, Golang và framework Express.js để đưa ra lựa chọn tốt nhất.
+\subsection{Back-end}
+Để lựa chọn công nghệ phù hợp cho backend, nhóm tiến hành xem xét một số ngôn ngữ và framework phổ biến hiện nay. Nhóm sẽ phân tích ngôn ngữ Python, Golang và framework Express.js để đưa ra lựa chọn tốt nhất.
 
-\subsection{Python}
-Python là một ngôn ngữ lập trình phổ biến, được sử dụng rộng rãi và đáp ứng được nhiều nhu cầu trong đó có việc phát triển backend.
 
-\textbf{Ưu điểm:}
+\subsubsection{Python}
+Python là một ngôn ngữ lập trình biến phổ biến, được sử dụng rộng rãi và đáp ứng được nhiều nhu cầu trong đó có việc phát triển backend.
+
+
+\textbf{Ưu điểm:}
 \begin{itemize}
-    \item Đơn giản, dễ tiếp cận và thân thiện với người dùng.
-    \item Cộng đồng người dùng lớn.
-    \item Thoải mái và dễ dàng khi làm việc vì đây là ngôn ngữ interpreter và không quản lý kiểu.
-    \item Hỗ trợ đa luồng giúp lập trình viên có thể scale ứng dụng.
+    \item Đơn giản, dễ tiếp cận và thân thiện với người dùng.
+    \item Cộng đồng người dùng lớn.
+    \item Thoải mái và dễ dàng khi làm việc vì đây là ngôn ngữ interpreter và không quản lý kiểu.
+    \item Hỗ trợ đa luồng giúp lập trình viên có thể mở rộng quy mô ứng dụng.
 \end{itemize}
 
-\textbf{Nhược điểm:}
+
+\textbf{Nhược điểm:}
 \begin{itemize}
-    \item Việc quản lý kiểu dữ liệu không chặt chẽ là nguy cơ gây ra lỗi cho ứng dụng khi chạy thực tế, vì lập trình viên không biết cách xử lý chính xác khi đối diện với các biến trong chương trình.
-    \item Thời gian thực thi chậm.
+    \item Việc quản lý kiểu dữ liệu không chặt chẽ là nguyên nhân gây ra lỗi cho ứng dụng khi chạy thực tế, bởi vì lập trình viên không biết cách xử lý chính xác khi đối diện với các biến trong chương trình.
+    \item Thời gian thực thi chậm.
 \end{itemize}
 
-\subsection{Express.js}
-Express.js là một framework của Javascript, được đông đảo người dùng sử dụng để phát triển các ứng dụng web và hệ thống backend.
 
-\textbf{Ưu điểm:}
+\subsubsection{Express.js}
+Express.js là một framework của Javascript, được đông đảo người dùng sử dụng để phát triển các ứng dụng web và hệ thống backend.
+
+\textbf{Ưu điểm:}
 \begin{itemize}
-    \item Cộng đồng người dùng lớn, hệ sinh thái của ngôn ngữ Javascript giúp lập trình viên Express.js có thể dễ dàng làm việc với các thư viện frontend khác như React, Next.
-    \item Thoải mái và dễ dàng khi làm việc vì đây là ngôn ngữ interpreter và không quản lý kiểu.
-    \item Tính scale cao, phù hợp xây dựng hệ thống từ nhỏ tới lớn.
+    \item Cộng đồng người dùng lớn, hệ sinh thái của ngôn ngữ Javascript giúp lập trình viên Express.js có thể dễ dàng làm việc với các giao diện thư viện khác như React, Next.
+    \item Thoải mái và dễ dàng khi làm việc vì đây là trình thông dịch ngôn ngữ và không quản lý kiểu dữ liệu.
+    \item Tính scale cao, phù hợp xây dựng hệ thống từ nhỏ tới lớn.
 \end{itemize}
 
-\textbf{Nhược điểm:}
+\textbf{Nhược điểm:}
 \begin{itemize}
-    \item Việc quản lý kiểu dữ liệu không chặt chẽ là nguy cơ gây ra lỗi cho ứng dụng khi chạy thực tế, vì lập trình viên không biết cách xử lý chính xác khi đối diện với các biến trong chương trình.
+    \item Việc quản lý kiểu dữ liệu không chặt chẽ là nguyên nhân gây ra lỗi cho ứng dụng khi chạy thực tế, bởi vì lập trình viên không biết cách xử lý chính xác khi đối diện xử lý các biến trong chương trình.
 \end{itemize}
 
-\subsection{Golang}
-Golang là một ngôn ngữ mới, được phát triển bởi Google nhằm sử dụng cho các hệ thống scale lớn. Đây là ngôn ngữ hiệu quả cho việc xây dựng hệ thống nói chung, và xây dựng hệ thống microservice nói riêng.
+\subsubsection{Golang}
+Golang là một ngôn ngữ mới, được phát triển bởi Google với mục đích sử dụng cho các hệ thống quy mô lớn. Đây là ngôn ngữ hiệu quả cho việc xây dựng hệ thống nói chung và xây dựng hệ thống microservice nói riêng.
 
-\textbf{Ưu điểm:}
+\textbf{Ưu điểm:}
 \begin{itemize}
-    \item Cộng đồng người dùng lớn.
-    \item Là ngôn ngữ quản lý kiểu chặt chẽ, giúp giảm thiểu đáng kể lỗi về dữ liệu và luồng thực thi của mã nguồn.
-    \item Mạnh về lập trình đa luồng, giúp lập trình viên dễ dàng scale ứng dụng và quản lý giao tiếp giữa các luồng.
-    \item Tính scale cao, phù hợp xây dựng hệ thống từ nhỏ tới lớn.
-    \item Tốc độ thực thi nhanh vì đây là ngôn ngữ compiler và có sự tối ưu khi build mã nguồn.
-    \item Đối với các hệ thống microservice, Golang hiện là lựa chọn hàng đầu.
+    \item Cộng đồng người dùng lớn.
+    \item Là ngôn ngữ quản lý kiểu chặt chẽ, giúp giảm thiểu đáng kể lỗi về dữ liệu và luồng thực thi của mã nguồn.
+    \item Mạnh về lập trình đa luồng, giúp lập trình thành viên dễ dàng mở rộng quy mô ứng dụng và quản lý giao tiếp giữa các luồng.
+    \item Tính scale cao, phù hợp xây dựng hệ thống từ nhỏ tới lớn.
+    \item Tốc độ thực thi nhanh vì đây là ngôn ngữ compiler và có sự tối ưu hóa khi build mã nguồn.
+    \item Đối với các hệ thống microservice, Golang hiện là lựa chọn hàng đầu.
 \end{itemize}
 
-\textbf{Nhược điểm:}
+\textbf{Nhược điểm:}
 \begin{itemize}
-    \item Việc quản lý chặt chẽ kiểu dữ liệu có thể làm lập trình viên gặp khó khi làm việc.
+    \item Quản lý chặt chẽ kiểu dữ liệu có thể làm cho việc lập trình viên gặp khó khăn khi làm việc.
 \end{itemize}
 
-\hspace{0.5cm}Xét các ưu và nhược điểm của các ngôn ngữ và framework trên, nhóm nhận thấy Golang là ngôn ngữ phù hợp nhất. Sự chặt chẽ và an toàn của Golang giúp đảm bảo hệ thống sẽ tránh được các lỗi về dữ liệu. Bên cạnh đó tốc độ thực thi nhanh và khả năng lập trình đa luồng và quản lý đa luồng giúp hệ thống mà nhóm xây dựng dễ dàng scale và đáp ứng nhu cầu lớn về tải. Cộng đồng người dùng lớn cũng là một yếu tố quan trọng giúp nhóm có nhiều sự tham khảo và hỗ trợ khi hiện thực.
+\hspace{0.5cm}Xét các ưu điểm và nhược điểm của các ngôn ngữ và framework trên, nhóm nhận thấy Golang là ngôn ngữ phù hợp nhất. Sự chặt chẽ và an toàn của Golang giúp đảm bảo hệ thống sẽ tránh được các lỗi về dữ liệu. Bên cạnh đó tốc độ thực thi nhanh và khả năng lập trình đa luồng và quản lý đa luồng giúp hệ thống mà nhóm xây dựng dễ dàng mở rộng quy mô và đáp ứng nhu cầu tải lớn. Cộng đồng người dùng lớn cũng là một yếu tố quan trọng giúp nhóm có nhiều sự tham khảo và hỗ trợ khi hiện thực.\\
 
-\begin{figure}[!htp]
-    \begin{center}
-        \includegraphics[width=5cm]{img/Technology/Golang.png}
-    \end{center}
-    \caption{Logo Golang \cite{technologyGolang}}
-\end{figure}
+
 
 \hspace{0.5cm}Qua đó, có thể thấy Golang có nhiều ưu điểm khi sử dụng. Với lợi thế về hiệu năng, khả năng mở rộng và độ tin cậy, Golang là lựa chọn thích hợp cho nhóm trong dự án này.
