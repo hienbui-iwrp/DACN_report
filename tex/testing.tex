@@ -6,7 +6,7 @@
 
 Bản thân ngôn ngữ Golang có hỗ trợ thư viện \textbf{testing} để viết test, do đó nhóm sử dụng thư viện này để viết các bộ testcase.\\
 
-Nhóm thực hiện unit test cho các service trong hệ thống để đảm bảo tính đúng đắn của mã nguồn từ mức thấp nhất và kiểm tra mức độ bao phủ của unit test với mã nguồn (hay còn được gọi là coverage). Code coverage là một thông số cho biết mức độ mà mã nguồn đã được bao phủ bởi test, được ghi dưới dạng phần trăm câu lệnh đã được kiểm tra đi qua. Đây là một số thông số quan trọng để xác định mức độ tin cậy của mã, thể hiện rằng các testcase đã bao gồm đủ các trường hợp, các luồng đi trong mã hay chưa. Nhóm đặt ra yêu cầu cho code coverage của mỗi service là ít nhất 75\% để đảm bảo chất lượng mã trong mỗi service.\\
+Nhóm thực hiện unit test cho các service trong hệ thống để đảm bảo tính đúng đắn của mã nguồn từ mức thấp nhất và kiểm tra mức độ bao phủ của unit test với mã nguồn (hay còn được gọi là coverage). Code coverage là một thông số cho biết mức độ mà mã nguồn đã được bao phủ bởi test, được ghi dưới dạng phần trăm câu lệnh đã được kiểm tra đi qua. Đây là một số thông số quan trọng để xác định mức độ tin cậy của mã, thể hiện rằng các testcase đã bao gồm đủ các trường hợp, các luồng đi trong mã hay chưa. Nhóm đặt ra yêu cầu cho code coverage của mỗi service là ít nhất 90\% để đảm bảo chất lượng mã trong mỗi service.\\
 
 
 
@@ -55,7 +55,7 @@ Lúc đó tất cả các unit test trong service đều được chạy và k�
 
 \begin{lstlisting}
 PASS
-coverage: 78.8% of statements
+coverage: 90.1% of statements
 ok      store-bpel/order_service/internal/controller    0.006s
 \end{lstlisting}
 
@@ -65,46 +65,46 @@ Tương tự với các service khác, nhóm thu được kết quả test và k
 \subsection{Kết quả kiểm thử}
 {
     \setlength\extrarowheight{6pt}
-    \begin{longtable}{| p{4cm}| p{4cm}| p{4cm} |}
+    \begin{longtable}{| p{4cm}| p{4cm}| p{4cm}| p{4cm} |}
         \hline
-        \textbf{Service}  & \textbf{Coverage} & \textbf{Kết quả} \\
-        \hline
-        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        Account Service   & 77.6\%            & PASS             \\
+        \textbf{Service} &  \textbf{Số testcase}  & \textbf{Coverage} & \textbf{Kết quả} \\
         \hline
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        Branch Service    & 83.3\%            & PASS             \\
+        Account Service  &  38  & 93.3\%            & PASS             \\
         \hline
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        Cart Service      & 82.4\%            & PASS             \\
+        Branch Service  &  20  & 93.3\%            & PASS             \\
         \hline
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        Customer Service  & 80.0\%            & PASS             \\
+        Cart Service  &  16   & 91.2\%            & PASS             \\
         \hline
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        Event Service     & 80.0\%            & PASS             \\
+        Customer Service  &  14  & 93.3\%            & PASS             \\
         \hline
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        Goods Service     & 76.0\%            & PASS             \\
+        Event Service  &   25   & 93.3\%            & PASS             \\
         \hline
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        Order Service     & 78.8\%            & PASS             \\
+        Goods Service  &   53   & 90.3\%            & PASS             \\
         \hline
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        Staff Service     & 76.4\%            & PASS             \\
+        Order Service  &   35   & 90.1\%            & PASS             \\
         \hline
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        Statistic Service & 83.3\%            & PASS             \\
+        Staff Service  &  33   & 91.3\%            & PASS             \\
         \hline
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        Warehouse Service & 76.9\%            & PASS             \\
+        Statistic Service  & 17 & 95.2\%            & PASS             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Warehouse Service  &  27  & 92.3\%            & PASS             \\
         \hline
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         \caption{Kết quả của kiểm thử đơn vị}
     \end{longtable}
 }
 
-Có thể thấy tất cả service đều pass unit test và coverage đảm bảo lớn hơn 75\%, thỏa yêu cầu nhóm đề ra. Do đó, ứng dụng đó đã qua bước kiểm thử đơn vị.
+Có thể thấy tất cả service đều pass unit test và coverage đảm bảo lớn hơn 90\%, thỏa yêu cầu nhóm đề ra. Do đó, ứng dụng đó đã qua bước kiểm thử đơn vị.
 
 \newpage
 \section{Kiểm thử tích hợp (Integration testing)}
