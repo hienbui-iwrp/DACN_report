@@ -189,7 +189,59 @@ Nhóm đưa ra ví dụ để kiểm thử các API lấy thông tin người d�
 \end{itemize}
 
 \subsection{Kết quả kiểm thử}
-Nhóm tiến hành tạo các data mẫu và thực hiện kiểm thử các API và service còn lại tương tự như các ví dụ trên. Kết quả đầu ra đúng như kỳ vọng cho từng API và cho tất cả các service. Do đó, ứng dụng đã qua bước kiểm thử tích hợp.
+Nhóm tiến hành tạo các data mẫu và thực hiện kiểm thử các API và service còn lại tương tự như các ví dụ trên. Kết quả kiểm thử được trình bày trong bảng sau:
+% đầu ra đúng như kỳ vọng cho từng API và cho tất cả các service.
+\setlength\extrarowheight{6pt}
+    \begin{longtable}{| p{4cm}| p{4cm}| p{4cm}| p{4cm} |}
+        \hline
+        \textbf{Tên service} &  \textbf{Số API}  & \textbf{Kết quả} \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Account service  &  8              & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Branch service  &  8              & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Cart service  &  6               & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Customer service  &  3              & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Event service  &   7               & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Goods service  &   12               & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Order service  &   8              & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Staff service  &  11               & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Warehouse service  & 11             & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Statistic service  &  5              & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Admin BFF  &  50              & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Customer BFF  &  14             & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Share BFF  &  15              & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \textbf{Tổng cộng}  &  158              & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \caption{Kết quả của kiểm thử đơn vị}
+    \end{longtable} 
+    Dựa theo kết quả kiểm thử ở bảng trên, có thể thấy toàn bộ API đã đạt được kết quả yêu cầu. Do đó, ứng dụng đã qua bước kiểm thử tích hợp.
 
 \newpage
 \section{Kiểm thử hệ thống (System testing)}
@@ -1483,4 +1535,98 @@ Vì vậy, nhóm chọn sử dụng phương pháp Use-case testing để kiểm
         \caption{Kịch bản kiểm thử xem thông tin chi tiết đơn hàng trực tiếp}
     \end{longtable}
 }
-Các kịch bản kiểm tra đều đạt kết quả PASS. Do đó, ứng dụng đã qua bước kiểm thử hệ thống.
+
+\subsection{Kết quả kiểm thử}
+{
+    \setlength\extrarowheight{6pt}
+    \begin{longtable}{| p{4cm}| p{4cm}| p{4cm}| p{4cm} |}
+        \hline
+        \textbf{Usecase} &  \textbf{Số testcase}  & \textbf{Kết quả} \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Xem danh sách các sản phẩm  &  2              & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Lọc sản phẩm theo đặc điểm  &  2              & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Lọc danh sách sản phẩm theo từ khóa  &  1               & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Xem thông tin chi tiết sản phẩm  &  3              & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Thêm sản phẩm vào giỏ hàng  &   3               & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Mua hàng trực tuyến  &   3               & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Xem thông tin chi tiết sự kiện  &   1               & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Thêm sự kiện mới  &  2               & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Chỉnh sửa sự kiện  & 2             & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Xem thông tin chi tiết chi nhánh  &  1              & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Thêm chi nhánh  &  2              & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Chỉnh sửa chi nhánh  &  2              & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Xóa chi nhánh  &  2              & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Xem thông tin chi tiết nhân viên  &  1              & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Thêm nhân viên  &  2              & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Chỉnh sửa nhân viên  &  2              & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Xóa nhân viên  &  2              & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Thêm kho  &  2              & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Chỉnh sửa kho  &  2              & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Thêm hàng  &  2              & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Chỉnh sửa hàng  &  1              & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Chuyển kho  &  1              & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Trả hàng  &  1              & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Nhận trả hàng  &  1              & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Xem thông tin chi tiết đơn hàng trực tuyến  &  1              & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Xem thông tin chi tiết đơn hàng trực tiếp  &  1              & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+       \textbf{Tổng cộng}    &  45              & Đạt             \\
+        \hline
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \caption{Kết quả của kiểm thử đơn vị}
+    \end{longtable}
+}
+
+Theo như bảng thống kê ở trên thì tất cả kịch bản kiểm tra đều đạt kết quả PASS. Do đó, ứng dụng đã qua bước kiểm thử hệ thống.
