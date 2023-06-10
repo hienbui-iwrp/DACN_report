@@ -76,7 +76,7 @@ Sự kiện là một tác động đến quy trình nghiệp vụ có thể là
 \end{itemize}
 \begin{figure}[!htp]
     \begin{center}
-        \includegraphics[width=6cm]{img/theory/BPMN/Event.png}
+        \includegraphics[width=9cm]{img/theory/BPMN/Event.png}
     \end{center}
     \caption{Các loại sự kiện trong BPMN \cite{theoryBPMN1}}
 \end{figure}
@@ -159,31 +159,202 @@ Quy trình BPEL chi tiết như sau. Đầu tiên Client sẽ gửi một yêu c
 \hspace*{0.5cm} \par Việc chuyển đổi từ BPMN sang BPEL sẽ giúp tự động hóa quy trình nghiệp vụ. BPMN ở dạng diagram, là mô hình và công cụ để người dùng nghiệp vụ và lập trình viên có thể làm việc và giao tiếp với nhau.
 Còn để thực thi được nghiệp vụ, chúng ta cần ngôn ngữ thực thi, ở đây là BPEL. Vậy nên việc chuyển đổi từ BPMN sang BPEL là bước quan trọng trong việc tự động hóa quy trình nghiệp vụ.
 
-\par Đầu tiên, ta đề cập đến các cấu trúc well-structured trong BPMN. Đây là các cấu trúc cơ bản, và dễ dàng để convert sang BPEL, do đó đây sẽ là nền tảng trong việc chuyển đổi. Các cấu trúc well-structured bao gồm:
+\par Để chuyển đổi BPMN (file .bpmn) sang BPEL ta có các quy tắc sau:
 \begin{itemize}
-    \item Sequence
-    \item Flow
-    \item Switch
-    \item Pick
-    \item While
-    \item Repeat
-    \item Repeat - While
+    \item Chuyển đổi quy trình BPMN thành cấu trúc dữ liệu dạng cây.
+    \item Từ cấu trúc dữ liệu vừa được tạo ra, ta thực hiện xác định các thành phần nguyên tố và các thành phần cấu trúc tương ứng trong BPEL:
+          \begin{itemize}
+              \item Các thành phần cơ bản thực hiện chuyển đổi trực tiếp thành các thành phần nguyên tố.
+              \item Các cấu trúc đặc biệt được chuyển đổi thành các thành phần cấu trúc.
+          \end{itemize}
+    \item Thực hiện các bước xử lý dữ liệu, tính toán, xác định các dịch vụ web tương ứng, xử lý lỗi... để hoàn thiện quy trình có thể vận hành.
 \end{itemize}
 
-\par Với các cấu trúc phức tạp hơn, ta gọi các cấu trúc đó là non-well structured. Đối với cấu trúc này, ta có thể chia nhỏ và gom nhóm các thành phần của cấu trúc để tạo nên các well-structured, và từ đó chuyển đổi từng phần well-structured nhỏ sang BPEL.
-Sau đó ta gộp các thành phần BPEL đã chuyển đổi để thành BPEL cuối cùng.
+\subsection{Chuyển đổi các thành phần nguyên tố}
+Các thành phần nguyên tố được chuyển tương ứng như sau:
+{
+\setlength\extrarowheight{6pt}
+\begin{longtable}{| p{4cm} | p{4cm} |}
 
-\par Giải thuật chuyển đổi từ BPMN X sang BPEL như sau \cite{theoryConvert}:
-\begin{enumerate}
-    \item Nếu X là well-structured, chuyển đổi trực tiếp sang BPEL, tới bước 4.
-    \item Nếu X là non-well structured:
-          \begin{enumerate}
-              \item Nếu tồn tại thành phần C là Sequence, chọn ra phần đó và đến bước 2.4.
-              \item Nếu tồn tại thành phần C là well-structured và non-sequence, chọn ra phần đó và đến bước 2.4.
-              \item Nếu tồn tại thành phần C là non-well structured, chọn ra phần đó.
-              \item Gán việc ánh xạ C qua BPEL cho công việc t\_{c}.
-              \item Quay lại bước 2.
-          \end{enumerate}
-    \item Xuất ra đoạn code ứng với công việc t\_{c}.
-    \item Event nhập và event xuất được ánh xạ tương ứng lần lượt thành <process> và </process> để bao lại phần code BPEL vừa được chuyển đổi.
-\end{enumerate}
+    \hline
+    \textbf{BPMN} & \textbf{BPEL}  \\
+    \hline
+    %%%%%%%%%%%%%%%%%%%%%%
+    Start Event   & $<receive/>$   \\
+    \hline
+    %%%%%%%%%%%%%%%%%%%%%%
+    End Event     & $<reply/>$     \\
+    \hline
+    %%%%%%%%%%%%%%%%%%%%%%
+    Send Task     & $<invoke/>$    \\
+    \hline
+    %%%%%%%%%%%%%%%%%%%%%%
+    Receive Task  & $<receive/>$   \\
+    \hline
+    %%%%%%%%%%%%%%%%%%%%%%
+    User Task     & $<humanTask/>$ \\
+    \hline
+    %%%%%%%%%%%%%%%%%%%%%%
+    System Task   & $<invoke/>$    \\
+    \hline
+    %%%%%%%%%%%%%%%%%%%%%%
+    Script Task   & $<assign/>$    \\
+    \hline
+    %%%%%%%%%%%%%%%%%%%%%%
+    Send Event    & $<invoke/>$    \\
+    \hline
+    %%%%%%%%%%%%%%%%%%%%%%
+    Send Event    & $<invoke/>$    \\
+    \hline
+    %%%%%%%%%%%%%%%%%%%%%%
+    Receive Event & $<receive/>$   \\
+    \hline
+    \caption{Các thành phần nguyên tố}
+\end{longtable}
+
+}
+
+\subsection{Chuyển đổi các thành phần cấu trúc}
+Một số cấu trúc phổ biến được chuyển tương ứng như sau:\\
+\par \textbf{Sequence:} Cấu trúc tuần tự
+\begin{figure}[!htp]
+    \begin{center}
+        \includegraphics[width=6cm]{img/Theory/tranfer/Sequence.png}
+    \end{center}
+    \caption{BPMN Sequence}
+\end{figure}
+\\
+\par Mã BPEL tương ứng:
+\begin{figure}[!htp]
+    \begin{center}
+        \includegraphics[width=4cm]{img/Theory/tranfer/SequenceCode.png}
+    \end{center}
+\end{figure}
+
+\textbf{Flow:} Cấu trúc rẽ nhánh, cần hoàn thành mọi nhánh
+\begin{figure}[!htp]
+    \begin{center}
+        \includegraphics[width=8cm]{img/Theory/tranfer/flow.png}
+    \end{center}
+    \caption{BPMN Flow}
+\end{figure}
+\newpage
+\par Mã BPEL tương ứng:
+\begin{figure}[!htp]
+    \begin{center}
+        \includegraphics[width=5cm]{img/Theory/tranfer/flowCode.png}
+    \end{center}
+\end{figure}
+
+\textbf{If:} Cấu trúc rẽ nhánh điều kiện, chỉ cần hoàn thành một nhánh
+\begin{figure}[!htp]
+    \begin{center}
+        \includegraphics[width=6cm]{img/Theory/tranfer/If.png}
+    \end{center}
+    \caption{BPMN If}
+\end{figure}
+\par Mã BPEL tương ứng:
+\begin{figure}[!htp]
+    \begin{center}
+        \includegraphics[width=5cm]{img/Theory/tranfer/IfCode.png}
+    \end{center}
+\end{figure}
+
+
+\textbf{Pick:}  Cấu trúc rẽ nhánh sự kiện, chỉ cần hoàn thành một nhánh
+\begin{figure}[!htp]
+    \begin{center}
+        \includegraphics[width=6cm]{img/Theory/tranfer/pick.png}
+    \end{center}
+    \caption{BPMN Pick}
+\end{figure}
+\par Mã BPEL tương ứng:
+\begin{figure}[!htp]
+    \begin{center}
+        \includegraphics[width=5cm]{img/Theory/tranfer/pickCode.png}
+    \end{center}
+\end{figure}
+
+\newpage
+\textbf{While:} Cấu trúc lặp
+\begin{figure}[!htp]
+    \begin{center}
+        \includegraphics[width=6cm]{img/Theory/tranfer/while.png}
+    \end{center}
+    \caption{BPMN  While}
+\end{figure}
+\par Mã BPEL tương ứng:
+\begin{figure}[!htp]
+    \begin{center}
+        \includegraphics[width=5cm]{img/Theory/tranfer/whileCode.png}
+    \end{center}
+\end{figure}
+
+
+\textbf{Repeat-Until:} Cấu trúc lặp
+\begin{figure}[!htp]
+    \begin{center}
+        \includegraphics[width=6cm]{img/Theory/tranfer/repeat-until.png}
+    \end{center}
+    \caption{BPMN Repeat-Until}
+\end{figure}
+\par Mã BPEL tương ứng:
+\begin{figure}[!htp]
+    \begin{center}
+        \includegraphics[width=5cm]{img/Theory/tranfer/repeat-untilCode.png}
+    \end{center}
+\end{figure}
+
+\textbf{Repeat-While:} Cấu trúc lặp
+\begin{figure}[!htp]
+    \begin{center}
+        \includegraphics[width=6cm]{img/Theory/tranfer/repeat-while.png}
+    \end{center}
+    \caption{BPMN Repeat-While}
+\end{figure}
+\newpage
+\par Mã BPEL tương ứng:
+\begin{figure}[!htp]
+    \begin{center}
+        \includegraphics[width=5cm]{img/Theory/tranfer/repeat-whileCode.png}
+    \end{center}
+\end{figure}
+
+\par Với các cấu trúc phức tạp hơn, ta có thể chia nhỏ và gom nhóm các thành phần của cấu trúc để tạo nên các cấu trúc  đơn giản hơn như trên, và từ đó chuyển đổi từng phần sang BPEL. Sau đó ta gộp các thành phần BPEL đã chuyển đổi để thành BPEL cuối cùng.
+
+% \par Giải thuật chuyển đổi từ BPMN X sang BPEL như sau \cite{theoryConvert}:
+% \begin{enumerate}
+%     \item Nếu X là well-structured, chuyển đổi trực tiếp sang BPEL, tới bước 4.
+%     \item Nếu X là non-well structured:
+%           \begin{enumerate}
+%               \item Nếu tồn tại thành phần C là Sequence, chọn ra phần đó và đến bước 2.4.
+%               \item Nếu tồn tại thành phần C là well-structured và non-sequence, chọn ra phần đó và đến bước 2.4.
+%               \item Nếu tồn tại thành phần C là non-well structured, chọn ra phần đó.
+%               \item Gán việc ánh xạ C qua BPEL cho công việc t\_{c}.
+%               \item Quay lại bước 2.
+%           \end{enumerate}
+%     \item Xuất ra đoạn code ứng với công việc t\_{c}.
+%     \item Event nhập và event xuất được ánh xạ tương ứng lần lượt thành <process> và </process> để bao lại phần code BPEL vừa được chuyển đổi.
+% \end{enumerate}
+
+
+\section{Thay đổi quy trình nghiệp vụ trong hệ thống}
+% \begin{figure}[!htp]
+%     \centering
+%     \includegraphics[width=10cm]{img/bpel/general.png}
+%     \newline
+%     \caption{Vị trí của BPEL trong hệ thống}
+% \end{figure}
+
+
+
+\hspace*{0.5cm}Đối với mỗi quy trình nghiệp vụ của hệ thống được thiết kế bằng BPMN, các kĩ thuật viên cần thực hiện chuyền đổi các quy trình đó thành quy trình BPEL để thực thi và tích hợp vào hệ thông.
+
+\begin{figure}[!htp]
+    \centering
+    \includegraphics[width=10cm]{img/bpel/tranfer.png}
+    \newline
+    \caption{Các thành phần bị tác động khi thay đổi quy trịnh nghiệp vụ}
+\end{figure}
+
+Khi có nhu cầu thanh đổi quy trình nghiệp vụ trong hệ thống, phía người dùng chỉ cần thực hiện thay đổi BPMN để kĩ thuật viên thực hiện chuyển đổi thành BPEL cập nhật hệ thống mà không thay đổi đến bản chất các thành phần khác trong hệ thông, ngoại trừ có thể sẽ thay đổi cách tương tác giửa các thành phần trong hệ thống đến BPEL.
